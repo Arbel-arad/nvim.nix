@@ -31,6 +31,12 @@ in {
               suda_smart_edit = 1; # use super user write automatically
             };
 
+            extraPackages = [
+              pkgs.imagemagick
+              pkgs.fzf
+              pkgs.nix
+            ];
+
             clipboard = {
               enable = true;
               providers = {
@@ -553,7 +559,7 @@ in {
                   clang-debugger = lib.mkForce /* lua */ ''
                     dap.adapters.lldb = {
                       type = 'executable',
-                      command = '${config.programs.nvf.settings.vim.languages.clang.dap.package}/bin/lldb-dap',
+                      command = '${pkgs.clang-tools}/bin/lldb-dap',
                       name = 'lldb'
                     }
                     dap.configurations.cpp = {
