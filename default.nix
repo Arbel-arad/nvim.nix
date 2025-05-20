@@ -48,10 +48,23 @@ in {
               formatOnSave = false;
               lspkind.enable = true;
               lspsaga = {
-                enable = false;
+                enable = true;
+                setupOpts = {
+                  ui = {
+                    code_action = "🟅";
+                  };
+                  lightbulb = {
+                    sign = false;
+                    virtual_text = true;
+                  };
+                  breadcrumbs.enable = false;
+                };
               };
               trouble = {
                 enable = true;
+                mappings = {
+                  documentDiagnostics = null;
+                };
                 setupOpts = {
                   modes = {
                     diagnostics = {
@@ -67,6 +80,15 @@ in {
               };
               otter-nvim = {
                 enable = true;
+                setupOpts = {
+                  buffers.set_filetype = true;
+                  lsp = {
+                    diagnostic_update_event = [
+                      "BufWritePost"
+                      "InsertLeave"
+                    ];
+                  };
+                };
               };
               #nvim-docs-view.enable = isMaximal;
               servers = {
@@ -468,11 +490,26 @@ in {
               toggleterm = {
                 enable = true;
                 lazygit.enable = true;
+                mappings.open = null;
                 setupOpts = {
                   direction = "float";
                   shell = "bash";
                 };
               };
+            };
+
+            keymaps = [
+              {
+                key = "<leader>tt";
+                mode = ["n"];
+                silent = true;
+                action = "<cmd>Lspsaga term_toggle<cr>";
+                desc = "Lspsaga terminal";
+              }
+            ];
+
+            luaConfigRC = {
+
             };
 
             diagnostics = {
@@ -600,7 +637,7 @@ in {
                 "nvim-scrollview" = {
                   package = pkgs.vimPlugins.nvim-scrollview;
                   setupOpts = {
-
+                    signs_on_startup = [ "all" ];
                   };
                   lazy = true;
                   event = ["BufEnter"];
