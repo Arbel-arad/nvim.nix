@@ -26,8 +26,8 @@
         default = pkgs.mkShell {
         };
       };
-      packages = import ./package.nix { inherit config inputs self' pkgs lib; };
-      apps = import ./apps.nix { inherit self' pkgs; };
+      packages = import ./flake/package.nix { inherit config inputs self self' pkgs lib; };
+      apps = import ./flake/apps.nix { inherit self' pkgs; };
     };
   };
 }

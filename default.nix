@@ -3,7 +3,7 @@
 in {
   imports = [
     inputs.nvf.homeManagerModules.default
-    ./debug.nix
+    ./config/debug.nix
   ];
   config = {
     programs = {
@@ -24,6 +24,9 @@ in {
               mousescroll = "ver:1,hor:1";
               mousemoveevent = true;
               # shortmess = "ltToOCF";
+
+              autoindent = true;
+              smartindent = true;
             };
 
             globals = {
@@ -35,6 +38,7 @@ in {
               pkgs.imagemagick
               pkgs.fzf
               pkgs.nix
+              pkgs.cppcheck
             ];
 
             clipboard = {
@@ -242,6 +246,12 @@ in {
               highlight = {
                 enable = true;
               };
+              indent = {
+                enable = true;
+                disable = [
+                  "nix"
+                ];
+              };
             };
 
             binds = {
@@ -293,6 +303,18 @@ in {
 
               rust = {
                 enable = true;
+                lsp = {
+                  enable = true;
+                  opts = /* lua */ ''
+                    ['rust-analyzer'] = {
+                    cargo = {allFeature = true},
+                    checkOnSave = true,
+                      procMacro = {
+                        enable = true,
+                      },
+                    },
+                  '';
+                };
                 crates = {
                   enable = true;
                   codeActions = true;
@@ -542,6 +564,14 @@ in {
               };
               nvim-lint = {
                 enable = true;
+                linters = {
+
+                };
+                linters_by_ft = {
+                  c = [
+                    "cppcheck"
+                  ];
+                };
               };
             };
 
