@@ -1,14 +1,6 @@
 { pkgs, ... }: {
   config = let
-    formatTOML = pkgs.formats.toml {};
-    "neovideToml" = formatTOML.generate "neovide.toml" {
-      maximized = true;
-      font = {
-        normal = [];
-        size = 10.0;
-      };
-    };
-
+    "neovideToml" = import ./config/neovide.nix { inherit pkgs; };
     "nvf-wrapped" = pkgs.writeShellScriptBin "nvf-wrapped" /* bash */ ''
       SHELL=${pkgs.fish}/bin/fish nvim --headless --listen localhost:6666 "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server=localhost:6666
     '';

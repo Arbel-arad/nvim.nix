@@ -44,6 +44,8 @@ in {
               pkgs.fzf
               pkgs.nix
               pkgs.cppcheck
+              pkgs.yazi
+              pkgs.fish
             ];
 
             clipboard = {
