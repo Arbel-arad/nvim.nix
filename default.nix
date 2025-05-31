@@ -4,6 +4,7 @@ in {
   imports = [
     inputs.nvf.homeManagerModules.default
     ./config/debug.nix
+    ./home.nix
   ];
   config = {
     programs = {
@@ -32,6 +33,10 @@ in {
             globals = {
               navic_silence = true; # navic tries to attach multiple LSPs and fails
               suda_smart_edit = 1; # use super user write automatically
+
+              neovide_scale_factor = 0.7;
+              neovide_cursor_animation_length = 0.1;
+              neovide_cursor_short_animation_length = 0;
             };
 
             extraPackages = [
@@ -237,7 +242,7 @@ in {
                 enable = true;
                 setupOpts = {
                   mode = "topline";
-                  max_lines = 6;
+                  max_lines = 3;
                   min_window_height = 50;
                   separator = null;
                 };
@@ -490,7 +495,7 @@ in {
             visuals = {
               fidget-nvim.enable = true;
               nvim-web-devicons.enable = true;
-              cinnamon-nvim.enable = true; # smooth scroll
+              cinnamon-nvim.enable = false; # smooth scroll
               rainbow-delimiters.enable = true;
 
               nvim-scrollbar = {
