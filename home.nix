@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   config = let
     "neovideToml" = import ./config/neovide.nix { inherit pkgs; };
     "nvf-wrapped" = pkgs.writeShellScriptBin "nvf-wrapped" /* bash */ ''
@@ -11,12 +11,36 @@
         nvf-wrapped
       ];
     };
-    xdg = {
-      desktopEntries = {
-        nvim = {
-          name = "Nvim";
-          genericName = "Neovim wrapped";
-          exec = "${nvf-wrapped}/bin/nvf-wrapped";
+    systemd = let
+      socket = "${config.home.homeDirectory}/.local/share/nvf.socket";
+      program = pkgs.writeShellScriptBin "sock-wrap" /* bash */ ''
+
+      '';
+
+    in {
+      user = {
+#         sockets = {
+#           nvf-wrapped = {
+#             Unit = {
+#               Description = "Neovim flake GUI wrapper";
+#             };
+#             Socket = {
+#               Accept = true;
+#               ListenStream = socket;
+#             };
+#           };
+#         };
+        services = {
+#           "nvf-wrapped@" = {
+#             Service = {
+#               ExecStart = "${config.programs.nvf.finalPackage}/bin/nvim --headless --listen $REMOTE_ADDR";
+#             };
+#           };
+          "nvf-wrapped" = {
+            Service = {
+              ExecStart = "${config.programs.nvf.finalPackage}/bin/nvim --headless --listen ${socket}";
+            };
+          };
         };
       };
     };

@@ -3,13 +3,13 @@
 ## Usage
 
 ```bash
-nix run git+https://forgejo.spacetime.technology/arbel/nvim.nix.git
+nix run git+https://forgejo.spacetime.technology/arbel/nvim.nix
 ```
 
 GUI version:
 
 ```bash
-nix run git+https://forgejo.spacetime.technology/arbel/nvim.nix.git#gui
+nix run git+https://forgejo.spacetime.technology/arbel/nvim.nix#gui
 ```
 
 <div>
