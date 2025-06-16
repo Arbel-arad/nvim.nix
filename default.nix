@@ -677,14 +677,14 @@ in {
                   lazy = true;
                   event = ["BufEnter"];
                 };
-                "nvim-scrollview" = {
-                  package = pkgs.vimPlugins.nvim-scrollview;
-                  setupOpts = {
-                    signs_on_startup = [ "all" ];
-                  };
-                  lazy = true;
-                  event = ["BufEnter"];
-                };
+                #"nvim-scrollview" = {
+                #  package = pkgs.vimPlugins.nvim-scrollview;
+                #  setupOpts = {
+                #    signs_on_startup = [ "all" ];
+                #  };
+                #  lazy = true;
+                #  event = ["BufEnter"];
+                #};
                 "vimplugin-nvim-platformio" = let
                   "nvim-platformio" = pkgs.vimUtils.buildVimPlugin {
                     name = "nvim-platformio";
