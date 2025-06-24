@@ -1,13 +1,13 @@
-{ pkgs, config, ... }: {
+{ pkgs, ... }: {
   config = let
-    nvf-wrapped = import ./flake/apps.nix { inherit pkgs; self' = null;};
+    nvf-wrapped = import ./packages/nvf-wrapped.nix { inherit pkgs; };
 #     "nvf-wrapped" = pkgs.writeShellScriptBin "nvf-wrapped" /* bash */ ''
 #       SHELL=${pkgs.fish}/bin/fish nvim --headless --listen localhost:6666 "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server=localhost:6666
 #     '';
   in {
     home = {
       packages = [
-        nvf-wrapped.gui.program
+        nvf-wrapped.program
       ];
     };
     xdg = {
@@ -17,7 +17,7 @@
           genericName = "Neovim GUI";
           type = "Application";
           terminal = false;
-          exec = "${nvf-wrapped.gui.program}/bin/nvf-wrapped";
+          exec = "${nvf-wrapped.program}/bin/nvf-wrapped";
           settings = {
             Keywords = "nvim;nvf;neovim;neovide";
           };
@@ -33,13 +33,13 @@
         };
       };
     };
-    systemd = let
-      socket = "${config.home.homeDirectory}/.local/share/nvf.socket";
-      program = pkgs.writeShellScriptBin "sock-wrap" /* bash */ ''
-
-      '';
-    in {
-      user = {
+#     systemd = let
+#       socket = "${config.home.homeDirectory}/.local/share/nvf.socket";
+#       program = pkgs.writeShellScriptBin "sock-wrap" /* bash */ ''
+#
+#       '';
+#     in {
+#       user = {
 #         sockets = {
 #           nvf-wrapped = {
 #             Unit = {
@@ -51,19 +51,19 @@
 #             };
 #           };
 #         };
-        services = {
+#         services = {
 #           "nvf-wrapped@" = {
 #             Service = {
 #               ExecStart = "${config.programs.nvf.finalPackage}/bin/nvim --headless --listen $REMOTE_ADDR";
 #             };
 #           };
-          "nvf-wrapped" = {
-            Service = {
-              ExecStart = "${config.programs.nvf.finalPackage}/bin/nvim --headless --listen ${socket}";
-            };
-          };
-        };
-      };
-    };
+#           "nvf-wrapped" = {
+#             Service = {
+#               ExecStart = "${config.programs.nvf.finalPackage}/bin/nvim --headless --listen ${socket}";
+#             };
+#           };
+#         };
+#       };
+#     };
   };
 }

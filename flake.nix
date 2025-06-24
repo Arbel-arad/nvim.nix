@@ -27,7 +27,7 @@
         };
       };
       packages = import ./flake/package.nix { inherit config inputs self self' pkgs lib; };
-      apps = import ./flake/apps.nix { inherit self' pkgs; };
+      apps = import ./flake/apps.nix { inherit self self' pkgs; };
     };
   };
 }
