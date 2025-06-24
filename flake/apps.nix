@@ -16,8 +16,9 @@
       ];
       text = /* bash */ ''
         sockdir=$(mktemp -d)
-        SHELL=${pkgs.fish}/bin/fish nvim --headless --listen "$sockdir/nvim.sock" "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server="$sockdir/nvim.sock"
-        rm "$sockdir/nvim.sock" || echo "nvim removed socket"
+        sockfile="$sockdir/nvim.sock"
+        SHELL=${pkgs.fish}/bin/fish nvim --headless --listen "$sockfile" "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server="$sockfile"
+        if [ -S "$sockfile" ]; then rm "$sockdir/nvim.sock"; fi
         rmdir "$sockdir"
       '';
     };

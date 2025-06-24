@@ -40,6 +40,9 @@ in {
             };
 
             extraPackages = [
+              pkgs.platformio-core # for platformio
+              pkgs.ccls
+
               pkgs.imagemagick
               pkgs.fzf
               pkgs.nix
@@ -691,8 +694,8 @@ in {
                     src = pkgs.fetchFromGitHub {
                       owner = "anurag3301";
                       repo = "nvim-platformio.lua";
-                      rev = "04712085ff6c3d78617b8efc30380f468fe58f01";
-                      hash = "sha256-6WoNoRns67krOsyN7b7I7TUn/ZmpO49pJvt/s7CF/jU=";
+                      rev = "db0af8a0a7e71e613c497812724ff32b7f158df1";
+                      hash = "sha256-3DFKkPa0vbBBAEAs4Y4A5m3J6FIBbx70v5mHFe0EXus=";
                     };
                     nvimSkipModule = [
                       "platformio.pioinit"
@@ -706,6 +709,7 @@ in {
                   setupOpts = {
 
                   };
+                  lazy = true;
                 };
                 "dropbar.nvim" = {
                   package = pkgs.vimPlugins.dropbar-nvim;
