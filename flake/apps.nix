@@ -14,7 +14,7 @@
         pkgs.yazi
         pkgs.fish
       ];
-      text = ''
+      text = /* bash */ ''
         SHELL=${pkgs.fish}/bin/fish nvim --headless --listen localhost:7777 "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server=localhost:7777
       '';
     };
