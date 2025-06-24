@@ -15,7 +15,10 @@
         pkgs.fish
       ];
       text = /* bash */ ''
-        SHELL=${pkgs.fish}/bin/fish nvim --headless --listen localhost:7777 "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server=localhost:7777
+        sockdir=$(mktemp -d)
+        SHELL=${pkgs.fish}/bin/fish nvim --headless --listen "$sockdir/nvim.sock" "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server="$sockdir/nvim.sock"
+        rm "$sockdir/nvim.sock" || echo "nvim removed socket"
+        rmdir "$sockdir"
       '';
     };
   };
