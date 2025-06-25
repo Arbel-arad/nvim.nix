@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   config = let
-    nvf-wrapped = import ./packages/nvf-wrapped.nix { inherit pkgs; };
+    nvf-wrapped = import ./packages/nvf-wrapped.nix { inherit pkgs; nvf = config.programs.nvf.finalPackage;};
 #     "nvf-wrapped" = pkgs.writeShellScriptBin "nvf-wrapped" /* bash */ ''
 #       SHELL=${pkgs.fish}/bin/fish nvim --headless --listen localhost:6666 "$@" & NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server=localhost:6666
 #     '';

@@ -4,5 +4,5 @@
     type = "app";
     program = self'.packages.default;
   };
-  gui = import (self + /packages/nvf-wrapped.nix) { inherit pkgs; };
+  gui = import (self + /packages/nvf-wrapped.nix) { inherit pkgs; nvf = self'.packages.default; };
 }
