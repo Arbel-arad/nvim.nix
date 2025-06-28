@@ -1,5 +1,7 @@
 { config, inputs, pkgs, lib, ... }: let
 
+  nvimSize = 1;
+
 in {
   imports = [
     inputs.nvf.homeManagerModules.default
@@ -8,39 +10,10 @@ in {
   ];
   config = {
     programs = {
-      nvf = {
-        enable = true;
-        enableManpages = true;
+      nvf = lib.recursiveUpdate {
         settings = {
           vim = {
-            package = inputs.nvim-nightly.packages.${pkgs.system}.neovim;
-            viAlias = false;
-            vimAlias = true;
-            options = {
-              tabstop = 2;
-              shiftwidth = 2;
-              foldlevel = 99;
-              foldcolumn = "auto:1";
-              fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
-              mousescroll = "ver:1,hor:1";
-              mousemoveevent = true;
-              # shortmess = "ltToOCF";
-
-              autoindent = true;
-              smartindent = true;
-            };
-
-            globals = {
-              navic_silence = true; # navic tries to attach multiple LSPs and fails
-              suda_smart_edit = 1; # use super user write automatically
-
-              neovide_scale_factor = 0.7;
-              neovide_cursor_animation_length = 0.1;
-              neovide_cursor_short_animation_length = 0;
-            };
-
             extraPackages = [
-              pkgs.platformio-core # for platformio
               pkgs.ccls
 
               pkgs.imagemagick
@@ -51,113 +24,8 @@ in {
               pkgs.fish
             ];
 
-            clipboard = {
-              enable = true;
-              providers = {
-                wl-copy.enable = true;
-              };
-            };
-
-            spellcheck = {
-              enable = true;
-              programmingWordlist.enable = true;
-            };
-
-            lsp = {
-              enable = true;
-              formatOnSave = false;
-              lspkind.enable = true;
-              lspsaga = {
-                enable = true;
-                setupOpts = {
-                  ui = {
-                    code_action = "🟅";
-                  };
-                  lightbulb = {
-                    sign = false;
-                    virtual_text = true;
-                  };
-                  breadcrumbs.enable = false;
-                };
-              };
-              trouble = {
-                enable = true;
-                mappings = {
-                  documentDiagnostics = null;
-                };
-                setupOpts = {
-                  modes = {
-                    diagnostics = {
-                      auto_open = true;
-                      auto_close = true;
-                    };
-                  };
-                };
-              };
-              lspSignature.enable = true;
-              lspconfig = {
-                enable = true;
-              };
-              otter-nvim = {
-                enable = true;
-                setupOpts = {
-                  buffers.set_filetype = true;
-                  lsp = {
-                    diagnostic_update_event = [
-                      "BufWritePost"
-                      "InsertLeave"
-                    ];
-                  };
-                };
-              };
-              #nvim-docs-view.enable = isMaximal;
-              servers = {
-                nil = {
-                  enable = true;
-                  cmd = [ "${lib.getExe pkgs.nil}" ];
-                  filetypes = [ "nix" ];
-                  root_markers = [
-                    "flake.nix"
-                    "flake.lock"
-                    ".git"
-                  ];
-                  settings.nil = {
-                    diagnostics = {
-                      ignored = [
-                        "unused_binding"
-                        "unused_with"
-                      ];
-                    };
-                  };
-                };
-                nixd = {
-                  enable = true;
-                  cmd = [ "${lib.getExe pkgs.nixd}" "--log=error" ];
-                  filetypes = [ "nix" ];
-                  root_markers = [
-                    "flake.nix"
-                    "flake.lock"
-                    ".git"
-                  ];
-                  capabilities = {
-                    textDocument = {
-                      foldingRange = {
-                        dynamicRegistration = false;
-                        lineFoldingOnly = true;
-                      };
-                    };
-                  };
-                };
-                "clangd" = {
-                  cmd = [ "${pkgs.clang-tools}/bin/clangd" "--clang-tidy" ];
-                };
-              };
-            };
-
-
             autocomplete = { # Which is better?
               nvim-cmp = {
-                enable = true;
                 # setupOpts = lib.generators.mkLuaInline /* lua */ ''
                 /*  sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
@@ -170,74 +38,13 @@ in {
                   })
                 '';*/
                 sources = {
-                  buffer = "[Buffer]";
-                  nvim-cmp = null;
                   #async_path = "[Path]"; # not showing highlight correctly
                   #cmdline = "[cmd]"; # not showing in the cmdline
-                  path = "[Path]";
                 };
                 sourcePlugins = [
                   #pkgs.vimPlugins.cmp-async-path
-                  pkgs.vimPlugins.cmp-cmdline
                 ];
               };
-              blink-cmp = {
-                enable = false;
-              };
-            };
-
-
-            filetree = {
-              neo-tree = {
-                enable = true;
-                setupOpts = {
-                  enable_cursor_hijack = true;
-                };
-              };
-            };
-
-            theme = {
-              enable = true;
-              name = "catppuccin";
-              style = "mocha";
-              transparent = false;
-            };
-
-            statusline = {
-              lualine = {
-                enable = true;
-                theme = "iceberg_dark";
-                setupOpts = {
-                  options = {
-                    disabled_filetypes = rec {
-                      winbar = statusline;
-                      statusline = [
-                        # DAP-ui
-                        "dapui_breakpoints"
-                        "dapui_console"
-                        "dapui_watches"
-                        "dapui_scopes"
-                        "dapui_stacks"
-                        "dap-repl"
-
-                        # DAP-view
-                        "dap-view-term"
-                        "dap-view"
-                        "dap-repl"
-
-                        # dashboards
-                        "dashboard"
-                        "startify"
-                        "alpha"
-                      ];
-                    };
-                  };
-                };
-              };
-            };
-
-            tabline = {
-              nvimBufferline.enable = true;
             };
 
             treesitter = {
@@ -269,9 +76,6 @@ in {
               cheatsheet.enable = true;
             };
 
-            autopairs.nvim-autopairs.enable = true;
-            snippets.luasnip.enable = true;
-
             telescope = {
               enable = true;
               mappings = {
@@ -285,11 +89,6 @@ in {
                 enable = true;
                 codeActions.enable = false; # throws an annoying debug message
               };
-            };
-
-            minimap = {
-              minimap-vim.enable = false;
-              codewindow.enable = true;
             };
 
             dashboard = { # dashboard-nvim looks better but it's showing the tablines wrong
@@ -680,14 +479,14 @@ in {
                   lazy = true;
                   event = ["BufEnter"];
                 };
-                #"nvim-scrollview" = {
-                #  package = pkgs.vimPlugins.nvim-scrollview;
-                #  setupOpts = {
-                #    signs_on_startup = [ "all" ];
-                #  };
-                #  lazy = true;
-                #  event = ["BufEnter"];
-                #};
+                "nvim-scrollview" = {
+                 package = pkgs.vimPlugins.nvim-scrollview;
+                 setupOpts = {
+                   signs_on_startup = [ "all" ];
+                 };
+                 lazy = true;
+                 event = ["BufEnter"];
+                };
                 "vimplugin-nvim-platformio" = let
                   "nvim-platformio" = pkgs.vimUtils.buildVimPlugin {
                     name = "nvim-platformio";
@@ -804,7 +603,7 @@ in {
             };
           };
         };
-      };
+      } (import ./config/neovim.nix { inherit inputs pkgs lib nvimSize; });
     };
   };
 }

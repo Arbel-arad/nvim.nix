@@ -1,5 +1,5 @@
 { pkgs, nvf }: let
-  neovideToml = import ../config/neovide.nix { inherit pkgs; };
+  neovideToml = (import ../config/neovide.nix { inherit pkgs; }).config;
 in {
   type = "app";
   program = pkgs.writeShellApplication {

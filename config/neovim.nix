@@ -1,0 +1,40 @@
+{ nvimSize, inputs, pkgs, lib }: {
+  enable = true;
+  enableManpages = true;
+
+  settings = {
+    vim = lib.mergeAttrsList [
+      (import ./utils.nix {})
+      (import ./lsp.nix { inherit pkgs lib; })
+      (import ./editing.nix { inherit pkgs; })
+      (import ./interface.nix {})
+
+      {
+        package = inputs.nvim-nightly.packages."${pkgs.system}".neovim;
+
+        viAlias = true;
+        vimAlias = true;
+
+        options = {
+          tabstop = 2;
+          shiftwidth = 2; # should be equal to tabstop
+
+          foldlevel = 99; # for folds and fillchars to show correctly
+          foldcolumn = "auto:1"; # levels of folds to show
+          fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
+
+          mousescroll = "ver:1,hor:1";
+          mousemoveevent = true;
+
+          autoindent = true;
+          smartindent = true;
+        };
+
+        globals = {
+          navic_silence = true; # navic tries to attach multiple LSPs and fails
+          #suda_smart_edit = 1; # use super user write automatically
+        } // (import ./neovide.nix { inherit pkgs; }).globals;
+      }
+    ];
+  };
+}
