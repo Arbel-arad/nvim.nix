@@ -5,7 +5,6 @@
 in {
   imports = [
     inputs.nvf.homeManagerModules.default
-    ./config/debug.nix
     ./home.nix
   ];
   config = {
@@ -24,7 +23,7 @@ in {
               pkgs.fish
             ];
 
-            autocomplete = { # Which is better?
+            autocomplete = {
               nvim-cmp = {
                 # setupOpts = lib.generators.mkLuaInline /* lua */ ''
                 /*  sources = cmp.config.sources({
@@ -91,10 +90,7 @@ in {
               };
             };
 
-            dashboard = { # dashboard-nvim looks better but it's showing the tablines wrong
-              #dashboard-nvim.enable = true;
-              alpha.enable = true;
-            };
+
 
             notify = {
               nvim-notify.enable = true;
@@ -263,66 +259,6 @@ in {
               sleuth.enable = true;
             };
 
-            ui = {
-              # illuminate.enable = true; # uses deprecated API
-              breadcrumbs = {
-                enable = false;
-                navbuddy.enable = false;
-              };
-              modes-nvim = {
-                enable = true;
-                setupOpts = {
-                  colors = {
-                    insert = "#75c6df";
-                  };
-                };
-              };
-              fastaction = {
-                enable = true;
-              };
-              borders = {
-                enable = true;
-                plugins = {
-                  fastaction.enable = true;
-                  lsp-signature.enable = true;
-                  nvim-cmp.enable = true;
-                };
-              };
-              nvim-ufo = {
-                enable = true;
-              };
-              noice = {
-                enable = true; # should i use this?
-              };
-            };
-
-            visuals = {
-              fidget-nvim.enable = true;
-              nvim-web-devicons.enable = true;
-              cinnamon-nvim.enable = false; # smooth scroll
-              rainbow-delimiters.enable = true;
-
-              nvim-scrollbar = {
-                enable = false;
-              };
-
-              indent-blankline = {
-                enable = true;
-                setupOpts = {
-                  exclude = {
-                    filetypes = [
-                      "dashboard"
-                      "alpha"
-                    ];
-                  };
-                };
-              };
-            };
-
-            notes = {
-              todo-comments.enable = true;
-            };
-
             terminal = {
               toggleterm = {
                 enable = true;
@@ -380,73 +316,6 @@ in {
                   c = [
                     "cppcheck"
                   ];
-                };
-              };
-            };
-
-            formatter = {
-              conform-nvim = {
-                enable = true;
-              };
-            };
-
-            debugger = {
-              nvim-dap = {
-                enable = true;
-                ui.enable = true;
-                sources = {
-                  clang-debugger = lib.mkForce /* lua */ ''
-                    dap.adapters.lldb = {
-                      type = 'executable',
-                      command = '${pkgs.clang-tools}/bin/lldb-dap',
-                      name = 'lldb'
-                    }
-                    dap.configurations.cpp = {
-                      {
-                        name = 'Launch',
-                        type = 'lldb',
-                        request = 'launch',
-                        console = "integratedTerminal",
-                        program = function()
-                          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                        end,
-                        cwd = "''${workspaceFolder}",
-                        stopOnEntry = false,
-                        args = {},
-                      },
-                      {
-                        name = "LaunchWithArgs",
-                        type = "lldb",
-                        request = "launch",
-                        console = "integratedTerminal",
-                        args = function()
-                          local args_string = vim.fn.input('Arguments: ')
-                          return vim.split(args_string, " +")
-                        end,
-                        program = function()
-                          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                        end,
-                        stopOnEntry = true,
-                        runInTerminal = false,
-                      },
-                      {
-                        name = "LaunchConsole",
-                        type = "lldb",
-                        request = "launch",
-                        console = "integratedTerminal",
-                        args = function()
-                          local args_string = vim.fn.input('Arguments: ')
-                          return vim.split(args_string, " +")
-                        end,
-                        program = function()
-                          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-                        end,
-                        stopOnEntry = true,
-                        runInTerminal = true,
-                      },
-                    }
-                    dap.configurations.c = dap.configurations.cpp
-                  '';
                 };
               };
             };

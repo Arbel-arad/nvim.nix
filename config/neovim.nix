@@ -6,6 +6,8 @@
     vim = lib.mergeAttrsList [
       (import ./utils.nix {})
       (import ./lsp.nix { inherit pkgs lib; })
+      (import ./debug.nix { inherit pkgs lib; })
+      (import ./formats.nix { inherit pkgs lib; })
       (import ./editing.nix { inherit pkgs; })
       (import ./interface.nix {})
 

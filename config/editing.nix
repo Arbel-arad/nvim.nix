@@ -1,5 +1,5 @@
 { pkgs }:{
-  autocomplete = {
+  autocomplete = { # Which is better?
     nvim-cmp = {
       enable = true;
       sources = {
