@@ -1,4 +1,4 @@
-{ pkgs, lib }:{
+{ nvimSize, pkgs, lib }:{
   lsp = {
     enable = true;
     formatOnSave = false;

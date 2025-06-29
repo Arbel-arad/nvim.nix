@@ -1,4 +1,4 @@
-{ lib }:{
+{ nvimSize, lib }:{
   diagnostics = {
     enable = true;
     config = {

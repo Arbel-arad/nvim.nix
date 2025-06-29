@@ -1,4 +1,4 @@
-{ pkgs, lib }:{
+{ nvimSize, pkgs, lib }:{
   debugger = {
     nvim-dap = {
       enable = true;

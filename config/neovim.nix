@@ -5,14 +5,15 @@
   settings = {
     vim = lib.mergeAttrsList [
       (import ./utils.nix {})
-      (import ./lsp.nix { inherit pkgs lib; })
-      (import ./debug.nix { inherit pkgs lib; })
-      (import ./formats.nix { inherit pkgs lib; })
-      (import ./editing.nix { inherit pkgs; })
-      (import ./interface.nix { inherit pkgs; })
+      (import ./lsp.nix { inherit nvimSize pkgs lib; })
+      (import ./debug.nix { inherit nvimSize pkgs lib; })
+      (import ./formats.nix { inherit nvimSize; })
+      (import ./editing.nix { inherit nvimSize pkgs; })
+      (import ./interface.nix { inherit nvimSize pkgs lib; })
       (import ./keymaps.nix {})
-      (import ./navigation.nix {})
-      (import ./diagnostics.nix { inherit lib; })
+      (import ./navigation.nix { inherit nvimSize; })
+      (import ./diagnostics.nix { inherit nvimSize lib; })
+      (import ./languages { inherit nvimSize pkgs lib; })
 
       {
         package = inputs.nvim-nightly.packages."${pkgs.system}".neovim;

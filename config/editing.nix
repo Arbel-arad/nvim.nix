@@ -1,4 +1,4 @@
-{ pkgs }:{
+{ nvimSize, pkgs }:{
   autocomplete = { # Which is better?
     nvim-cmp = {
       enable = true;

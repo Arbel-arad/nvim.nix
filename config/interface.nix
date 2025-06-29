@@ -1,4 +1,4 @@
-{ pkgs }:{
+{ nvimSize, pkgs, lib }:{
   theme = {
     enable = true;
     name = "catppuccin";
@@ -52,7 +52,9 @@
     minimap-vim = {
       enable = false;
     };
-    codewindow.enable = true;
+    codewindow = {
+      enable = true;
+    };
   };
 
   statusline = {
@@ -88,13 +90,17 @@
   };
 
   ui = {
-    # illuminate.enable = true; # uses deprecated API
+    illuminate = {
+      enable = true;
+    };
+
     breadcrumbs = {
       enable = false;
       navbuddy = {
         enable = false;
       };
     };
+
     modes-nvim = {
       enable = true;
       setupOpts = {
@@ -139,6 +145,18 @@
     rainbow-delimiters = {
       enable = true;
     };
+    nvim-scrollbar = {
+      enable = true;
+      setupOpts = {
+        show_in_active_only = true;
+        hide_if_all_visible = true;
+
+        handlers = {
+          cursor = false;
+          gitsigns = true;
+        };
+      };
+    };
 
     indent-blankline = {
       enable = true;
@@ -155,13 +173,25 @@
 
   lazy = {
     plugins = {
-      "nvim-scrollview" = {
+      "nvim-scrollview" = lib.mkIf false {
         package = pkgs.vimPlugins.nvim-scrollview;
         setupOpts = {
           signs_on_startup = [ "all" ];
         };
         lazy = true;
         event = ["BufEnter"];
+      };
+      "dropbar.nvim" = {
+        package = pkgs.vimPlugins.dropbar-nvim;
+        setupModule = "dropbar";
+        setupOpts = {
+          bar = {
+            hover = true;
+          };
+          menu = {
+            preview = false;
+          };
+        };
       };
     };
   };

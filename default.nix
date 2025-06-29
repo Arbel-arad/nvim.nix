@@ -52,10 +52,12 @@ in {
               context = {
                 enable = true;
                 setupOpts = {
+                  #multiwindow = true;
                   mode = "topline";
                   max_lines = 3;
                   min_window_height = 50;
                   separator = null;
+                  zindex = 10;
                 };
               };
               autotagHtml = true;
@@ -68,11 +70,6 @@ in {
                   "nix"
                 ];
               };
-            };
-
-            binds = {
-              whichKey.enable = true;
-              cheatsheet.enable = true;
             };
 
             telescope = {
@@ -90,123 +87,12 @@ in {
               };
             };
 
-
-
             notify = {
               nvim-notify.enable = true;
             };
 
             projects = {
               project-nvim.enable = true;
-            };
-
-            languages = {
-              enableFormat = true;
-              enableTreesitter = true;
-              enableExtraDiagnostics = true;
-              enableDAP = true;
-
-              rust = {
-                enable = true;
-                lsp = {
-                  enable = true;
-                  opts = /* lua */ ''
-                    ['rust-analyzer'] = {
-                    cargo = {allFeature = true},
-                    checkOnSave = true,
-                      procMacro = {
-                        enable = true,
-                      },
-                    },
-                  '';
-                };
-                crates = {
-                  enable = true;
-                  codeActions = true;
-                };
-              };
-              nix = {
-                enable = true;
-                lsp = {
-                  server = "nixd";
-                };
-                extraDiagnostics = {
-                  enable = true;
-                  types = [
-                    "statix"
-                    "deadnix"
-                  ];
-                };
-              };
-              clang = {
-                enable = true;
-                dap = {
-                  enable = true;
-                };
-              };
-              ts = {
-                enable = true;
-                extraDiagnostics.enable = true;
-              };
-              python = {
-                enable = true;
-              };
-              zig = {
-                enable = true;
-              };
-              markdown = {
-                enable = true;
-                extensions = {
-                  render-markdown-nvim = {
-                    enable = true;
-                  };
-                };
-                extraDiagnostics.enable = true;
-              };
-              html = {
-                enable = true;
-              };
-              css = {
-                enable = true;
-              };
-              go = {
-                enable = true;
-              };
-              lua = {
-                enable = true;
-              };
-              bash = {
-                enable = true;
-                extraDiagnostics = {
-                  enable = true;
-                  types = [
-                    "shellcheck"
-                  ];
-                };
-              };
-              nu = {
-                enable = true;
-              };
-              assembly = {
-                enable = true;
-              };
-              haskell = {
-                enable = true;
-              };
-              terraform = {
-                enable = true;
-              };
-              sql = {
-                enable = true;
-                extraDiagnostics.enable = true;
-              };
-              yaml = {
-                enable = true;
-              };
-              scala = {
-                enable = true;
-                fixShortmess = false;
-              };
             };
 
             utility = {
@@ -311,18 +197,6 @@ in {
 
                   };
                   lazy = true;
-                };
-                "dropbar.nvim" = {
-                  package = pkgs.vimPlugins.dropbar-nvim;
-                  setupModule = "dropbar";
-                  setupOpts = {
-                    bar = {
-                      hover = true;
-                    };
-                    menu = {
-                      preview = false;
-                    };
-                  };
                 };
               };
             };
