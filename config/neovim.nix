@@ -9,7 +9,10 @@
       (import ./debug.nix { inherit pkgs lib; })
       (import ./formats.nix { inherit pkgs lib; })
       (import ./editing.nix { inherit pkgs; })
-      (import ./interface.nix {})
+      (import ./interface.nix { inherit pkgs; })
+      (import ./keymaps.nix {})
+      (import ./navigation.nix {})
+      (import ./diagnostics.nix { inherit lib; })
 
       {
         package = inputs.nvim-nightly.packages."${pkgs.system}".neovim;

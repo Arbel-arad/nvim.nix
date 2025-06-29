@@ -220,7 +220,7 @@ in {
               preview = {
                 markdownPreview = {
                   enable = true;
-                  autoStart = true;
+                  autoStart = false;
                   autoClose = true;
                   lazyRefresh = true;
                 };
@@ -231,20 +231,6 @@ in {
                 image-nvim = {
                   enable = true;
                   setupOpts.backend = "kitty";
-                };
-              };
-              motion = {
-                precognition = { # helper to learn motions
-                  enable = true;
-                  setupOpts = {
-                    highlightColor = { foreground = "#617a78"; background = "#181818"; };
-                    showBlankVirtLine = true;
-                    disabled_fts = [
-                      "dashboard"
-                      "startify"
-                      "alpha"
-                    ];
-                  };
                 };
               };
               surround = {
@@ -271,53 +257,8 @@ in {
               };
             };
 
-            keymaps = [
-              {
-                key = "<leader>tt";
-                mode = ["n"];
-                silent = true;
-                action = "<cmd>Lspsaga term_toggle<cr>";
-                desc = "Lspsaga terminal";
-              }
-            ];
-
             luaConfigRC = {
 
-            };
-
-            diagnostics = {
-              enable = true;
-              config = {
-                signs = {
-                  text = {
-                    "vim.diagnostic.severity.Error" = " ";
-                    "vim.diagnostic.severity.Warn" = " ";
-                    "vim.diagnostic.severity.Hint" = " ";
-                    "vim.diagnostic.severity.Info" = " ";
-                  };
-                };
-                underline = true;
-                update_in_insert = true;
-                virtual_text = {
-                  format = lib.generators.mkLuaInline /* lua */''
-                    function(diagnostic)
-                      return string.format("%s", diagnostic.message)
-                      --return string.format("%s (%s)", diagnostic.message, diagnostic.source)
-                    end
-                  '';
-                };
-              };
-              nvim-lint = {
-                enable = true;
-                linters = {
-
-                };
-                linters_by_ft = {
-                  c = [
-                    "cppcheck"
-                  ];
-                };
-              };
             };
 
             lazy = {
@@ -347,14 +288,6 @@ in {
                   };
                   lazy = true;
                   event = ["BufEnter"];
-                };
-                "nvim-scrollview" = {
-                 package = pkgs.vimPlugins.nvim-scrollview;
-                 setupOpts = {
-                   signs_on_startup = [ "all" ];
-                 };
-                 lazy = true;
-                 event = ["BufEnter"];
                 };
                 "vimplugin-nvim-platformio" = let
                   "nvim-platformio" = pkgs.vimUtils.buildVimPlugin {

@@ -1,4 +1,4 @@
-_:{
+{ pkgs }:{
   theme = {
     enable = true;
     name = "catppuccin";
@@ -18,6 +18,14 @@ _:{
   tabline = {
     nvimBufferline = {
       enable = true;
+      setupOpts = {
+        options = {
+          numbers = "none";
+          truncate_names = true;
+          tab_size = 18;
+          style_preset = "minimal";
+        };
+      };
     };
   };
 
@@ -141,6 +149,19 @@ _:{
             "alpha"
           ];
         };
+      };
+    };
+  };
+
+  lazy = {
+    plugins = {
+      "nvim-scrollview" = {
+        package = pkgs.vimPlugins.nvim-scrollview;
+        setupOpts = {
+          signs_on_startup = [ "all" ];
+        };
+        lazy = true;
+        event = ["BufEnter"];
       };
     };
   };
