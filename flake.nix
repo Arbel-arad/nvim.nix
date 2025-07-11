@@ -18,7 +18,7 @@
   outputs = { self, ... }@inputs:
   inputs.flake-parts.lib.mkFlake { inherit inputs self; } {
   flake = {
-    flakeConfig = import ./flake/config.nix {};
+    nixConfig = import ./flake/config.nix {};
   };
   systems = inputs.system.wellSupportedArches;
     perSystem = { config, self', pkgs, lib, ... }: {
