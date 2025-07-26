@@ -1,4 +1,4 @@
-_:{
+{ pkgs }:{
   clipboard = {
     enable = true;
     providers = {
@@ -14,6 +14,13 @@ _:{
   notes = {
     todo-comments = {
       enable = true;
+    };
+    orgmode = {
+      enable = true;
+      treesitter = {
+        enable = true; # need to find the right package
+        orgPackage = pkgs.luajitPackages.tree-sitter-orgmode;
+      };
     };
   };
 }

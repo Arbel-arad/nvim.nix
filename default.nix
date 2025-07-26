@@ -175,28 +175,37 @@ in {
                   lazy = true;
                   event = ["BufEnter"];
                 };
+
+                "telescope-ui-select.nvim" = {
+                  package = pkgs.vimPlugins.telescope-ui-select-nvim;
+                  lazy = true;
+                };
                 "vimplugin-nvim-platformio" = let
                   "nvim-platformio" = pkgs.vimUtils.buildVimPlugin {
                     name = "nvim-platformio";
                     src = pkgs.fetchFromGitHub {
                       owner = "anurag3301";
                       repo = "nvim-platformio.lua";
-                      rev = "db0af8a0a7e71e613c497812724ff32b7f158df1";
-                      hash = "sha256-3DFKkPa0vbBBAEAs4Y4A5m3J6FIBbx70v5mHFe0EXus=";
+                      rev = "6df49afd28c6056fe6df031a7edefcc07b5186c8";
+                      hash = "sha256-4VeA9+wJHxK0yyHYeGL5yeDi4CIO71ftIdwnKq0+7po=";
                     };
-                    nvimSkipModule = [
-                      "platformio.pioinit"
-                      "platformio.piolib"
-                      "platformio.piomenu"
-                      "minimal_config"
-                    ];
+                    doCheck = false;
+                    #nvimSkipModule = [
+                    #  "platformio.pioinit"
+                    #  "platformio.piolib"
+                    #  "platformio.piomenu"
+                    #  "minimal_config"
+                    #];
                   };
                 in {
                   package = nvim-platformio;
-                  setupOpts = {
+                  setupModule = "platformio";
+#                  setupOpts = {
+#                    lsp = "clangd";
+#                  };
 
-                  };
                   lazy = true;
+                  cmd = [ "Pioinit" "Piorun" "Piocmdh" "Piocmdf" "Piolib" "Piomon" "Piodebug" "Piodb" ];
                 };
               };
             };
