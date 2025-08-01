@@ -18,7 +18,6 @@
   outputs = { self, ... }@inputs:
   inputs.flake-parts.lib.mkFlake { inherit inputs self; } {
   flake = {
-    nixConfig = import ./flake/config.nix {};
   };
   systems = inputs.system.wellSupportedArches;
     perSystem = { config, self', pkgs, lib, ... }: {
@@ -29,5 +28,17 @@
       packages = import ./flake/package.nix { inherit config inputs self self' pkgs lib; };
       apps = import ./flake/apps.nix { inherit self self' pkgs; };
     };
+  };
+
+
+  nixConfig = {
+    extra-substituters = [
+      "http://buildnix.spacetime.technology:8000"
+      "https://attic.spacetime.technology/buildnix"
+    ];
+    extra-trusted-public-keys = [
+      "buildnix.spacetime.technology:cUI+2I7OJ/ufQg6Or2NP7mzPwdLQ7LUny80UxyFr25A="
+      "buildnix:Ns8cOyVRHbn/FIui31sgg7b0LG4wNl+GmcOdTw8B73o="
+    ];
   };
 }
