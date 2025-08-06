@@ -1,4 +1,4 @@
-_:{
+{ nvimSize, ... }:{
   languages = {
     enableFormat = true;
     enableTreesitter = true;
@@ -90,7 +90,7 @@ _:{
       enable = true;
     };
     haskell = {
-      enable = true;
+      enable = nvimSize <= 0;
     };
     terraform = {
       enable = true;
