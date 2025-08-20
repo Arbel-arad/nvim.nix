@@ -8,6 +8,10 @@
 
   spellcheck = {
     enable = true;
+    languages = [
+      "en"
+      "he"
+    ];
     programmingWordlist.enable = true;
   };
 

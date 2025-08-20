@@ -104,6 +104,10 @@
       clangd = {
         cmd = [ "${pkgs.clang-tools}/bin/clangd" "--clang-tidy" ];
       };
+
+      qmlls = {
+        cmd = [ "${pkgs.kdePackages.qtdeclarative}/bin/qmlls"];
+      };
     };
 
     nvim-docs-view = {
