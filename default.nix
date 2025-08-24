@@ -21,6 +21,9 @@ in {
               pkgs.cppcheck
               pkgs.yazi
               pkgs.fish
+
+              pkgs.rshell # For micropython
+              pkgs.adafruit-ampy
             ];
 
             autocomplete = {
@@ -180,32 +183,75 @@ in {
                   package = pkgs.vimPlugins.telescope-ui-select-nvim;
                   lazy = true;
                 };
-                "vimplugin-nvim-platformio" = let
+                "micropython.nvim" = let
+                  "micropython" = pkgs.vimUtils.buildVimPlugin {
+                    pname = "micropython.nvim";
+                    version = "0";
+                    src = pkgs.fetchFromGitHub {
+                      owner = "jim-at-jibba";
+                      repo = "micropython.nvim";
+                      rev = "c1c7f5b4133391ff61b5ae87731caec6d77f377f";
+                      hash = "sha256-N9od+q5T42Dm09Vc4y5c2X5OqZ4RPL0mqvVUXwLsLFA=";
+                    };
+                    dependencies = [
+                      pkgs.vimPlugins.toggleterm-nvim
+                      pkgs.rshell
+                      pkgs.adafruit-ampy
+                    ];
+                    doCheck = true;
+                  };
+                in {
+                  package = micropython;
+                  lazy = true;
+                  cmd = [
+                    "MPRun"
+                    "MPSetPort"
+                    "MPSetBaud"
+                    "MPSetStubs"
+                    "MPRepl"
+                    "MPInit"
+                    "MPUpload"
+                    "MPEraseOne"
+                    "MPUploadAll"
+                  ];
+                };
+                "nvim-platformio" = let
                   "nvim-platformio" = pkgs.vimUtils.buildVimPlugin {
-                    name = "nvim-platformio";
+                    pname = "nvim-platformio";
+                    version = "0";
                     src = pkgs.fetchFromGitHub {
                       owner = "anurag3301";
                       repo = "nvim-platformio.lua";
                       rev = "6df49afd28c6056fe6df031a7edefcc07b5186c8";
                       hash = "sha256-4VeA9+wJHxK0yyHYeGL5yeDi4CIO71ftIdwnKq0+7po=";
                     };
-                    doCheck = false;
-                    #nvimSkipModule = [
-                    #  "platformio.pioinit"
-                    #  "platformio.piolib"
-                    #  "platformio.piomenu"
-                    #  "minimal_config"
-                    #];
+                    dependencies = [
+                      pkgs.vimPlugins.telescope-nvim
+                      pkgs.vimPlugins.FTerm-nvim
+                      pkgs.vimPlugins.plenary-nvim
+                      pkgs.platformio-core
+                    ];
+                    doCheck = true;
+                    nvimSkipModule = [
+                      "minimal_config"
+                    ];
                   };
                 in {
                   package = nvim-platformio;
-                  setupModule = "platformio";
 #                  setupOpts = {
 #                    lsp = "clangd";
 #                  };
-
                   lazy = true;
-                  cmd = [ "Pioinit" "Piorun" "Piocmdh" "Piocmdf" "Piolib" "Piomon" "Piodebug" "Piodb" ];
+                  cmd = [
+                    "Pioinit"
+                    "Piorun"
+                    "Piocmdh"
+                    "Piocmdf"
+                    "Piolib"
+                    "Piomon"
+                    "Piodebug"
+                    "Piodb"
+                  ];
                 };
               };
             };
