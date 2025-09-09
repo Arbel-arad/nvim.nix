@@ -183,8 +183,9 @@ in {
                   package = pkgs.vimPlugins.telescope-ui-select-nvim;
                   lazy = true;
                 };
-                "micropython.nvim" = let
-                  "micropython" = pkgs.vimUtils.buildVimPlugin {
+
+                "micropython.nvim" = {
+                  package = pkgs.vimUtils.buildVimPlugin {
                     pname = "micropython.nvim";
                     version = "0";
                     src = pkgs.fetchFromGitHub {
@@ -200,8 +201,6 @@ in {
                     ];
                     doCheck = true;
                   };
-                in {
-                  package = micropython;
                   lazy = true;
                   cmd = [
                     "MPRun"
@@ -215,8 +214,9 @@ in {
                     "MPUploadAll"
                   ];
                 };
-                "nvim-platformio" = let
-                  "nvim-platformio" = pkgs.vimUtils.buildVimPlugin {
+
+                "nvim-platformio" = {
+                  package = pkgs.vimUtils.buildVimPlugin {
                     pname = "nvim-platformio";
                     version = "0";
                     src = pkgs.fetchFromGitHub {
@@ -236,11 +236,9 @@ in {
                       "minimal_config"
                     ];
                   };
-                in {
-                  package = nvim-platformio;
-#                  setupOpts = {
-#                    lsp = "clangd";
-#                  };
+                  setupOpts = {
+                    lsp = "clangd";
+                  };
                   lazy = true;
                   cmd = [
                     "Pioinit"
@@ -252,6 +250,70 @@ in {
                     "Piodebug"
                     "Piodb"
                   ];
+                };
+
+                "arduino-lsp" = {
+                  enabled = false;
+                  package = pkgs.vimUtils.buildVimPlugin {
+                    pname = "arduino-lsp";
+                    version = "0";
+                    src = pkgs.fetchFromGitHub {
+                      owner = "glebzlat";
+                      repo = "arduino-nvim";
+                      rev = "086901d0b33a330c2f6e3fe2095ad8166c093e88";
+                      hash = "sha256-OHMMV4Bg+3k8BfvVJ0Cz42SX31dsdwfAYJ6w5IPfWyo=";
+                    };
+                    dependencies = [
+                      pkgs.clang-tools
+                      pkgs.arduino-cli
+                      pkgs.arduino-language-server
+                    ];
+                    doCheck = true;
+                  };
+                  setupOpts = {
+                    clangd = "${pkgs.clang-tools}/bin/clangd";
+                    arduino = "${lib.getExe pkgs.arduino-cli}";
+                    capabilities = {
+                      textDocument = {
+                        foldingRange = {
+                          dynamicRegistration = false;
+                          lineFoldingOnly = true;
+                        };
+                      };
+                    };
+                  };
+                  lazy = false;
+                  ft = [
+                    "ino"
+                  ];
+
+                };
+
+                "nvim-arduino" = {
+                  enabled = false;
+                  package = pkgs.vimUtils.buildVimPlugin {
+                    pname = "nvim-arduino";
+                    version = "0";
+                    src = pkgs.fetchFromGitHub {
+                      owner = "yuukiflow";
+                      repo = "Arduino-Nvim";
+                      rev = "8d1dff82d1c2a248155c9234bddb2c9a82d07a25";
+                      hash = "sha256-WTFbo5swtyAjLBOk9UciQCiBKOjkbwLStZMO/0uaZYg=";
+                    };
+                    dependencies = [
+                      pkgs.clang-tools
+                      pkgs.arduino-cli
+                      pkgs.arduino-language-server
+                      pkgs.vimPlugins.telescope-nvim
+                      pkgs.vimPlugins.nvim-lspconfig
+                    ];
+                    doCheck = true;
+                    nvimSkipModule = [
+                      "init"
+                      "libGetter"
+                    ];
+                  };
+                  lazy = false;
                 };
               };
             };

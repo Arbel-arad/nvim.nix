@@ -102,11 +102,30 @@
       };
 
       clangd = {
-        cmd = [ "${pkgs.clang-tools}/bin/clangd" "--clang-tidy" ];
+        cmd = [
+          "${pkgs.clang-tools}/bin/clangd"
+          "--clang-tidy"
+        ];
       };
 
       qmlls = {
-        cmd = [ "${pkgs.kdePackages.qtdeclarative}/bin/qmlls"];
+        cmd = [ "${pkgs.kdePackages.qtdeclarative}/bin/qmlls" ];
+      };
+
+      arduino-lsp = {
+        cmd = [
+          "${lib.getExe pkgs.arduino-language-server}"
+          "-clangd" "${pkgs.clang-tools}/bin/clangd"
+          "-cli" "${lib.getExe pkgs.arduino-cli}"
+          "-fqbn" "arduino:avr:uno"
+        ];
+        filetypes = [
+          "arduino"
+          "ino"
+        ];
+        capabilities = lib.mkForce {
+
+        };
       };
     };
 
