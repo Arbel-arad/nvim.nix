@@ -1,4 +1,10 @@
 { nvimSize, pkgs, lib }:{
+  options = {
+    foldlevel = 99; # for folds and fillchars to show correctly
+    foldcolumn = "auto:1"; # levels of folds to show
+    fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
+  };
+
   theme = {
     enable = true;
     name = "catppuccin";
@@ -61,6 +67,29 @@
     lualine = {
       enable = true;
       theme = "iceberg_dark";
+      activeSection = {
+        c = [
+          /* lua */ ''
+            {
+              "diff",
+              colored = false,
+              diff_color = {
+                -- Same color values as the general color option can be used here.
+                added    = 'DiffAdd',    -- Changes the diff's added color
+                modified = 'DiffChange', -- Changes the diff's modified color
+                removed  = 'DiffDelete', -- Changes the diff's removed color you
+              },
+              symbols = {added = '+', modified = '~', removed = '-'}, -- Changes the diff symbols
+              separator = {right = ''}
+            }
+          ''
+          /* lua */ ''
+            function()
+              return require('direnv').statusline()
+            end,
+          ''
+        ];
+      };
       setupOpts = {
         options = {
           disabled_filetypes = rec {

@@ -16,6 +16,39 @@
     };
   };
 
+  treesitter = {
+    enable = true;
+    addDefaultGrammars = true;
+    context = {
+      enable = true;
+      setupOpts = {
+        #multiwindow = true;
+        mode = "topline";
+        max_lines = 3;
+        min_window_height = 50;
+        separator = null;
+        zindex = 10;
+      };
+    };
+    autotagHtml = true;
+    highlight = {
+      enable = true;
+    };
+    indent = {
+      enable = true;
+      disable = [
+        "nix"
+      ];
+    };
+  };
+
+  telescope = {
+    enable = true;
+    mappings = {
+
+    };
+  };
+
   autopairs = {
     nvim-autopairs = {
       enable = true;

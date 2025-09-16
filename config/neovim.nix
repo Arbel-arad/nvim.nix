@@ -9,6 +9,7 @@
       (import ./debug.nix { inherit nvimSize pkgs lib; })
       (import ./formats.nix { inherit nvimSize; })
       (import ./editing.nix { inherit nvimSize pkgs; })
+      (import ./embedded.nix { inherit nvimSize pkgs; })
       (import ./interface.nix { inherit nvimSize pkgs lib; })
       (import ./keymaps.nix {})
       (import ./navigation.nix { inherit nvimSize; })

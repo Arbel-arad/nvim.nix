@@ -49,39 +49,6 @@ in {
               };
             };
 
-            treesitter = {
-              enable = true;
-              addDefaultGrammars = true;
-              context = {
-                enable = true;
-                setupOpts = {
-                  #multiwindow = true;
-                  mode = "topline";
-                  max_lines = 3;
-                  min_window_height = 50;
-                  separator = null;
-                  zindex = 10;
-                };
-              };
-              autotagHtml = true;
-              highlight = {
-                enable = true;
-              };
-              indent = {
-                enable = true;
-                disable = [
-                  "nix"
-                ];
-              };
-            };
-
-            telescope = {
-              enable = true;
-              mappings = {
-
-              };
-            };
-
             git = {
               enable = true;
               gitsigns = {
@@ -184,6 +151,39 @@ in {
                   lazy = true;
                 };
 
+                "direnv.nvim" = {
+                  package = pkgs.vimUtils.buildVimPlugin {
+                    pname = "direnv.nvim";
+                    version = "0";
+                    src = pkgs.fetchFromGitHub {
+                      owner = "notashelf";
+                      repo = "direnv.nvim";
+                      rev = "4dfc8758a1deab45e37b7f3661e0fd3759d85788";
+                      hash = "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE=";
+                    };
+                    doCheck = true;
+                  };
+                  lazy = true;
+
+                  event = [
+                    "BufEnter"
+                  ];
+
+                  cmd = [
+                    "Direnv"
+                    "DirenvStatuslineRefresh"
+                  ];
+
+                  setupModule = "direnv";
+                  setupOpts = {
+                    autoload_direnv = true;
+                    statusline = {
+                      enabled = true;
+                      icon = " ";
+                    };
+                  };
+                };
+
                 "micropython.nvim" = {
                   package = pkgs.vimUtils.buildVimPlugin {
                     pname = "micropython.nvim";
@@ -282,7 +282,7 @@ in {
                       };
                     };
                   };
-                  lazy = false;
+                  lazy = true;
                   ft = [
                     "ino"
                   ];

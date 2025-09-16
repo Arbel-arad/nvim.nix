@@ -15,6 +15,12 @@
     programmingWordlist.enable = true;
   };
 
+  utility = {
+    direnv = {
+      #enable = true; # still uses old direnv.vim
+    };
+  };
+
   notes = {
     todo-comments = {
       enable = true;
