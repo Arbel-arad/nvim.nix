@@ -102,6 +102,20 @@
     yaml = {
       enable = true;
     };
+    typst = {
+      enable = true;
+      extensions = {
+        typst-concealer = {
+          enable = true;
+          mappings = {
+
+          };
+        };
+        typst-preview-nvim = {
+          enable = true;
+        };
+      };
+    };
     scala = {
       enable = true;
       fixShortmess = false;

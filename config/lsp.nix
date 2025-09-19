@@ -34,13 +34,13 @@
     trouble = {
       enable = true;
       mappings = {
-        documentDiagnostics = null;
+
       };
       setupOpts = {
         modes = {
           diagnostics = {
-            auto_open = true;
-            auto_close = true;
+            auto_open = false;
+            auto_close = false;
           };
         };
       };

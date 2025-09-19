@@ -53,7 +53,9 @@ in {
               enable = true;
               gitsigns = {
                 enable = true;
-                codeActions.enable = false; # throws an annoying debug message
+                codeActions = {
+                  enable = false; # throws an annoying debug message
+                };
               };
             };
 
@@ -119,6 +121,17 @@ in {
 
             lazy = {
               plugins = {
+                "trouble" = {
+                  package = lib.mkForce (pkgs.vimPlugins.trouble-nvim.overrideAttrs {
+                    pname = "trouble";
+                    src = pkgs.fetchFromGitHub {
+                      owner = "folke";
+                      repo = "trouble.nvim";
+                      rev = "3fb3bd737be8866e5f3a170abc70b4da8b5dd45a";
+                      sha256 = "sha256-W6iO5f+q4busBuP0psE7sikn87wwc1BkztsMnVkjnW0=";
+                    };
+                  });
+                };
                 "vim-suda" = {
                   package = pkgs.vimPlugins.vim-suda;
                   setupOpts = {
@@ -322,11 +335,11 @@ in {
                 package = pkgs.vimPlugins.statuscol-nvim;
                 setup = /*lua*/ ''
                   local builtin = require("statuscol.builtin")
-                  local ffi = require("statuscol.ffidef")
-                  local C = ffi.C
+                  --local ffi = require("statuscol.ffidef")
+                  --local C = ffi.C
 
                   -- only show fold level up to this level
-                  local fold_level_limit = 3
+                  --[[local fold_level_limit = 3
                   local function foldfunc(args)
                     local foldinfo = C.fold_info(args.wp, args.lnum)
                     if foldinfo.level > fold_level_limit then
@@ -334,7 +347,30 @@ in {
                     end
 
                     return builtin.foldfunc(args)
+                  end]]
+                  local c = vim.cmd
+                  clickmod = "a"
+
+                  local function fold_click(args, open, other)
+                    -- Create fold on middle click
+                    --[[if args.button == "m" then
+                      create_fold(args)
+                      if other then return end
+                    end]]
+                    foldmarker = nil
+
+                    if args.button == "l" then -- Open/Close (recursive) fold on (clickmod)-click
+                      if open then
+                        c("norm! z"..(args.mods:find(clickmod) and "O" or "o"))
+                      else
+                        c("norm! z"..(args.mods:find(clickmod) and "C" or "c"))
+                      end
+                    --elseif args.button == "r" then -- Delete (recursive) fold on (clickmod)-right click
+                      --c("norm! z"..(args.mods:find(clickmod) and "D" or "d"))
+                    end
                   end
+
+                  local npc = vim.F.npcall
 
                   require("statuscol").setup {
                     relculright = false,
@@ -350,6 +386,19 @@ in {
                       },
                       { text = { "%s" }, click = "v:lua.ScSa" },
                       { text = { builtin.lnumfunc }, click = "v:lua.ScLa", },
+                    },
+
+                    clickmod = "a",
+                    clickhandlers = {
+                      FoldClose = function(args)
+                        fold_click(args, true)
+                      end,
+                      FoldOpen = function(args)
+                        fold_click(args, false)
+                      end,
+                      FoldOther = null,--[[ = function(args)
+                        fold_click(args, false, true)
+                      end,]]
                     }
                   }
                 '';
