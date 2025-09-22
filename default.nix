@@ -24,7 +24,10 @@ in {
 
               pkgs.rshell # For micropython
               pkgs.adafruit-ampy
+
+              pkgs.clippy # For rust
             ];
+            enableLuaLoader = true;
 
             autocomplete = {
               nvim-cmp = {

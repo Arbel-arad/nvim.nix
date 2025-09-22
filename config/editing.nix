@@ -20,7 +20,7 @@
     enable = true;
     addDefaultGrammars = true;
     context = {
-      enable = true;
+      enable = false;
       setupOpts = {
         #multiwindow = true;
         mode = "topline";

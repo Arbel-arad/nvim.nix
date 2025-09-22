@@ -12,11 +12,24 @@
       };
       underline = true;
       update_in_insert = true;
+
       virtual_text = {
-        format = lib.generators.mkLuaInline /* lua */''
+        format = lib.generators.mkLuaInline /* lua */ ''
           function(diagnostic)
-            return string.format("%s", diagnostic.message)
-            --return string.format("%s (%s)", diagnostic.message, diagnostic.source)
+            local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
+            if diagnostic.lnum ~= cursor_line then
+              return string.format("%s", diagnostic.message)
+            end
+          end
+        '';
+      };
+      virtual_lines = {
+        format = lib.generators.mkLuaInline /* lua */ ''
+          function(diagnostic)
+            local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
+            if diagnostic.lnum == cursor_line then
+              return string.format("%s", diagnostic.message)
+            end
           end
         '';
       };
