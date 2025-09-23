@@ -399,9 +399,9 @@ in {
                       FoldOpen = function(args)
                         fold_click(args, false)
                       end,
-                      FoldOther = null,--[[ = function(args)
-                        fold_click(args, false, true)
-                      end,]]
+                      FoldOther = function(args)
+                        --fold_click(args, false, true)
+                      end,
                     }
                   }
                 '';
