@@ -21,7 +21,7 @@
         ];
 
         event = [
-          #"VeryLazy"
+          "BufEnter"
         ];
       };
       org-bullets = {
