@@ -9,6 +9,12 @@
           org_startup_folded = "inherit";
           org_agenda_files = "~/orgfiles/**/*";
           org_default_notes_file = "~/orgfiles/refile.org";
+
+          ui = {
+            input = {
+              use_vim_ui = true;
+            };
+          };
         };
 
         lazy = true;
@@ -24,6 +30,27 @@
           "BufEnter"
         ];
       };
+
+      "org-roam.nvim" = {
+        package = pkgs.vimPlugins.org-roam-nvim;
+        setupModule = "org-roam";
+
+        setupOpts = {
+          directory = "~/.org-roam";
+          org_files = [
+
+          ];
+        };
+
+        lazy = true;
+        ft = [
+          "org"
+        ];
+
+        cmd = [
+        ];
+      };
+
       org-bullets = {
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "org-bullets";
