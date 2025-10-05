@@ -32,6 +32,9 @@
           foldcolumn = "auto:1"; # levels of folds to show
           fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
 
+          # For neorg
+          conceallevel = 3;
+
           mousescroll = "ver:1,hor:1";
           mousemoveevent = true;
 

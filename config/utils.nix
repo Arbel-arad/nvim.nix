@@ -25,5 +25,30 @@
     todo-comments = {
       enable = true;
     };
+    neorg = {
+      enable = true;
+      treesitter = {
+        enable = true;
+      };
+      setupOpts = {
+        load = {
+          "core.defaults" = {
+            enable = true;
+          };
+          "core.concealer" = {
+            enable = true;
+            config = {
+
+            };
+          };
+          "core.completion" = {
+            enable = true;
+            config = {
+              engine = "nvim-cmp";
+            };
+          };
+        };
+      };
+    };
   };
 }

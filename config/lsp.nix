@@ -84,8 +84,13 @@
       };
       nixd = {
         enable = true;
-        cmd = [ "${lib.getExe pkgs.nixd}" "--log=error" ];
-        filetypes = [ "nix" ];
+        cmd = [
+          "${lib.getExe pkgs.nixd}"
+          "--log=error"
+        ];
+        filetypes = [
+          "nix"
+        ];
         root_markers = [
           "flake.nix"
           "flake.lock"
@@ -109,7 +114,9 @@
       };
 
       qmlls = {
-        cmd = [ "${pkgs.kdePackages.qtdeclarative}/bin/qmlls" ];
+        cmd = [
+          "${pkgs.kdePackages.qtdeclarative}/bin/qmlls"
+        ];
       };
 
       arduino-lsp = {
@@ -119,12 +126,38 @@
           "-cli" "${lib.getExe pkgs.arduino-cli}"
           "-fqbn" "arduino:avr:uno"
         ];
+
         filetypes = [
           "arduino"
           "ino"
         ];
+
         capabilities = lib.mkForce {
 
+        };
+      };
+
+      harper-ls = {
+        root_markers = [
+          ".git"
+        ];
+
+        cmd = [
+          "${lib.getExe pkgs.harper}"
+          "--stdio"
+        ];
+
+        #filetypes = [
+          #"md"
+        #];
+
+        settings = {
+          linters = {
+            spellCheck = true;
+          };
+
+          diagnosticSeverity = "hint";
+          dialect = "American";
         };
       };
     };

@@ -336,7 +336,7 @@ in {
             extraPlugins = {
               "statuscol.nvim" = {
                 package = pkgs.vimPlugins.statuscol-nvim;
-                setup = /*lua*/ ''
+                setup = /* lua */ ''
                   local builtin = require("statuscol.builtin")
                   --local ffi = require("statuscol.ffidef")
                   --local C = ffi.C
