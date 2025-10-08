@@ -52,6 +52,10 @@
     };
     zig = {
       enable = true;
+      lsp = {
+        # Configured manually
+        enable = false;
+      };
     };
     markdown = {
       enable = true;
