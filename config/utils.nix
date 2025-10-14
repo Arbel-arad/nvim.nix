@@ -10,7 +10,7 @@
     enable = true;
     languages = [
       "en"
-      "he"
+      #"he"
     ];
     programmingWordlist.enable = true;
   };
