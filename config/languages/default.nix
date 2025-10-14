@@ -95,6 +95,10 @@
     };
     haskell = {
       enable = nvimSize <= 0;
+      dap = {
+        # Package haskell-debug-adapter is currently broken
+        enable = false;
+      };
     };
     terraform = {
       enable = true;
