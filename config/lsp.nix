@@ -15,6 +15,10 @@
       enable = true;
     };
 
+    inlayHints = {
+      enable = true;
+    };
+
     lspsaga = {
       enable = true;
       setupOpts = {
@@ -200,13 +204,33 @@
         #];
 
         settings = {
-          linters = {
-            spellCheck = true;
-          };
+          harper-ls = {
+            linters = {
+              spellCheck = true;
+            };
 
-          diagnosticSeverity = "hint";
-          dialect = "American";
+            diagnosticSeverity = "hint";
+            dialect = "American";
+          };
         };
+      };
+
+      verible-verilog-ls = {
+        root_markers = [
+          ".git"
+          "verilator.f"
+        ];
+
+        cmd = [
+          "${pkgs.verible}/bin/verible-verilog-ls"
+          "--nopush_diagnostic_notifications"
+        ];
+
+        filetypes = [
+          "verilog"
+          "systemverilog"
+        ];
+
       };
     };
 

@@ -27,6 +27,9 @@ in {
               pkgs.adafruit-ampy
 
               pkgs.clippy # For rust
+
+              # For vim.lsp filw watcher performance?
+              pkgs.inotify-tools
             ];
             enableLuaLoader = true;
 

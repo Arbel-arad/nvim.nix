@@ -88,13 +88,41 @@
             end
           '';
         };
+
+        # verilog linter
+        verilator = {
+          cmd = "${pkgs.verilator}/bin/verilator";
+
+          args = [
+            "-sv"
+            "-wall"
+            "--bbox-sys"
+            "--bbox-unsup"
+            "--lint-only"
+            "-f"
+            (lib.generators.mkLuaInline /* lua */ ''
+              vim.fs.find('verilator.f', {upward = true, stop = vim.env.HOME})[1]
+            '')
+          ];
+
+
+        };
       };
       linters_by_ft = {
         c = [
           "cppcheck"
         ];
+        cpp = [
+          "cppcheck"
+        ];
         openscad = [
           "sca2d"
+        ];
+        systemverilog = [
+          "verilator"
+        ];
+        verilog = [
+          "verilator"
         ];
       };
     };
