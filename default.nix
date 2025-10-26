@@ -28,7 +28,7 @@ in {
 
               pkgs.clippy # For rust
 
-              # For vim.lsp filw watcher performance?
+              # For vim.lsp file watcher performance?
               pkgs.inotify-tools
             ];
             enableLuaLoader = true;
