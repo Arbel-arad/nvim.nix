@@ -26,7 +26,13 @@ in {
               pkgs.rshell # For micropython
               pkgs.adafruit-ampy
 
+              pkgs.cargo
               pkgs.clippy # For rust
+
+              pkgs.zig
+
+              pkgs.flutter
+              pkgs.dart
 
               # For vim.lsp file watcher performance?
               pkgs.inotify-tools

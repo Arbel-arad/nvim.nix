@@ -15,7 +15,7 @@
       (import ./editing.nix { inherit nvimSize pkgs; })
       (import ./embedded.nix { inherit nvimSize pkgs; })
       (import ./interface.nix { inherit nvimSize pkgs lib; })
-      (import ./keymaps.nix {})
+      (import ./keymaps.nix { inherit pkgs lib; })
       (import ./navigation.nix { inherit nvimSize; })
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
       (import ./languages { inherit nvimSize pkgs lib; })

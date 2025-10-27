@@ -3,7 +3,9 @@
   "nvim.nix" = (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
     inherit pkgs;
     modules = [
-      (import (self + /default.nix) { inherit config inputs pkgs lib; }).config.programs.nvf.settings
+      (import (self + /default.nix) {
+        inherit config inputs pkgs lib;
+      }).config.programs.nvf.settings
     ];
   }).neovim;
 }

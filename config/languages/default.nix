@@ -124,6 +124,28 @@
         };
       };
     };
+    dart = {
+      enable = true;
+      dap = {
+        enable = true;
+      };
+      lsp = {
+        enable = false;
+      };
+
+      flutter-tools = {
+        enable = true;
+        color = {
+          enable = true;
+          highlightBackground = false;
+          highlightForeground = false;
+          virtualText = {
+            enable = true;
+            character = ''"■"'';
+          };
+        };
+      };
+    };
     scala = {
       enable = true;
       fixShortmess = false;
