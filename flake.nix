@@ -7,11 +7,26 @@
     system.url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1";
     nvim-nightly = {
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
     };
     nvf = {
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/nvf?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    spectrum-os = {
+      url = "git+https://forgejo.spacetime.technology/mirrors/spectrum-os?shallow=1";
+      flake = false;
+    };
+    microvm = {
+      url = "git+https://forgejo.spacetime.technology/nix-mirrors/microvm.nix?shallow=1";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        spectrum.follows = "spectrum-os";
+      };
     };
   };
 

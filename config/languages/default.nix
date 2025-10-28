@@ -146,6 +146,12 @@
         };
       };
     };
+    r = {
+      enable = true;
+      lsp = {
+        enable = true;
+      };
+    };
     scala = {
       enable = true;
       fixShortmess = false;

@@ -109,6 +109,24 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "git-hooks": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -177,6 +195,31 @@
         "owner": "hercules-ci",
         "repo": "hercules-ci-effects",
         "type": "github"
+      }
+    },
+    "microvm": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "spectrum": [
+          "spectrum-os"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760574296,
+        "narHash": "sha256-S3gIp6Wd9vQ2RYDxcbHM2CIYgDtogbwzSdu38WABKaQ=",
+        "ref": "refs/heads/main",
+        "rev": "42628f7c61b02d385ce2cb1f66f9be333ac20140",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/microvm.nix"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/microvm.nix"
       }
     },
     "mnw": {
@@ -250,7 +293,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "systems": "systems"
+        "systems": "systems_2"
       },
       "locked": {
         "lastModified": 1761112426,
@@ -297,10 +340,29 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "microvm": "microvm",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",
         "nvim-nightly": "nvim-nightly",
+        "spectrum-os": "spectrum-os",
         "system": "system"
+      }
+    },
+    "spectrum-os": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761470324,
+        "narHash": "sha256-04Mmn0zu68qBjfmdAVclUshBmHj4LtyDhwJg0XU5Z/k=",
+        "ref": "refs/heads/main",
+        "rev": "fab6d9ce5f5ae9a50264bab4cadccfa72fcc143b",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"
       }
     },
     "system": {
@@ -320,6 +382,21 @@
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

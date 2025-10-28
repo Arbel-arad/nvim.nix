@@ -22,6 +22,8 @@ in {
               pkgs.yazi
               pkgs.fish
               pkgs.direnv
+              pkgs.gitui
+              pkgs.zellij
 
               pkgs.rshell # For micropython
               pkgs.adafruit-ampy
