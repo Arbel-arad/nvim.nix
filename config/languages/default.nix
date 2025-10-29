@@ -27,7 +27,8 @@
     nix = {
       enable = true;
       lsp = {
-        server = "nixd";
+        enable = false;
+        #server = "nixd";
       };
       extraDiagnostics = {
         enable = true;

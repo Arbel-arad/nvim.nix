@@ -95,6 +95,56 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "lsp-inputs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761666354,
+        "narHash": "sha256-fHr+tIYBJccNF8QWqgowfRmEAtAMSt1deZIRNKL8A7c=",
+        "ref": "refs/heads/master",
+        "rev": "ca2ab1d877a24d5a437dad62f56b8b2c02e964e9",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/home-manager"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/home-manager"
+      }
+    },
+    "lsp-inputs": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "home-manager": "home-manager",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "system": [
+          "system"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761745730,
+        "narHash": "sha256-FmzGDdq2mOXq3Pcbc4mhDA4nGvWP/WlKvF8rLjmyUSA=",
+        "ref": "refs/heads/master",
+        "rev": "daee7726c37b299b6c540f31bccb497e26c05470",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/arbel/nix-lsp-inputs"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/arbel/nix-lsp-inputs"
+      }
+    },
     "microvm": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -234,6 +284,7 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
+        "lsp-inputs": "lsp-inputs",
         "microvm": "microvm",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",

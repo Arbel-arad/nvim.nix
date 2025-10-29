@@ -28,6 +28,14 @@
         spectrum.follows = "spectrum-os";
       };
     };
+    lsp-inputs = {
+      url = "git+https://forgejo.spacetime.technology/arbel/nix-lsp-inputs?shallow=1";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        system.follows = "system";
+      };
+    };
   };
 
   outputs = { self, ... }@inputs:
@@ -41,6 +49,9 @@
     perSystem = { config, self', pkgs, lib, ... }: {
       devShells = {
         default = pkgs.mkShell {
+          nativeBuildInputs = [
+            self'.packages.default
+          ];
         };
       };
       packages = import ./flake/package.nix { inherit config inputs self self' pkgs lib; };
