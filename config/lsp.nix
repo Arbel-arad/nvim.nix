@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }:{
+{ nvimSize, inputs, pkgs, lib }:{
   lsp = {
     enable = true;
     formatOnSave = false;
@@ -117,12 +117,20 @@
           nixpkgs = {
             expr = "import <nixpkgs> { }";
           };
+          formatting = {
+            command = [
+              (lib.getExe pkgs.nixfmt)
+            ];
+          };
           options = {
             #nixos = {
               #expr = "";
             #};
             home-manager = {
-              expr = "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.\"arbel@arbel-p16v\".options";
+              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").homeConfigurations.default.options";
+            };
+            flake-parts = {
+              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").debug.options";
             };
           };
         };
