@@ -84,6 +84,19 @@
               "unused_with"
             ];
           };
+          nix = {
+            binary = lib.getExe pkgs.nixVersions.git;
+
+            maxMemoryMB = 8192;
+
+            flake = {
+              autoArchive = true;
+
+              #autoEvalInputs = true;
+
+              nixpkgsInputName = "nixpkgs";
+            };
+          };
         };
       };
       nixd = {
@@ -100,6 +113,19 @@
           "flake.lock"
           ".git"
         ];
+        settings.nixd = {
+          nixpkgs = {
+            expr = "import <nixpkgs> { }";
+          };
+          options = {
+            #nixos = {
+              #expr = "";
+            #};
+            home-manager = {
+              expr = "(builtins.getFlake (builtins.toString ./.)).homeConfigurations.\"arbel@arbel-p16v\".options";
+            };
+          };
+        };
         capabilities = {
           textDocument = {
             foldingRange = {

@@ -33,6 +33,9 @@
   outputs = { self, ... }@inputs:
   inputs.flake-parts.lib.mkFlake { inherit inputs self; } {
   flake = {
+    nixosConfigurations = import ./flake/microVMs.nix {
+      inherit inputs self;
+    };
   };
   systems = inputs.system.wellSupportedArches;
     perSystem = { config, self', pkgs, lib, ... }: {
