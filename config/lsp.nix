@@ -123,14 +123,17 @@
             ];
           };
           options = {
-            #nixos = {
-              #expr = "";
-            #};
+            nixos = {
+              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").nixosConfigurations.default.options";
+            };
             home-manager = {
               expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").homeConfigurations.default.options";
             };
             flake-parts = {
               expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").debug.options";
+            };
+            flake-parts-per-system = {
+              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").currentSystem.options";
             };
           };
         };
