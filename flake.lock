@@ -131,10 +131,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1761756441,
-        "narHash": "sha256-SbvGkBUqbZjmMkV5Ee5gb+vERhJQdSxd8r9xvplZ0nA=",
+        "lastModified": 1761817688,
+        "narHash": "sha256-MNrgQeNoxqsSOELg5l8OzrN5GY0IT6q5QgVWgJxGo1w=",
         "ref": "refs/heads/master",
-        "rev": "1ba80b5929c762aa9c468f2684831bba34ff4ca4",
+        "rev": "7e66c17168e52463031dc9b5437c6e56a04e2ebd",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/arbel/nix-lsp-inputs"

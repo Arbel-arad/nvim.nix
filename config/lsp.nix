@@ -122,18 +122,25 @@
               (lib.getExe pkgs.nixfmt)
             ];
           };
-          options = {
+          options = let
+
+            lsp-input = inputs.lsp-inputs + /.;
+
+          in {
             nixos = {
-              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").nixosConfigurations.default.options";
+              expr = "(builtins.getFlake \"${lsp-input}\").nixosConfigurations.default.options";
             };
             home-manager = {
-              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").homeConfigurations.default.options";
+              expr = "(builtins.getFlake \"${lsp-input}\").homeConfigurations.default.options";
+            };
+            home-manager-module = {
+              expr = "(builtins.getFlake \"${lsp-input}\").nixosConfigurations.home-manager.options.home-manager.users.type.getSubOptions []";
             };
             flake-parts = {
-              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").debug.options";
+              expr = "(builtins.getFlake \"${lsp-input}\").debug.options";
             };
             flake-parts-per-system = {
-              expr = "(builtins.getFlake \"${inputs.lsp-inputs + /.}\").currentSystem.options";
+              expr = "(builtins.getFlake \"${lsp-input}\").currentSystem.options";
             };
           };
         };
