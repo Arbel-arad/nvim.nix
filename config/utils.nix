@@ -12,7 +12,9 @@
       "en"
       #"he"
     ];
-    programmingWordlist.enable = true;
+    programmingWordlist = {
+      #enable = true;
+    };
   };
 
   utility = {

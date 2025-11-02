@@ -23,6 +23,7 @@ in {
               pkgs.fish
               pkgs.direnv
               pkgs.gitui
+              pkgs.btop
               pkgs.zellij
 
               pkgs.rshell # For micropython

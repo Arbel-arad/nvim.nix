@@ -145,7 +145,14 @@
           };
         };
         capabilities = {
+
+          signature_help = false;
+
           textDocument = {
+            hover = false;
+            signatureHelp = false;
+            documentSymbol = false;
+
             foldingRange = {
               dynamicRegistration = false;
               lineFoldingOnly = true;

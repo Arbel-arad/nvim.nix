@@ -20,6 +20,7 @@ in {
             enable = true;
             backend = "gtk";
           };
+
           interfaces = [
             {
               type = "user";
@@ -27,12 +28,18 @@ in {
               mac = "02:00:00:00:00:01";
             }
           ];
+
           shares = [
             {
               tag = "ro-store";
               source = "/nix/store";
               mountPoint = "/nix/.ro-store";
             }
+          ];
+
+          devices = [
+            # Requires host configuration
+            #{ bus = "usb"; path = "vendorid=0x0781,productid=0x5566"; }
           ];
         };
 
@@ -90,6 +97,37 @@ in {
         system = {
           stateVersion = pkgs.lib.trivial.release;
         };
+
+        environment = {
+          systemPackages = [
+            pkgs.xdg-utils
+            pkgs.ghostty
+            pkgs.sway
+            pkgs.hyprland
+            pkgs.btop
+          ];
+          sessionVariables = {
+            WAYLAND_DISPLAY = "wayland-1";
+            DISPLAY = ":0";
+            QT_QPA_PLATFORM = "wayland"; # Qt Applications
+            GDK_BACKEND = "wayland"; # GTK Applications
+            XDG_SESSION_TYPE = "wayland"; # Electron Applications
+            SDL_VIDEODRIVER = "wayland";
+            CLUTTER_BACKEND = "wayland";
+          };
+        };
+
+        systemd.user.services.wayland-proxy = {
+        enable = false;
+        description = "Wayland Proxy";
+        serviceConfig = with pkgs; {
+          # Environment = "WAYLAND_DISPLAY=wayland-1";
+          ExecStart = "${wayland-proxy-virtwl}/bin/wayland-proxy-virtwl --virtio-gpu --x-display=0 --xwayland-binary=${xwayland}/bin/Xwayland";
+          Restart = "on-failure";
+          RestartSec = 5;
+        };
+        wantedBy = [ "default.target" ];
+      };
       }
     ];
   };
