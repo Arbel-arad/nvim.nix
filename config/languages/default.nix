@@ -58,6 +58,9 @@
         enable = false;
       };
     };
+    odin = {
+      enable = true;
+    };
     markdown = {
       enable = true;
       extensions = {
@@ -106,7 +109,12 @@
     };
     sql = {
       enable = true;
-      extraDiagnostics.enable = true;
+      format = {
+        enable = true;
+      };
+      extraDiagnostics = {
+        enable = true;
+      };
     };
     yaml = {
       enable = true;

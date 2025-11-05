@@ -283,6 +283,17 @@
         ];
 
       };
+
+      fish-lsp = {
+        cmd = [
+          "${lib.getExe pkgs.fish-lsp}"
+          "start"
+        ];
+
+        filetypes = [
+          "fish"
+        ];
+      };
     };
 
     nvim-docs-view = {

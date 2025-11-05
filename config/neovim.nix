@@ -23,7 +23,7 @@
 
 
       {
-        package = inputs.nvim-nightly.packages."${pkgs.system}".neovim;
+        package = inputs.nvim-nightly.packages."${pkgs.stdenv.hostPlatform.system}".neovim;
 
         viAlias = true;
         vimAlias = true;

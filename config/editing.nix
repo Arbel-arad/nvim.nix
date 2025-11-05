@@ -37,8 +37,11 @@
     indent = {
       enable = true;
       disable = [
-        "nix"
+        #"nix"
       ];
+    };
+    textobjects = {
+      enable = true;
     };
   };
 

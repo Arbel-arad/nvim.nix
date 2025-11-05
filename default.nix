@@ -21,6 +21,7 @@ in {
               pkgs.cppcheck
               pkgs.yazi
               pkgs.fish
+              pkgs.nushell
               pkgs.direnv
               pkgs.gitui
               pkgs.btop
@@ -41,6 +42,9 @@ in {
               pkgs.inotify-tools
             ];
             enableLuaLoader = true;
+
+            withPython3 = true;
+            withNodeJs = true;
 
             autocomplete = {
               nvim-cmp = {
