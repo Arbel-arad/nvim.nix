@@ -274,6 +274,7 @@
 
         cmd = [
           "${pkgs.verible}/bin/verible-verilog-ls"
+          # Fixes double notification issue
           "--nopush_diagnostic_notifications"
         ];
 
@@ -292,6 +293,16 @@
 
         filetypes = [
           "fish"
+        ];
+      };
+
+      systemd-lsp = {
+        cmd = [
+          "${lib.getExe pkgs.systemd-lsp}"
+        ];
+
+        filetypes = [
+          "systemd"
         ];
       };
     };

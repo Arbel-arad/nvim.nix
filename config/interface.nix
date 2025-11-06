@@ -198,6 +198,12 @@
   visuals = {
     fidget-nvim = {
       enable = true;
+      setupOpts = {
+        progress = {
+          # Disable repeated hot-reload LSP notifications
+          suppress_on_insert = true;
+        };
+      };
     };
     nvim-web-devicons = {
       enable = true;
