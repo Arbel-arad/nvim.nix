@@ -26,6 +26,7 @@ in {
               pkgs.gitui
               pkgs.btop
               pkgs.zellij
+              pkgs.openssh
 
               pkgs.rshell # For micropython
               pkgs.adafruit-ampy
