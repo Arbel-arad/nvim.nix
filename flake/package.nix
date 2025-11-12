@@ -8,4 +8,6 @@
       }).config.programs.nvf.settings
     ];
   }).neovim;
+
+  inherit ((import ../packages/vm.nix { inherit pkgs; })) crosvm-gui;
 }

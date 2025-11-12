@@ -12,7 +12,8 @@ in {
 
       {
         microvm = {
-          hypervisor = "qemu";
+          hypervisor = "crosvm";
+          storeDiskType = "squashfs";
 
           balloon = true;
 
@@ -22,25 +23,32 @@ in {
           };
 
           interfaces = [
-            {
+            /*{
               type = "user";
               id = "test-vm";
               mac = "02:00:00:00:00:01";
-            }
+            }*/
           ];
 
           shares = [
-            {
+            /*{
               tag = "ro-store";
               source = "/nix/store";
               mountPoint = "/nix/.ro-store";
-            }
+            }*/
           ];
 
           devices = [
             # Requires host configuration
             #{ bus = "usb"; path = "vendorid=0x0781,productid=0x5566"; }
           ];
+        };
+
+        documentation = {
+          enable = false;
+          man = {
+            enable = false;
+          };
         };
 
         services = {
@@ -105,6 +113,8 @@ in {
             pkgs.sway
             pkgs.hyprland
             pkgs.btop
+            #pkgs.sommelier
+            pkgs.wayland-proxy-virtwl
           ];
           sessionVariables = {
             WAYLAND_DISPLAY = "wayland-1";
@@ -118,16 +128,16 @@ in {
         };
 
         systemd.user.services.wayland-proxy = {
-        enable = false;
-        description = "Wayland Proxy";
-        serviceConfig = with pkgs; {
-          # Environment = "WAYLAND_DISPLAY=wayland-1";
-          ExecStart = "${wayland-proxy-virtwl}/bin/wayland-proxy-virtwl --virtio-gpu --x-display=0 --xwayland-binary=${xwayland}/bin/Xwayland";
-          Restart = "on-failure";
-          RestartSec = 5;
+          enable = false;
+          description = "Wayland Proxy";
+          serviceConfig = with pkgs; {
+            # Environment = "WAYLAND_DISPLAY=wayland-1";
+            ExecStart = "${wayland-proxy-virtwl}/bin/wayland-proxy-virtwl --virtio-gpu --x-display=0 --xwayland-binary=${xwayland}/bin/Xwayland";
+            Restart = "on-failure";
+            RestartSec = 5;
+          };
+          wantedBy = [ "default.target" ];
         };
-        wantedBy = [ "default.target" ];
-      };
       }
     ];
   };
