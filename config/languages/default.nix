@@ -115,6 +115,9 @@
       extraDiagnostics = {
         enable = true;
       };
+      lsp = {
+        enable = true;
+      };
     };
     yaml = {
       enable = true;

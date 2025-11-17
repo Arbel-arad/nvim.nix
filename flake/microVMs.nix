@@ -12,35 +12,47 @@ in {
 
       {
         microvm = {
-          hypervisor = "crosvm";
+          hypervisor = "qemu";
           storeDiskType = "squashfs";
 
-          balloon = true;
+          mem = 8192;
+          vcpu = 8;
+
+          vsock = {
+            cid = 1234;
+          };
 
           graphics = {
             enable = true;
-            backend = "gtk";
+            backend = "gtk-gpu";
           };
 
           interfaces = [
-            /*{
+            {
               type = "user";
               id = "test-vm";
               mac = "02:00:00:00:00:01";
-            }*/
+            }
           ];
 
           shares = [
-            /*{
+            {
               tag = "ro-store";
               source = "/nix/store";
               mountPoint = "/nix/.ro-store";
-            }*/
+            }
           ];
 
           devices = [
             # Requires host configuration
             #{ bus = "usb"; path = "vendorid=0x0781,productid=0x5566"; }
+          ];
+
+         qemu.extraArgs = [
+            # needed for mouse/keyboard input via vnc
+            "-device" "virtio-keyboard"
+            "-usb"
+            "-device" "usb-tablet,bus=usb-bus.0"
           ];
         };
 
@@ -55,7 +67,7 @@ in {
           getty.autologinUser = "user";
 
           kmscon = {
-            enable = true;
+            enable = false;
             autologinUser = "user";
           };
         };

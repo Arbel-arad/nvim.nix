@@ -156,18 +156,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1762200934,
-        "narHash": "sha256-Bv4ZKRPsIc6W7qF1I2fevxFETqRNuG3XOsiRIfJ7YlQ=",
+        "lastModified": 1763379275,
+        "narHash": "sha256-po61DqUvQaGDtEGfHAcWcC84Q9BfJiSlhlZ9D1JcD6g=",
         "ref": "refs/heads/main",
-        "rev": "1d05a3c26dbb9d4b1cd644e10713a70d8740cb6a",
+        "rev": "4df27b0df19a82b07e99ae3d8ce5d01049259417",
         "shallow": true,
         "type": "git",
-        "url": "https://forgejo.spacetime.technology/nix-mirrors/microvm.nix"
+        "url": "https://forgejo.spacetime.technology/arbel/microvm.nix"
       },
       "original": {
         "shallow": true,
         "type": "git",
-        "url": "https://forgejo.spacetime.technology/nix-mirrors/microvm.nix"
+        "url": "https://forgejo.spacetime.technology/arbel/microvm.nix"
       }
     },
     "mnw": {

@@ -22,7 +22,7 @@
       flake = false;
     };
     microvm = {
-      url = "git+https://forgejo.spacetime.technology/nix-mirrors/microvm.nix?shallow=1";
+      url = "git+https://forgejo.spacetime.technology/arbel/microvm.nix?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         spectrum.follows = "spectrum-os";

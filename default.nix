@@ -16,6 +16,7 @@ in {
               pkgs.ccls
 
               pkgs.imagemagick
+              pkgs.git
               pkgs.fzf
               pkgs.nix
               pkgs.cppcheck

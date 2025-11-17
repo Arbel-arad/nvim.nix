@@ -9,5 +9,5 @@
     ];
   }).neovim;
 
-  inherit ((import ../packages/vm.nix { inherit pkgs; })) crosvm-gui;
+  #inherit ((import ../packages/vm.nix { inherit pkgs; })) vm-gui;
 }
