@@ -51,6 +51,8 @@
         default = pkgs.mkShell {
           nativeBuildInputs = [
             self'.packages.default
+            pkgs.nix-tree
+            pkgs.just
           ];
         };
       };

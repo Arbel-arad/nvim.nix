@@ -168,5 +168,14 @@
       enable = true;
       fixShortmess = false;
     };
+    elixir = {
+      enable = true;
+      elixir-tools = {
+        enable = true;
+      };
+      lsp = {
+        enable = true;
+      };
+    };
   };
 }
