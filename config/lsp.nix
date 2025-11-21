@@ -146,7 +146,6 @@
         };
         capabilities = {
 
-          signature_help = false;
 
           textDocument = {
             hover = false;
@@ -303,6 +302,16 @@
 
         filetypes = [
           "systemd"
+        ];
+      };
+
+      awk-language-server = {
+        cmd = [
+          "${lib.getExe pkgs.awk-language-server}"
+        ];
+
+        filetypes = [
+          "awk"
         ];
       };
     };

@@ -24,6 +24,7 @@
         codeActions = true;
       };
     };
+
     nix = {
       enable = true;
       lsp = {
@@ -38,19 +39,23 @@
         ];
       };
     };
+
     clang = {
       enable = true;
       dap = {
         enable = true;
       };
     };
+
     ts = {
       enable = true;
       extraDiagnostics.enable = true;
     };
+
     python = {
       enable = true;
     };
+
     zig = {
       enable = true;
       lsp = {
@@ -58,9 +63,11 @@
         enable = false;
       };
     };
+
     odin = {
       enable = true;
     };
+
     markdown = {
       enable = true;
       extensions = {
@@ -70,18 +77,23 @@
       };
       extraDiagnostics.enable = true;
     };
+
     html = {
       enable = true;
     };
+
     css = {
       enable = true;
     };
+
     go = {
       enable = true;
     };
+
     lua = {
       enable = true;
     };
+
     bash = {
       enable = true;
       extraDiagnostics = {
@@ -91,12 +103,15 @@
         ];
       };
     };
+
     nu = {
       enable = true;
     };
+
     assembly = {
       enable = true;
     };
+
     haskell = {
       enable = nvimSize <= 0;
       dap = {
@@ -104,9 +119,11 @@
         enable = false;
       };
     };
+
     terraform = {
       enable = true;
     };
+
     sql = {
       enable = true;
       format = {
@@ -119,9 +136,11 @@
         enable = true;
       };
     };
+
     yaml = {
       enable = true;
     };
+
     typst = {
       enable = true;
       extensions = {
@@ -136,6 +155,7 @@
         };
       };
     };
+
     dart = {
       enable = true;
       dap = {
@@ -158,16 +178,19 @@
         };
       };
     };
+
     r = {
       enable = true;
       lsp = {
         enable = true;
       };
     };
+
     scala = {
       enable = true;
       fixShortmess = false;
     };
+
     elixir = {
       enable = true;
       elixir-tools = {
@@ -177,5 +200,6 @@
         enable = true;
       };
     };
+
   };
 }
