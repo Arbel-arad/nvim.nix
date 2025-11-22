@@ -314,6 +314,18 @@
           "awk"
         ];
       };
+
+      # Ruff python linter/LSP
+      ruff = {
+        cmd = [
+          "${lib.getExe pkgs.ruff}"
+          "server"
+        ];
+
+        filetypes = [
+          "python"
+        ];
+      };
     };
 
     nvim-docs-view = {

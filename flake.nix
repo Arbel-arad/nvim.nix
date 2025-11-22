@@ -53,6 +53,7 @@
             self'.packages.default
             pkgs.nix-tree
             pkgs.just
+            pkgs.bat
           ];
         };
       };
