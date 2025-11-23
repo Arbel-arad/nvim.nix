@@ -23,6 +23,10 @@
         enable = true;
         codeActions = true;
       };
+      format = {
+        enable = true;
+        type = "rustfmt";
+      };
     };
 
     nix = {

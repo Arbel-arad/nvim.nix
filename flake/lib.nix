@@ -1,28 +1,46 @@
 { lib }: {
 
-  mergeAttrsList =
-    list:
-    let
-      # `binaryMerge start end` merges the elements at indices `index` of `list` such that `start <= index < end`
-      # Type: Int -> Int -> Attrs
-      binaryMerge =
-        start: end:
-        # assert start < end; # Invariant
-        if end - start >= 2 then
-          # If there's at least 2 elements, split the range in two, recurse on each part and merge the result
-          # The invariant is satisfied because each half will have at least 1 element
-          #binaryMerge start (start + (end - start) / 2) // binaryMerge (start + (end - start) / 2) end
-          lib.recursiveUpdate (binaryMerge start (start + (end - start) / 2)) (
-            binaryMerge (start + (end - start) / 2) end
-          )
-        else
-          # Otherwise there will be exactly 1 element due to the invariant, in which case we just return it directly
-          builtins.elemAt list start;
-    in
-    if list == [ ] then
-      # Calling binaryMerge as below would not satisfy its invariant
-      { }
-    else
-      binaryMerge 0 (builtins.length list);
+  mergeAttrsList = list:
+  let
+    mergeAttrs = a: b:
+      lib.mapAttrs
+        (name: value:
+          if (builtins.hasAttr name b) then
+            let other = b.${name}; in
+            if builtins.isList value && builtins.isList other then
+              # Both are lists => concatenate
+              value ++ other
+            else if builtins.isAttrs value && builtins.isAttrs other then
+              # Both are attrsets => merge recursively
+              mergeAttrs value other
+            else
+              # Otherwise, override with B's value
+              other
+          else
+            # If key only exists in A => keep A's value
+            value
+        )
+        a
+      # Add keys that exist only in B
+      // lib.filterAttrs (n: _: !(builtins.hasAttr n a)) b;
+
+
+
+    binaryMerge = start: end:
+      if end - start >= 2 then
+        mergeAttrs
+          (binaryMerge start (start + (end - start) / 2))
+          (binaryMerge (start + (end - start) / 2) end)
+      else
+        builtins.elemAt list start;
+
+
+  in
+  # If list is empty, return empty attrset
+  if list == [] then
+    {}
+  else
+    # Merge entire list range
+    binaryMerge 0 (builtins.length list);
 
 }

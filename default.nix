@@ -33,6 +33,7 @@ in {
               pkgs.adafruit-ampy
 
               pkgs.cargo
+              pkgs.rustc
               pkgs.clippy # For rust
 
               pkgs.zig
