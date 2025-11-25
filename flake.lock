@@ -21,10 +21,10 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1762980239,
-        "narHash": "sha256-8oNVE8TrD19ulHinjaqONf9QWCKK+w4url56cdStMpM=",
+        "lastModified": 1763759067,
+        "narHash": "sha256-LlLt2Jo/gMNYAwOgdRQBrsRoOz7BPRkzvNaI/fzXi2Q=",
         "ref": "refs/heads/main",
-        "rev": "52a2caecc898d0b46b2b905f058ccc5081f842da",
+        "rev": "2cccadc7357c0ba201788ae99c4dfa90728ef5e0",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts"
@@ -64,11 +64,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762980239,
-        "narHash": "sha256-8oNVE8TrD19ulHinjaqONf9QWCKK+w4url56cdStMpM=",
+        "lastModified": 1763759067,
+        "narHash": "sha256-LlLt2Jo/gMNYAwOgdRQBrsRoOz7BPRkzvNaI/fzXi2Q=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "52a2caecc898d0b46b2b905f058ccc5081f842da",
+        "rev": "2cccadc7357c0ba201788ae99c4dfa90728ef5e0",
         "type": "github"
       },
       "original": {
@@ -188,11 +188,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1763591732,
-        "narHash": "sha256-v/Vf5E4eLvywWd28BlWH4p9aLya6d6rgvwuWvPLXx3M=",
+        "lastModified": 1764025805,
+        "narHash": "sha256-DMG2kVggmBUbr2lxFugiRjiCBOkC9vU822JTkpYTeN4=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "4f97239661ebf569fa701f211dd92ef1919bc922",
+        "rev": "60c35cc4c7b713c27e8bfdd196cbee46cf050bbb",
         "type": "github"
       },
       "original": {
@@ -203,10 +203,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1763464769,
-        "narHash": "sha256-AJHrsT7VoeQzErpBRlLJM1SODcaayp0joAoEA35yiwM=",
+        "lastModified": 1763934636,
+        "narHash": "sha256-9glbI7f1uU+yzQCq5LwLgdZqx6svOhZWkd4JRY265fc=",
         "ref": "nixpkgs-unstable",
-        "rev": "6f374686605df381de8541c072038472a5ea2e2d",
+        "rev": "ee09932cedcef15aaf476f9343d1dea2cb77e261",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -267,10 +267,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1763597114,
-        "narHash": "sha256-HHf9mwto/I840HVPAOok9T/VLmbFPvGTMmBeyqDkvzY=",
+        "lastModified": 1764029077,
+        "narHash": "sha256-a3imRMIsRjonDDyt4buoTaXnCJ0H6FSZEes0tHyWr0s=",
         "ref": "refs/heads/master",
-        "rev": "9cb3c755b295a4c872c948bff25c77eaee501064",
+        "rev": "4e2ede6fae4af2d474f63028ff54bd714707c3e7",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"
@@ -296,10 +296,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1763462775,
-        "narHash": "sha256-k5M7Ll1SOBJPEE6+9ESjJ9tuyFZ4qTI/gesHd2eb/2A=",
+        "lastModified": 1763916175,
+        "narHash": "sha256-go0y+QS6Y6YywBbATAV2lYjstq/nTx8yG+Y3VUYmj5A=",
         "ref": "refs/heads/main",
-        "rev": "99f09ab0a69f41eb14795c1cd047d5cd6ee5896e",
+        "rev": "796ccabc9fe93b6b3181ee07d4b824f3f5e93ff3",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"

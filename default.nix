@@ -261,18 +261,33 @@ in {
                     src = pkgs.fetchFromGitHub {
                       owner = "anurag3301";
                       repo = "nvim-platformio.lua";
-                      rev = "6df49afd28c6056fe6df031a7edefcc07b5186c8";
-                      hash = "sha256-4VeA9+wJHxK0yyHYeGL5yeDi4CIO71ftIdwnKq0+7po=";
+                      rev = "a8245f0243c80c2635103863f64c839b9a2d88a0";
+                      hash = "sha256-iid6GdLSWr7cDqkYpRp9vR7TKJJzfp/tAYUACPOXLIc=";
                     };
                     dependencies = [
                       pkgs.vimPlugins.telescope-nvim
+                      pkgs.vimPlugins.telescope-ui-select-nvim
                       pkgs.vimPlugins.FTerm-nvim
                       pkgs.vimPlugins.plenary-nvim
+                      pkgs.vimPlugins.toggleterm-nvim
+                      pkgs.vimPlugins.which-key-nvim
                       pkgs.platformio-core
                     ];
                     doCheck = true;
-                    nvimSkipModule = [
+                    nvimSkipModules = [
                       "minimal_config"
+                      "platformio.piolsserial"
+                      "platformio.boilerplate"
+                      "platformio"
+                      "platformio.piocmd"
+                      "platformio.piodebug"
+                      "platformio.pioinit"
+                      "platformio.piolib"
+                      "platformio.piolsp"
+                      "platformio.piomenu"
+                      "platformio.piomon"
+                      "platformio.piorun"
+                      "platformio.utils"
                     ];
                   };
                   setupOpts = {
@@ -337,8 +352,8 @@ in {
                     src = pkgs.fetchFromGitHub {
                       owner = "yuukiflow";
                       repo = "Arduino-Nvim";
-                      rev = "8d1dff82d1c2a248155c9234bddb2c9a82d07a25";
-                      hash = "sha256-WTFbo5swtyAjLBOk9UciQCiBKOjkbwLStZMO/0uaZYg=";
+                      rev = "fba550deef2acf2b400927e82775d5139c56615f";
+                      hash = "sha256-0jord5abDVqU5NhlW0LhKrKdgXX1/hJlM0W0ByRXyb4=";
                     };
 
                     dependencies = [
@@ -351,7 +366,7 @@ in {
 
                     doCheck = true;
 
-                    nvimSkipModule = [
+                    nvimSkipModules = [
                       "init"
                       "libGetter"
                     ];
