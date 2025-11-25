@@ -155,6 +155,7 @@ in {
                     };
                   });
                 };
+
                 "vim-suda" = {
                   package = pkgs.vimPlugins.vim-suda;
                   setupOpts = {
@@ -163,6 +164,7 @@ in {
                   lazy = true;
                   event = ["BufEnter"];
                 };
+
                 "rest.nvim" = {
                   package = pkgs.vimPlugins.rest-nvim;
                   setupOpts = {
@@ -173,6 +175,7 @@ in {
                     "http"
                   ];
                 };
+
                 "remote-nvim.nvim" = {
                   package = pkgs.vimPlugins.remote-nvim-nvim;
                   setupOpts = {
@@ -330,12 +333,14 @@ in {
                   package = pkgs.vimUtils.buildVimPlugin {
                     pname = "nvim-arduino";
                     version = "0";
+
                     src = pkgs.fetchFromGitHub {
                       owner = "yuukiflow";
                       repo = "Arduino-Nvim";
                       rev = "8d1dff82d1c2a248155c9234bddb2c9a82d07a25";
                       hash = "sha256-WTFbo5swtyAjLBOk9UciQCiBKOjkbwLStZMO/0uaZYg=";
                     };
+
                     dependencies = [
                       pkgs.clang-tools
                       pkgs.arduino-cli
@@ -343,13 +348,86 @@ in {
                       pkgs.vimPlugins.telescope-nvim
                       pkgs.vimPlugins.nvim-lspconfig
                     ];
+
                     doCheck = true;
+
                     nvimSkipModule = [
                       "init"
                       "libGetter"
                     ];
                   };
                   lazy = false;
+                };
+
+                "ccls-nvim" = {
+                  enabled = true;
+                  package = pkgs.vimUtils.buildVimPlugin {
+                    pname = "ccls-nvim";
+                    version = "0";
+
+                    src = pkgs.fetchFromGitHub {
+                      owner = "ranjithshegde";
+                      repo = "ccls.nvim";
+                      rev = "4b258c269d58cc5e37e55cf2316074e2740e5f57";
+                      hash = "sha256-o1U+F1F2TTBZ3ViG77wvc3D92rwfQFoCol+vD5WWxXM=";
+                    };
+
+                    dependencies = [
+                      pkgs.ccls
+                    ];
+                  };
+
+                  setupModule = "ccls";
+                  setupOpts = {
+                    filetypes = [
+                      "c"
+                      "cpp"
+                      "objc"
+                      "objcpp"
+                      "opencl"
+                    ];
+
+                    lsp = {
+                      server = {
+                        name = "ccls";
+                        cmd = [
+                          "${lib.getExe pkgs.ccls}"
+                        ];
+                        args = [ ];
+                        offset_encoding = "utf-32";
+                        root_dir = lib.generators.mkLuaInline /* lua */ ''
+                          vim.fs.dirname(vim.fs.find({ "compile_commands.json", ".git" }, { upward = true })[1])
+                        '';
+                      };
+                      codelens = {
+                        enable = true;
+                        events = [
+                          "BufWritePost"
+                          "InsertLeave"
+                        ];
+                      };
+
+                      # Clang compatibility
+                      disable_capabilities = {
+                        completionProvider = true;
+                        documentFormattingProvider = true;
+                        documentRangeFormattingProvider = true;
+                        documentHighlightProvider = true;
+                        documentSymbolProvider = true;
+                        workspaceSymbolProvider = true;
+                        renameProvider = true;
+                        hoverProvider = true;
+                        codeActionProvider = true;
+                      };
+                      disable_diagnostics = true;
+                      disable_signature = true;
+                    };
+                  };
+
+                  lazy = false;
+                  ft = [
+                    "cpp"
+                  ];
                 };
               };
             };

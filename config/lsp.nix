@@ -201,12 +201,12 @@
         cmd = [
           "${lib.getExe pkgs.zls}"
           "--config-path"
-          "${(pkgs.formats.json {}).generate "zls.json" {
+          "${(pkgs.formats.json { }).generate "zls.json" {
             warn_style = true;
             #enable_build_on_save = true;
             build_on_save_args = [
               #"install"
-            #  "-fno-emit-bin"
+              #  "-fno-emit-bin"
             ];
           }}"
         ];
@@ -250,7 +250,7 @@
         ];
 
         #filetypes = [
-          #"md"
+        #"md"
         #];
 
         settings = {
