@@ -9,12 +9,14 @@
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
       };
     };
     nvf = {
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/nvf?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
       };
     };
     spectrum-os = {
@@ -26,6 +28,7 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         spectrum.follows = "spectrum-os";
+        flake-utils.inputs.systems.follows = "nvf/systems";
       };
     };
     lsp-inputs = {
