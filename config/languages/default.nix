@@ -1,4 +1,7 @@
-{ nvimSize, ... }:{
+{ nvimSize, pkgs, lib, lib' }: lib'.mergeAttrsList [
+  (import ./c-cpp.nix { inherit nvimSize pkgs lib; })
+
+  {
   languages = {
     enableFormat = true;
     enableTreesitter = true;
@@ -207,3 +210,4 @@
 
   };
 }
+]
