@@ -87,7 +87,9 @@ in {
             };
 
             projects = {
-              project-nvim.enable = true;
+              # Replaced with neovim-project
+              # https://github.com/coffebar/neovim-project
+              #project-nvim.enable = true;
             };
 
             utility = {

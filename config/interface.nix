@@ -44,10 +44,13 @@
     };
     alpha = {
       enable = true;
+
       theme = "theta";
+
       layout = [
 
       ];
+
       opts = {
 
       };
