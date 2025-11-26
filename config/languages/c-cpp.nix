@@ -1,4 +1,25 @@
 { nvimSize, pkgs, lib }: {
+
+  languages = {
+    clang = {
+      enable = true;
+      dap = {
+        enable = true;
+      };
+    };
+  };
+
+  lsp = {
+    servers = {
+      clangd = {
+        cmd = [
+          "${pkgs.clang-tools}/bin/clangd"
+          "--clang-tidy"
+        ];
+      };
+    };
+  };
+
   lazy = {
     plugins = {
       "ccls-nvim" = {

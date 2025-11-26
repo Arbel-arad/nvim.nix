@@ -9,7 +9,7 @@
     in {
     vim = lib'.mergeAttrsList [
       (import ./utils.nix { inherit pkgs; })
-      (import ./languages { inherit nvimSize pkgs lib lib'; })
+      (import ./languages { inherit nvimSize inputs pkgs lib lib'; })
       (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
       (import ./debug.nix { inherit nvimSize pkgs lib; })
       (import ./formats.nix { inherit nvimSize; })

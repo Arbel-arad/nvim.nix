@@ -1,213 +1,191 @@
-{ nvimSize, pkgs, lib, lib' }: lib'.mergeAttrsList [
+{ nvimSize, inputs, pkgs, lib, lib' }: lib'.mergeAttrsList [
   (import ./c-cpp.nix { inherit nvimSize pkgs lib; })
+  (import ./nix.nix { inherit inputs pkgs lib; })
 
   {
-  languages = {
-    enableFormat = true;
-    enableTreesitter = true;
-    enableExtraDiagnostics = true;
-    enableDAP = true;
+    languages = {
+      enableFormat = true;
+      enableTreesitter = true;
+      enableExtraDiagnostics = true;
+      enableDAP = true;
 
-    rust = {
-      enable = true;
-      lsp = {
+      rust = {
         enable = true;
-        opts = /* lua */ ''
-          ['rust-analyzer'] = {
-          cargo = {allFeature = true},
-          checkOnSave = true,
-            procMacro = {
-              enable = true,
+        lsp = {
+          enable = true;
+          opts = /* lua */ ''
+            ['rust-analyzer'] = {
+            cargo = {allFeature = true},
+            checkOnSave = true,
+              procMacro = {
+                enable = true,
+              },
             },
-          },
-        '';
-      };
-      crates = {
-        enable = true;
-        codeActions = true;
-      };
-      format = {
-        enable = true;
-        type = "rustfmt";
-      };
-    };
-
-    nix = {
-      enable = true;
-      lsp = {
-        enable = false;
-        #server = "nixd";
-      };
-      extraDiagnostics = {
-        enable = true;
-        types = [
-          "statix"
-          "deadnix"
-        ];
-      };
-    };
-
-    clang = {
-      enable = true;
-      dap = {
-        enable = true;
-      };
-    };
-
-    ts = {
-      enable = true;
-      extraDiagnostics.enable = true;
-    };
-
-    python = {
-      enable = true;
-    };
-
-    zig = {
-      enable = true;
-      lsp = {
-        # Configured manually
-        enable = false;
-      };
-    };
-
-    odin = {
-      enable = true;
-    };
-
-    markdown = {
-      enable = true;
-      extensions = {
-        render-markdown-nvim = {
-            enable = true;
+          '';
+        };
+        crates = {
+          enable = true;
+          codeActions = true;
+        };
+        format = {
+          enable = true;
+          type = "rustfmt";
         };
       };
-      extraDiagnostics.enable = true;
-    };
 
-    html = {
-      enable = true;
-    };
-
-    css = {
-      enable = true;
-    };
-
-    go = {
-      enable = true;
-    };
-
-    lua = {
-      enable = true;
-    };
-
-    bash = {
-      enable = true;
-      extraDiagnostics = {
+      ts = {
         enable = true;
-        types = [
-          "shellcheck"
-        ];
+        extraDiagnostics.enable = true;
       };
-    };
 
-    nu = {
-      enable = true;
-    };
-
-    assembly = {
-      enable = true;
-    };
-
-    haskell = {
-      enable = nvimSize <= 0;
-      dap = {
-        # Package haskell-debug-adapter is currently broken
-        enable = false;
-      };
-    };
-
-    terraform = {
-      enable = true;
-    };
-
-    sql = {
-      enable = true;
-      format = {
+      python = {
         enable = true;
       };
-      extraDiagnostics = {
+
+      zig = {
+        enable = true;
+        lsp = {
+          # Configured manually
+          enable = false;
+        };
+      };
+
+      odin = {
         enable = true;
       };
-      lsp = {
+
+      markdown = {
         enable = true;
-      };
-    };
-
-    yaml = {
-      enable = true;
-    };
-
-    typst = {
-      enable = true;
-      extensions = {
-        typst-concealer = {
-          enable = true;
-          mappings = {
-
+        extensions = {
+          render-markdown-nvim = {
+              enable = true;
           };
         };
-        typst-preview-nvim = {
+        extraDiagnostics.enable = true;
+      };
+
+      html = {
+        enable = true;
+      };
+
+      css = {
+        enable = true;
+      };
+
+      go = {
+        enable = true;
+      };
+
+      lua = {
+        enable = true;
+      };
+
+      bash = {
+        enable = true;
+        extraDiagnostics = {
+          enable = true;
+          types = [
+            "shellcheck"
+          ];
+        };
+      };
+
+      nu = {
+        enable = true;
+      };
+
+      assembly = {
+        enable = true;
+      };
+
+      haskell = {
+        enable = nvimSize <= 0;
+        dap = {
+          # Package haskell-debug-adapter is currently broken
+          enable = false;
+        };
+      };
+
+      terraform = {
+        enable = true;
+      };
+
+      sql = {
+        enable = true;
+        format = {
+          enable = true;
+        };
+        extraDiagnostics = {
+          enable = true;
+        };
+        lsp = {
           enable = true;
         };
       };
-    };
 
-    dart = {
-      enable = true;
-      dap = {
+      yaml = {
         enable = true;
       };
-      lsp = {
-        enable = false;
-      };
 
-      flutter-tools = {
+      typst = {
         enable = true;
-        color = {
-          enable = true;
-          highlightBackground = false;
-          highlightForeground = false;
-          virtualText = {
+        extensions = {
+          typst-concealer = {
             enable = true;
-            character = ''"■"'';
+            mappings = {
+
+            };
+          };
+          typst-preview-nvim = {
+            enable = true;
           };
         };
       };
-    };
 
-    r = {
-      enable = true;
-      lsp = {
+      dart = {
         enable = true;
+        dap = {
+          enable = true;
+        };
+        lsp = {
+          enable = false;
+        };
+
+        flutter-tools = {
+          enable = true;
+          color = {
+            enable = true;
+            highlightBackground = false;
+            highlightForeground = false;
+            virtualText = {
+              enable = true;
+              character = ''"■"'';
+            };
+          };
+        };
+      };
+
+      r = {
+        enable = true;
+        lsp = {
+          enable = true;
+        };
+      };
+
+      scala = {
+        enable = true;
+        fixShortmess = false;
+      };
+
+      elixir = {
+        enable = true;
+        elixir-tools = {
+          enable = true;
+        };
+        lsp = {
+          enable = true;
+        };
       };
     };
-
-    scala = {
-      enable = true;
-      fixShortmess = false;
-    };
-
-    elixir = {
-      enable = true;
-      elixir-tools = {
-        enable = true;
-      };
-      lsp = {
-        enable = true;
-      };
-    };
-
-  };
-}
+  }
 ]
