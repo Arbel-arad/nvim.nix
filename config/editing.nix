@@ -1,4 +1,5 @@
 { nvimSize, pkgs }:{
+
   autocomplete = { # Which is better?
     nvim-cmp = {
       enable = true;
@@ -6,11 +7,28 @@
         buffer = "[Buffer]";
         nvim-cmp = null;
         path = "[Path]";
+        #async_path = "[Path]"; # not showing highlight correctly
+        #cmdline = "[cmd]"; # not showing in the cmdline
       };
+
       sourcePlugins = [
         pkgs.vimPlugins.cmp-cmdline
+        #pkgs.vimPlugins.cmp-async-path
       ];
+
+      # setupOpts = lib.generators.mkLuaInline /* lua */ ''
+      /*  sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'vsnip' }, -- For vsnip users.
+          -- { name = 'luasnip' }, -- For luasnip users.
+          -- { name = 'ultisnips' }, -- For ultisnips users.
+          -- { name = 'snippy' }, -- For snippy users.
+        }, {
+          { name = 'buffer' },
+        })
+      '';*/
     };
+
     blink-cmp = {
       enable = false;
     };

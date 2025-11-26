@@ -270,4 +270,79 @@
       vim.cmd.aunmenu{'PopUp.-2-'}
     '';
   };
+
+  extraPlugins = {
+    "statuscol.nvim" = {
+      package = pkgs.vimPlugins.statuscol-nvim;
+      setup = /* lua */ ''
+        local builtin = require("statuscol.builtin")
+        --local ffi = require("statuscol.ffidef")
+        --local C = ffi.C
+
+        -- only show fold level up to this level
+        --[[local fold_level_limit = 3
+        local function foldfunc(args)
+          local foldinfo = C.fold_info(args.wp, args.lnum)
+          if foldinfo.level > fold_level_limit then
+            return " "
+          end
+
+          return builtin.foldfunc(args)
+        end]]
+        local c = vim.cmd
+        clickmod = "a"
+
+        local function fold_click(args, open, other)
+          -- Create fold on middle click
+          --[[if args.button == "m" then
+            create_fold(args)
+            if other then return end
+          end]]
+          foldmarker = nil
+
+          if args.button == "l" then -- Open/Close (recursive) fold on (clickmod)-click
+            if open then
+              c("norm! z"..(args.mods:find(clickmod) and "O" or "o"))
+            else
+              c("norm! z"..(args.mods:find(clickmod) and "C" or "c"))
+            end
+          --elseif args.button == "r" then -- Delete (recursive) fold on (clickmod)-right click
+            --c("norm! z"..(args.mods:find(clickmod) and "D" or "d"))
+          end
+        end
+
+        local npc = vim.F.npcall
+
+        require("statuscol").setup {
+          relculright = false,
+          segments = {
+            {
+              text = { " ", builtin.foldfunc, " " },
+              condition = { builtin.not_empty, true, builtin.not_empty },
+              click = "v:lua.ScFa"
+            },
+            { -- not working
+              sign = { namespace = { "diagnostic/signs" }, maxwidth = 2, auto = true },
+              click = "v:lua.ScSa"
+            },
+            { text = { "%s" }, click = "v:lua.ScSa" },
+            { text = { builtin.lnumfunc }, click = "v:lua.ScLa", },
+          },
+
+          clickmod = "a",
+          clickhandlers = {
+            FoldClose = function(args)
+              fold_click(args, true)
+            end,
+            FoldOpen = function(args)
+              fold_click(args, false)
+            end,
+            FoldOther = function(args)
+              --fold_click(args, false, true)
+            end,
+          }
+        }
+      '';
+    };
+  };
 }
