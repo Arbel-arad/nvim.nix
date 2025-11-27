@@ -16,7 +16,7 @@
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/nvf?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
+        #flake-parts.follows = "flake-parts";
       };
     };
     spectrum-os = {
@@ -43,7 +43,21 @@
 
   outputs = { self, ... }@inputs:
   inputs.flake-parts.lib.mkFlake { inherit inputs self; } {
-  flake = {
+  flake = let
+
+    pkgs = import inputs.nixpkgs {
+      system = "x86_64-linux";
+    };
+
+  in {
+
+    # For exploring configuration in REPL
+    nvim-config = (import (self + /default.nix) {
+      inherit inputs pkgs;
+      inherit (pkgs) lib;
+      config = { };
+    }).config.programs.nvf.settings.vim;
+
     nixosConfigurations = import ./flake/microVMs.nix {
       inherit inputs self;
     };

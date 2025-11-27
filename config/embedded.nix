@@ -2,13 +2,13 @@
 
   enabled = nvimSize <= 100;
 in {
-  extraPackages = lib.mkIf enabled [
+  extraPackages = [
     # For micropython
     pkgs.rshell
     pkgs.adafruit-ampy
   ];
 
-  lazy = lib.mkIf enabled {
+  lazy = {
     plugins = {
       "nvim-platformio" = {
         package = pkgs.vimUtils.buildVimPlugin {

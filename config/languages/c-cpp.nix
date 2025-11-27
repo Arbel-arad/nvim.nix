@@ -1,5 +1,9 @@
 { nvimSize, pkgs, lib }: {
 
+  extraPackages = [
+    pkgs.ccls
+  ];
+
   languages = {
     clang = {
       enable = true;
@@ -93,6 +97,10 @@
           "objc"
           "objcpp"
         ];
+
+        #afer = /* lua */ ''
+        #  --vim.cmd "LspStart ccls"
+        #'';
       };
     };
   };

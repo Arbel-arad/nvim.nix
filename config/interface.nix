@@ -242,7 +242,8 @@
 
   lazy = {
     plugins = {
-      "nvim-scrollview" = lib.mkIf false {
+      "nvim-scrollview" = {
+        enabled = false;
         package = pkgs.vimPlugins.nvim-scrollview;
         setupOpts = {
           signs_on_startup = [ "all" ];
