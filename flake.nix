@@ -16,7 +16,7 @@
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/nvf?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        #flake-parts.follows = "flake-parts";
+        flake-parts.follows = "flake-parts";
       };
     };
     spectrum-os = {
