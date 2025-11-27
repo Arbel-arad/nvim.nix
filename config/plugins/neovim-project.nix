@@ -57,6 +57,10 @@
 
           last_session_on_startup = false;
 
+          dashboard_mode = true;
+
+          per_branch_sessions = true;
+
           picker = {
             type = "telescope";
 
