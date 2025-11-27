@@ -14,6 +14,7 @@
     pkgs.btop
     pkgs.zellij
     pkgs.openssh
+    pkgs.ripgrep-all
 
     # For rust
     pkgs.cargo

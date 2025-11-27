@@ -38,12 +38,32 @@
   dashboard = {
     dashboard-nvim = {
       #enable = true;
-      setupOpts = {
 
+      setupOpts = {
+        theme = "doom";
+
+        config = {
+          header = {};
+          center = [
+            {
+              icon = " ";
+              icon_hl = "Title";
+              desc = "Find File           ";
+              desc_hl = "String";
+              key = "b";
+              keymap = "SPC f f";
+              key_hl = "Number";
+              key_format = " %s"; # -- remove default surrounding `[]`
+              action = "NeovimProjectHistory";
+            }
+         ];
+          footer = {};
+        };
       };
     };
+
     alpha = {
-      enable = true;
+      #enable = true;
 
       theme = "theta";
 
@@ -53,6 +73,84 @@
 
       opts = {
 
+      };
+    };
+  };
+
+  utility = {
+    snacks-nvim = {
+      enable = true;
+
+      setupOpts = {
+        picker = {
+          ui_select = false;
+        };
+
+        dashboard = {
+          preset = {
+            #pick = "telescope.nvim";
+            keys = lib.generators.mkLuaInline /* lua */ ''
+              {
+                { icon = " ", key = "d", desc = "Find project", action = ":NeovimProjectHistory"},
+                { icon = "󰺄 ", key = "a", desc = "All projects", action = ":NeovimProjectDiscover"},
+                { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
+                { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+                { icon = " ", key = "g", desc = "Find Text", action = ":Telescope live_grep" },
+                { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
+                { icon = " ", key = "s", desc = "Restore Session", action = ":NeovimProjectLoadRecent"},
+                { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                { icon = " ", key = "c", desc = "Config",
+                  action = function()
+                    local path = vim.fn.stdpath('config')
+                    vim.cmd("cd " .. path)
+                    vim.cmd("Telescope find_files")
+                  end,
+                },
+              },
+            '';
+
+            header = lib.generators.mkLuaInline ''[[
+ █  █
+ ███ ██
+ █████
+ ██ ███
+ █  █
+
+
+ N  E  O - V  I  M
+
+            ]]'';
+          };
+
+          sections = [
+            { section = "header"; }
+            { section = "keys"; gap = 1; padding = 1; }
+            { icon = " "; title = "Projects"; section = "projects"; indent = 2; padding = 2; }
+            (lib.generators.mkLuaInline /* lua */ ''
+              function()
+                local in_git = Snacks.git.get_root() ~= nil
+                local cmds = {
+                  {
+                    icon = " ",
+                    title = "Git Status",
+                    cmd = "git --no-pager diff --stat -B -M -C",
+                    height = 10,
+                  },
+                }
+                return vim.tbl_map(function(cmd)
+                  return vim.tbl_extend("force", {
+                    pane = 1,
+                    section = "terminal",
+                    enabled = in_git,
+                    padding = 1,
+                    ttl = 5 * 60,
+                    indent = 3,
+                  }, cmd)
+                end, cmds)
+              end,
+            '')
+          ];
+        };
       };
     };
   };
@@ -111,6 +209,7 @@
               "dap-repl"
 
               # dashboards
+              "snacks_dashboard"
               "dashboard"
               "startify"
               "alpha"
@@ -316,6 +415,17 @@
 
         require("statuscol").setup {
           relculright = false,
+
+          ft_ignore = {
+            'snacks_dashboard',
+            'dashboard',
+          },
+          bt_ignore = {
+            'snacks_dashboard',
+            'dashboard',
+            'nofile',
+          },
+
           segments = {
             {
               text = { " ", builtin.foldfunc, " " },
