@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1763759067,
-        "narHash": "sha256-LlLt2Jo/gMNYAwOgdRQBrsRoOz7BPRkzvNaI/fzXi2Q=",
+        "lastModified": 1760948891,
+        "narHash": "sha256-TmWcdiUUaWk8J4lpjzu4gCGxWY6/Ok7mOK4fIFfBuU4=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "2cccadc7357c0ba201788ae99c4dfa90728ef5e0",
+        "rev": "864599284fc7c0ba6357ed89ed5e2cd5040f0c04",
         "type": "github"
       },
       "original": {
@@ -280,10 +280,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1764104301,
-        "narHash": "sha256-KYWTybuTg0ZElMeINCuq5mDFjzaFzVxw37L/NvDtGew=",
+        "lastModified": 1764190348,
+        "narHash": "sha256-t1paKKlh3v6gTb4eeKlC0OAUFQ51Z17T2rvjhfEgHy0=",
         "ref": "refs/heads/main",
-        "rev": "c5c8853bfc917aa324815043dc486f6bf73b6da7",
+        "rev": "c43e5c63a028994d5f66a15db19f415bf3cb7736",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"

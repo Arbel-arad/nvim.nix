@@ -95,7 +95,7 @@
                 { icon = "󰺄 ", key = "a", desc = "All projects", action = ":NeovimProjectDiscover"},
                 { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
                 { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                { icon = " ", key = "g", desc = "Find Text", action = ":Telescope live_grep" },
+                { icon = " ", key = "g", desc = "Find Text", action = "<leader>fg" },
                 { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
                 { icon = " ", key = "s", desc = "Restore Session", action = ":NeovimProjectLoadRecent"},
                 { icon = " ", key = "q", desc = "Quit", action = ":qa" },
@@ -110,6 +110,7 @@
             '';
 
             header = lib.generators.mkLuaInline ''[[
+
  █  █
  ███ ██
  █████
@@ -350,6 +351,7 @@
         lazy = true;
         event = ["BufEnter"];
       };
+
       "dropbar.nvim" = {
         package = pkgs.vimPlugins.dropbar-nvim;
         setupModule = "dropbar";
@@ -362,8 +364,18 @@
           };
         };
       };
+      nvim-ufo = {
+        lazy = true;
+        event = [
+          {
+            event = "User";
+            pattern = "LazyFile";
+          }
+        ];
+      };
     };
   };
+
   luaConfigRC = {
     enableMouse = /* lua */ ''
       vim.cmd.aunmenu{'PopUp.How-to\\ disable\\ mouse'}
