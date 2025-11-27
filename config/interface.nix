@@ -124,9 +124,30 @@
           };
 
           sections = [
-            { section = "header"; }
-            { section = "keys"; gap = 1; padding = 1; }
-            { icon = " "; title = "Projects"; section = "projects"; indent = 2; padding = 2; }
+            {
+              section = "header";
+            }
+            {
+              section = "keys";
+              gap = 1;
+              padding = 1;
+            }
+            {
+              icon = " ";
+              title = "Projects";
+              section = "projects";
+              indent = 2;
+              padding = 2;
+            }
+            {
+              icon = " ";
+              title = "Recent Files";
+              section = "recent_files";
+              limit = 3;
+              indent = 2;
+              padding = 1;
+            }
+
             (lib.generators.mkLuaInline /* lua */ ''
               function()
                 local in_git = Snacks.git.get_root() ~= nil
@@ -144,6 +165,7 @@
                     section = "terminal",
                     enabled = in_git,
                     padding = 1,
+                    align = "center",
                     ttl = 5 * 60,
                     indent = 3,
                   }, cmd)
@@ -160,6 +182,7 @@
     minimap-vim = {
       enable = false;
     };
+
     codewindow = {
       enable = true;
     };
