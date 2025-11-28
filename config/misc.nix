@@ -5,21 +5,23 @@
     pkgs.git
     pkgs.fzf
     pkgs.nix
-    pkgs.cppcheck
     pkgs.yazi
     pkgs.fish
     pkgs.nushell
     pkgs.direnv
-    pkgs.gitui
-    pkgs.btop
     pkgs.zellij
     pkgs.openssh
     pkgs.ripgrep-all
+
+    pkgs.lazysql
+    pkgs.gitui
+    pkgs.btop
 
     # For rust
     pkgs.cargo
     pkgs.rustc
     pkgs.clippy
+
     pkgs.zig
 
     pkgs.flutter

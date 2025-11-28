@@ -1,0 +1,15 @@
+[package]
+name = "colorprint"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+termcolor = "1.4.1"
+
+[profile.release]
+lto=true
+panic="abort"
+strip=true
+codegen-units=1
+opt-level = "z"
+prefer-dynamic = true

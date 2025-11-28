@@ -21,7 +21,10 @@ in {
         settings = {
 
         };
-      } (import ./config/neovim.nix { inherit inputs pkgs lib nvimSize; });
+      } (import ./config/neovim.nix {
+          inherit inputs pkgs lib nvimSize;
+          self = ./.;
+        });
     };
   };
 }

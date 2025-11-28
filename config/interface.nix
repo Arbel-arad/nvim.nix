@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }:{
+{ nvimSize, self, pkgs, lib }:{
   options = {
     foldlevel = 99; # for folds and fillchars to show correctly
     foldcolumn = "auto:1"; # levels of folds to show
@@ -91,11 +91,11 @@
             #pick = "telescope.nvim";
             keys = lib.generators.mkLuaInline /* lua */ ''
               {
+                { icon = " ", key = "g", desc = "Find Text", action = "<leader>fg" },
+                { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
                 { icon = " ", key = "d", desc = "Find project", action = ":NeovimProjectHistory"},
                 { icon = "󰺄 ", key = "a", desc = "All projects", action = ":NeovimProjectDiscover"},
-                { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
                 { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                { icon = " ", key = "g", desc = "Find Text", action = "<leader>fg" },
                 { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
                 { icon = " ", key = "s", desc = "Restore Session", action = ":NeovimProjectLoadRecent"},
                 { icon = " ", key = "q", desc = "Quit", action = ":qa" },
@@ -105,21 +105,12 @@
                     vim.cmd("cd " .. path)
                     vim.cmd("Telescope find_files")
                   end,
+                  hidden = true,
                 },
               },
             '';
 
             header = lib.generators.mkLuaInline ''[[
- ██     ██
-████    ███
-██████   ████
-███████  ████
-███████ ████
-████ ███████
-████  ███████
-████   ██████
-███    ████
- ██     ██
 
  N  E  O -- V  I  M
 
@@ -127,6 +118,12 @@
           };
 
           sections = [
+            {
+              section = "terminal";
+              cmd = "${import (self + /tools/colorprint) { inherit pkgs; }}/bin/colorprint";
+              align = "center";
+              indent = 23;
+            }
             {
               section = "header";
             }
@@ -139,7 +136,7 @@
               icon = " ";
               title = "Projects";
               section = "projects";
-              limit = 5;
+              limit = 3;
               indent = 2;
               padding = 1;
             }

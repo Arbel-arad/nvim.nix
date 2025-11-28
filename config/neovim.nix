@@ -1,4 +1,4 @@
-{ nvimSize, inputs, pkgs, lib }: {
+{ nvimSize, self, inputs, pkgs, lib }: {
   enable = true;
   enableManpages = true;
 
@@ -6,7 +6,7 @@
 
     lib' = import ../flake/lib.nix { inherit lib; };
 
-    in {
+  in {
     vim = lib'.mergeAttrsList [
       (import ./misc.nix { inherit pkgs lib; })
       (import ./utils.nix { inherit pkgs; })
@@ -16,7 +16,7 @@
       (import ./formats.nix { inherit nvimSize; })
       (import ./editing.nix { inherit nvimSize pkgs; })
       (import ./embedded.nix { inherit nvimSize pkgs lib; })
-      (import ./interface.nix { inherit nvimSize pkgs lib; })
+      (import ./interface.nix { inherit nvimSize self pkgs lib; })
       (import ./keymaps.nix { inherit pkgs lib; })
       (import ./navigation.nix { inherit nvimSize; })
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })

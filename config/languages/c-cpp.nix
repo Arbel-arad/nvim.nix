@@ -1,6 +1,7 @@
 { nvimSize, pkgs, lib }: {
 
   extraPackages = [
+    pkgs.cppcheck
     pkgs.ccls
   ];
 
@@ -91,7 +92,8 @@
           };
         };
 
-        lazy = false; ### TODO fix lazy load
+        lazy = true;
+
         ft = [
           "cpp"
           "objc"

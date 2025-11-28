@@ -122,22 +122,6 @@
         };
       };
 
-      openscad = {
-        root_markers = [
-          ".git"
-        ];
-
-        cmd = [
-          "${lib.getExe pkgs.openscad-lsp}"
-          "--stdio"
-        ];
-
-        filetypes = [
-          "openscad"
-          "scad"
-        ];
-      };
-
       harper-ls = {
         root_markers = [
           ".git"

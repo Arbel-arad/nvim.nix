@@ -1,6 +1,7 @@
 { nvimSize, inputs, pkgs, lib, lib' }: lib'.mergeAttrsList [
   (import ./c-cpp.nix { inherit nvimSize pkgs lib; })
   (import ./nix.nix { inherit inputs pkgs lib; })
+  (import ./openscad.nix { inherit pkgs lib; })
 
   {
     languages = {
