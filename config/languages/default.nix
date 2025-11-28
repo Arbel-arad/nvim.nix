@@ -79,6 +79,9 @@
 
       lua = {
         enable = true;
+        extraDiagnostics = {
+          enable = true;
+        };
       };
 
       bash = {
@@ -186,6 +189,21 @@
         lsp = {
           enable = true;
         };
+      };
+
+      julia = {
+        enable = true;
+        lsp = {
+          enable = true;
+        };
+      };
+
+      helm = {
+        enable = true;
+      };
+
+      wgsl = {
+        enable = true;
       };
     };
   }

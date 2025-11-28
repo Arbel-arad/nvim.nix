@@ -26,8 +26,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    " ██     ██\n"
+  let _ = writeln!(buf,
+    " ██     ██"
   );
 
   // Line 2
@@ -54,8 +54,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "███    ███\n"
+  let _ = writeln!(buf,
+    "███    ███"
   );
 
   // Line 3
@@ -74,8 +74,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "███   ████\n"
+  let _ = writeln!(buf,
+    "███   ████"
   );
 
   // Line 4
@@ -94,8 +94,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "███  ████\n"
+  let _ = writeln!(buf,
+    "███  ████"
   );
 
   // Line 5
@@ -113,8 +113,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "███ ████\n"
+  let _ = writeln!(buf,
+    "███ ████"
   );
 
   // Line 6
@@ -132,8 +132,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    " ███████\n"
+  let _ = writeln!(buf,
+    " ███████"
   );
 
   // Line 7
@@ -151,8 +151,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "  ███████\n"
+  let _ = writeln!(buf,
+    "  ███████"
   );
 
   // Line 8
@@ -170,8 +170,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "   ██████\n"
+  let _ = writeln!(buf,
+    "   ██████"
   );
 
   // Line 9
@@ -189,8 +189,8 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "    ████\n"
+  let _ = writeln!(buf,
+    "    ████"
   );
 
   // Line 10
@@ -208,7 +208,7 @@ fn neovim_logo(buf: &mut termcolor::Buffer) {
     .set_fg(nv_green)
   );
 
-  let _ = write!(buf,
-    "     ██\n"
+  let _ = writeln!(buf,
+    "     ██"
   );
 }

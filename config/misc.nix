@@ -12,6 +12,7 @@
     pkgs.zellij
     pkgs.openssh
     pkgs.ripgrep-all
+    pkgs.hyperfine
 
     pkgs.lazysql
     pkgs.gitui
@@ -152,6 +153,44 @@
             icon = " ";
           };
         };
+      };
+
+      "nerdy.nvim" = {
+        package = pkgs.vimPlugins.nerdy-nvim;
+
+        setupModule = "nerdy";
+
+        setupOpts = {
+          max_recents = 30;
+          add_default_keybindings = false;
+          copy_to_clipboard = false;
+          copy_register = "+";
+        };
+
+        lazy = true;
+
+        cmd = [
+          "Nerdy"
+        ];
+
+        keys = [
+          {
+            mode = [
+              "n"
+            ];
+            key = "<leader>in";
+            action = ":Nerdy list<CR>";
+            desc = "Browser nerd icons";
+          }
+          {
+            mode = [
+              "n"
+            ];
+            key = "<leader>iN";
+            action = ":Nerdy recents<CR>";
+            desc = "Browser recent nerd icons";
+          }
+        ];
       };
     };
   };

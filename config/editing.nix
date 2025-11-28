@@ -69,8 +69,20 @@
     extensions = [
       {
         name = "fzf";
-        packages = [pkgs.vimPlugins.telescope-fzf-native-nvim];
-        setup = {fzf = {fuzzy = true;};};
+        packages = [
+          pkgs.vimPlugins.telescope-fzf-native-nvim
+        ];
+        setup = {
+          fzf = {
+            fuzzy = true;
+          };
+        };
+      }
+      {
+        name = "nerdy";
+        packages = [
+          pkgs.vimPlugins.nerdy-nvim
+        ];
       }
     ];
 

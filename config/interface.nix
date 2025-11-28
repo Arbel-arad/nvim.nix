@@ -332,12 +332,15 @@
         };
       };
     };
+
     nvim-web-devicons = {
       enable = true;
     };
+
     rainbow-delimiters = {
       enable = true;
     };
+
     nvim-scrollbar = {
       enable = true;
       setupOpts = {
@@ -359,6 +362,23 @@
             "dashboard"
             "alpha"
           ];
+        };
+      };
+    };
+
+    cinnamon-nvim = {
+      enable = true;
+      setupOpts = {
+        options = {
+          #mode = "cursor";
+          mode = "window";
+
+          count_only = false;
+        };
+
+        keymaps = {
+          basic = false;
+          extra = false;
         };
       };
     };
