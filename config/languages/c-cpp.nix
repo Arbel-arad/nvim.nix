@@ -3,6 +3,12 @@
   extraPackages = [
     pkgs.cppcheck
     pkgs.ccls
+
+    pkgs.gnumake
+    pkgs.cmakeMinimal
+
+    pkgs.gcc_latest
+    pkgs.gcc-arm-embedded
   ];
 
   languages = {

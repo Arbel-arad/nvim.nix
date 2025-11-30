@@ -7,7 +7,7 @@
   in {
     home = {
       packages = [
-        nvf-wrapped.program
+        nvf-wrapped
       ];
     };
     xdg = {
@@ -17,7 +17,7 @@
           genericName = "Neovim GUI";
           type = "Application";
           terminal = false;
-          exec = "${nvf-wrapped.program}/bin/nvf-wrapped";
+          exec = "${nvf-wrapped}/bin/nvf-wrapped";
           settings = {
             Keywords = "nvim;nvf;neovim;neovide";
           };

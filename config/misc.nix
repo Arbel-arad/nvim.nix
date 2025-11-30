@@ -111,15 +111,6 @@ in {
         ];
       };
 
-      "remote-nvim.nvim" = {
-        package = pkgs.vimPlugins.remote-nvim-nvim;
-        setupOpts = {
-
-        };
-        lazy = true;
-        event = ["BufEnter"];
-      };
-
       "telescope-ui-select.nvim" = {
         package = pkgs.vimPlugins.telescope-ui-select-nvim;
         lazy = true;

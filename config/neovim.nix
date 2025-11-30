@@ -22,7 +22,7 @@
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
       (import ./plugins { inherit pkgs lib lib'; })
       (import ./tests.nix { inherit pkgs lib; })
-      (import ./remote.nix { inherit pkgs lib; })
+      (import ./remote.nix { inherit nvimSize pkgs lib; })
 
 
       {
