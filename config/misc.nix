@@ -1,4 +1,7 @@
-{ pkgs, lib }: {
+{ nvimSize, pkgs, lib }: let
+  enableExtra = nvimSize <= 300;
+
+in {
 
   extraPackages = [
     pkgs.imagemagick
@@ -33,8 +36,8 @@
   ];
   enableLuaLoader = true;
 
-  withPython3 = true;
-  withNodeJs = true;
+  withPython3 = enableExtra;
+  withNodeJs = enableExtra;
 
   git = {
     enable = true;

@@ -68,6 +68,8 @@
         default = pkgs.mkShell {
           nativeBuildInputs = [
             self'.packages.default
+            self'.packages.nvim-gui
+
             pkgs.nix-tree
             pkgs.just
             pkgs.bat

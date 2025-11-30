@@ -12,6 +12,11 @@
     ];
   }).neovim;
 
+  nvim-gui = import (self + /packages/nvf-wrapped.nix) {
+    inherit pkgs;
+    nvf = self'.packages.default;
+  };
+
   "nvim-minimal" = (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
     inherit pkgs;
     modules = [

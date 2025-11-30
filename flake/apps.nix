@@ -18,19 +18,23 @@
     };
   };
 
-  gui = (import (self + /packages/nvf-wrapped.nix) {
-    inherit pkgs;
-    nvf = self'.packages.default;
-  }) // {
+  gui = {
+    type = "app";
+    program = import (self + /packages/nvf-wrapped.nix) {
+      inherit pkgs;
+      nvf = self'.packages.default;
+    };
     meta = {
       description = "Neovide GUI";
     };
   };
 
-  gui-minimal = (import (self + /packages/nvf-wrapped.nix) {
-    inherit pkgs;
-    nvf = self'.packages.nvim-minimal;
-  }) // {
+  gui-minimal = {
+    type = "app";
+    program = import (self + /packages/nvf-wrapped.nix) {
+      inherit pkgs;
+      nvf = self'.packages.nvim-minimal;
+    };
     meta = {
       description = "Neovide GUI";
     };

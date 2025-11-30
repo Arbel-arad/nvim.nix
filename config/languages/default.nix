@@ -4,11 +4,15 @@
   (import ./openscad.nix { inherit pkgs lib; })
 
   {
-    languages = {
+    languages = let
+
+      enableExtra = nvimSize <= 300;
+
+    in {
       enableFormat = true;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
-      enableDAP = true;
+      enableDAP = nvimSize <= 300;
 
       rust = {
         enable = true;
@@ -52,7 +56,7 @@
       };
 
       odin = {
-        enable = true;
+        enable = enableExtra;
       };
 
       markdown = {
@@ -105,8 +109,7 @@
       haskell = {
         enable = nvimSize <= 0;
         dap = {
-          # Package haskell-debug-adapter is currently broken
-          enable = false;
+          enable = true;
         };
       };
 
@@ -147,7 +150,7 @@
       };
 
       dart = {
-        enable = true;
+        enable = enableExtra;
         dap = {
           enable = true;
         };
@@ -156,7 +159,7 @@
         };
 
         flutter-tools = {
-          enable = true;
+          enable = enableExtra;
           color = {
             enable = true;
             highlightBackground = false;
@@ -170,19 +173,19 @@
       };
 
       r = {
-        enable = true;
+        enable = enableExtra;
         lsp = {
           enable = true;
         };
       };
 
       scala = {
-        enable = true;
+        enable = enableExtra;
         fixShortmess = false;
       };
 
       elixir = {
-        enable = true;
+        enable = enableExtra;
         elixir-tools = {
           enable = true;
         };
@@ -192,7 +195,7 @@
       };
 
       julia = {
-        enable = true;
+        enable = enableExtra;
         lsp = {
           enable = true;
         };
