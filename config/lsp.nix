@@ -72,7 +72,7 @@
         ];
       };
 
-      arduino-lsp = {
+      arduino-lsp = lib.mkIf (nvimSize <= 300) {
         cmd = [
           "${lib.getExe pkgs.arduino-language-server}"
           "-clangd" "${pkgs.clang-tools}/bin/clangd"

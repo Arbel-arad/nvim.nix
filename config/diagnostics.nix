@@ -3,12 +3,14 @@
     enable = true;
     config = {
       signs = {
-        text = {
-          "vim.diagnostic.severity.Error" = " ";
-          "vim.diagnostic.severity.Warn" = " ";
-          "vim.diagnostic.severity.Hint" = " ";
-          "vim.diagnostic.severity.Info" = " ";
-        };
+        text = lib.generators.mkLuaInline /* lua */ ''
+          {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ",
+            [vim.diagnostic.severity.WARN] = "󰀪 ",
+            [vim.diagnostic.severity.HINT] = " ",
+            [vim.diagnostic.severity.INFO] = " ",
+          }
+      '';
       };
       underline = true;
       update_in_insert = true;

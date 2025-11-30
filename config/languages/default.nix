@@ -2,6 +2,9 @@
   (import ./c-cpp.nix { inherit nvimSize pkgs lib; })
   (import ./nix.nix { inherit inputs pkgs lib; })
   (import ./openscad.nix { inherit pkgs lib; })
+  (import ./rust.nix { inherit pkgs lib; })
+  (import ./zig.nix { inherit pkgs lib; })
+  (import ./dart.nix { inherit nvimSize pkgs lib; })
 
   {
     languages = let

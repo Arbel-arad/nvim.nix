@@ -4,9 +4,10 @@
 in {
 
   extraPackages = [
-    pkgs.imagemagick
     pkgs.git
     pkgs.fzf
+    # jq-LSP???
+    pkgs.jq
     pkgs.nix
     pkgs.yazi
     pkgs.fish
@@ -14,8 +15,10 @@ in {
     pkgs.direnv
     pkgs.zellij
     pkgs.openssh
-    pkgs.ripgrep-all
     pkgs.hyperfine
+    pkgs.ripgrep-all
+    pkgs.imagemagick
+    pkgs.attic-client
 
     pkgs.lazysql
     pkgs.gitui
@@ -27,9 +30,6 @@ in {
     pkgs.clippy
 
     pkgs.zig
-
-    pkgs.flutter
-    pkgs.dart
 
     # For vim.lsp file watcher performance?
     pkgs.inotify-tools
