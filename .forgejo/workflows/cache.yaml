@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: attic login
         run: |
-          attic login attic https://attic.spacetime.technology ${{ secrets.ATTIC_TOKEN }} --set-default
+          /usr/bin/env attic login attic https://attic.spacetime.technology ${{ secrets.ATTIC_TOKEN }} --set-default
       - name: build
         run: |
           bash tools/build-cache.sh
