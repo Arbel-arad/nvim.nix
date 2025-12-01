@@ -16,4 +16,4 @@ jobs:
           attic login attic https://attic.spacetime.technology ${{ secrets.ATTIC_TOKEN }} --set-default
       - name: build
         run: |
-          bash ../../tools/build-cache.sh
+          bash tools/build-cache.sh
