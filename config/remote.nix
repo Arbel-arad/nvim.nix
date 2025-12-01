@@ -63,6 +63,13 @@ in {
         #  };
         #};
 
+        # Distant manager needs to be started before connections
+        # distant manager listen --user --access 0o600
+        # After that, connections can be initiated with :DistantConnect ssh://<user>@<target>
+        before = /* lua */ ''
+
+        '';
+
         after = if enableExtra then /* lua */ ''
           local plugin = require('distant')
           plugin:setup({
@@ -79,6 +86,7 @@ in {
           "DistantConnect"
           "DistantLaunch"
           "DistantInstall"
+          #"..."
         ];
       };
     };

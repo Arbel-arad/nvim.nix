@@ -149,11 +149,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1764444989,
-        "narHash": "sha256-Ivlfkx/vmW2fXXUoK4WcwPAetBbMqY0KVWDpVW6XoUQ=",
+        "lastModified": 1764519732,
+        "narHash": "sha256-R0UspjBwPi5St0Dxq9Ej9ejJ34K8ivF5WeCS9dMvvVQ=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "a4b2192690d7ed7c919708d8a50629c5b5cdfb50",
+        "rev": "d62bbe24cbe5311ce595d73a0c40dc87af989666",
         "type": "github"
       },
       "original": {
@@ -164,10 +164,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1764445028,
-        "narHash": "sha256-ik6H/0Zl+qHYDKTXFPpzuVHSZE+uvVz2XQuQd1IVXzo=",
+        "lastModified": 1764557259,
+        "narHash": "sha256-fhD/QUtJ0HKs3oLvfnD+/SrBV5Y7YEkCYnDjOVUjLys=",
         "ref": "nixpkgs-unstable",
-        "rev": "a09378c0108815dbf3961a0e085936f4146ec415",
+        "rev": "0d70460758949966e91d9ecb823b821f963cefbb",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -232,10 +232,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1764461186,
-        "narHash": "sha256-KH7BJQ1Bgf/k3mPZU1LYkUkxUKtCGWR2JU//nDfNcP4=",
+        "lastModified": 1764547590,
+        "narHash": "sha256-PDVKI5QCPfzVCPY/ZYAQTHGwC9ksT8ISNVaVZDVzb54=",
         "ref": "refs/heads/master",
-        "rev": "b7478189e2816460e308d51e5863b0c8dfb584de",
+        "rev": "71ba04d8a26327031fd58284af4a4891d7b3c842",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"
@@ -261,10 +261,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1764414697,
-        "narHash": "sha256-ROcCUYVjizx6ItAU7Sb0eRBfkGst15/iFMmk6rSgMmg=",
+        "lastModified": 1764439263,
+        "narHash": "sha256-FqadU3668nna1mEEq59byScaIJCRVwmXO8TF5IgDjEM=",
         "ref": "refs/heads/main",
-        "rev": "067c6a5d50971242f9cb8ac0ac76e20d88a9b5c1",
+        "rev": "965f5706764edb1b4fea147683b5ab803dd6df5e",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"

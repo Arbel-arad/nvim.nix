@@ -1,0 +1,16 @@
+name: Cache nvim
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  cache:
+    name: cache
+    runs-on: nix-actor
+    steps:
+      - name: attic login
+        run: |
+          attic login attic https://attic.spacetime.technology ${{ secrets.ATTIC_TOKEN }} --set-default
+#      - name: build
+#        run: |
