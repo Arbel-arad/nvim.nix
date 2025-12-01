@@ -7,7 +7,7 @@ on:
 jobs:
   cache:
     name: cache
-    runs-on: nix-actor
+    runs-on: buildnix
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
