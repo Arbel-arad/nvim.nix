@@ -16,24 +16,26 @@
       update_in_insert = true;
 
       virtual_text = {
-        format = lib.generators.mkLuaInline /* lua */ ''
-          function(diagnostic)
-            local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
-            if diagnostic.lnum ~= cursor_line then
-              return string.format("%s", diagnostic.message)
-            end
-          end
-        '';
+        current_line = false;
+        #format = lib.generators.mkLuaInline /* lua */ ''
+        #  function(diagnostic)
+        #    local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
+        #    if diagnostic.lnum ~= cursor_line then
+        #      return string.format("%s", diagnostic.message)
+        #    end
+        #  end
+        #'';
       };
       virtual_lines = {
-        format = lib.generators.mkLuaInline /* lua */ ''
-          function(diagnostic)
-            local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
-            if diagnostic.lnum == cursor_line then
-              return string.format("%s", diagnostic.message)
-            end
-          end
-        '';
+        current_line = true;
+        #format = lib.generators.mkLuaInline /* lua */ ''
+        #  function(diagnostic)
+        #    local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
+        #    if diagnostic.lnum == cursor_line then
+        #      return string.format("%s", diagnostic.message)
+        #    end
+        #  end
+        #'';
       };
     };
     nvim-lint = {

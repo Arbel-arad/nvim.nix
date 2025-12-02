@@ -261,10 +261,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1764538846,
-        "narHash": "sha256-NWYctDY0cSuycetJu5UHT48fhyt2DvxiOKhUY9DRycU=",
+        "lastModified": 1764673106,
+        "narHash": "sha256-Wp/7Goqr6ZOZq2jEm8P38dI97YZYPxm78L4EyDWaUi4=",
         "ref": "refs/heads/main",
-        "rev": "cf131bd816a34095af34345f0e5f148c47268a04",
+        "rev": "8bfcbf9014f0405edfd712c9cc367f20f7dbe0c2",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"

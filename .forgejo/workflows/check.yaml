@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: deadnix
         continue-on-error: true
-        uses: astro/deadnix-action@main
+        run: |
+          nix run nixpkgs#deadnix -- -_ --hidden
       - name: statix
         continue-on-error: true
         run: |
