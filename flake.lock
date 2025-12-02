@@ -149,11 +149,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1764519732,
-        "narHash": "sha256-R0UspjBwPi5St0Dxq9Ej9ejJ34K8ivF5WeCS9dMvvVQ=",
+        "lastModified": 1764626050,
+        "narHash": "sha256-Ils7KcQgF3Pdv9LUp7NTkDlmI16uH060RTlTo+zClcg=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "d62bbe24cbe5311ce595d73a0c40dc87af989666",
+        "rev": "b058a801e7515dd09154f60d7de0219f92635fb8",
         "type": "github"
       },
       "original": {
@@ -164,10 +164,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1764557259,
-        "narHash": "sha256-fhD/QUtJ0HKs3oLvfnD+/SrBV5Y7YEkCYnDjOVUjLys=",
+        "lastModified": 1764611609,
+        "narHash": "sha256-yU9BNcP0oadUKupw0UKmO9BKDOVIg9NStdJosEbXf8U=",
         "ref": "nixpkgs-unstable",
-        "rev": "0d70460758949966e91d9ecb823b821f963cefbb",
+        "rev": "8c29968b3a942f2903f90797f9623737c215737c",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -232,10 +232,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1764547590,
-        "narHash": "sha256-PDVKI5QCPfzVCPY/ZYAQTHGwC9ksT8ISNVaVZDVzb54=",
+        "lastModified": 1764633920,
+        "narHash": "sha256-kGypzQxhJAwnfTNIfHRDTFO2PYbspU+OBfQBD6ncZU4=",
         "ref": "refs/heads/master",
-        "rev": "71ba04d8a26327031fd58284af4a4891d7b3c842",
+        "rev": "1da4af182bc9cede73ec72a7e14c69ca5087faeb",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"
@@ -277,10 +277,10 @@
     },
     "system": {
       "locked": {
-        "lastModified": 1747686986,
-        "narHash": "sha256-4ogT+JYE74PT1cgG8IoBS4pRbLFED2tVFuOhvEbCGIE=",
+        "lastModified": 1764663594,
+        "narHash": "sha256-BfN7cocSfiaR0GKvp8ZddijPmbEXQG+UifNX5Tt6+h8=",
         "ref": "refs/heads/master",
-        "rev": "1f203a65d40164d18f4ca64a664ad6e77f53a470",
+        "rev": "be2db9b2a5321c41a6774185eaabd08e6a7ac425",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/arbel/nix-system"
