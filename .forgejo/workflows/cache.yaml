@@ -8,12 +8,14 @@ jobs:
   cache:
     name: cache
     runs-on: buildnix
+    #runs-on: nix-actor
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: attic login
         run: |
-          /usr/bin/env attic login attic https://attic.spacetime.technology ${{ secrets.ATTIC_TOKEN }} --set-default
+          /run/current-system/sw/bin/attic login attic https://attic.spacetime.technology ${{ secrets.ATTIC_TOKEN }} --set-default
       - name: build
         run: |
+          export PATH=/run/current-system/sw/bin:$PATH
           bash tools/build-cache.sh

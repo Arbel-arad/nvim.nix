@@ -15,3 +15,5 @@ explore-drv-minimal:
   nix-tree $(nix eval .#packages.x86_64-linux.nvim-minimal --raw --quiet --option warn-dirty false 2>/dev/null)
 print-config:
   nix run .#print-config --quiet --option warn-dirty false | bat --language lua
+cache:
+  bash tools/build-cache.sh
