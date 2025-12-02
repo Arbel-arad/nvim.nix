@@ -11,7 +11,7 @@ GUI_P=$(nix build .#packages.x86_64-linux.nvim-gui --no-link --json --quiet 2>/d
 printf "full size:%s\n" "$(nix path-info -h -S -s "$GUI_P" | cut -f 2,3)"
 printf "minimal size:%s\n" "$(nix path-info -h -S -s "$MINIMAL_P" | cut -f 2,3)"
 
-attic push "$CACHE" "$DEFAULT_P" || true
 attic push "$CACHE" "$MINIMAL_P" || true
+attic push "$CACHE" "$DEFAULT_P" || true
 attic push "$CACHE" "$GUI_P" || true
 
