@@ -13,6 +13,7 @@ jobs:
       - name: deadnix
         continue-on-error: true
         run: |
+          export PATH=/run/current-system/sw/bin:$PATH
           nix run nixpkgs#deadnix -- -_ --hidden
       - name: statix
         continue-on-error: true
