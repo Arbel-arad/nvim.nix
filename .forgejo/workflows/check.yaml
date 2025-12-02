@@ -1,0 +1,21 @@
+name: Nix code checkout
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  deadnix:
+    name: Deadnix
+    runs-on: buildnix
+    steps:
+      - uses: actions/checkout@v4
+      - name: deadnix
+        continue-on-error: true
+        uses: astro/deadnix-action@main
+      - name: statix
+        continue-on-error: true
+        run: |
+          export PATH=/run/current-system/sw/bin:$PATH
+          nix run nixpkgs#statix -- check
+

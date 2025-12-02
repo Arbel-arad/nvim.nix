@@ -19,3 +19,8 @@ jobs:
         run: |
           export PATH=/run/current-system/sw/bin:$PATH
           bash tools/build-cache.sh
+# Run again to ensure cache completeness
+      - name: cache
+        run: |
+          export PATH=/run/current-system/sw/bin:$PATH
+          bash tools/build-cache.sh

@@ -1,5 +1,9 @@
 { nvimSize, pkgs }:{
 
+  globals = {
+    editorconfig = true;
+  };
+
   autocomplete = { # Which is better?
     nvim-cmp = {
       enable = true;
