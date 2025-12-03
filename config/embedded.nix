@@ -11,7 +11,7 @@ in {
   ];
 
   lazy = {
-    plugins = {
+    plugins = lib.mkIf enabled {
       "nvim-platformio" = {
         inherit enabled;
         package = pkgs.vimUtils.buildVimPlugin {
@@ -72,7 +72,7 @@ in {
         ];
       };
 
-      "arduino-nvim" = {
+      "arduino-nvim" = lib.mkIf enabled {
         enabled = false;
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "arduino-nvim";

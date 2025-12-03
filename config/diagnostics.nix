@@ -16,6 +16,7 @@
       update_in_insert = true;
 
       virtual_text = {
+        # current_line causes "flickering" when there are multiple entries on the same line
         current_line = false;
         #format = lib.generators.mkLuaInline /* lua */ ''
         #  function(diagnostic)

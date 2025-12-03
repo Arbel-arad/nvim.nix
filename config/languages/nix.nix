@@ -33,7 +33,7 @@
         settings.nil = {
           diagnostics = {
             ignored = [
-              "unused_binding"
+              #"unused_binding"
               "unused_with"
             ];
           };
@@ -71,11 +71,19 @@
           nixpkgs = {
             expr = "import <nixpkgs> { }";
           };
+
           formatting = {
             command = [
               (lib.getExe pkgs.nixfmt)
             ];
           };
+
+          diagnostic = {
+            suppress = [
+              "sema-unused-def-let"
+            ];
+          };
+
           options = let
 
             lsp-input = inputs.lsp-inputs + /.;
@@ -98,6 +106,7 @@
             };
           };
         };
+
         capabilities = {
 
 

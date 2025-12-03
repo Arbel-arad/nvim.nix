@@ -1,4 +1,8 @@
-{ nvimSize, inputs, pkgs, lib }:{
+{ nvimSize, inputs, pkgs, lib }: let
+
+  enableExtra = nvimSize <= 300;
+
+in {
   lsp = {
     enable = true;
     formatOnSave = false;
@@ -41,6 +45,11 @@
 
       };
       setupOpts = {
+        win = {
+          type = "split";
+          position = "right";
+        };
+
         modes = {
           diagnostics = {
             auto_open = false;
@@ -167,7 +176,7 @@
 
       };
 
-      fish-lsp = {
+      fish-lsp = lib.mkIf enableExtra {
         cmd = [
           "${lib.getExe pkgs.fish-lsp}"
           "start"

@@ -1,11 +1,17 @@
-{ nvimSize, pkgs, lib }: {
+{ nvimSize, pkgs, lib }: let
+
+  enableExtra = nvimSize <= 400;
+
+in {
 
   extraPackages = [
     pkgs.cppcheck
-    pkgs.ccls
 
     pkgs.gnumake
     pkgs.cmakeMinimal
+
+  ] ++ lib.optionals enableExtra [
+    pkgs.ccls
 
     pkgs.gcc_latest
     pkgs.gcc-arm-embedded
@@ -33,8 +39,8 @@
 
   lazy = {
     plugins = {
-      "ccls-nvim" = {
-        enabled = true;
+      "ccls-nvim" = lib.mkIf enableExtra {
+        enabled = enableExtra;
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "ccls-nvim";
           version = "0";

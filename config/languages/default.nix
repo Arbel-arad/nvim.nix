@@ -42,7 +42,7 @@
       };
 
       ts = {
-        enable = true;
+        enable = enableExtra;
         extraDiagnostics.enable = true;
       };
 

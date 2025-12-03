@@ -16,9 +16,6 @@ in {
     pkgs.zellij
     pkgs.openssh
     pkgs.hyperfine
-    pkgs.ripgrep-all
-    pkgs.imagemagick
-    pkgs.attic-client
 
     pkgs.lazysql
     pkgs.gitui
@@ -33,6 +30,15 @@ in {
 
     # For vim.lsp file watcher performance?
     pkgs.inotify-tools
+
+  ] ++ lib.optionals enableExtra [
+    pkgs.ripgrep-all
+    pkgs.imagemagick
+    pkgs.attic-client
+
+    # Networking
+    pkgs.termshark
+    pkgs.bandwhich
   ];
   enableLuaLoader = true;
 
@@ -89,6 +95,8 @@ in {
             sha256 = "sha256-W6iO5f+q4busBuP0psE7sikn87wwc1BkztsMnVkjnW0=";
           };
         });
+
+        lazy = true;
       };
 
       "vim-suda" = {
