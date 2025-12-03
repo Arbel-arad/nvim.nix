@@ -151,6 +151,9 @@
 
             (lib.generators.mkLuaInline /* lua */ ''
               function()
+                -- Disable folding on dashboard?
+                vim.opt_local.foldenable = false
+
                 local in_git = Snacks.git.get_root() ~= nil
                 local cmds = {
                   {
@@ -283,6 +286,7 @@
         nvim-cmp.enable = true;
       };
     };
+
     nvim-ufo = {
       enable = true;
       setupOpts = {
@@ -317,6 +321,7 @@
         '';
       };
     };
+
     noice = {
       enable = true; # should i use this?
     };
