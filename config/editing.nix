@@ -40,7 +40,52 @@
     };
 
     blink-cmp = {
-      enable = false;
+      #enable = true;
+
+      sourcePlugins = {
+        ripgrep = {
+          enable = true;
+        };
+
+        spell = {
+          enable = true;
+        };
+
+        emoji = {
+          enable = true;
+        };
+      };
+
+      setupOpts = {
+        sources = {
+          default = [
+            "lsp"
+            "path"
+            "snippets"
+            "buffer"
+          ];
+        };
+
+        cmdline = {
+          keymap = {
+            preset = "default";
+          };
+        };
+
+        signature = {
+          enabled = true;
+        };
+
+        completion = {
+          documentation = {
+            auto_show = true;
+          };
+        };
+
+        fuzzy = {
+          implementation = "prefer_rust_with_warning";
+        };
+      };
     };
   };
 

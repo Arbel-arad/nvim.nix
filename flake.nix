@@ -42,53 +42,56 @@
   };
 
   outputs = { self, ... }@inputs:
-  inputs.flake-parts.lib.mkFlake { inherit inputs self; } {
-  flake = let
-
-    pkgs = import inputs.nixpkgs {
-      system = "x86_64-linux";
-    };
-
-  in {
-    # For exploring configuration in REPL
-    nvim-config = (import (self + /default.nix) {
-      inherit inputs pkgs;
-      inherit (pkgs) lib;
-      config = { };
-    }).config.programs.nvf.settings.vim;
-
-    nixosConfigurations = import ./flake/microVMs.nix {
+    inputs.flake-parts.lib.mkFlake {
       inherit inputs self;
-    };
-  };
-  systems = inputs.system.wellSupportedArches;
-    perSystem = { config, self', pkgs, lib, ... }: {
-      devShells = {
-        default = pkgs.mkShell {
-          nativeBuildInputs = [
-            self'.packages.default
-            self'.packages.nvim-gui
+    } {
+      flake = let
 
-            pkgs.nix-tree
-            pkgs.just
-            pkgs.bat
-          ];
+        pkgs = import inputs.nixpkgs {
+          system = "x86_64-linux";
+        };
+
+      in {
+        # For exploring configuration in REPL
+        nvim-config = (import (self + /default.nix) {
+          inherit inputs pkgs;
+          inherit (pkgs) lib;
+          config = { };
+        }).config.programs.nvf.settings.vim;
+
+        nixosConfigurations = import ./flake/microVMs.nix {
+          inherit inputs self;
         };
       };
-      packages = import ./flake/package.nix { inherit config inputs self self' pkgs lib; };
-      apps = import ./flake/apps.nix { inherit self self' pkgs; };
+
+      systems = inputs.system.wellSupportedArches;
+      perSystem = { config, self', pkgs, lib, ... }: {
+        devShells = {
+          default = pkgs.mkShell {
+            nativeBuildInputs = [
+              self'.packages.default
+              self'.packages.nvim-gui
+
+              pkgs.nix-tree
+              pkgs.just
+              pkgs.bat
+            ];
+          };
+        };
+        packages = import ./flake/package.nix { inherit config inputs self self' pkgs lib; };
+        apps = import ./flake/apps.nix { inherit self self' pkgs; };
+      };
     };
-  };
 
 
-  nixConfig = {
-    extra-substituters = [
-      "http://buildnix.spacetime.technology:8000"
-      "https://attic.spacetime.technology/buildnix"
-    ];
-    extra-trusted-public-keys = [
-      "buildnix.spacetime.technology:cUI+2I7OJ/ufQg6Or2NP7mzPwdLQ7LUny80UxyFr25A="
-      "buildnix:Ns8cOyVRHbn/FIui31sgg7b0LG4wNl+GmcOdTw8B73o="
-    ];
-  };
+    nixConfig = {
+      extra-substituters = [
+        "http://buildnix.spacetime.technology:8000"
+        "https://attic.spacetime.technology/buildnix"
+      ];
+      extra-trusted-public-keys = [
+        "buildnix.spacetime.technology:cUI+2I7OJ/ufQg6Or2NP7mzPwdLQ7LUny80UxyFr25A="
+        "buildnix:Ns8cOyVRHbn/FIui31sgg7b0LG4wNl+GmcOdTw8B73o="
+      ];
+    };
 }

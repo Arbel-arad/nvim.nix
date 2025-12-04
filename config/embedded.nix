@@ -15,8 +15,8 @@ in {
   ];
 
   lazy = {
-    plugins = lib.mkIf enabled {
-      "nvim-platformio" = {
+    plugins = {
+      "nvim-platformio" = lib.mkIf enabled {
         inherit enabled;
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "nvim-platformio";

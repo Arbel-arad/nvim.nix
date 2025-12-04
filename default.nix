@@ -18,6 +18,7 @@ in {
   config = {
     programs = {
       nvf = lib.recursiveUpdate {
+        enableManpages = true;
         settings = {
 
         };

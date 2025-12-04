@@ -16,6 +16,7 @@ in {
     };
 
     lspSignature = {
+      # blink-cmp has an integrated replacement
       enable = true;
     };
 
