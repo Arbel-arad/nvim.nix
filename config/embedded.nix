@@ -7,7 +7,11 @@ in {
     pkgs.rshell
     pkgs.adafruit-ampy
 
+    # Generic embedded project framework
     pkgs.platformio-core
+
+    # For teensy boards
+    pkgs.tytools
   ];
 
   lazy = {

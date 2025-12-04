@@ -50,7 +50,6 @@
     };
 
   in {
-
     # For exploring configuration in REPL
     nvim-config = (import (self + /default.nix) {
       inherit inputs pkgs;
