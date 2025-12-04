@@ -1,5 +1,11 @@
 { nvimSize, pkgs }:{
 
+  options = {
+    # Apparently these break treesitter's auto-indent functionality
+    autoindent = false;
+    smartindent = false;
+  };
+
   globals = {
     editorconfig = true;
   };

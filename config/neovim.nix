@@ -36,6 +36,7 @@
           tabstop = 2;
           shiftwidth = 2; # should be equal to tabstop
 
+          # Fold configuration for UFO-nvim and statuscol
           foldlevel = 99; # for folds and fillchars to show correctly
           foldcolumn = "auto:1"; # levels of folds to show
           fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
@@ -45,9 +46,6 @@
 
           mousescroll = "ver:1,hor:1";
           mousemoveevent = true;
-
-          autoindent = true;
-          smartindent = true;
         };
 
         globals = {

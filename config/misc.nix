@@ -40,6 +40,7 @@ in {
     pkgs.termshark
     pkgs.bandwhich
   ];
+
   enableLuaLoader = true;
 
   withPython3 = enableExtra;
@@ -128,14 +129,17 @@ in {
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "direnv.nvim";
           version = "0";
+
           src = pkgs.fetchFromGitHub {
             owner = "notashelf";
             repo = "direnv.nvim";
             rev = "4dfc8758a1deab45e37b7f3661e0fd3759d85788";
             hash = "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE=";
           };
+
           doCheck = true;
         };
+
         lazy = true;
 
         event = [
