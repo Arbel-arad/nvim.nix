@@ -1,4 +1,12 @@
-{ nvimSize, pkgs, lib }:{
+{ nvimSize, pkgs, lib }: let
+
+  enableExtra = nvimSize <= 400;
+
+in {
+  extraPackages = lib.optionals enableExtra [
+    pkgs.vale
+  ];
+
   diagnostics = {
     enable = true;
     config = {
@@ -41,7 +49,15 @@
     };
     nvim-lint = {
       enable = true;
+
       linters = {
+        # Writing style linter
+        vale = {
+          # Require vale configuration before running
+          required_files = [
+            ".vale.ini"
+          ];
+        };
 
         # verilog linter
         verilator = {
@@ -67,7 +83,14 @@
           cmd = "${lib.getExe pkgs.zig-zlint}";
         };
       };
+
       linters_by_ft = {
+        org = [
+          "vale"
+        ];
+        markdown = [
+          "vale"
+        ];
         c = [
           "cppcheck"
         ];

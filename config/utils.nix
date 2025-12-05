@@ -35,13 +35,87 @@
     diffview-nvim.enable = true;
 
     images = {
+      img-clip = {
+        # Allow pasting images to markup
+        #enable = true;
+      };
+
       image-nvim = {
         enable = true;
-        setupOpts.backend = "kitty";
+        setupOpts = {
+          backend = "kitty";
+
+          editor_only_render_when_focused = true;
+
+          window_overlap_clear_enabled = true;
+          window_overlap_clear_ft_ignore = [
+            "cmp_menu"
+            "cmp_docs"
+            "snacks_notif"
+            "scrollview"
+            "scrollview_sign"
+          ];
+
+          # Unclear if this section works
+          editorOnlyRenderWhenFocused = true;
+          windowOverlapClear = {
+            enable = true;
+            ftIgnore = [
+              "cmp_menu"
+              "cmp_docs"
+              ""
+            ];
+          };
+
+          maxHeightWindowPercentage = 35;
+          maxWidthWindowPercentage = 100;
+
+          integrations = let
+
+            default = {
+              clear_in_insert_mode = true;
+              download_remote_images = false;
+              only_render_image_at_cursor = true;
+              only_render_image_at_cursor_mode = "inline";
+            };
+
+          in {
+            markdown = default // {
+              enable = true;
+              clearInInsertMode = true;
+              onlyRenderAtCursor = true;
+            };
+
+            neorg = default // {
+              enable = true;
+              clearInInsertMode = true;
+              onlyRenderAtCursor = true;
+            };
+
+            typst = default;
+
+            html = default;
+            css = default;
+          };
+
+          hijackFilePatterns = [
+            "*.png"
+            "*.jpg"
+            "*.jpeg"
+            "*.gif"
+            "*.webp"
+          ];
+        };
       };
     };
 
     surround = {
+      enable = true;
+      # Use alternative set of keybindings that avoids conflicts with other plugins
+      useVendoredKeybindings = true;
+    };
+
+    multicursors = {
       enable = true;
     };
 
@@ -49,12 +123,24 @@
       enable = true;
     };
 
-    multicursors = {
+    sleuth = {
       enable = true;
     };
 
-    sleuth = {
+    undotree = {
       enable = true;
+    };
+
+    smart-splits = {
+      enable = true;
+
+      keymaps = {
+
+      };
+
+      setupOpts = {
+
+      };
     };
   };
 
@@ -62,6 +148,7 @@
     todo-comments = {
       enable = true;
     };
+
     neorg = {
       enable = true;
       treesitter = {
@@ -72,12 +159,14 @@
           "core.defaults" = {
             enable = true;
           };
+
           "core.concealer" = {
             enable = true;
             config = {
 
             };
           };
+
           "core.completion" = {
             enable = true;
             config = {
