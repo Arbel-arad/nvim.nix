@@ -30,9 +30,13 @@
       };
     };
 
-    icon-picker.enable = true;
+    icon-picker = {
+      enable = true;
+    };
 
-    diffview-nvim.enable = true;
+    diffview-nvim = {
+      enable = true;
+    };
 
     images = {
       img-clip = {
@@ -129,18 +133,6 @@
 
     undotree = {
       enable = true;
-    };
-
-    smart-splits = {
-      enable = true;
-
-      keymaps = {
-
-      };
-
-      setupOpts = {
-
-      };
     };
   };
 

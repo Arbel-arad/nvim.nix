@@ -20,7 +20,7 @@
       (import ./keymaps.nix { inherit pkgs lib; })
       (import ./navigation.nix { inherit nvimSize; })
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
-      (import ./plugins { inherit pkgs lib lib'; })
+      (import ./plugins { inherit nvimSize pkgs lib lib'; })
       (import ./tests.nix { inherit pkgs lib; })
       (import ./remote.nix { inherit nvimSize pkgs lib; })
       (import ./spellcheck.nix { inherit pkgs; })

@@ -3,6 +3,7 @@
     plugins = {
       orgmode = {
         package = pkgs.vimPlugins.orgmode;
+
         setupModule = "orgmode";
 
         setupOpts = {
@@ -17,7 +18,37 @@
           };
         };
 
+        lazy = false;
+
+        ft = [
+          "org"
+        ];
+
+        cmd = [
+          "Org"
+        ];
+
+        event = [
+          # "BufEnter"
+        ];
+      };
+
+      "org-roam.nvim" = {
+        #enabled = false;
+
+        package = pkgs.vimPlugins.org-roam-nvim;
+
+        setupModule = "org-roam";
+
+        setupOpts = {
+          directory = "~/.org-roam";
+          org_files = [
+
+          ];
+        };
+
         lazy = true;
+
         ft = [
           "org"
         ];
@@ -31,30 +62,13 @@
         ];
       };
 
-      "org-roam.nvim" = {
-        package = pkgs.vimPlugins.org-roam-nvim;
-        setupModule = "org-roam";
-
-        setupOpts = {
-          directory = "~/.org-roam";
-          org_files = [
-
-          ];
-        };
-
-        lazy = true;
-        ft = [
-          "org"
-        ];
-
-        cmd = [
-        ];
-      };
-
       org-bullets = {
+        #enabled = false;
+
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "org-bullets";
           version = "0";
+
           src = pkgs.fetchFromGitHub {
             owner = "nvim-orgmode";
             repo = "org-bullets.nvim";
@@ -70,6 +84,7 @@
         };
 
         lazy = true;
+
         ft = [
           "org"
         ];
@@ -79,11 +94,12 @@
         ];
 
         event = [
-          "BufEnter"
+          #"BufEnter"
         ];
       };
     };
   };
+
   treesitter = {
     grammars = [
       pkgs.luajitPackages.tree-sitter-orgmode
