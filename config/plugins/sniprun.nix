@@ -4,7 +4,13 @@
 
 in {
   extraPackages = lib.optionals enableExtra [
+
+    # Rust
     pkgs.evcxr
+
+    pkgs.lua
+
+    pkgs.R
   ];
 
   lazy = {
@@ -16,7 +22,7 @@ in {
 
         setupModule = "sniprun";
 
-        setupOpts = {
+        setupOpts = if !enableExtra then { } else {
           repl_enable = [
             "Rust_original"
           ];
@@ -37,12 +43,24 @@ in {
               compiler = "${pkgs.rustc}/bin/rustc";
             };
 
+            C_original = {
+              compiler = "${lib.getExe pkgs.gcc_latest}";
+            };
+
             TypeScript_original = {
               interpreter = "${lib.getExe pkgs.nodejs}";
             };
 
             SQL_original = {
               interpreter = "${lib.getExe pkgs.usql}";
+            };
+
+            Lua_original = {
+              interpreter = "${lib.getExe pkgs.lua}";
+            };
+
+            R_original = {
+              interpreter = "${pkgs.R}/bin/Rscript";
             };
 
             OrgMode_original = {

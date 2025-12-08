@@ -61,7 +61,7 @@ in {
 
         # verilog linter
         verilator = {
-          cmd = "${pkgs.verilator}/bin/verilator";
+          cmd = if enableExtra then "${pkgs.verilator}/bin/verilator" else "false";
 
           args = [
             "-sv"

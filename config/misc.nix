@@ -4,7 +4,10 @@
 in {
 
   extraPackages = [
-    pkgs.git
+    (if nvimSize <= 500
+      then pkgs.gitFull
+      else pkgs.gitMinimal
+    )
     pkgs.fzf
     # jq-LSP???
     pkgs.jq

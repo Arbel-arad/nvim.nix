@@ -12,6 +12,7 @@
         flake-parts.follows = "flake-parts";
       };
     };
+
     nvf = {
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/nvf?shallow=1";
       inputs = {
@@ -19,10 +20,12 @@
         flake-parts.follows = "flake-parts";
       };
     };
+
     spectrum-os = {
       url = "git+https://forgejo.spacetime.technology/mirrors/spectrum-os?shallow=1";
       flake = false;
     };
+
     microvm = {
       url = "git+https://forgejo.spacetime.technology/arbel/microvm.nix?shallow=1";
       inputs = {
@@ -31,6 +34,7 @@
         flake-utils.inputs.systems.follows = "nvf/systems";
       };
     };
+
     lsp-inputs = {
       url = "git+https://forgejo.spacetime.technology/arbel/nix-lsp-inputs?shallow=1";
       inputs = {
@@ -72,6 +76,7 @@
               self'.packages.default
               self'.packages.nvim-gui
 
+              pkgs.attic-client
               pkgs.nix-tree
               pkgs.just
               pkgs.bat

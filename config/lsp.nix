@@ -198,7 +198,7 @@ in {
         ];
       };
 
-      awk-language-server = {
+      awk-language-server = lib.mkIf enableExtra {
         cmd = [
           "${lib.getExe pkgs.awk-language-server}"
         ];

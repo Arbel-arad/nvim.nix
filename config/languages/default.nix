@@ -36,7 +36,7 @@
           codeActions = true;
         };
         format = {
-          enable = true;
+          enable = enableExtra;
           type = "rustfmt";
         };
       };
