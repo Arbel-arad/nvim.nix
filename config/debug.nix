@@ -1,4 +1,15 @@
-{ nvimSize, pkgs, lib }:{
+{ nvimSize, pkgs, lib }: let
+
+enableExtra = nvimSize <= 100;
+
+in {
+
+  extraPackages = lib.optionals enableExtra [
+    pkgs.qemu_full
+    pkgs.openocd
+    pkgs.gcc-arm-embedded
+  ];
+
   debugger = {
     nvim-dap = {
       enable = true;
