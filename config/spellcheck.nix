@@ -1,4 +1,4 @@
-{ pkgs }: let
+{ nvf, pkgs }: let
 
   source = "https://ftp.nluug.nl/pub/vim/runtime/spell/";
   mkSpell = file: hash: {
@@ -12,6 +12,8 @@
 in {
 
   additionalRuntimePaths = [
+    ./plugins/spell-lists
+
     (builtins.path {
       name = "spell-files";
       path = pkgs.linkFarm "spell" [
@@ -23,13 +25,21 @@ in {
 
   spellcheck = {
     enable = true;
+
     languages = [
       "en"
       "he"
     ];
+
     programmingWordlist = {
       enable = true;
     };
   };
 
+  # Append location of the programming word list
+  #luaConfigRC = {
+  #  programming-word-location = nvf.lib.nvim.dag.entryAfter [ "vim-dirtytalk" ] /* lua */ ''
+  #    vim.opt.rtp:append(vim.fn.stdpath 'data' .. '/site')
+  #  '';
+  #};
 }
