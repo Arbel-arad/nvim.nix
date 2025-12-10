@@ -1,7 +1,17 @@
-{ pkgs, lib }:{
+{ nvimSize, nvf, pkgs, lib }: let
+
+  enabled = nvimSize <= 400;
+
+  dag = nvf.lib.nvim.dag;
+
+in {
   lazy = {
     plugins = {
       orgmode = {
+        inherit enabled;
+
+        priority = 2;
+
         package = pkgs.vimPlugins.orgmode;
 
         setupModule = "orgmode";
@@ -36,6 +46,8 @@
       "org-roam.nvim" = {
         #enabled = false;
 
+        priority = 1;
+
         package = pkgs.vimPlugins.org-roam-nvim;
 
         setupModule = "org-roam";
@@ -64,6 +76,8 @@
 
       org-bullets = {
         #enabled = false;
+
+        priority = 3;
 
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "org-bullets";
