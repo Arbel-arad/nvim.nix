@@ -1,6 +1,7 @@
 { nvimSize, pkgs, lib }: let
 
   enabled = nvimSize <= 100;
+
 in {
   extraPackages = lib.optionals enabled [
     # For micropython
@@ -12,10 +13,14 @@ in {
 
     # For teensy boards
     pkgs.tytools
+
+    # For embedded rust
+    pkgs.probe-rs-tools
+    pkgs.ravedude
   ];
 
   lazy = {
-    plugins = {
+    plugins = if !enabled then {} else {
       "nvim-platformio" = lib.mkIf enabled {
         inherit enabled;
         package = pkgs.vimUtils.buildVimPlugin {

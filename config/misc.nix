@@ -24,11 +24,6 @@ in {
     pkgs.gitui
     pkgs.btop
 
-    # For rust
-    pkgs.cargo
-    pkgs.rustc
-    pkgs.clippy
-
     pkgs.zig
 
     # For vim.lsp file watcher performance?

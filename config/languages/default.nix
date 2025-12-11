@@ -2,7 +2,7 @@
   (import ./c-cpp.nix { inherit nvimSize pkgs lib; })
   (import ./nix.nix { inherit inputs pkgs lib; })
   (import ./openscad.nix { inherit pkgs lib; })
-  (import ./rust.nix { inherit pkgs lib; })
+  (import ./rust.nix { inherit nvimSize pkgs lib; })
   (import ./zig.nix { inherit pkgs lib; })
   (import ./dart.nix { inherit nvimSize pkgs lib; })
 
@@ -17,29 +17,6 @@
       enableExtraDiagnostics = true;
       enableDAP = nvimSize <= 300;
 
-      rust = {
-        enable = true;
-        lsp = {
-          enable = true;
-          opts = /* lua */ ''
-            ['rust-analyzer'] = {
-            cargo = {allFeature = true},
-            checkOnSave = true,
-              procMacro = {
-                enable = true,
-              },
-            },
-          '';
-        };
-        crates = {
-          enable = true;
-          codeActions = true;
-        };
-        format = {
-          enable = enableExtra;
-          type = "rustfmt";
-        };
-      };
 
       ts = {
         enable = enableExtra;
