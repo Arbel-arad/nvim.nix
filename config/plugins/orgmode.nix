@@ -4,13 +4,15 @@
 
   dag = nvf.lib.nvim.dag;
 
+  org_priority = 100;
+
 in {
   lazy = {
     plugins = {
       orgmode = {
         inherit enabled;
 
-        priority = 2;
+        priority = org_priority + 10;
 
         package = pkgs.vimPlugins.orgmode;
 
@@ -44,9 +46,10 @@ in {
       };
 
       "org-roam.nvim" = {
+        inherit enabled;
         #enabled = false;
 
-        priority = 1;
+        priority = org_priority + 5;
 
         package = pkgs.vimPlugins.org-roam-nvim;
 
@@ -59,7 +62,7 @@ in {
           ];
         };
 
-        lazy = true;
+        lazy = false;
 
         ft = [
           "org"
@@ -75,9 +78,10 @@ in {
       };
 
       org-bullets = {
+        inherit enabled;
         #enabled = false;
 
-        priority = 3;
+        priority = org_priority + 1;
 
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "org-bullets";
@@ -108,7 +112,7 @@ in {
         ];
 
         event = [
-          #"BufEnter"
+          "BufEnter"
         ];
       };
     };

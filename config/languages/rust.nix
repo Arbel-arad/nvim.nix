@@ -28,14 +28,36 @@ in {
         '';
       };
 
-      crates = {
-        enable = true;
-        codeActions = true;
+      extensions = {
+        crates-nvim = {
+          enable = true;
+
+          setupOpts = {
+            completion = {
+              crates = {
+                enabled = true;
+
+                max_results = 10;
+                min_chars = 5;
+              };
+            };
+
+            lsp = {
+              enabled = true;
+
+              actions = true;
+              completion = true;
+              hover = true;
+            };
+          };
+        };
       };
 
       format = {
         enable = true;
-        type = "rustfmt";
+        type = [
+          "rustfmt"
+        ];
       };
     };
   };
