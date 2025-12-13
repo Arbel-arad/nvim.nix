@@ -31,7 +31,7 @@ in {
     ];
   }).neovim;
 
-  inherit (zellij) nvf-zellij;
+  inherit (zellij) nvim-zellij;
 
   #inherit ((import ../packages/vm.nix { inherit pkgs; })) vm-gui;
 }

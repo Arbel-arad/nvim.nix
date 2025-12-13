@@ -2,7 +2,7 @@
 
   enabled = nvimSize <= 400;
 
-  dag = nvf.lib.nvim.dag;
+  inherit (nvf.lib.nvim) dag;
 
   org_priority = 100;
 
@@ -77,7 +77,7 @@ in {
         ];
       };
 
-      org-bullets = {
+      org-bullets = lib.mkIf enabled {
         inherit enabled;
         #enabled = false;
 
