@@ -1,4 +1,8 @@
-{ config, inputs, self, self', pkgs, lib }: {
+{ config, inputs, self, self', pkgs, lib }: let
+
+  zellij = import (self + /tools/zellij/zellij.nix) { inherit self' pkgs lib; };
+
+in {
 
   default = self'.packages."nvim.nix";
 
@@ -26,6 +30,8 @@
       }).config.programs.nvf.settings
     ];
   }).neovim;
+
+  inherit (zellij) nvf-zellij;
 
   #inherit ((import ../packages/vm.nix { inherit pkgs; })) vm-gui;
 }

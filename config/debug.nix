@@ -13,9 +13,11 @@ in {
   debugger = {
     nvim-dap = {
       enable = true;
+
       ui = {
         enable = true;
       };
+
       sources = {
         clang-debugger = lib.mkForce /* lua */ ''
           dap.adapters.lldb = {

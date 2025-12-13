@@ -12,10 +12,10 @@
       enableExtra = nvimSize <= 300;
 
     in {
-      enableFormat = true;
+      enableFormat = enableExtra;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
-      enableDAP = nvimSize <= 300;
+      enableDAP = nvimSize <= 400;
 
 
       ts = {
@@ -25,13 +25,9 @@
 
       python = {
         enable = true;
-      };
 
-      zig = {
-        enable = true;
         lsp = {
-          # Configured manually
-          enable = false;
+          enable = enableExtra;
         };
       };
 
@@ -41,12 +37,16 @@
 
       markdown = {
         enable = true;
+
         extensions = {
           render-markdown-nvim = {
               enable = true;
           };
         };
-        extraDiagnostics.enable = true;
+
+        extraDiagnostics = {
+          enable = true;
+        };
       };
 
       html = {
@@ -58,7 +58,7 @@
       };
 
       go = {
-        enable = true;
+        enable = enableExtra;
       };
 
       lua = {
@@ -94,17 +94,20 @@
       };
 
       terraform = {
-        enable = true;
+        enable = enableExtra;
       };
 
       sql = {
         enable = true;
+
         format = {
-          enable = true;
+          enable = enableExtra;
         };
+
         extraDiagnostics = {
-          enable = true;
+          enable = enableExtra;
         };
+
         lsp = {
           enable = true;
         };
@@ -116,6 +119,7 @@
 
       typst = {
         enable = true;
+
         extensions = {
           typst-concealer = {
             enable = true;
@@ -131,9 +135,11 @@
 
       dart = {
         enable = enableExtra;
+
         dap = {
           enable = true;
         };
+
         lsp = {
           enable = false;
         };
@@ -176,17 +182,22 @@
 
       julia = {
         enable = enableExtra;
+
         lsp = {
           enable = true;
         };
       };
 
       helm = {
-        enable = true;
+        enable = enableExtra;
       };
 
       wgsl = {
-        enable = true;
+        enable = enableExtra;
+      };
+
+      just = {
+        enable = enableExtra;
       };
     };
   }

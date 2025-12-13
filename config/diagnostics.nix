@@ -78,10 +78,6 @@ in {
 
         };
 
-        # zig zlint
-        zlint = {
-          cmd = "${lib.getExe pkgs.zig-zlint}";
-        };
       };
 
       linters_by_ft = {
@@ -102,9 +98,6 @@ in {
         ];
         verilog = [
           "verilator"
-        ];
-        zig = [
-          "zlint"
         ];
       };
     };

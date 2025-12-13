@@ -100,38 +100,6 @@ in {
         };
       };
 
-      zls = {
-        root_markers = [
-          ".git"
-          "build.zig"
-          "build.zig.zon"
-        ];
-
-        cmd = [
-          "${lib.getExe pkgs.zls}"
-          "--config-path"
-          "${(pkgs.formats.json { }).generate "zls.json" {
-            warn_style = true;
-            #enable_build_on_save = true;
-            build_on_save_args = [
-              #"install"
-              #  "-fno-emit-bin"
-            ];
-          }}"
-        ];
-
-        filetypes = [
-          "zig"
-          "zon"
-        ];
-
-        settings = {
-          zls = {
-            enable_build_on_save = true;
-          };
-        };
-      };
-
       harper-ls = {
         root_markers = [
           ".git"
@@ -209,7 +177,7 @@ in {
       };
 
       # Ruff python linter/LSP
-      ruff = {
+      ruff = lib.mkIf enableExtra {
         cmd = [
           "${lib.getExe pkgs.ruff}"
           "server"
