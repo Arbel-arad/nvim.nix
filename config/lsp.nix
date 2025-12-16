@@ -76,7 +76,7 @@ in {
     };
 
     servers = {
-      qmlls = {
+      qmlls = lib.mkIf enableExtra {
         cmd = [
           "${pkgs.kdePackages.qtdeclarative}/bin/qmlls"
         ];

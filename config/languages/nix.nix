@@ -1,4 +1,8 @@
-{ inputs, pkgs, lib }: {
+{ nvimSize, inputs, pkgs, lib }: let
+
+  enableExtra = nvimSize <= 600;
+
+in {
 
   languages = {
     nix = {
@@ -53,20 +57,24 @@
         };
       };
 
-      nixd = {
-        enable = true;
+      nixd = lib.mkIf enableExtra{
+        enable = enableExtra;
+
         cmd = [
           "${lib.getExe pkgs.nixd}"
           "--log=error"
         ];
+
         filetypes = [
           "nix"
         ];
+
         root_markers = [
           "flake.nix"
           "flake.lock"
           ".git"
         ];
+
         settings.nixd = {
           nixpkgs = {
             expr = "import <nixpkgs> { }";

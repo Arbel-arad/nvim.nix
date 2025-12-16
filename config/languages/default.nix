@@ -1,9 +1,9 @@
 { nvimSize, inputs, pkgs, lib, lib' }: lib'.mergeAttrsList [
   (import ./c-cpp.nix { inherit nvimSize pkgs lib; })
-  (import ./nix.nix { inherit inputs pkgs lib; })
-  (import ./openscad.nix { inherit pkgs lib; })
+  (import ./nix.nix { inherit nvimSize inputs pkgs lib; })
+  (import ./openscad.nix { inherit nvimSize pkgs lib; })
   (import ./rust.nix { inherit nvimSize pkgs lib; })
-  (import ./zig.nix { inherit pkgs lib; })
+  (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./dart.nix { inherit nvimSize pkgs lib; })
 
   {
@@ -51,6 +51,9 @@
 
       html = {
         enable = true;
+        extraDiagnostics = {
+          enable = enableExtra;
+        };
       };
 
       css = {
@@ -115,10 +118,17 @@
 
       yaml = {
         enable = true;
+        lsp = {
+          enable = enableExtra;
+        };
       };
 
       typst = {
-        enable = true;
+        enable = enableExtra;
+
+        lsp = {
+          enable = enableExtra;
+        };
 
         extensions = {
           typst-concealer = {

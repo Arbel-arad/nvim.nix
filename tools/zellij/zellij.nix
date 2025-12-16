@@ -33,6 +33,7 @@
         sha256 = "13f54hf77bwcqhsbmkvpv07pwn3mblyljx15my66j6kw5zva5rbp";
       };
 
+      # Keybinds matched with Neovim
       config = pkgs.writeText "config.kdl" /* bash */ ''
         default_layout "nvim"
 
@@ -45,15 +46,15 @@
 
         keybinds {
           locked {
-            bind "Alt h" "Alt Left" { MoveFocus "Left"; }
-            bind "Alt l" "Alt Right" { MoveFocus "Right"; }
-            bind "Alt j" "Alt Down" { MoveFocus "Down"; }
-            bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+            ${mkPluginBind { keys = [ "Ctrl Alt h" "Ctrl Alt Left"  ]; name = "move_focus_or_tab"; dir = "left"; }}
+            ${mkPluginBind { keys = [ "Ctrl Alt j" "Ctrl Alt Down" ]; name = "move_focus"; dir = "down"; }}
+            ${mkPluginBind { keys = [ "Ctrl Alt k" "Ctrl Alt U"  ]; name = "move_focus"; dir = "up"; }}
+            ${mkPluginBind { keys = [ "Ctrl Alt l" "Ctrl Alt Right"    ]; name = "move_focus_or_tab"; dir = "right"; }}
 
-            ${mkPluginBind { keys = [ "Ctrl h" ]; name = "move_focus_or_tab"; dir = "left"; }}
-            ${mkPluginBind { keys = [ "Ctrl j" ]; name = "move_focus"; dir = "down"; }}
-            ${mkPluginBind { keys = [ "Ctrl k" ]; name = "move_focus"; dir = "up"; }}
-            ${mkPluginBind { keys = [ "Ctrl l" ]; name = "move_focus_or_tab"; dir = "right"; }}
+            ${mkPluginBind { keys = [ "Alt h" "Alt Left"  ]; name = "resize"; dir = "left"; }}
+            ${mkPluginBind { keys = [ "Alt j" "Alt Down" ]; name = "resize"; dir = "down"; }}
+            ${mkPluginBind { keys = [ "Alt k" "Alt Up"  ]; name = "resize"; dir = "up"; }}
+            ${mkPluginBind { keys = [ "Alt l" "Alt Right"    ]; name = "resize"; dir = "right"; }}
           }
         }
       '';

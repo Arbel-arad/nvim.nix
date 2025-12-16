@@ -24,8 +24,6 @@ in {
     pkgs.gitui
     pkgs.btop
 
-    pkgs.zig
-
     # For vim.lsp file watcher performance?
     pkgs.inotify-tools
 
@@ -112,7 +110,9 @@ in {
         setupOpts = {
 
         };
+
         lazy = true;
+
         ft = [
           "http"
         ];

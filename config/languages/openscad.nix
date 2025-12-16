@@ -1,4 +1,4 @@
-{ pkgs, lib }: {
+{ nvimSize, pkgs, lib }: if nvimSize > 200 then {} else {
 
   lsp = {
     servers = {

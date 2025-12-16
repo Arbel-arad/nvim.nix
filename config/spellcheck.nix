@@ -1,6 +1,9 @@
-{ nvf, pkgs }: let
+{ nvimSize, nvf, pkgs, lib }: let
+
+  enableExtra = nvimSize <= 100;
 
   source = "https://ftp.nluug.nl/pub/vim/runtime/spell/";
+
   mkSpell = file: hash: {
     name = "spell/${file}";
     path = builtins.fetchurl {
@@ -28,6 +31,7 @@ in {
 
     languages = [
       "en"
+    ] ++ lib.optionals enableExtra [
       "he"
     ];
 

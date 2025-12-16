@@ -1,6 +1,14 @@
-{ pkgs, lib }: {
+{ nvimSize, pkgs, lib }: let
+
+  enabled = nvimSize <= 600;
+
+in {
+  extraPackages = lib.optionals enabled [
+    pkgs.zig
+  ];
+
   languages = {
-    zig = {
+    zig = lib.mkIf enabled {
       enable = true;
 
       lsp = {
@@ -12,7 +20,7 @@
 
   lsp = {
     servers = {
-      zls = {
+      zls = lib.mkIf enabled {
         root_markers = [
           ".git"
           "build.zig"
@@ -49,7 +57,7 @@
   diagnostics = {
     nvim-lint = {
       linters = {
-        zlint = {
+        zlint = lib.mkIf enabled {
           cmd = "${lib.getExe pkgs.zig-zlint}";
         };
       };
