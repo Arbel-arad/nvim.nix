@@ -18,7 +18,8 @@
       (import ./formats.nix { inherit nvimSize; })
       (import ./editing.nix { inherit nvimSize pkgs; })
       (import ./embedded.nix { inherit nvimSize pkgs lib; })
-      (import ./interface.nix { inherit nvimSize self pkgs lib; })
+      (import ./interface.nix { inherit nvimSize pkgs lib; })
+      (import ./dashboard.nix { inherit self pkgs lib; })
       (import ./keymaps.nix { inherit pkgs lib; })
       (import ./navigation.nix { inherit nvimSize; })
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
@@ -29,6 +30,7 @@
         inherit nvimSize nvf pkgs lib lib';
       })
 
+      # One of spellcheck / diagnostics causes scroll lag
 
       {
         package = inputs.nvim-nightly.packages."${pkgs.stdenv.hostPlatform.system}".neovim;

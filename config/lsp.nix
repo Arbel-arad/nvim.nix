@@ -26,16 +26,23 @@ in {
 
     lspsaga = {
       enable = true;
+
       setupOpts = {
         ui = {
           code_action = "🟅";
         };
+
         lightbulb = {
           sign = false;
           virtual_text = true;
         };
+
         breadcrumbs = {
-          enable = true;
+          enable = false;
+        };
+
+        symbol_in_winbar = {
+          enable = false;
         };
       };
     };

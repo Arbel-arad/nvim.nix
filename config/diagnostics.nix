@@ -9,6 +9,7 @@ in {
 
   diagnostics = {
     enable = true;
+
     config = {
       signs = {
         text = lib.generators.mkLuaInline /* lua */ ''
@@ -26,6 +27,13 @@ in {
       virtual_text = {
         # current_line causes "flickering" when there are multiple entries on the same line
         current_line = false;
+
+        severity = {
+          min = lib.generators.mkLuaInline /* lua */ ''
+            vim.diagnostic.severity.WARN
+          '';
+        };
+
         #format = lib.generators.mkLuaInline /* lua */ ''
         #  function(diagnostic)
         #    local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
@@ -47,6 +55,7 @@ in {
         #'';
       };
     };
+
     nvim-lint = {
       enable = true;
 

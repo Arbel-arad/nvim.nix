@@ -7,6 +7,7 @@
 
   config = (pkgs.formats.toml {}).generate "neovide.toml" {
     maximized = true;
+
     font = {
       normal = [];
       size = 10.0;
