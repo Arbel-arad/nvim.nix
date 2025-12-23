@@ -31,7 +31,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         spectrum.follows = "spectrum-os";
-        flake-utils.inputs.systems.follows = "nvf/systems";
       };
     };
 

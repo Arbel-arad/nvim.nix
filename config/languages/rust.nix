@@ -28,6 +28,10 @@ in {
     pkgs.rustc
     pkgs.clippy
 
+    pkgs.cargo-deny
+    pkgs.cargo-bloat
+    pkgs.cargo-generate
+
     #rustowl
   ];
 

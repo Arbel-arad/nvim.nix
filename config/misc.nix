@@ -28,6 +28,9 @@ in {
     pkgs.inotify-tools
 
   ] ++ lib.optionals enableExtra [
+    # For sstrip
+    pkgs.elfkickers
+
     pkgs.ripgrep-all
     pkgs.imagemagick
     pkgs.attic-client
