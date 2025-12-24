@@ -42,6 +42,14 @@
         system.follows = "system";
       };
     };
+
+    rustowl-flake = {
+      url = "git+https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git?shallow=1";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
   };
 
   outputs = { self, ... }@inputs:

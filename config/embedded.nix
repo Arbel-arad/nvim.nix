@@ -17,6 +17,9 @@ in {
     # For embedded rust
     pkgs.probe-rs-tools
     pkgs.ravedude
+
+    pkgs.minicom
+    pkgs.tio
   ];
 
   lazy = {

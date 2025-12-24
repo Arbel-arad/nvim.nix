@@ -1,26 +1,10 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, rustowl-flake, pkgs, lib }: let
 
   enable = nvimSize <= 800;
 
   inherit (pkgs.vimUtils) buildVimPlugin;
 
-  rustowl-src = pkgs.fetchFromGitHub {
-    owner = "cordx56";
-    repo = "rustowl";
-    rev = "655bc5c37e59156954fa9af3e6466602e7dfa814";
-    hash = "sha256-vvTXzlBgJKM0VOkFL071y0Yu4NqTCk2lYMmku0savx4=";
-  };
-
-  # Requires nightly rust to build properly
-  rustowl = pkgs.rustPlatform.buildRustPackage {
-    name = "rustowl";
-
-    src = rustowl-src;
-
-    cargoLock = {
-      lockFile = rustowl-src + /Cargo.lock;
-    };
-  };
+  rustowl = rustowl-flake.packages.${pkgs.stdenv.hostPlatform.system};
 
 in {
   extraPackages = lib.optionals enable [
@@ -32,7 +16,7 @@ in {
     pkgs.cargo-bloat
     pkgs.cargo-generate
 
-    #rustowl
+    rustowl.rustowl
   ];
 
   languages = {
@@ -91,18 +75,17 @@ in {
   lazy = {
     plugins = {
       rustowl = lib.mkIf enable {
-        package = buildVimPlugin {
-          pname = "rustowl";
-          version = "0";
+        package = rustowl.rustowl-nvim;
 
-          src = rustowl-src;
-        };
+        lazy = true;
 
-        lazy = false;
-
-        ft = [
-          "rust"
+        cmd = [
+          "Rustowl"
         ];
+
+        #ft = [
+        #  "rust"
+        #];
       };
 
       # For memory layout
@@ -135,4 +118,4 @@ in {
       };
     };
   };
-}
+  }
