@@ -15,7 +15,9 @@
       enable = true;
     };
 
-    nix-develop.enable = true;
+    nix-develop = {
+      enable = true;
+    };
 
     outline.aerial-nvim = {
       enable = true;

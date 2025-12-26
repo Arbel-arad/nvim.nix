@@ -1,35 +1,55 @@
 { config, inputs, self, self', pkgs, lib }: let
 
-  zellij = import (self + /tools/zellij/zellij.nix) { inherit self' pkgs lib; };
+  zellij = import (self + /tools/zellij/zellij.nix) {
+    inherit self' pkgs lib;
+  };
+
+  mkNvim = nvimSize: (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
+      inherit pkgs;
+      modules = [
+        (
+          import (self + /default.nix) {
+            inherit nvimSize config inputs pkgs lib;
+          }
+        ).config.programs.nvf.settings
+      ];
+    }
+  ).neovim;
+
 
 in {
 
   default = self'.packages."nvim.nix";
 
-  "nvim.nix" = (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
-    inherit pkgs;
-    modules = [
-      (import (self + /default.nix) {
-        inherit config inputs pkgs lib;
-        nvimSize = 0;
-      }).config.programs.nvf.settings
+  nvim = self'.packages."nvim.nix";
+
+  "nvim.nix" = pkgs.symlinkJoin {
+    name = "nvim.nix";
+
+    paths = [
+      (mkNvim 0)
     ];
-  }).neovim;
+
+    buildInputs = [
+      pkgs.makeWrapper
+    ];
+
+    postBuild = /* bash */ ''
+      wrapProgram "$out/bin/nvim" \
+        --prefix PATH : "${lib.makeBinPath self.nvim-config.extraPackages }"
+    '';
+
+    meta = {
+      mainProgram = "nvim";
+    };
+  };
 
   nvim-gui = import (self + /packages/nvf-wrapped.nix) {
     inherit pkgs;
     nvf = self'.packages.default;
   };
 
-  "nvim-minimal" = (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
-    inherit pkgs;
-    modules = [
-      (import (self + /default.nix) {
-        inherit config inputs pkgs lib;
-        nvimSize = 999;
-      }).config.programs.nvf.settings
-    ];
-  }).neovim;
+  "nvim-minimal" = mkNvim 999;
 
   inherit (zellij) nvim-zellij;
 

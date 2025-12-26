@@ -1,4 +1,5 @@
 { nvimSize, pkgs, lib }: let
+
   enableExtra = nvimSize <= 300;
 
 in {
@@ -12,7 +13,46 @@ in {
     # jq-LSP???
     pkgs.jq
     pkgs.nix
-    pkgs.yazi
+
+    (pkgs.yazi.override {
+      # TODO: Also need to add plugins
+      settings = {
+        yazi = {
+          plugin = {
+            prepend_previewers = [
+              { name = "*justfile"; run = "yazi-plugin-bat"; }
+            ];
+          };
+
+          manager = {
+            sort_by = "natural";
+            sort_dir_first = true;
+            sort_reverse = false;
+            sort_sensitive = true;
+
+            show_hidden = true;
+            show_symlink = true;
+          };
+        };
+
+        theme = { };
+        keymap = { };
+      };
+
+      plugins = {
+        inherit (pkgs.yaziPlugins)
+          starship
+        ;
+
+        yazi-plugin-bat = pkgs.fetchFromGitHub {
+          owner = "mgumz";
+          repo = "yazi-plugin-bat";
+          rev = "4dea0a584f30247b8ca4183dc2bd38c80da0d7ea";
+          hash = "sha256-OPa8afKLZaBFL69pq5itI8xRg7u05FJthst88t6HZo0=";
+        };
+      };
+    })
+
     pkgs.fish
     pkgs.nushell
     pkgs.direnv
@@ -56,7 +96,9 @@ in {
   };
 
   notify = {
-    nvim-notify.enable = true;
+    nvim-notify = {
+      enable = true;
+    };
   };
 
   projects = {
