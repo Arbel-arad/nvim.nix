@@ -225,11 +225,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1766651930,
-        "narHash": "sha256-kTaJ3AQ+yPvk1vs5wNHaw8uNxLKp4e2t49ZM7t4QZuE=",
+        "lastModified": 1766742707,
+        "narHash": "sha256-vWRPyUDlSiFucT3dwRuYm8AdZ75kzvQg+ymsiLapMwk=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "5a1a92cc7a3d3a338fe5f610190910e220f074f6",
+        "rev": "899ec829be85b52202f0ce32c455ae4f4d60b85b",
         "type": "github"
       },
       "original": {
@@ -341,10 +341,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1766707499,
-        "narHash": "sha256-Lmn0DYvFOdAV5lMLCODSOPmvjJYPxS19d9fu3VtZ2ng=",
+        "lastModified": 1766793883,
+        "narHash": "sha256-k5pLDiwKWQfsSSwKs6UbIWiKWZo6xKNsTNPnuzHPeNo=",
         "ref": "refs/heads/master",
-        "rev": "bcdaa959f18326bccf889cfd1bd49e9d39d5f91c",
+        "rev": "6c63748c49be61297332a11c984973194638d4fb",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"

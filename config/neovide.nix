@@ -1,6 +1,9 @@
 { pkgs }: {
   globals = {
     neovide_scale_factor = 0.7;
+
+    neovide_floating_shadow = false;
+
     neovide_cursor_animation_length = 0.1;
     neovice_cursor_short_animation_length = 0;
   };

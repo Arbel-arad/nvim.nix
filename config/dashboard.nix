@@ -102,14 +102,6 @@ in {
               padding = 1;
             }
             {
-              icon = " ";
-              title = "Projects";
-              section = "projects";
-              limit = 3;
-              indent = 2;
-              padding = 1;
-            }
-            {
               icon = " ";
               title = "Recent Files";
               section = "recent_files";
@@ -117,6 +109,15 @@ in {
               indent = 2;
               padding = 1;
             }
+            {
+              icon = " ";
+              title = "Projects";
+              section = "projects";
+              limit = 3;
+              indent = 2;
+              padding = 1;
+            }
+
 
             (lib.generators.mkLuaInline /* lua */ ''
               function()
