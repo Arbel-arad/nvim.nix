@@ -45,6 +45,22 @@ in {
           })
           vim.lsp.enable('sqls')
         '';
+
+        lazy = true;
+
+        ft = [
+          "sql"
+        ];
+
+        cmd = [
+          "SqlsExecuteQuery"
+          "SqlsExecuteQueryVertical"
+          "SqlsShowDatabases"
+          "SqlsShowSchemas"
+          "SqlsShowConnections"
+          "SqlsSwitchDatabase"
+          "SqlsSwitchConnection"
+        ];
       };
     };
   };
