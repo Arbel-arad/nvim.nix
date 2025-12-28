@@ -39,10 +39,26 @@ in {
         };
 
         after = /* lua */ ''
-          vim.lsp.config('sqls', {
-              -- your custom client configuration
-            cmd = {"${lib.getExe pkgs.sqls}"};
-          })
+          local cwd = vim.fn.getcwd()
+          local config_file = io.open(".sqls.yml", r)
+
+          if config_file ~= nil then
+            io.close(config_file)
+            vim.notify("Starting sqls for "..cwd.."/.sqls.yml")
+
+            vim.lsp.config('sqls', {
+                -- your custom client configuration
+              cmd = {"${lib.getExe pkgs.sqls}", "-config", cwd.."/.sqls.yml"};
+            })
+          else
+            vim.notify("Starting sqls for global config")
+
+            vim.lsp.config('sqls', {
+                -- your custom client configuration
+              cmd = {"${lib.getExe pkgs.sqls}"};
+            })
+          end
+
           vim.lsp.enable('sqls')
         '';
 
