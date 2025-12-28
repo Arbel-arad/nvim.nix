@@ -1,5 +1,9 @@
 { pkgs }: (
   pkgs.yazi.override {
+    extraPackages = [
+      pkgs.starship
+    ];
+
     settings = {
       yazi = {
         plugin = {

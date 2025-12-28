@@ -9,6 +9,7 @@
   (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./dart.nix { inherit nvimSize pkgs lib; })
   (import ./clojure.nix { inherit nvimSize pkgs lib; })
+  (import ./sql.nix { inherit nvimSize pkgs lib; })
 
   {
     languages = let
@@ -77,6 +78,7 @@
 
       bash = {
         enable = true;
+
         extraDiagnostics = {
           enable = true;
           types = [
@@ -95,6 +97,7 @@
 
       haskell = {
         enable = nvimSize <= 0;
+
         dap = {
           enable = true;
         };
@@ -104,24 +107,9 @@
         enable = enableExtra;
       };
 
-      sql = {
-        enable = true;
-
-        format = {
-          enable = enableExtra;
-        };
-
-        extraDiagnostics = {
-          enable = enableExtra;
-        };
-
-        lsp = {
-          enable = true;
-        };
-      };
-
       yaml = {
         enable = true;
+
         lsp = {
           enable = enableExtra;
         };
