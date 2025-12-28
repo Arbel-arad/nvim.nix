@@ -1,4 +1,18 @@
-{ pkgs }: {
+{ pkgs, lib }: let
+
+  tree-sitter-language-injection = pkgs.vimUtils.buildVimPlugin {
+    pname = "tree-sitter-language-injection.nvim";
+    version = "0";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "DariusCorvus";
+      repo = "tree-sitter-language-injection.nvim";
+      rev = "5f5b962232d189017d040a55eee623daf486b393";
+      hash = "sha256-/oqleaE2CGXAx7YTz4fEDv4CtuyAWt2CfSwTZ+wvqNw=";
+    };
+  };
+
+in {
   lazy = {
     plugins = {
       "otter.nvim" = {
@@ -48,6 +62,33 @@
             desc = "Stop Otter-ls";
             action = /* lua */ "<cmd>lua require'otter'.deactivate()<cr>";
           }
+        ];
+      };
+
+      "tree-sitter-language-injection.nvim" = {
+        package = tree-sitter-language-injection;
+
+        setupModule = "tree-sitter-language-injection";
+
+        setupOpts = {
+
+        };
+
+        before = /* lua */ ''
+          local config_path = vim.fn.stdpath("config")
+
+          if vim.fn.isdirectory(config_path) == 0 then
+            vim.fn.mkdir(config_path)
+          end
+        '';
+
+        lazy = true;
+
+        ft = [
+          "python"
+          "rust"
+          "javascript"
+          "typescript"
         ];
       };
     };
