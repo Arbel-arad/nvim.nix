@@ -67,21 +67,6 @@ in {
       };
     };
 
-    otter-nvim = {
-      enable = true;
-      setupOpts = {
-        buffers = {
-          set_filetype = true;
-        };
-        lsp = {
-          diagnostic_update_event = [
-            "BufWritePost"
-            "InsertLeave"
-          ];
-        };
-      };
-    };
-
     servers = {
       qmlls = lib.mkIf enableExtra {
         cmd = [

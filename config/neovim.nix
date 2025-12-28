@@ -27,6 +27,7 @@
       (import ./remote.nix { inherit nvimSize pkgs lib; })
       (import ./spellcheck.nix { inherit nvimSize nvf pkgs lib; })
       (import ./presentation.nix { inherit nvimSize pkgs lib; })
+      (import ./injections.nix { inherit pkgs; })
       (import ./plugins {
         inherit nvimSize nvf pkgs lib lib';
       })
