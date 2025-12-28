@@ -18,7 +18,10 @@ in {
       inherit pkgs;
     })
 
-    pkgs.fish
+    (import (self + /config/tools/fish.nix) {
+      inherit pkgs;
+    })
+
     pkgs.nushell
     pkgs.direnv
     pkgs.zellij

@@ -7,7 +7,7 @@
         "n"
       ];
       silent = true;
-      action = "<cmd>Lspsaga term_toggle ${lib.getExe pkgs.fish}<cr>";
+      action = "<cmd>Lspsaga term_toggle fish<cr>";
       desc = "Lspsaga terminal";
     }
     {
