@@ -91,7 +91,9 @@
 
   treesitter = {
     enable = true;
+
     addDefaultGrammars = true;
+
     context = {
       enable = false;
       setupOpts = {
@@ -103,16 +105,20 @@
         zindex = 10;
       };
     };
+
     autotagHtml = true;
+
     highlight = {
       enable = true;
     };
+
     indent = {
       enable = true;
       disable = [
         #"nix"
       ];
     };
+
     textobjects = {
       enable = true;
     };
@@ -156,6 +162,7 @@
           "result/"
           ".direnv/"
           ".zig-cache/"
+          "%.lock"
         ];
       };
     };

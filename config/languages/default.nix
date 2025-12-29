@@ -71,8 +71,19 @@
 
       lua = {
         enable = true;
+
         extraDiagnostics = {
+          enable = enableExtra;
+          types = [
+            "luacheck"
+          ];
+        };
+
+        lsp = {
           enable = true;
+          lazydev = {
+            enable = true;
+          };
         };
       };
 

@@ -179,6 +179,31 @@ in {
           "python"
         ];
       };
+
+      lua-language-server = {
+        settings = {
+          Lua = {
+            runtime = {
+              version = "LuaJIT";
+            };
+
+            workspace = {
+              checkThirdParty = false; # ?
+              library = [
+                # This might be better defined per project
+                # (.luarc.jsonc)
+                (lib.generators.mkLuaInline /* lua */ "vim.env.VIMRUNTIME")
+              ];
+            };
+
+            diagnostics = {
+              globals = [
+                #"vim"
+              ];
+            };
+          };
+        };
+      };
     };
 
     nvim-docs-view = {
