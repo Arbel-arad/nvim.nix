@@ -8,9 +8,10 @@ in {
     pkgs.cppcheck
 
     pkgs.gnumake
-    pkgs.cmakeMinimal
 
   ] ++ lib.optionals enableExtra [
+    pkgs.cmakeMinimal
+
     pkgs.ccls
 
     pkgs.gcc_latest

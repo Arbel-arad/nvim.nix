@@ -6,12 +6,14 @@
 
     lib' = import ../flake/lib.nix { inherit lib; };
 
+    npins = import ../npins;
+
     inherit (inputs) nvf;
 
   in {
     vim = lib'.mergeAttrsList [
       (import ./misc.nix { inherit self nvimSize pkgs lib; })
-      (import ./utils.nix { inherit pkgs; })
+      (import ./utils.nix { inherit nvimSize pkgs; })
       (import ./languages { inherit nvimSize inputs pkgs lib lib'; })
       (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
       (import ./debug.nix { inherit nvimSize pkgs lib; })
@@ -24,7 +26,7 @@
       (import ./navigation.nix { inherit nvimSize; })
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
       (import ./tests.nix { inherit pkgs lib; })
-      (import ./remote.nix { inherit nvimSize pkgs lib; })
+      (import ./remote.nix { inherit nvimSize npins pkgs lib; })
       (import ./spellcheck.nix { inherit nvimSize nvf pkgs lib; })
       (import ./presentation.nix { inherit nvimSize pkgs lib; })
       (import ./injections.nix { inherit pkgs lib; })

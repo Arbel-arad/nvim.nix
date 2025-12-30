@@ -1,8 +1,15 @@
-{ pkgs }:{
+{ nvimSize, pkgs }: let
+
+  enableExtra = nvimSize <= 500;
+
+in {
   clipboard = {
     enable = true;
+
     providers = {
-      wl-copy.enable = true;
+      wl-copy = {
+        enable = enableExtra;
+      };
     };
   };
 
@@ -25,7 +32,7 @@
 
     preview = {
       markdownPreview = {
-        enable = true;
+        enable = enableExtra;
         autoStart = false;
         autoClose = true;
         lazyRefresh = true;

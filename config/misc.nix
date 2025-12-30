@@ -24,7 +24,6 @@ in {
 
     pkgs.nushell
     pkgs.direnv
-    pkgs.zellij
     pkgs.openssh
     pkgs.hyperfine
 
@@ -41,7 +40,10 @@ in {
 
     pkgs.ripgrep-all
     pkgs.imagemagick
+
     pkgs.attic-client
+
+    pkgs.zellij
 
     # Networking
     pkgs.termshark

@@ -85,13 +85,20 @@
 
               pkgs.attic-client
               pkgs.nix-tree
+              pkgs.npins
               pkgs.just
               pkgs.bat
             ];
           };
         };
-        packages = import ./flake/package.nix { inherit config inputs self self' pkgs lib; };
-        apps = import ./flake/apps.nix { inherit self self' pkgs; };
+
+        packages = import ./flake/package.nix {
+          inherit config inputs self self' pkgs lib;
+        };
+
+        apps = import ./flake/apps.nix {
+          inherit self self' pkgs;
+        };
       };
     };
 

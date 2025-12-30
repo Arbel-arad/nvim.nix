@@ -75,6 +75,12 @@ in {
         event = [
           "BufEnter"
         ];
+
+
+        /* NOTE:
+        *   If there are nodes missing from the roam search, rebuild database with
+        *   `:RoamReset sync`
+        */
       };
 
       org-bullets = lib.mkIf enabled {

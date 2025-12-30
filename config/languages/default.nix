@@ -50,7 +50,11 @@
         };
 
         extraDiagnostics = {
-          enable = true;
+          enable = enableExtra;
+        };
+
+        lsp = {
+          enable = enableExtra;
         };
       };
 
@@ -80,7 +84,7 @@
         };
 
         lsp = {
-          enable = true;
+          enable = enableExtra;
           lazydev = {
             enable = true;
           };
@@ -104,6 +108,10 @@
 
       assembly = {
         enable = true;
+
+        lsp = {
+          enable = enableExtra;
+        };
       };
 
       haskell = {
@@ -173,6 +181,7 @@
 
       r = {
         enable = enableExtra;
+
         lsp = {
           enable = true;
         };
@@ -180,11 +189,13 @@
 
       scala = {
         enable = enableExtra;
+
         fixShortmess = false;
       };
 
       elixir = {
         enable = enableExtra;
+
         elixir-tools = {
           enable = true;
         };

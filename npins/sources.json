@@ -1,0 +1,18 @@
+{
+  "pins": {
+    "distant": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "arbel-arad",
+        "repo": "distant"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "13bb5080a60be614e809d767d2ea5562cc6748d5",
+      "url": "https://github.com/arbel-arad/distant/archive/13bb5080a60be614e809d767d2ea5562cc6748d5.tar.gz",
+      "hash": "sha256-NCJzMplH+IB0GDdKPw6w7xvysd07qfG/VBLrZh22l0E="
+    }
+  },
+  "version": 7
+}

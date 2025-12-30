@@ -1,13 +1,8 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, npins, pkgs, lib }: let
 
   enableExtra = nvimSize <= 0;
 
-  distant-src = pkgs.fetchFromGitHub {
-    owner = "arbel-arad";
-    repo = "distant";
-    rev = "bd7d331ae457ed7954ec9c6e5c0202408612a2fa";
-    hash = "sha256-yq/ZuCBZ5iaF9UfzPpi20ufCOeqz+PeU/NGy4o8/aC8=";
-  };
+  distant-src = npins.distant;
 
   distant = pkgs.rustPlatform.buildRustPackage {
     name = "distant";

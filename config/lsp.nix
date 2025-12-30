@@ -92,7 +92,7 @@ in {
         };
       };
 
-      harper-ls = {
+      harper-ls = lib.mkIf enableExtra {
         root_markers = [
           ".git"
         ];
@@ -118,7 +118,7 @@ in {
         };
       };
 
-      verible-verilog-ls = {
+      verible-verilog-ls = lib.mkIf enableExtra {
         root_markers = [
           ".git"
           "verilator.f"
