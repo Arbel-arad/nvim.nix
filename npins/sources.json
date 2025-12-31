@@ -9,9 +9,23 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "13bb5080a60be614e809d767d2ea5562cc6748d5",
-      "url": "https://github.com/arbel-arad/distant/archive/13bb5080a60be614e809d767d2ea5562cc6748d5.tar.gz",
-      "hash": "sha256-NCJzMplH+IB0GDdKPw6w7xvysd07qfG/VBLrZh22l0E="
+      "revision": "d4866c24ce24ee148c951f8cddf530b8aecd1d28",
+      "url": "https://github.com/arbel-arad/distant/archive/d4866c24ce24ee148c951f8cddf530b8aecd1d28.tar.gz",
+      "hash": "sha256-n3mWr+uL6SU7+a6x2Imm/mF5vx+vXtwOUUYgw7ET9iY="
+    },
+    "flake-compat": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://forgejo.spacetime.technology/",
+        "owner": "nix-mirrors",
+        "repo": "flake-compat"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-compat/archive/5edf11c44bc78a0d334f6334cdaf7d60d732daab.tar.gz",
+      "hash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns="
     }
   },
   "version": 7

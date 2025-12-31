@@ -25,7 +25,7 @@
       (import ./keymaps.nix { inherit pkgs lib; })
       (import ./navigation.nix { inherit nvimSize; })
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
-      (import ./tests.nix { inherit pkgs lib; })
+      (import ./tests.nix { inherit nvf pkgs lib; })
       (import ./remote.nix { inherit nvimSize npins pkgs lib; })
       (import ./spellcheck.nix { inherit nvimSize nvf pkgs lib; })
       (import ./presentation.nix { inherit nvimSize pkgs lib; })
