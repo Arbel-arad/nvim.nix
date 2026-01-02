@@ -162,6 +162,7 @@
           "result/"
           ".direnv/"
           ".zig-cache/"
+          ".ccls-cache/"
           "%.lock"
         ];
       };
