@@ -125,7 +125,7 @@ in {
 
       };
 
-      "nvim-arduino" = {
+      "nvim-arduino" = lib.mkIf enabled {
         enabled = false;
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "nvim-arduino";

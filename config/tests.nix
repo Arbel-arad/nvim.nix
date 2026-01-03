@@ -1,4 +1,4 @@
-{ nvf, pkgs, lib }: {
+{ pkgs, lib }: {
 
   # Neotest seems to be broken currently
   # (at least in some languages)
@@ -136,16 +136,5 @@
     };
   };
 
-  binds = let
 
-    inherit (nvf.lib.nvim.binds) pushDownDefault;
-
-  in {
-    whichKey = {
-      register = pushDownDefault {
-        "<leader>r" = "+Run";
-        "<leader>rt" = "+Run test";
-      };
-    };
-  };
 }

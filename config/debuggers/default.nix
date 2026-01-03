@@ -10,7 +10,41 @@ in {
     pkgs.gcc-arm-embedded
   ];
 
-  debugger = {
+  keymaps = [
+    # TODO: add argument prompt
+    # Also add function to automatically select rust-specific debugger
+    {
+      mode = [
+        "n"
+      ];
+      key = "<leader>rdd";
+      action = "<cmd>DapNew<cr>";
+      desc = "DapNew";
+    }
+    {
+      mode = [
+        "n"
+      ];
+      key = "<leader>rdr";
+      action = "<cmd>RustLsp debug<cr>";
+      desc = "Debug rust";
+    }
+    {
+      mode = [
+        "n"
+      ];
+      key = "<leader>rdu";
+      action = /* lua */''
+        function()
+          require('dapui').toggle()
+        end
+      '';
+      lua = true;
+      desc = "DapUi toggle";
+    }
+  ];
+
+  debugger = lib.mkIf enableExtra {
     nvim-dap = {
       enable = true;
 
@@ -19,58 +53,23 @@ in {
       };
 
       sources = {
-        clang-debugger = lib.mkForce /* lua */ ''
-          dap.adapters.lldb = {
-            type = 'executable',
-            command = '${pkgs.clang-tools}/bin/lldb-dap',
-            name = 'lldb'
-          }
-          dap.configurations.cpp = {
-            {
-              name = 'Launch',
-              type = 'lldb',
-              request = 'launch',
-              console = "integratedTerminal",
-              program = function()
-                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-              end,
-              cwd = "''${workspaceFolder}",
-              stopOnEntry = false,
-              args = {},
-            },
-            {
-              name = "LaunchWithArgs",
-              type = "lldb",
-              request = "launch",
-              console = "integratedTerminal",
-              args = function()
-                local args_string = vim.fn.input('Arguments: ')
-                return vim.split(args_string, " +")
-              end,
-              program = function()
-                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-              end,
-              stopOnEntry = true,
-              runInTerminal = false,
-            },
-            {
-              name = "LaunchConsole",
-              type = "lldb",
-              request = "launch",
-              console = "integratedTerminal",
-              args = function()
-                local args_string = vim.fn.input('Arguments: ')
-                return vim.split(args_string, " +")
-              end,
-              program = function()
-                return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-              end,
-              stopOnEntry = true,
-              runInTerminal = true,
-            },
-          }
-          dap.configurations.c = dap.configurations.cpp
-        '';
+        clang-debugger = lib.mkForce (import ./lldb.nix {
+          inherit pkgs;
+        });
+
+        gdb-debugger = import ./gdb.nix {
+          inherit pkgs lib;
+        };
+
+        probe-rs-debugger = import ./probe-rs.nix {
+          inherit pkgs;
+        };
+
+        /* bashdb seems to be broken
+        bash-debugger = import ./bashdb.nix {
+          inherit pkgs lib;
+        };
+        */
       };
     };
   };
@@ -87,7 +86,7 @@ in {
           show_stop_reason = true,               -- show stop reason when stopped for exceptions
           commented = false,                     -- prefix virtual text with comment string
           only_first_definition = true,          -- only show virtual text at first definition (if there are multiple)
-          all_references = false,                -- show virtual text on all all references of the variable (not only definitions)
+          all_references = true,                -- show virtual text on all all references of the variable (not only definitions)
           clear_on_continue = false,             -- clear virtual text on "continue" (might cause flickering when stepping)
           --- A callback that determines how a variable is displayed or whether it should be omitted
           --- @param variable Variable https://microsoft.github.io/debug-adapter-protocol/specification#Types_Variable

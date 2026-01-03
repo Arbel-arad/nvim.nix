@@ -1,4 +1,4 @@
-{ pkgs, lib }:{
+{ nvf, pkgs, lib }:{
   keymaps = [
     # Terminals
     {
@@ -19,10 +19,12 @@
       action = /* lua */ "<cmd>lua Snacks.terminal.open()<cr>";
       desc = "Open new terminal";
     }
+
     # Search
     # set hlsearch/nohlsearch for highlighting
     {
-      key = "<ESC><ESC>";
+      #key = "<ESC><ESC>";
+      key = "<leader>q";
       mode = [
         "n"
       ];
@@ -31,11 +33,22 @@
       desc = "Clear search highlight";
     }
   ];
+  binds = let
 
-  binds = {
+    inherit (nvf.lib.nvim.binds) pushDownDefault;
+
+  in {
     whichKey = {
       enable = true;
+
+      # Add whichkey groups for test and debug runners
+      register = pushDownDefault {
+        "<leader>r" = "+Run";
+        "<leader>rt" = "+Run test";
+        "<leader>rd" = "+Run debug";
+      };
     };
+
     cheatsheet = {
       enable = true;
     };
