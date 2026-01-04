@@ -373,17 +373,50 @@
           },
 
           segments = {
-            {
-              text = { " ", builtin.foldfunc, " " },
-              condition = { builtin.not_empty, true, builtin.not_empty },
-              click = "v:lua.ScFa"
+            { -- Git signs
+              sign = {
+                namespace = { "gitsigns" },
+                maxwidth = 1,
+                auto = " "
+              },
+              click = "v:lua.ScSa",
             },
-            { -- not working
-              sign = { namespace = { "diagnostic/signs" }, maxwidth = 2, auto = true },
-              click = "v:lua.ScSa"
+            { -- Fold indicator
+              text = {
+                builtin.foldfunc,
+                " ",
+              },
+              sign = {
+                auto = "  ",
+              },
+              click = "v:lua.ScFa",
             },
-            { text = { "%s" }, click = "v:lua.ScSa" },
-            { text = { builtin.lnumfunc }, click = "v:lua.ScLa", },
+            { -- Breakpoints / other
+              sign = {
+                name = { ".*" },
+                maxwidth = 1,
+                --auto = " ",
+                auto = true,
+                --wrap = true
+              },
+              click = "v:lua.ScSa",
+            },
+            { -- Diagnostics
+              sign = {
+                namespace = { "diagnostic" },
+                maxwidth = 1,
+                colwidth = 1,
+                auto = " ",
+                wrap = true
+              },
+              click = "v:lua.ScSa",
+            },
+            { -- Line numbers
+              text = {
+                builtin.lnumfunc, " "
+              },
+              click = "v:lua.ScLa",
+            },
           },
 
           clickmod = "a",

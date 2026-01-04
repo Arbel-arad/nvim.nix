@@ -50,6 +50,7 @@ in {
 
       ui = {
         enable = true;
+        autoStart = true;
       };
 
       sources = {

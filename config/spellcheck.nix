@@ -40,6 +40,17 @@ in {
     };
   };
 
+  autocmds = [
+    {
+      event = [
+        "TermOpen"
+      ];
+      pattern = null;
+      command = "setlocal nospell";
+      desc = "Disable spellcheck for terminal buffers";
+    }
+  ];
+
   # Append location of the programming word list
   #luaConfigRC = {
   #  programming-word-location = nvf.lib.nvim.dag.entryAfter [ "vim-dirtytalk" ] /* lua */ ''
