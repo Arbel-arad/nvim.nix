@@ -67,10 +67,22 @@
               separator = {right = ''}
             }
           ''
+
           /* lua */ ''
             function()
               return require('direnv').statusline()
-            end,
+            end
+          ''
+
+          /* lua */ ''
+            function()
+              local mode = require("submode").mode()
+              if mode == nil then
+                return '''
+              else
+                return mode
+              end
+            end
           ''
         ];
       };

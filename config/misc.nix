@@ -171,6 +171,13 @@ in {
             enabled = true;
             icon = " ";
           };
+
+          keybindings = {
+            allow = "<Leader>dea";
+            deny = "<Leader>ded";
+            reload = "<Leader>der";
+            edit = "<Leader>dee";
+          };
         };
       };
 

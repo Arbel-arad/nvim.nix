@@ -26,6 +26,19 @@
       "revision": "5edf11c44bc78a0d334f6334cdaf7d60d732daab",
       "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-compat/archive/5edf11c44bc78a0d334f6334cdaf7d60d732daab.tar.gz",
       "hash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns="
+    },
+    "submode.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "pogyomo",
+        "repo": "submode.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "2094da8b2c3a3acd58d13c8c7f349623c58e284e",
+      "url": "https://github.com/pogyomo/submode.nvim/archive/2094da8b2c3a3acd58d13c8c7f349623c58e284e.tar.gz",
+      "hash": "sha256-0hZfassbzQlNu2p32K6MZY7mfLVIUQ2ZpdAC2+xZRDs="
     }
   },
   "version": 7

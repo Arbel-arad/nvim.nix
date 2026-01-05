@@ -22,7 +22,7 @@
       (import ./embedded.nix { inherit nvimSize pkgs lib; })
       (import ./interface.nix { inherit nvimSize pkgs lib; })
       (import ./dashboard.nix { inherit self pkgs lib; })
-      (import ./keymaps.nix { inherit nvf pkgs lib; })
+      (import ./keymaps.nix { inherit nvf npins pkgs lib; })
       (import ./navigation.nix { inherit nvimSize; })
       (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
       (import ./tests.nix { inherit pkgs lib; })
