@@ -32,6 +32,7 @@
       action = ":nohl<CR><C-l>";
       desc = "Clear search highlight";
     }
+
   ];
 
   binds = let

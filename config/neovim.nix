@@ -30,6 +30,7 @@
       (import ./spellcheck.nix { inherit nvimSize nvf pkgs lib; })
       (import ./presentation.nix { inherit npins nvimSize pkgs lib; })
       (import ./injections.nix { inherit npins pkgs lib; })
+      (import ./codelens.nix { inherit lib; })
       (import ./plugins {
         inherit nvimSize nvf pkgs lib lib';
       })
