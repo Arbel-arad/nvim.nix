@@ -1,15 +1,10 @@
-{ pkgs, lib }: let
+{ npins, pkgs, lib }: let
 
   tree-sitter-language-injection = pkgs.vimUtils.buildVimPlugin {
     pname = "tree-sitter-language-injection.nvim";
     version = "0";
 
-    src = pkgs.fetchFromGitHub {
-      owner = "DariusCorvus";
-      repo = "tree-sitter-language-injection.nvim";
-      rev = "5f5b962232d189017d040a55eee623daf486b393";
-      hash = "sha256-/oqleaE2CGXAx7YTz4fEDv4CtuyAWt2CfSwTZ+wvqNw=";
-    };
+    src = npins."tree-sitter-language-injection.nvim";
   };
 
 in {

@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }: let
+{ npins, nvimSize, pkgs, lib }: let
 
     enabled = nvimSize <= 900;
 
@@ -11,12 +11,7 @@ in {
           pname = "screenkey.nvim";
           version = "2.4.2";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "NStefan002";
-            repo = "screenkey.nvim";
-            rev = "ffe868e737d16d07a9792c8e04568cf8a2644cb7";
-            hash = "sha256-hVpIWF9M8Ef7Ku02hti1JS4e1vHwNk3gY9+1VZ6DB20=";
-          };
+          src = npins."screenkey.nvim";
         };
 
       in {

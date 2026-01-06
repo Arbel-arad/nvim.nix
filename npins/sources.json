@@ -1,5 +1,44 @@
 {
   "pins": {
+    "Arduino-Nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "yuukiflow",
+        "repo": "Arduino-Nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "fba550deef2acf2b400927e82775d5139c56615f",
+      "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/fba550deef2acf2b400927e82775d5139c56615f.tar.gz",
+      "hash": "sha256-0jord5abDVqU5NhlW0LhKrKdgXX1/hJlM0W0ByRXyb4="
+    },
+    "arduino-nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "glebzlat",
+        "repo": "arduino-nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "086901d0b33a330c2f6e3fe2095ad8166c093e88",
+      "url": "https://github.com/glebzlat/arduino-nvim/archive/086901d0b33a330c2f6e3fe2095ad8166c093e88.tar.gz",
+      "hash": "sha256-OHMMV4Bg+3k8BfvVJ0Cz42SX31dsdwfAYJ6w5IPfWyo="
+    },
+    "direnv.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "notashelf",
+        "repo": "direnv.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4dfc8758a1deab45e37b7f3661e0fd3759d85788",
+      "url": "https://github.com/notashelf/direnv.nvim/archive/4dfc8758a1deab45e37b7f3661e0fd3759d85788.tar.gz",
+      "hash": "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE="
+    },
     "distant": {
       "type": "Git",
       "repository": {
@@ -27,6 +66,59 @@
       "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-compat/archive/5edf11c44bc78a0d334f6334cdaf7d60d732daab.tar.gz",
       "hash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns="
     },
+    "micropython.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "jim-at-jibba",
+        "repo": "micropython.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "f124d6b166bd370338481e225f7a39b7d4a56742",
+      "url": "https://github.com/jim-at-jibba/micropython.nvim/archive/f124d6b166bd370338481e225f7a39b7d4a56742.tar.gz",
+      "hash": "sha256-tJ50rgrhPYZ0LPjN90nz7JwEtyAZH97YnHFK4SPaYZc="
+    },
+    "nvim-dap-disasm": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://codeberg.org/",
+        "owner": "Jorenar",
+        "repo": "nvim-dap-disasm"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "58d7de7623e23347619e5b3efedd6a7e896c8a7d",
+      "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/58d7de7623e23347619e5b3efedd6a7e896c8a7d.tar.gz",
+      "hash": "sha256-zMRUZ+tXV/lm1eHzfXZDZuyqWr5c6E1YOQnQ4GVUbmU="
+    },
+    "nvim-platformio.lua": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "anurag3301",
+        "repo": "nvim-platformio.lua"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "9dca64c052822ba60278594c804243f624e31cef",
+      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/9dca64c052822ba60278594c804243f624e31cef.tar.gz",
+      "hash": "sha256-oscwc0kURRJWbKHh3D/YaomBZNG8pDB8KZwvP/aepBk="
+    },
+    "screenkey.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NStefan002",
+        "repo": "screenkey.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "68f03f52faf52ccfe954e5430ce17f7590bac2a0",
+      "url": "https://github.com/NStefan002/screenkey.nvim/archive/68f03f52faf52ccfe954e5430ce17f7590bac2a0.tar.gz",
+      "hash": "sha256-HrVxE6dQBntp++9yll28bG17muAOj5uvzvUpulsZ800="
+    },
     "submode.nvim": {
       "type": "Git",
       "repository": {
@@ -39,6 +131,32 @@
       "revision": "2094da8b2c3a3acd58d13c8c7f349623c58e284e",
       "url": "https://github.com/pogyomo/submode.nvim/archive/2094da8b2c3a3acd58d13c8c7f349623c58e284e.tar.gz",
       "hash": "sha256-0hZfassbzQlNu2p32K6MZY7mfLVIUQ2ZpdAC2+xZRDs="
+    },
+    "tree-sitter-language-injection.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "DariusCorvus",
+        "repo": "tree-sitter-language-injection.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "5f5b962232d189017d040a55eee623daf486b393",
+      "url": "https://github.com/DariusCorvus/tree-sitter-language-injection.nvim/archive/5f5b962232d189017d040a55eee623daf486b393.tar.gz",
+      "hash": "sha256-/oqleaE2CGXAx7YTz4fEDv4CtuyAWt2CfSwTZ+wvqNw="
+    },
+    "trouble.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "trouble.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "bd67efe408d4816e25e8491cc5ad4088e708a69a",
+      "url": "https://github.com/folke/trouble.nvim/archive/bd67efe408d4816e25e8491cc5ad4088e708a69a.tar.gz",
+      "hash": "sha256-6U/KWjvRMxWIxcsI2xNU/ltfgkaFG4E3BdzC7brK/DI="
     }
   },
   "version": 7

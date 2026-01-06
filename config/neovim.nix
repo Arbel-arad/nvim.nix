@@ -12,14 +12,14 @@
 
   in {
     vim = lib'.mergeAttrsList [
-      (import ./misc.nix { inherit self nvimSize pkgs lib; })
+      (import ./misc.nix { inherit self npins nvimSize pkgs lib; })
       (import ./utils.nix { inherit nvimSize pkgs; })
       (import ./languages { inherit nvimSize inputs pkgs lib lib'; })
       (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
       (import ./debuggers { inherit nvimSize pkgs lib; })
       (import ./formats.nix { inherit nvimSize; })
       (import ./editing.nix { inherit nvimSize pkgs; })
-      (import ./embedded.nix { inherit nvimSize pkgs lib; })
+      (import ./embedded.nix { inherit nvimSize npins pkgs lib; })
       (import ./interface.nix { inherit nvimSize pkgs lib; })
       (import ./dashboard.nix { inherit self pkgs lib; })
       (import ./keymaps.nix { inherit nvf npins pkgs lib; })
@@ -28,8 +28,8 @@
       (import ./tests.nix { inherit pkgs lib; })
       (import ./remote.nix { inherit nvimSize npins pkgs lib; })
       (import ./spellcheck.nix { inherit nvimSize nvf pkgs lib; })
-      (import ./presentation.nix { inherit nvimSize pkgs lib; })
-      (import ./injections.nix { inherit pkgs lib; })
+      (import ./presentation.nix { inherit npins nvimSize pkgs lib; })
+      (import ./injections.nix { inherit npins pkgs lib; })
       (import ./plugins {
         inherit nvimSize nvf pkgs lib lib';
       })

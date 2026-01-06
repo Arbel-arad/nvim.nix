@@ -1,4 +1,4 @@
-{ self, nvimSize, pkgs, lib }: let
+{ self, npins, nvimSize, pkgs, lib }: let
 
   enableExtra = nvimSize <= 300;
 
@@ -98,14 +98,12 @@ in {
   lazy = {
     plugins = {
       "trouble" = {
+        enabled = true;
+
         package = lib.mkForce (pkgs.vimPlugins.trouble-nvim.overrideAttrs {
           pname = "trouble";
-          src = pkgs.fetchFromGitHub {
-            owner = "folke";
-            repo = "trouble.nvim";
-            rev = "3fb3bd737be8866e5f3a170abc70b4da8b5dd45a";
-            sha256 = "sha256-W6iO5f+q4busBuP0psE7sikn87wwc1BkztsMnVkjnW0=";
-          };
+
+          src = npins."trouble.nvim";
         });
 
         lazy = true;
@@ -143,12 +141,7 @@ in {
           pname = "direnv.nvim";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "notashelf";
-            repo = "direnv.nvim";
-            rev = "4dfc8758a1deab45e37b7f3661e0fd3759d85788";
-            hash = "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE=";
-          };
+          src = npins."direnv.nvim";
 
           doCheck = true;
         };

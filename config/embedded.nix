@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, npins, pkgs, lib }: let
 
   enabled = nvimSize <= 100;
 
@@ -17,6 +17,7 @@ in {
     # For embedded rust
     pkgs.probe-rs-tools
     pkgs.ravedude
+    pkgs.espflash
 
     pkgs.minicom
     pkgs.tio
@@ -30,12 +31,7 @@ in {
           pname = "nvim-platformio";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "anurag3301";
-            repo = "nvim-platformio.lua";
-            rev = "a8245f0243c80c2635103863f64c839b9a2d88a0";
-            hash = "sha256-iid6GdLSWr7cDqkYpRp9vR7TKJJzfp/tAYUACPOXLIc=";
-          };
+          src = npins."nvim-platformio.lua";
 
           dependencies = [
             pkgs.vimPlugins.telescope-nvim
@@ -89,12 +85,8 @@ in {
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "arduino-nvim";
           version = "0";
-          src = pkgs.fetchFromGitHub {
-            owner = "glebzlat";
-            repo = "arduino-nvim";
-            rev = "086901d0b33a330c2f6e3fe2095ad8166c093e88";
-            hash = "sha256-OHMMV4Bg+3k8BfvVJ0Cz42SX31dsdwfAYJ6w5IPfWyo=";
-          };
+
+          src = npins."arduino-nvim";
 
           dependencies = [
             pkgs.clang-tools
@@ -131,12 +123,7 @@ in {
           pname = "nvim-arduino";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "yuukiflow";
-            repo = "Arduino-Nvim";
-            rev = "fba550deef2acf2b400927e82775d5139c56615f";
-            hash = "sha256-0jord5abDVqU5NhlW0LhKrKdgXX1/hJlM0W0ByRXyb4=";
-          };
+          src = npins."Arduino-Nvim";
 
           dependencies = [
             pkgs.clang-tools
@@ -163,12 +150,7 @@ in {
           pname = "micropython.nvim";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "jim-at-jibba";
-            repo = "micropython.nvim";
-            rev = "c1c7f5b4133391ff61b5ae87731caec6d77f377f";
-            hash = "sha256-N9od+q5T42Dm09Vc4y5c2X5OqZ4RPL0mqvVUXwLsLFA=";
-          };
+          src = npins."micropython.nvim";
 
           dependencies = [
             pkgs.vimPlugins.toggleterm-nvim
