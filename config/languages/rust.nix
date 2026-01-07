@@ -1,4 +1,4 @@
-{ nvimSize, rustowl-flake, pkgs, lib }: let
+{ nvimSize, npins, rustowl-flake, pkgs, lib }: let
 
   enable = nvimSize <= 800;
 
@@ -94,12 +94,7 @@ in {
           pname = "ferris";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "vxpm";
-            repo = "ferris.nvim";
-            rev = "275865530d753a205740804f1ce163af2322db57";
-            hash = "sha256-6wQi4yurKTSPxYDxKnQJlVMLI41RB9Kj8htlRNeiF0I=";
-          };
+          src = npins."ferris.nvim";
         };
 
         setupModule = "ferris";

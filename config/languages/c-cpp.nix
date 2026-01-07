@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, npins, pkgs, lib }: let
 
   enableExtra = nvimSize <= 400;
 
@@ -46,12 +46,7 @@ in {
           pname = "ccls-nvim";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "ranjithshegde";
-            repo = "ccls.nvim";
-            rev = "4b258c269d58cc5e37e55cf2316074e2740e5f57";
-            hash = "sha256-o1U+F1F2TTBZ3ViG77wvc3D92rwfQFoCol+vD5WWxXM=";
-          };
+          src = npins."ccls.nvim";
 
           dependencies = [
             pkgs.ccls

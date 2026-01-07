@@ -1,15 +1,15 @@
-{ nvimSize, inputs, pkgs, lib, lib' }: lib'.mergeAttrsList [
-  (import ./c-cpp.nix { inherit nvimSize pkgs lib; })
+{ nvimSize, inputs, npins, pkgs, lib, lib' }: lib'.mergeAttrsList [
+  (import ./c-cpp.nix { inherit nvimSize npins pkgs lib; })
   (import ./nix.nix { inherit nvimSize inputs pkgs lib; })
   (import ./openscad.nix { inherit nvimSize pkgs lib; })
   (import ./rust.nix {
-    inherit nvimSize pkgs lib;
+    inherit nvimSize npins pkgs lib;
     inherit (inputs) rustowl-flake;
   })
   (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./dart.nix { inherit nvimSize pkgs lib; })
   (import ./clojure.nix { inherit nvimSize pkgs lib; })
-  (import ./sql.nix { inherit nvimSize pkgs lib; })
+  (import ./sql.nix { inherit nvimSize npins pkgs lib; })
 
   {
     languages = let

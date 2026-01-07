@@ -1,14 +1,8 @@
-{ pkgs, lib }: let
+{ npins, pkgs, lib }: let
 
   vim-zellij-navigator-broken = let
 
-    src = pkgs.fetchFromGitHub {
-      owner = "hiasr";
-      repo = "vim-zellij-navigator";
-
-      rev = "6d2a3e0c1d6c64daf1ed19e9ea0849259b71f180";
-      hash = "sha256-1zzY1Z8ZpiNTdFW+gKRYaRR+oCzMnbJA2szY0k24bGg=";
-    };
+    src = npins."vim-zellij-navigator";
 
   in pkgs.rustPlatform.buildRustPackage {
     name = "vim-zellij-navigator";

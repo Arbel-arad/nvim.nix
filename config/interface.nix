@@ -84,6 +84,12 @@
               end
             end
           ''
+
+          /* lua */ ''
+            function()
+              return require("remote-sshfs.statusline").status()
+            end
+          ''
         ];
       };
 

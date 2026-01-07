@@ -1,4 +1,4 @@
-{ nvimSize, nvf, pkgs, lib }: let
+{ nvimSize, npins, nvf, pkgs, lib }: let
 
   enabled = nvimSize <= 400;
 
@@ -93,12 +93,7 @@ in {
           pname = "org-bullets";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "nvim-orgmode";
-            repo = "org-bullets.nvim";
-            rev = "21437cfa99c70f2c18977bffd423f912a7b832ea";
-            hash = "sha256-/l8IfvVSPK7pt3Or39+uenryTM5aBvyJZX5trKNh0X0=";
-          };
+          src = npins."org-bullets.nvim";
         };
 
         setupModule = "org-bullets";

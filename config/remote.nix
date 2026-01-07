@@ -27,7 +27,13 @@
 in {
   extraPackages = lib.optionals enableExtra [
     distant
+
+    pkgs.sshfs
   ];
+
+  globals = {
+    remote_sshfs_status_icon = "󱘖 ";
+  };
 
   lazy = {
     plugins = {
@@ -42,6 +48,30 @@ in {
         lazy = true;
         event = [
           "BufEnter"
+        ];
+      };
+
+      # TODO: Add automatic nix copy of ripgrep
+      "remote-sshfs.nvim" = {
+        package = pkgs.vimPlugins.remote-sshfs-nvim;
+
+        setupModule = "remote-sshfs";
+        setupOpts = {
+
+        };
+
+        after = /* lua */ ''
+          require('telescope').load_extension 'remote-sshfs'
+        '';
+
+        lazy = true;
+
+        cmd = [
+          "RemoteSSHFSConnect"
+          "RemoteSSHFSDisconnect"
+          "RemoteSSHFSEdit"
+          "RemoteSSHFSFindFiles"
+          "RemoteSSHFSLiveGrep"
         ];
       };
 

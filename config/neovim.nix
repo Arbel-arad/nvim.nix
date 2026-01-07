@@ -14,7 +14,7 @@
     vim = lib'.mergeAttrsList [
       (import ./misc.nix { inherit self npins nvimSize pkgs lib; })
       (import ./utils.nix { inherit nvimSize pkgs; })
-      (import ./languages { inherit nvimSize inputs pkgs lib lib'; })
+      (import ./languages { inherit nvimSize inputs npins pkgs lib lib'; })
       (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
       (import ./debuggers { inherit nvimSize pkgs lib; })
       (import ./formats.nix { inherit nvimSize; })
@@ -32,7 +32,7 @@
       (import ./injections.nix { inherit npins pkgs lib; })
       (import ./codelens.nix { inherit lib; })
       (import ./plugins {
-        inherit nvimSize nvf pkgs lib lib';
+        inherit nvimSize npins nvf pkgs lib lib';
       })
 
       # One of spellcheck / diagnostics causes scroll lag

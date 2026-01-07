@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, npins, pkgs, lib }: let
 
   enabled = nvimSize <= 500;
 
@@ -30,12 +30,7 @@ in {
           pname = "sqls-nvim";
           version = "0";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "nanotee";
-            repo = "sqls.nvim";
-            rev = "bfb7b4090268f6163c408577070da4cc9d7450fd";
-            hash = "sha256-PLt4SjPBgTtxAghwffsNICQ0b5AQRrdCrZ7tEHccXIc=";
-          };
+          src = npins."sqls.nvim";
         };
 
         after = /* lua */ ''

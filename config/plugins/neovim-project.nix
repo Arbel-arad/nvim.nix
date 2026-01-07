@@ -1,4 +1,4 @@
-{ pkgs, lib }: {
+{ npins, pkgs, lib }: {
   lazy = {
     plugins = let
 
@@ -6,12 +6,7 @@
         pname = "neovim-session-manager";
         version = "0";
 
-        src = pkgs.fetchFromGitHub {
-          owner = "Shatur";
-          repo = "neovim-session-manager";
-          rev = "3409dc920d40bec4c901c0a122a80bee03d6d1e1";
-          hash = "sha256-k2akj/s6qJx/sCnz3UNHo5zbENTpw+OPuo2WPF1W7rg=";
-        };
+        src = npins."neovim-session-manager";
 
         dependencies = [
           pkgs.vimPlugins.plenary-nvim
@@ -22,12 +17,7 @@
         pname = "neovim-project";
         version = "0";
 
-        src = pkgs.fetchFromGitHub {
-          owner = "coffebar";
-          repo = "neovim-project";
-          rev = "cfe4ffe8deb89a72b0a46b8f22183a3b534d9f00";
-          hash = "sha256-dizWD29IKPEy8AtXBqkhaZpDTas033jlfKKagAUSZqo=";
-        };
+        src = npins."neovim-project";
 
         dependencies = [
           pkgs.vimPlugins.plenary-nvim
