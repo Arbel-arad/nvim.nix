@@ -57,7 +57,16 @@ in {
 
         setupModule = "remote-sshfs";
         setupOpts = {
+          connections = {
+            ssh_configs = [
+              (lib.generators.mkLuaInline /* lua */ ''vim.fn.expand "$HOME" .. "/.ssh/impure/config"'')
 
+              (lib.generators.mkLuaInline /* lua */ ''vim.fn.expand "$HOME" .. "/.ssh/config"'')
+              ''/etc/ssh/ssh_config''
+            ];
+
+            ssh_known_hosts = lib.generators.mkLuaInline /* lua */ ''vim.fn.expand "$HOME" .. "/.ssh/known_hosts"'';
+          };
         };
 
         after = /* lua */ ''

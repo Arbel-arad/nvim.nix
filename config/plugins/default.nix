@@ -4,5 +4,6 @@
   (import ./neovim-project.nix { inherit npins pkgs lib; })
   (import ./splits.nix { inherit npins pkgs lib; }).config
   (import ./sniprun.nix { inherit nvimSize pkgs lib; })
+  (import ./hex.nix { inherit pkgs; })
   #(import ./regexplainer.nix { inherit npins pkgs lib; })
 ]
