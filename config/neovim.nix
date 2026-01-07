@@ -20,7 +20,7 @@
       (import ./formats.nix { inherit nvimSize; })
       (import ./editing.nix { inherit nvimSize pkgs; })
       (import ./embedded.nix { inherit nvimSize npins pkgs lib; })
-      (import ./interface.nix { inherit nvimSize pkgs lib; })
+      (import ./interface { inherit nvimSize pkgs lib lib'; })
       (import ./dashboard.nix { inherit self pkgs lib; })
       (import ./keymaps.nix { inherit nvf npins pkgs lib; })
       (import ./navigation.nix { inherit nvimSize; })

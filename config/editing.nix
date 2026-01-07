@@ -114,9 +114,6 @@
 
     indent = {
       enable = true;
-      disable = [
-        #"nix"
-      ];
     };
 
     textobjects = {
