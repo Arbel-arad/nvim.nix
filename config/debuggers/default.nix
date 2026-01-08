@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, npins, pkgs, lib }: let
 
 enableExtra = nvimSize <= 100;
 
@@ -42,6 +42,14 @@ in {
       lua = true;
       desc = "DapUi toggle";
     }
+    {
+      mode = [
+        "n"
+      ];
+      key = "<leader>rdv";
+      action = "<cmd>DapViewToggle<cr>";
+      desc = "Dapview toggle";
+    }
   ];
 
   debugger = lib.mkIf enableExtra {
@@ -51,6 +59,20 @@ in {
       ui = {
         enable = true;
         autoStart = true;
+
+        setupOpts = {
+          /*layouts = [
+            {
+              elements = [
+                {
+                  id = "disassembly";
+                }
+              ];
+              position = "bottom";
+              size = 0.15;
+            }
+          ];*/
+        };
       };
 
       sources = {
@@ -71,6 +93,134 @@ in {
           inherit pkgs lib;
         };
         */
+      };
+    };
+  };
+
+  /*
+  startPlugins = [
+    (pkgs.vimUtils.buildVimPlugin {
+      pname = "nvim-dap-disasm";
+      version = "0";
+
+      src = npins."nvim-dap-disasm";
+
+      optional = false;
+
+      dependencies = [
+        pkgs.vimPlugins.nvim-dap
+      ];
+    })
+  ];
+  */
+
+  lazy = {
+    plugins = {
+      # Need to fix loading order for nvim-dap-ui
+      "nvim-dap-disasm" = {
+        enabled = true;
+
+        package = pkgs.vimUtils.buildVimPlugin {
+          pname = "nvim-dap-disasm";
+          version = "0";
+
+          src = npins."nvim-dap-disasm";
+
+          dependencies = [
+            pkgs.vimPlugins.nvim-dap
+            #pkgs.vimPlugins.nvim-dap-view
+          ];
+        };
+
+        /*
+        setupModule = "dap-disasm";
+        setupOpts = {
+          dapui_register = false;
+          dapview_register = true;
+        };
+        */
+
+        lazy = false;
+      };
+
+      "nvim-dap-view" = {
+        package = pkgs.vimPlugins.nvim-dap-view;
+
+        setupModule = "dap-view";
+        setupOpts = {
+          windows = {
+            position = "right";
+          };
+
+          winbar = {
+            controls = {
+              #enabled = true;
+            };
+
+            sections = [
+              "watches"
+              "scopes"
+              "exceptions"
+              "breakpoints"
+              "threads"
+              "repl"
+              "disassembly"
+              "console"
+            ];
+
+            default_section = "disassembly";
+          };
+        };
+
+        lazy = true;
+
+        cmd = [
+          "DapViewToggle"
+        ];
+
+        after = /* lua */ ''
+          require("dap-disasm").setup({
+            -- Add disassembly view to elements of nvim-dap-ui
+            dapui_register = false,
+
+            -- Add disassembly view to nvim-dap-view
+            dapview_register = true,
+
+            -- If registered, pass section configuration to nvim-dap-view
+            dapview = {
+              keymap = "D",
+              label = "Disassembly [D]",
+              short_label = "󰒓 [D]",
+            },
+
+            -- Show winbar with buttons to step into the code with instruction granularity
+            -- This settings is overriden (disabled) if the dapview integration is enabled and the plugin is installed
+            winbar = true,
+
+            -- The sign to use for instruction the exectution is stopped at
+            sign = "DapStopped",
+
+            -- Number of instructions to show before the memory reference
+            ins_before_memref = 16,
+
+            -- Number of instructions to show after the memory reference
+            ins_after_memref = 16,
+
+            -- Labels of buttons in winbar
+            controls = {
+              step_into = "Step Into",
+              step_over = "Step Over",
+              step_back = "Step Back",
+            },
+
+            -- Columns to display in the disassembly view
+            columns = {
+              "address",
+              "instructionBytes",
+              "instruction",
+            },
+          })
+        '';
       };
     };
   };

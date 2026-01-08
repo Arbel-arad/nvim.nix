@@ -24,6 +24,12 @@ nix run git+https://forgejo.spacetime.technology/arbel/nvim.nix#gui
 
 </div>
 
+<div>
+
+![screenshot_3](./docs/assets/screenshot_3.png)
+
+</div>
+
 ---
 
 ##### This project is based on [neovim](https://neovim.io) and [nvf](https://nvf.notashelf.dev/)

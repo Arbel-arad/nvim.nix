@@ -16,7 +16,7 @@
       (import ./utils.nix { inherit nvimSize pkgs; })
       (import ./languages { inherit nvimSize inputs npins pkgs lib lib'; })
       (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
-      (import ./debuggers { inherit nvimSize pkgs lib; })
+      (import ./debuggers { inherit nvimSize npins pkgs lib; })
       (import ./formats.nix { inherit nvimSize; })
       (import ./editing.nix { inherit nvimSize pkgs; })
       (import ./embedded.nix { inherit nvimSize npins pkgs lib; })
