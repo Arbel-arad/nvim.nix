@@ -92,6 +92,19 @@
       "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-compat/archive/5edf11c44bc78a0d334f6334cdaf7d60d732daab.tar.gz",
       "hash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns="
     },
+    "just.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nxuv",
+        "repo": "just.nvim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "2fc113fafab9196cda972fa2c8cdff38a3678be9",
+      "url": "https://github.com/nxuv/just.nvim/archive/2fc113fafab9196cda972fa2c8cdff38a3678be9.tar.gz",
+      "hash": "sha256-mpVPjgpNkuDFX0lQEBFZMrBFLMyulzKTkPS1HNsLFPM="
+    },
     "micropython.nvim": {
       "type": "Git",
       "repository": {

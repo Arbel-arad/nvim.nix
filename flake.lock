@@ -228,11 +228,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1767740412,
-        "narHash": "sha256-PmT0T9FU2vs2DE5UBgjOvzA3rpduMXFdIuh2Q2AXUFU=",
+        "lastModified": 1767829782,
+        "narHash": "sha256-ZICnwVq/gDcG8KjRTLFk4fI9nvrVJNGORnNdHEG5iZI=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "9252d470cb08552fec9c405b22b887624a49ee20",
+        "rev": "89960e27d6f131587e6e97602be947fdedd8de7a",
         "type": "github"
       },
       "original": {
@@ -328,10 +328,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1767744315,
-        "narHash": "sha256-3Ck6p5OBp7+TlRyX/0ewyiV3D4K9GnVskfzImj5+h88=",
+        "lastModified": 1767830720,
+        "narHash": "sha256-QkoscipfDnwclEnVughLSycbkv69yYbxzBLeSWWVAvM=",
         "ref": "refs/heads/master",
-        "rev": "51267717d88e4934e0035cfc117438bd768d673b",
+        "rev": "bc28e1651ac22277c1b8d77916944a3a462d875b",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"
@@ -419,10 +419,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1766263013,
-        "narHash": "sha256-9wzmXlcLz+PE2alNOaAbrIdZTJp8FPoVDKLAFLJ6AO0=",
+        "lastModified": 1766959235,
+        "narHash": "sha256-OBfZxBD+aw2RG06WT+P3xWprrSKZXfTtqfb+fhZlvkI=",
         "ref": "refs/heads/main",
-        "rev": "93126ea05e4b45415aee38e2ea4c4264b1c4ccaf",
+        "rev": "8a6e4f03951d80382e5dcf1a159d37dec8376a0b",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"

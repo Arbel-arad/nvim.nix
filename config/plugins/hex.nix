@@ -1,6 +1,28 @@
-{ pkgs }: {
+{ pkgs, lib }: {
   lazy = {
     plugins = {
+      "hex.nvim" = let
+
+        xxd-bin = lib.getExe pkgs.tinyxxd;
+
+      in {
+        package = pkgs.vimPlugins.hex-nvim;
+
+        setupModule = "hex";
+        setupOpts = {
+          dump_cmd = "${xxd-bin} -g 1 -u";
+          assemble_cmd = "${xxd-bin} -r";
+        };
+
+        lazy = true;
+
+        cmd = [
+          "HexDump"
+          "HexAssemble"
+          "HexToggle"
+        ];
+      };
+
       "compiler-explorer.nvim" = {
         package = pkgs.vimPlugins.compiler-explorer-nvim;
 
