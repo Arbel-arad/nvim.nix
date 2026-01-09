@@ -49,6 +49,7 @@
         "<leader>rt" = "+Run test";
         "<leader>rd" = "+Run debug";
         "<leader>rdw" = "+Debug mode";
+        "<leader>rr" = "+Mount";
         "<leader>d" = "+Debug/Direnv";
         "<leader>de" = "+Direnv";
       };

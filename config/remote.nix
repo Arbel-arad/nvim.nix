@@ -64,7 +64,7 @@ in {
           connections = {
             ssh_configs = [                 # Table of ssh config file locations to use
               "~/.ssh/config"
-              "~/.ssh/config/impure/config"
+              "~/.ssh/impure/config"
               "/etc/ssh/ssh_config"
             ];
               # SSHFS mount options (table of key-value pairs converted to sshfs -o arguments)
@@ -115,6 +115,8 @@ in {
             };
           };
 
+          lead_prefix = "<leader>rr";
+
           global_paths = [
             "/etc/nixos"
             "/var/lib"
@@ -158,7 +160,7 @@ in {
             ssh_known_hosts = lib.generators.mkLuaInline /* lua */ ''vim.fn.expand "$HOME" .. "/.ssh/known_hosts"'';
           };
 
-          find_command = "/nix/store/0qh46n4bqwci1dli1bjqkavvzmdw87x3-ripgrep-15.1.0/bin/rg";
+            #find_command = "/nix/store/0qh46n4bqwci1dli1bjqkavvzmdw87x3-ripgrep-15.1.0/bin/rg";
         };
 
         after = /* lua */ ''
