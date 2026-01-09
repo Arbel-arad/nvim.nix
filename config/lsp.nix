@@ -168,18 +168,6 @@ in {
         ];
       };
 
-      # Ruff python linter/LSP
-      ruff = lib.mkIf enableExtra {
-        cmd = [
-          "${lib.getExe pkgs.ruff}"
-          "server"
-        ];
-
-        filetypes = [
-          "python"
-        ];
-      };
-
       lua-language-server = {
         settings = {
           Lua = {

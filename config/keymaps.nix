@@ -114,7 +114,7 @@
         after = /* lua */ ''
           local submode = require("submode")
 
-          submode.create("Debuger", {
+          submode.create("Debugger", {
             mode = "n",
             enter = "<Space>rdw",
             leave = { "q", "<ESC>" },

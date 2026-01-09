@@ -10,6 +10,10 @@
   (import ./dart.nix { inherit nvimSize pkgs lib; })
   (import ./clojure.nix { inherit nvimSize pkgs lib; })
   (import ./sql.nix { inherit nvimSize npins pkgs lib; })
+  (import ./python.nix {
+    inherit pkgs lib;
+    enableExtra = nvimSize <= 300;
+  })
 
   {
     languages = let
@@ -26,14 +30,6 @@
       ts = {
         enable = enableExtra;
         extraDiagnostics.enable = true;
-      };
-
-      python = {
-        enable = true;
-
-        lsp = {
-          enable = enableExtra;
-        };
       };
 
       odin = {

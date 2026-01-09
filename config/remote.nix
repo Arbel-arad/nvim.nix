@@ -51,8 +51,98 @@ in {
         ];
       };
 
+      "sshfs.nvim" = {
+        package = pkgs.vimUtils.buildVimPlugin {
+          pname = "sshfs.nvim";
+          version = "0";
+
+          src = npins."sshfs.nvim";
+        };
+
+        setupModule = "sshfs";
+        setupOpts = {
+          connections = {
+            ssh_configs = [                 # Table of ssh config file locations to use
+              "~/.ssh/config"
+              "~/.ssh/config/impure/config"
+              "/etc/ssh/ssh_config"
+            ];
+              # SSHFS mount options (table of key-value pairs converted to sshfs -o arguments)
+              # Boolean flags: set to true to include, false/nil to omit
+              # String/number values: converted to key=value format
+            sshfs_options = {
+              reconnect = true;             #-- Auto-reconnect on connection loss
+              ConnectTimeout = 5;           #-- Connection timeout in seconds
+              compression = "yes";          ## Enable compression
+              ServerAliveInterval = 15;     # Keep-alive interval (15s × 3 = 45s timeout)
+              ServerAliveCountMax = 3;      # Keep-alive message count
+              dir_cache = "yes";            # Enable directory caching
+              dcache_timeout = 300;         # Cache timeout in seconds
+              dcache_max_size = 10000;      # Max cache size
+              #allow_other = true;        # Allow other users to access mount
+              #uid = "1000,gid=1000";     # Set file ownership (use string for complex values)
+              #follow_symlinks = true;    # Follow symbolic links
+            };
+            control_persist = "10m";       # How long to keep ControlMaster connection alive after last use
+            socket_dir = lib.generators.mkLuaInline /* lua */ ''vim.fn.expand("$HOME/.ssh/sockets")''; # Directory for ControlMaster sockets
+          };
+
+          mounts = {
+            base_dir = lib.generators.mkLuaInline /* lua */ ''vim.fn.expand("$HOME") .. "/.sshfs"''; # where remote mounts are created
+          };
+
+          hooks = {
+            on_exit = {
+              auto_unmount = true;
+              clean_mount_folders = true;
+            };
+
+            on_mount = {
+              auto_change_to_dir = true;
+              auto_run = "none";
+            };
+          };
+
+          ui = {
+            file_picker = {
+              preferred_picker = "snacks";
+
+              fallback_to_netrw = true;
+              netrw_command = "Texplore";
+            };
+            remote_picker = {
+              preferred_picker = "auto";
+            };
+          };
+
+          global_paths = [
+            "/etc/nixos"
+            "/var/lib"
+            "/var/log"
+          ];
+        };
+
+        lazy = true;
+
+        cmd = [
+          "SSHConnect"
+            "SSHDisconnect"
+            "SSHDisconnectAll"
+            "SSHConfig"
+            "SSHReload"
+            "SSHFiles"
+            "SSHGrep"
+            "SSHLiveFind"
+            "SSHLiveGrep"
+            "SSHExplore"
+            "SSHChangeDir"
+            "SSHCommand"
+            "SSHTerminal"
+        ];
+      };
+
       # TODO: Add automatic nix copy of ripgrep
-      "remote-sshfs.nvim" = {
+      "remote-sshfs.nvim" = lib.mkIf false {
         package = pkgs.vimPlugins.remote-sshfs-nvim;
 
         setupModule = "remote-sshfs";
@@ -67,6 +157,8 @@ in {
 
             ssh_known_hosts = lib.generators.mkLuaInline /* lua */ ''vim.fn.expand "$HOME" .. "/.ssh/known_hosts"'';
           };
+
+          find_command = "/nix/store/0qh46n4bqwci1dli1bjqkavvzmdw87x3-ripgrep-15.1.0/bin/rg";
         };
 
         after = /* lua */ ''

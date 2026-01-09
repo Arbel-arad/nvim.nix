@@ -223,6 +223,19 @@
       "url": "https://github.com/nanotee/sqls.nvim/archive/bfb7b4090268f6163c408577070da4cc9d7450fd.tar.gz",
       "hash": "sha256-PLt4SjPBgTtxAghwffsNICQ0b5AQRrdCrZ7tEHccXIc="
     },
+    "sshfs.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "uhs-robert",
+        "repo": "sshfs.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4516f32f2e104c31b7431b06d3a5c5c4f455038d",
+      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/4516f32f2e104c31b7431b06d3a5c5c4f455038d.tar.gz",
+      "hash": "sha256-Mqjlei8V9R177AAOq0kXitAnp0Za44bsjgni+1Q8pi0="
+    },
     "submode.nvim": {
       "type": "Git",
       "repository": {
