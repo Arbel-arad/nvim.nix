@@ -35,6 +35,10 @@ in {
     pkgs.inotify-tools
 
   ] ++ lib.optionals enableExtra [
+    # For opening weird office documents
+    pkgs.unzip
+    pkgs.pandoc
+
     # For sstrip
     pkgs.elfkickers
 

@@ -48,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4dfc8758a1deab45e37b7f3661e0fd3759d85788",
-      "url": "https://github.com/notashelf/direnv.nvim/archive/4dfc8758a1deab45e37b7f3661e0fd3759d85788.tar.gz",
-      "hash": "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE="
+      "revision": "ecd3bd4898f79689a3f5bf956877ea42c7b3072e",
+      "url": "https://github.com/notashelf/direnv.nvim/archive/ecd3bd4898f79689a3f5bf956877ea42c7b3072e.tar.gz",
+      "hash": "sha256-a+NvIzlGk+ojNzOReXt1QHqr6wVROIaFBhS8Hd1C3HU="
     },
     "distant": {
       "type": "Git",
@@ -127,9 +127,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "cfe4ffe8deb89a72b0a46b8f22183a3b534d9f00",
-      "url": "https://github.com/coffebar/neovim-project/archive/cfe4ffe8deb89a72b0a46b8f22183a3b534d9f00.tar.gz",
-      "hash": "sha256-dizWD29IKPEy8AtXBqkhaZpDTas033jlfKKagAUSZqo="
+      "revision": "6ecf6253697b2964e9afef9d000357d887221a2c",
+      "url": "https://github.com/coffebar/neovim-project/archive/6ecf6253697b2964e9afef9d000357d887221a2c.tar.gz",
+      "hash": "sha256-1SR/Pkzn1XWHJeGBiYd3hXArvVx7IgdlWDFdznl/gsw="
     },
     "neovim-session-manager": {
       "type": "Git",
