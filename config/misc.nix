@@ -42,6 +42,10 @@ in {
     # For sstrip
     pkgs.elfkickers
 
+    # Binary analyzer
+    pkgs.binsider
+
+    pkgs.ripgrep
     pkgs.ripgrep-all
     pkgs.imagemagick
 
@@ -52,6 +56,10 @@ in {
     # Networking
     pkgs.termshark
     pkgs.bandwhich
+
+    # System utilities
+    pkgs.uutils-coreutils-noprefix
+    pkgs.uutils-findutils
   ];
 
   enableLuaLoader = true;

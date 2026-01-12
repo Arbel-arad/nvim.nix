@@ -154,9 +154,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "58d7de7623e23347619e5b3efedd6a7e896c8a7d",
-      "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/58d7de7623e23347619e5b3efedd6a7e896c8a7d.tar.gz",
-      "hash": "sha256-zMRUZ+tXV/lm1eHzfXZDZuyqWr5c6E1YOQnQ4GVUbmU="
+      "revision": "e9c85c1b061dc78537807fc8a9e1266604b35aad",
+      "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/e9c85c1b061dc78537807fc8a9e1266604b35aad.tar.gz",
+      "hash": "sha256-wai8nhYN5VohrI5nRIcZFS+TEidARLAaj/JazMjKkGg="
     },
     "nvim-platformio.lua": {
       "type": "Git",

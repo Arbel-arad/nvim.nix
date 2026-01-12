@@ -1,4 +1,4 @@
-{ self', pkgs, lib }: {
+{ self, self', pkgs, lib }: {
   nvim-zellij = pkgs.symlinkJoin {
     name = "nvim-zellij";
 
@@ -62,7 +62,9 @@
     in /* bash */ ''
       wrapProgram "$out/bin/zellij" \
         --add-flags "--config-dir ${./.} --config ${config} --new-session-with-layout nvim" \
-        --prefix PATH : "${lib.makeBinPath [self'.packages."nvim.nix"]}"
+        --prefix PATH : "${ lib.makeBinPath ([
+          self'.packages."nvim.nix"
+        ] ++ self.nvim-config.extraPackages) }"
 
       mv $out/bin/zellij $out/bin/nvim-zellij
     '';

@@ -1,7 +1,7 @@
 { config, inputs, self, self', pkgs, lib }: let
 
   zellij = import (self + /tools/zellij/zellij.nix) {
-    inherit self' pkgs lib;
+    inherit self self' pkgs lib;
   };
 
   mkNvim = nvimSize: (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
@@ -36,7 +36,8 @@ in {
 
     postBuild = /* bash */ ''
       wrapProgram "$out/bin/nvim" \
-        --prefix PATH : "${lib.makeBinPath self.nvim-config.extraPackages }"
+        --set SHELL "fish" \
+        --prefix PATH : "${lib.makeBinPath self.nvim-config.extraPackages}"
     '';
 
     meta = {

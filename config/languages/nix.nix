@@ -42,9 +42,9 @@ in {
             ];
           };
           nix = {
-            binary = lib.getExe pkgs.nixVersions.git;
+            binary = lib.getExe pkgs.lixPackageSets.git.lix;
 
-            maxMemoryMB = 8192;
+            maxMemoryMB = 16384;
 
             flake = {
               autoArchive = true;
@@ -55,9 +55,13 @@ in {
             };
           };
         };
+
+        capabilities = {
+
+        };
       };
 
-      nixd = lib.mkIf enableExtra{
+      nixd = lib.mkIf enableExtra {
         enable = enableExtra;
 
         cmd = [
@@ -115,9 +119,7 @@ in {
           };
         };
 
-        capabilities = {
-
-
+        /*capabilities = {
           textDocument = {
             hover = false;
             signatureHelp = false;
@@ -128,7 +130,7 @@ in {
               lineFoldingOnly = true;
             };
           };
-        };
+        };*/
       };
     };
   };

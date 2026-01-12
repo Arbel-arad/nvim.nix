@@ -82,6 +82,7 @@
             nativeBuildInputs = [
               self'.packages.default
               self'.packages.nvim-gui
+              self'.packages.nvim-zellij
 
               pkgs.attic-client
               pkgs.nix-tree
