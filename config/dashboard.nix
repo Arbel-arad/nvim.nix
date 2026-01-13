@@ -59,6 +59,10 @@ in {
           ui_select = false;
         };
 
+        #quickfile = {
+
+        #};
+
         dashboard = {
           preset = {
             #pick = "telescope.nvim";

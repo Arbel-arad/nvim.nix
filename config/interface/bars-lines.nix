@@ -8,7 +8,8 @@
 
       activeSection = {
         c = [
-          /* lua */ ''
+          # lua
+          ''
             {
               "diff",
               colored = false,
@@ -23,13 +24,15 @@
             }
           ''
 
-          /* lua */ ''
+          # lua
+          ''
             function()
               return require('direnv').statusline()
             end
           ''
 
-          /* lua */ ''
+          # lua
+          ''
             function()
               local mode = require("submode").mode()
               if mode == nil then
@@ -40,7 +43,8 @@
             end
           ''
 
-          /* lua */ ''
+          # lua
+          ''
             function()
               return require("remote-sshfs.statusline").status()
             end
@@ -93,6 +97,68 @@
             preview = false;
           };
         };
+      };
+
+      "barbar.nvim" = {
+        enabled = true;
+
+        package = pkgs.vimPlugins.barbar-nvim;
+
+        setupModule = "barbar";
+        setupOpts = {
+          animation = true;
+          auto_hide = true;
+          tabpages = true;
+          clickable = true;
+          focus_on_close = "previous";
+
+          icons = {
+            diagnostics = lib.generators.mkLuaInline /* lua */ ''
+              {
+                [vim.diagnostic.severity.ERROR] = {enabled = true, icon = "󰅚 "},
+                [vim.diagnostic.severity.WARN] = {enabled = true, icon = "󰀪 "},
+                [vim.diagnostic.severity.INFO] = {enabled = true, icon = " "},
+                [vim.diagnostic.severity.HINT] = {enabled = true, icon = " "},
+              }
+            '';
+
+            gitsigns = lib.generators.mkLuaInline /* lua */ ''
+              {
+                added = {enabled = true, icon = '+'},
+                changed = {enabled = true, icon = '~'},
+                deleted = {enabled = true, icon = '-'},
+              }
+            '';
+
+            filetype = {
+              enabled = true;
+              custom_colors = false;
+            };
+
+            separator_at_end = true;
+          };
+        };
+
+        lazy = true;
+        event = [
+          "BufEnter"
+        ];
+      };
+
+      "scope.nvim" = {
+        enabled = true;
+
+        package = pkgs.vimPlugins.scope-nvim;
+
+        setupModule = "scope";
+        setupOpts = {
+
+        };
+
+        lazy = true;
+        event = [
+          "BufEnter"
+        ];
       };
     };
   };

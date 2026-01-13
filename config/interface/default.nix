@@ -26,7 +26,8 @@
 
     tabline = {
       nvimBufferline = {
-        enable = true;
+        #enable = true;
+
         setupOpts = {
           options = {
             numbers = "none";

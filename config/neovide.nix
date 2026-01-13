@@ -8,6 +8,10 @@
     neovice_cursor_short_animation_length = 0;
   };
 
+  options = {
+    mousescroll = "ver:30,hor:1";
+  };
+
   config = (pkgs.formats.toml {}).generate "neovide.toml" {
     maximized = true;
 
