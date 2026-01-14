@@ -139,14 +139,80 @@
               custom_colors = false;
             };
 
-            separator_at_end = true;
+            #separator = {
+            #  left = "▎";
+            #  right = "";
+            #};
+
+            modified = {
+              button = "●";
+            };
+
+            preset = "slanted";
+
+            #separator_at_end = true;
           };
+
+          minimum_length = 10;
+          maximum_length = 30;
         };
 
         lazy = true;
+
         event = [
           "BufEnter"
         ];
+
+        keys = [
+            {
+              mode = [
+                "n"
+              ];
+              key = "<leader>bn";
+              action = "<Cmd>BufferNext<CR>";
+              desc = "Buffer next";
+            }
+            {
+              mode = [
+                "n"
+              ];
+              key = "<leader>bb";
+              action = "<Cmd>BufferPrevious<CR>";
+              desc = "Buffer prev";
+            }
+            {
+              mode = [
+                "n"
+              ];
+              key = "<leader>bp";
+              action = "<Cmd>BufferPin<CR>";
+              desc = "Buffer pin";
+            }
+            {
+              mode = [
+                "n"
+              ];
+              key = "<leader>bw";
+              action = "<Cmd>BufferClose<CR>";
+              desc = "Buffer close";
+            }
+            {
+              mode = [
+                "n"
+              ];
+              key = "<leader>br";
+              action = "<Cmd>BufferRestore<CR>";
+              desc = "Buffer restore";
+            }
+            {
+              mode = [
+                "n"
+              ];
+              key = "<leader>bq";
+              action = "<Cmd>BufferPick<CR>";
+              desc = "Buffer pick";
+            }
+          ];
       };
 
       "scope.nvim" = {
@@ -156,13 +222,46 @@
 
         setupModule = "scope";
         setupOpts = {
+          pre_tab_leave = lib.generators.mkLuaInline /* lua */ ''
+            function()
+              vim.api.nvim_exec_autocmds('User', {pattern = 'ScopeTabLeavePre'})
+            end
+          '';
 
+          post_tab_enter = lib.generators.mkLuaInline /* lua */ ''
+            function()
+              vim.api.nvim_exec_autocmds('User', {pattern = 'ScopeTabEnterPost'})
+            end
+          '';
         };
 
         lazy = true;
         event = [
           "BufEnter"
         ];
+
+        after = /* lua */ ''
+          vim.opt.sessionoptions:append("tabpages")
+          --require("telescope").load_extension("scope")
+
+          local scope_group = vim.api.nvim_create_augroup('scope', {})
+
+          vim.api.nvim_create_autocmd({ 'User' }, {
+            pattern = "SessionSavePre",
+            group = scope_group,
+            callback = function()
+              vim.cmd([[ScopeSaveState]])
+            end,
+          })
+
+          vim.api.nvim_create_autocmd({ 'User' }, {
+            pattern = "SessionLoadPost",
+            group = scope_group,
+            callback = function()
+              vim.cmd([[ScopeLoadState]])
+            end,
+          })
+        '';
       };
     };
   };

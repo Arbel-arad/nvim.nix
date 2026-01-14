@@ -52,6 +52,7 @@
         "<leader>rr" = "+Mount";
         "<leader>d" = "+Debug/Direnv";
         "<leader>de" = "+Direnv";
+        "<leader>b" = "+Buffers";
       };
     };
 
