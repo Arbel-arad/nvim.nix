@@ -16,6 +16,8 @@ in {
     pkgs.cargo-bloat
     pkgs.cargo-generate
 
+    pkgs.cargo-flamegraph
+
     rustowl.rustowl
   ];
 

@@ -102,7 +102,11 @@
       "barbar.nvim" = {
         enabled = true;
 
-        package = pkgs.vimPlugins.barbar-nvim;
+        package = pkgs.vimPlugins.barbar-nvim.overrideAttrs (prev: {
+          patches = prev.patches or [] ++ [
+            ./barbar-click.patch
+          ];
+        });
 
         setupModule = "barbar";
         setupOpts = {

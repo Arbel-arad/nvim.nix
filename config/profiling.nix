@@ -9,6 +9,7 @@ in {
 
   lazy = {
     plugins = {
+      # TODO: Figure out how to make this work
       "perfanno.nvim" = lib.mkIf enabled {
         package = pkgs.vimPlugins.perfanno-nvim;
 
@@ -16,6 +17,30 @@ in {
         setupOpts = {
 
         };
+
+        lazy = true;
+        cmd = [
+          "PerfLoadFlat"
+          "PerfLoadCallGraph"
+          "PerfLoadFlameGraph"
+
+          "PerfLuaProfileStart"
+          "PerfLuaProfileStop"
+
+          "PerfAnnotate"
+          "PerfToggleAnnotations"
+          "PerfAnnotateSelection"
+          "PerfAnnotateFunction"
+
+          "PerfHottestLines"
+          "PerfHottestSymbols"
+          "PerfHottestCallersSelection"
+          "PerfHottestCallersFunction"
+
+          "PerfCacheSave"
+          "PerfCacheLoad"
+          "PerfCacheDelete"
+        ];
       };
     };
   };
