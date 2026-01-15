@@ -5,6 +5,8 @@
 in {
   extraPackages = lib.optionals enabled [
     pkgs.perf
+    pkgs.inferno
+    pkgs.flamelens
   ];
 
   lazy = {

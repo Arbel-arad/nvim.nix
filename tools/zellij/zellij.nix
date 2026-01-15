@@ -68,5 +68,9 @@
 
       mv $out/bin/zellij $out/bin/nvim-zellij
     '';
+
+    meta = {
+      mainProgram = "nvim-zellij";
+    };
   };
 }

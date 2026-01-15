@@ -1,0 +1,11 @@
+* Profiling Neovim
+
+  #name ProfileStart
+  @code lua
+    require('snacks').profiler.start()
+  @end
+
+  #name ProfileStop
+  @code lua
+    require('snacks').profiler.stop()
+  @end

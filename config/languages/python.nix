@@ -1,4 +1,8 @@
 { enableExtra, pkgs, lib }: {
+  extraPackages = lib.optionals enableExtra [
+    pkgs.py-spy
+  ];
+
   languages = {
     python = {
       enable = true;

@@ -19,6 +19,15 @@
       action = /* lua */ "<cmd>lua Snacks.terminal.open()<cr>";
       desc = "Open new terminal";
     }
+    {
+      key = "<leader>rs";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ "<cmd>SnipRun<cr>";
+      desc = "Run snippet";
+    }
 
     # Search
     # set hlsearch/nohlsearch for highlighting

@@ -10,6 +10,14 @@
     };
   };
 
+  nvim-zellij = {
+    type = "app";
+    program = self'.packages.nvim-zellij;
+    meta = {
+      description = "Neovim in zellij";
+    };
+  };
+
  nvim-minimal = {
     type = "app";
     program = self'.packages.nvim-minimal;
