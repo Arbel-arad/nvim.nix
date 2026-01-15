@@ -69,13 +69,13 @@ in {
             keys = lib.generators.mkLuaInline /* lua */ ''
               {
                 { icon = " ", key = "g", desc = "Find Text", action = "<leader>fg" },
-                { icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
-                { icon = " ", key = "d", desc = "Find project", action = ":NeovimProjectHistory"},
-                { icon = "󰺄 ", key = "a", desc = "All projects", action = ":NeovimProjectDiscover"},
-                { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-                { icon = " ", key = "r", desc = "Recent Files", action = ":Telescope oldfiles" },
-                { icon = " ", key = "s", desc = "Restore Session", action = ":NeovimProjectLoadRecent"},
-                { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                { icon = " ", key = "f", desc = "Find File", action = "<cmd>Telescope find_files<CR>" },
+                { icon = " ", key = "d", desc = "Find project", action = "<cmd>NeovimProjectHistory<CR>"},
+                { icon = "󰺄 ", key = "a", desc = "All projects", action = "<cmd>NeovimProjectDiscover<CR>"},
+                { icon = " ", key = "n", desc = "New File", action = "<cmd>ene | startinsert<CR>" },
+                { icon = " ", key = "r", desc = "Recent Files", action = "<cmd>Telescope oldfiles<CR>" },
+                { icon = " ", key = "s", desc = "Restore Session", action = "<cmd>NeovimProjectLoadRecent<CR>"},
+                { icon = " ", key = "q", desc = "Quit", action = "<cmd>qa<CR>" },
                 { icon = " ", key = "c", desc = "Config",
                   action = function()
                     local path = vim.fn.stdpath('config')

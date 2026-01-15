@@ -117,6 +117,9 @@
           focus_on_close = "previous";
 
           icons = {
+            #button = "";
+            button = false;
+
             diagnostics = lib.generators.mkLuaInline /* lua */ ''
               {
                 [vim.diagnostic.severity.ERROR] = {enabled = true, icon = "󰅚 "},
@@ -146,6 +149,11 @@
 
             modified = {
               button = "●";
+            };
+
+            pinned = {
+              button = "";
+              filename = true;
             };
 
             preset = "slanted";

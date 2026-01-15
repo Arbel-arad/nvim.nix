@@ -34,10 +34,10 @@
       };
 
       # Keybinds matched with Neovim
-      config = pkgs.writeText "config.kdl" /* bash */ ''
+      config = pkgs.writeText "config.kdl" /* c */ ''
         default_layout "nvim"
 
-        default_mode "locked"
+        //default_mode "locked"
 
         default_shell "fish"
 
@@ -45,7 +45,7 @@
         show_release_notes false
 
         keybinds {
-          locked {
+          shared_except "locked" {
             ${mkPluginBind { keys = [ "Ctrl Alt h" "Ctrl Alt Left"  ]; name = "move_focus_or_tab"; dir = "left"; }}
             ${mkPluginBind { keys = [ "Ctrl Alt j" "Ctrl Alt Down" ]; name = "move_focus"; dir = "down"; }}
             ${mkPluginBind { keys = [ "Ctrl Alt k" "Ctrl Alt U"  ]; name = "move_focus"; dir = "up"; }}

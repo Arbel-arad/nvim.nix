@@ -210,7 +210,7 @@ in {
               "n"
             ];
             key = "<leader>in";
-            action = ":Nerdy list<CR>";
+            action = "<cmd>Nerdy list<CR>";
             desc = "Browser nerd icons";
           }
           {
@@ -218,7 +218,7 @@ in {
               "n"
             ];
             key = "<leader>iN";
-            action = ":Nerdy recents<CR>";
+            action = "<cmd>Nerdy recents<CR>";
             desc = "Browser recent nerd icons";
           }
         ];

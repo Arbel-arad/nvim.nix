@@ -138,6 +138,44 @@
               )
             end,
           })
+
+          submode.create("Tabs", {
+            mode = "n",
+            enter = "<Space>b",
+            leave = { "n", "b", "q", "p", "r", "w", "<ESC>" },
+            default = function(register)
+              register("l",
+                function()
+                  vim.cmd("BufferNext")
+                end
+              )
+              register("h",
+                function()
+                  vim.cmd("BufferPrevious")
+                end
+              )
+              register("L",
+                function()
+                  vim.cmd("BufferMoveNext")
+                end
+              )
+              register("H",
+                function()
+                  vim.cmd("BufferMovePrevious")
+                end
+              )
+              register("k",
+                function()
+                  vim.cmd("tabnext")
+                end
+              )
+              register("j",
+                function()
+                  vim.cmd("tabprevious")
+                end
+              )
+            end,
+          })
         '';
       };
     };
