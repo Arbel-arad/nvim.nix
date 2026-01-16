@@ -46,7 +46,7 @@ in {
             ];
 
             desc = "Start Otter-ls";
-            action = /* lua */ "<cmd>lua require'otter'.activate()<cr>";
+            action = /* Lua */ "<cmd>lua require'otter'.activate()<cr>";
           }
           {
             key = "<leader>los";
@@ -55,7 +55,7 @@ in {
             ];
 
             desc = "Stop Otter-ls";
-            action = /* lua */ "<cmd>lua require'otter'.deactivate()<cr>";
+            action = /* Lua */ "<cmd>lua require'otter'.deactivate()<cr>";
           }
         ];
       };
@@ -69,7 +69,7 @@ in {
 
         };
 
-        before = /* lua */ ''
+        before = /* Lua */ ''
           local config_path = vim.fn.stdpath("config")
 
           if vim.fn.isdirectory(config_path) == 0 then

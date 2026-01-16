@@ -66,7 +66,7 @@ in {
         dashboard = {
           preset = {
             #pick = "telescope.nvim";
-            keys = lib.generators.mkLuaInline /* lua */ ''
+            keys = lib.generators.mkLuaInline /* Lua */ ''
               {
                 { icon = " ", key = "g", desc = "Find Text", action = "<leader>fg" },
                 { icon = " ", key = "f", desc = "Find File", action = "<cmd>Telescope find_files<CR>" },
@@ -123,7 +123,7 @@ in {
             }
 
 
-            (lib.generators.mkLuaInline /* lua */ ''
+            (lib.generators.mkLuaInline /* Lua */ ''
               function()
                 -- Disable folding on dashboard?
                 vim.opt_local.foldenable = false

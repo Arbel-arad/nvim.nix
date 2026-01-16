@@ -11,7 +11,7 @@
       mode = [ "n" ];
       lua = true;
 
-      action = /* lua */ ''
+      action = /* Lua */ ''
         function()
           require("conform").format({
             lsp_fallback = true,

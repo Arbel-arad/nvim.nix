@@ -25,15 +25,26 @@ in {
     servers = {
       nil = {
         enable = true;
+
         cmd = [ "${lib.getExe pkgs.nil}" ];
+
         filetypes = [
           "nix"
         ];
+
         root_markers = [
           "flake.nix"
           "flake.lock"
           ".git"
         ];
+
+        on_attach = lib.generators.mkLuaInline /* Lua */ ''
+          function(client, bufnr)
+            --client.server_capabilities.hoverProvider = false
+            client.server_capabilities.completionProvider = false
+          end
+        '';
+
         settings.nil = {
           diagnostics = {
             ignored = [
@@ -78,6 +89,13 @@ in {
           "flake.lock"
           ".git"
         ];
+
+        on_attach = lib.generators.mkLuaInline /* Lua */ ''
+          function(client, bufnr)
+            client.server_capabilities.hoverProvider = false
+            --client.server_capabilities.completionProvider = false
+          end
+        '';
 
         settings.nixd = {
           nixpkgs = {

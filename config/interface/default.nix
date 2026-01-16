@@ -6,6 +6,8 @@
       foldlevel = 99; # for folds and fillchars to show correctly
       foldcolumn = "auto:1"; # levels of folds to show
       fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
+
+      winborder = "rounded";
     };
 
     theme = {

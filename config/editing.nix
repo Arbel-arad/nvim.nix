@@ -1,4 +1,4 @@
-{ nvimSize, pkgs }:{
+{ nvimSize, pkgs, lib }:{
 
   options = {
     # Apparently these break treesitter's auto-indent functionality
@@ -16,31 +16,41 @@
       sources = {
         buffer = "[Buffer]";
         nvim-cmp = null;
-        path = "[Path]";
-        #async_path = "[Path]"; # not showing highlight correctly
+        path = "[path]";
+        #async_path = "[async_path]"; # not showing highlight correctly
         #cmdline = "[cmd]"; # not showing in the cmdline
       };
 
-      sourcePlugins = [
-        pkgs.vimPlugins.cmp-cmdline
+      /*sourcePlugins = lib.mkForce [
+        #pkgs.vimPlugins.cmp-cmdline
+        "cmp-buffer"
         #pkgs.vimPlugins.cmp-async-path
+      ];*/
+      sourcePlugins = [
+        pkgs.vimPlugins.cmp-async-path
       ];
 
-      # setupOpts = lib.generators.mkLuaInline /* lua */ ''
-      /*  sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'vsnip' }, -- For vsnip users.
-          -- { name = 'luasnip' }, -- For luasnip users.
-          -- { name = 'ultisnips' }, -- For ultisnips users.
-          -- { name = 'snippy' }, -- For snippy users.
-        }, {
-          { name = 'buffer' },
-        })
-      '';*/
+      setupOpts = lib.mkIf false {
+        sources = lib.mkForce [
+          {
+            name = "nvim_lsp";
+          }
+          {
+            name = "luasnip";
+          }
+          {
+            name = "buffer";
+          }
+          {
+            name = "path";
+            #name = "async_path";
+          }
+        ];
+      };
     };
 
-    blink-cmp = {
-      #enable = true;
+    blink-cmp = lib.mkIf false {
+      enable = true;
 
       sourcePlugins = {
         ripgrep = {
@@ -56,14 +66,35 @@
         };
       };
 
+      friendly-snippets = {
+        enable = true;
+      };
+
       setupOpts = {
         sources = {
           default = [
-            "lsp"
             "path"
-            "snippets"
             "buffer"
           ];
+
+          providers = {
+            lsp = {
+              name = "LSP";
+              module = "blink.cmp.sources.lsp";
+              opts = {};
+
+              enabled = true;
+              async = true;
+              timeout_ms = 2000;
+              transform_items = null;
+              should_show_items = true;
+              max_items = null;
+              min_keyword_length = 1;
+              fallbacks = {};
+              score_offset = 100;
+              override = null;
+            };
+          };
         };
 
         cmdline = {
@@ -77,8 +108,42 @@
         };
 
         completion = {
+          menu = {
+            border = "rounded";
+            direction_priority = lib.generators.mkLuaInline /* Lua */ ''
+              function()
+                local ctx = require('blink.cmp').get_context()
+                local item = require('blink.cmp').get_selected_item()
+                if ctx == nil or item == nil then return { 's', 'n' } end
+
+                local item_text = item.textEdit ~= nil and item.textEdit.newText or item.insertText or item.label
+                local is_multi_line = item_text:find('\n') ~= nil
+
+                -- after showing the menu upwards, we want to maintain that direction
+                -- until we re-open the menu, so store the context id in a global variable
+                if is_multi_line or vim.g.blink_cmp_upwards_ctx_id == ctx.id then
+                  vim.g.blink_cmp_upwards_ctx_id = ctx.id
+                  return { 'n', 's' }
+                end
+                return { 's', 'n' }
+              end
+            '';
+          };
+
+          ghost_text = {
+            enable = true;
+          };
+
           documentation = {
             auto_show = true;
+            border = "rounded";
+            auto_show_delay_ms = 500;
+          };
+
+          list = {
+            selection = {
+              preselect = true;
+            };
           };
         };
 

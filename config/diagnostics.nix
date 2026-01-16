@@ -12,7 +12,7 @@ in {
 
     config = {
       signs = {
-        text = lib.generators.mkLuaInline /* lua */ ''
+        text = lib.generators.mkLuaInline /* Lua */ ''
           {
             [vim.diagnostic.severity.ERROR] = "󰅚 ",
             [vim.diagnostic.severity.WARN] = "󰀪 ",
@@ -29,12 +29,12 @@ in {
         current_line = false;
 
         severity = {
-          min = lib.generators.mkLuaInline /* lua */ ''
+          min = lib.generators.mkLuaInline /* Lua */ ''
             vim.diagnostic.severity.WARN
           '';
         };
 
-        #format = lib.generators.mkLuaInline /* lua */ ''
+        #format = lib.generators.mkLuaInline /* Lua */ ''
         #  function(diagnostic)
         #    local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
         #    if diagnostic.lnum ~= cursor_line then
@@ -45,7 +45,7 @@ in {
       };
       virtual_lines = {
         current_line = true;
-        #format = lib.generators.mkLuaInline /* lua */ ''
+        #format = lib.generators.mkLuaInline /* Lua */ ''
         #  function(diagnostic)
         #    local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1
         #    if diagnostic.lnum == cursor_line then
@@ -79,7 +79,7 @@ in {
             "--bbox-unsup"
             "--lint-only"
             "-f"
-            (lib.generators.mkLuaInline /* lua */ ''
+            (lib.generators.mkLuaInline /* Lua */ ''
               vim.fs.find('verilator.f', {upward = true, stop = vim.env.HOME})[1]
             '')
           ];

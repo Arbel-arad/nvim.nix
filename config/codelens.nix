@@ -5,7 +5,7 @@
       event = [
         "LspAttach"
       ];
-      callback = lib.generators.mkLuaInline /* lua */ ''
+      callback = lib.generators.mkLuaInline /* Lua */ ''
         function(args)
           local bufnr = args.buf
           local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -31,7 +31,7 @@
       silent = true;
 
       lua = true;
-      action = /* lua */ ''
+      action = /* Lua */ ''
         function()
           vim.lsp.codelens.run()
         end
