@@ -35,11 +35,19 @@ in {
     ];
 
     postBuild = /* bash */ ''
+      cp "$out/bin/nvim" "$out/bin/nvim-unwrapped"
+
       wrapProgram "$out/bin/nvim" \
         --set SHELL "fish" \
         --prefix PATH : "${lib.makeBinPath self.nvim-config.extraPackages}"
     '';
 
+    meta = {
+      mainProgram = "nvim";
+    };
+  };
+
+  nvim-unwrapped = mkNvim 0 // {
     meta = {
       mainProgram = "nvim";
     };

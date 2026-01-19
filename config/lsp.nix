@@ -84,7 +84,7 @@ in {
 
         filetypes = [
           "arduino"
-          "ino"
+          #"ino"
         ];
 
         capabilities = lib.mkForce {
