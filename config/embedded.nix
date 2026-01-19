@@ -21,6 +21,11 @@ in {
 
     pkgs.minicom
     pkgs.tio
+
+    # For debugging
+    pkgs.openocd
+    pkgs.pyocd
+    #pkgs.blackmagic
   ];
 
   lazy = {

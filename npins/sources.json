@@ -65,6 +65,19 @@
       "url": "https://github.com/arbel-arad/distant/archive/d4866c24ce24ee148c951f8cddf530b8aecd1d28.tar.gz",
       "hash": "sha256-n3mWr+uL6SU7+a6x2Imm/mF5vx+vXtwOUUYgw7ET9iY="
     },
+    "exrc.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "jedrzejboczar",
+        "repo": "exrc.nvim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "4346164895f432f361e453d837b612e6c7cbe3e6",
+      "url": "https://github.com/jedrzejboczar/exrc.nvim/archive/4346164895f432f361e453d837b612e6c7cbe3e6.tar.gz",
+      "hash": "sha256-iF2fEIo7Pm3KtSwy7rhc//YXuqcD32BeP2h5ZYN8vKc="
+    },
     "ferris.nvim": {
       "type": "Git",
       "repository": {

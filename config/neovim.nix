@@ -60,6 +60,10 @@
 
           mousescroll = "ver:1,hor:1";
           mousemoveevent = true;
+
+          # Enable external per-project config
+          # Handled with exrc plugin instead
+          exrc = false;
         };
 
         globals = {

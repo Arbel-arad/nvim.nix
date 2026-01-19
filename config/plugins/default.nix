@@ -6,5 +6,6 @@
   (import ./sniprun.nix { inherit nvimSize pkgs lib; })
   (import ./hex.nix { inherit pkgs lib; })
   (import ./just.nix { inherit npins pkgs; })
+  (import ./exrc.nix { inherit npins pkgs; })
   #(import ./regexplainer.nix { inherit npins pkgs lib; })
 ]
