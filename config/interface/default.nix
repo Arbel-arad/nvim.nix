@@ -7,7 +7,9 @@
       foldcolumn = "auto:1"; # levels of folds to show
       fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
 
-      winborder = "rounded";
+      # Causes double borders on some elements?
+      # maybe conflicting with other border config
+      #winborder = "rounded";
     };
 
     theme = {

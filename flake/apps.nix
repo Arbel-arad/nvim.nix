@@ -10,6 +10,30 @@
     };
   };
 
+  nvim-unwrapped = {
+    type = "app";
+    program = self'.packages.default // {
+      meta = {
+        mainProgram = "nvim-unwrapped";
+      };
+    };
+    meta = {
+      description = "Neovim, unwrapped";
+    };
+  };
+
+  nvim-softwrapped = {
+    type = "app";
+    program = self'.packages.default // {
+      meta = {
+        mainProgram = "nvim-softwrapped";
+      };
+    };
+    meta = {
+      description = "Neovim with a soft wrapper that respects the environment";
+    };
+  };
+
   nvim-zellij = {
     type = "app";
     program = self'.packages.nvim-zellij;
@@ -52,7 +76,7 @@
     type = "app";
     program = "${self'.packages.default}/bin/nvf-print-config";
     meta = {
-    description = "nvf-print-config";
+      description = "nvf-print-config";
     };
   };
 }

@@ -171,6 +171,19 @@
       "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/e9c85c1b061dc78537807fc8a9e1266604b35aad.tar.gz",
       "hash": "sha256-wai8nhYN5VohrI5nRIcZFS+TEidARLAaj/JazMjKkGg="
     },
+    "nvim-dap-probe-rs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "abayomi185",
+        "repo": "nvim-dap-probe-rs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "6df52c49755d78a2d7754c0630dd58694ea39ada",
+      "url": "https://github.com/abayomi185/nvim-dap-probe-rs/archive/6df52c49755d78a2d7754c0630dd58694ea39ada.tar.gz",
+      "hash": "sha256-SVEJG+2oVqJKaH4+jDp2ZpbJIWIL4nqGkH0cN9pCa6M="
+    },
     "nvim-platformio.lua": {
       "type": "Git",
       "repository": {
@@ -180,9 +193,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "9dca64c052822ba60278594c804243f624e31cef",
-      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/9dca64c052822ba60278594c804243f624e31cef.tar.gz",
-      "hash": "sha256-oscwc0kURRJWbKHh3D/YaomBZNG8pDB8KZwvP/aepBk="
+      "revision": "95fb921677b4a738428da7d0d009eeab7a44c3ef",
+      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/95fb921677b4a738428da7d0d009eeab7a44c3ef.tar.gz",
+      "hash": "sha256-9j3YRCV3AGo2Nl8CsKzPQ0LN8z9SFmKRjurc4YNE2ag="
     },
     "nvim-regexplainer": {
       "type": "Git",
