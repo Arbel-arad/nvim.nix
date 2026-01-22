@@ -1,11 +1,11 @@
-{ config, inputs, self, self', pkgs, lib }: let
+{ config, inputs, self, self', nvf-pkgs, pkgs, lib }: let
 
   zellij = import (self + /tools/zellij/zellij.nix) {
     inherit self self' pkgs lib;
   };
 
   mkNvim = nvimSize: (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
-      inherit pkgs;
+      pkgs = nvf-pkgs;
       modules = [
         (
           import (self + /default.nix) {

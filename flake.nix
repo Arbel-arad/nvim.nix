@@ -2,7 +2,8 @@
   description = "Arbel's neovim flake";
 
   inputs = {
-    nixpkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=nixpkgs-unstable&shallow=1";
+    nixpkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1";
+    treesitter-pkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1&rev=62b21fb4436e32c7884191bc2fcbb4dc2726f160";
     flake-parts.url = "git+https://forgejo.spacetime.technology/nix-mirrors/flake-parts?shallow=1";
     system.url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1";
     nvim-nightly = {
@@ -76,7 +77,7 @@
       };
 
       systems = inputs.system.wellSupportedArches;
-      perSystem = { config, self', pkgs, lib, ... }: {
+      perSystem = { inputs', system, config, self', pkgs, lib, ... }: {
         devShells = {
           default = pkgs.mkShell {
             nativeBuildInputs = [
@@ -97,6 +98,7 @@
 
         packages = import ./flake/package.nix {
           inherit config inputs self self' pkgs lib;
+          nvf-pkgs = inputs'.treesitter-pkgs.legacyPackages;
         };
 
         apps = import ./flake/apps.nix {
