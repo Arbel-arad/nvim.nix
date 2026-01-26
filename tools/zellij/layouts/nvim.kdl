@@ -5,7 +5,15 @@ layout {
 
   pane split_direction="vertical" {
     pane {
+      name "nvim"
       command "nvim"
+
+      size "80%"
+      borderless true
+      //start_suspended true
+    }
+    pane {
+      focus true
     }
   }
 

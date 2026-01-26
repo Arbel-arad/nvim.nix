@@ -1,5 +1,9 @@
 { self, self', pkgs, lib }: {
-  nvim-zellij = pkgs.symlinkJoin {
+  nvim-zellij = let
+
+    base = ./.;
+
+  in pkgs.symlinkJoin {
     name = "nvim-zellij";
 
     paths = [
@@ -34,7 +38,10 @@
       };
 
       # Keybinds matched with Neovim
-      config = pkgs.writeText "config.kdl" /* c */ ''
+      config = pkgs.writeText "config.kdl" /* rs */ ''
+        layout_dir "${base}/layouts"
+        //theme_dir "${base}/themes"
+
         default_layout "nvim"
 
         //default_mode "locked"
@@ -43,6 +50,8 @@
 
         show_startup_tips false
         show_release_notes false
+
+        session_serialization false
 
         keybinds {
           shared_except "locked" {
@@ -57,11 +66,20 @@
             ${mkPluginBind { keys = [ "Alt l" "Alt Right"    ]; name = "resize"; dir = "right"; }}
           }
         }
+
+        //web_server_ip "::1"
+        web_client {
+          font "JetBrainsMono Nerd Font"
+          cursor_blink false
+          cursor_style "bar"
+          cursor_inactive_style "outline"
+        }
       '';
 
     in /* bash */ ''
       wrapProgram "$out/bin/zellij" \
-        --add-flags "--config-dir ${./.} --config ${config} --new-session-with-layout nvim" \
+        --add-flags "--config-dir ${base} --config ${config} --new-session-with-layout ${./layouts/nvim.kdl} --session \"neovim-zellij-wrapped\"" \
+        --set EDITOR nvim \
         --prefix PATH : "${ lib.makeBinPath ([
           self'.packages."nvim.nix"
         ] ++ self.nvim-config.extraPackages) }"

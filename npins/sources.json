@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "fba550deef2acf2b400927e82775d5139c56615f",
-      "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/fba550deef2acf2b400927e82775d5139c56615f.tar.gz",
-      "hash": "sha256-0jord5abDVqU5NhlW0LhKrKdgXX1/hJlM0W0ByRXyb4="
+      "revision": "60e7ed08ca2bcf0cd357efb0aa74ae3dd528a83a",
+      "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/60e7ed08ca2bcf0cd357efb0aa74ae3dd528a83a.tar.gz",
+      "hash": "sha256-pQk5bks0oBywnzZcMaime4J3mjpOaG/OUTBv0gVd/gU="
     },
     "arduino-nvim": {
       "type": "Git",
