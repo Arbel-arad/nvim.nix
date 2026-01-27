@@ -7,5 +7,6 @@
   (import ./hex.nix { inherit pkgs lib; })
   (import ./just.nix { inherit npins pkgs; })
   (import ./exrc.nix { inherit npins pkgs; })
+  (import ./kulala.nix { inherit pkgs; })
   #(import ./regexplainer.nix { inherit npins pkgs lib; })
 ]

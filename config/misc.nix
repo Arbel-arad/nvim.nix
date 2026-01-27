@@ -130,19 +130,6 @@ in {
         event = ["BufEnter"];
       };
 
-      "rest.nvim" = {
-        package = pkgs.vimPlugins.rest-nvim;
-        setupOpts = {
-
-        };
-
-        lazy = true;
-
-        ft = [
-          "http"
-        ];
-      };
-
       "telescope-ui-select.nvim" = {
         package = pkgs.vimPlugins.telescope-ui-select-nvim;
         lazy = true;

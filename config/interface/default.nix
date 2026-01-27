@@ -49,6 +49,7 @@
       };
 
       codewindow = {
+        # Broken on unstable treesitter
         enable = true;
       };
     };
