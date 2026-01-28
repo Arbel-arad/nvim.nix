@@ -20,6 +20,12 @@ in {
 
     yazi-nvim = {
       enable = true;
+
+      # Open at current file with my commonly used shortcut, Toggle mode sometimes jumps up directories
+      mappings = {
+        yaziToggle = "<leader>-";
+        openYazi = "<c-up>";
+      };
     };
 
     nix-develop = {
@@ -146,6 +152,7 @@ in {
   };
 
   notes = {
+    # (partially) Replaced with https://github.com/oxy2dev/tree-sitter-comment
     todo-comments = {
       enable = true;
     };

@@ -275,6 +275,19 @@
       "url": "https://github.com/pogyomo/submode.nvim/archive/2094da8b2c3a3acd58d13c8c7f349623c58e284e.tar.gz",
       "hash": "sha256-0hZfassbzQlNu2p32K6MZY7mfLVIUQ2ZpdAC2+xZRDs="
     },
+    "tree-sitter-comment": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "oxy2dev",
+        "repo": "tree-sitter-comment"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "87bb8707b694e7d9820947f21be36d6ce769e5cc",
+      "url": "https://github.com/oxy2dev/tree-sitter-comment/archive/87bb8707b694e7d9820947f21be36d6ce769e5cc.tar.gz",
+      "hash": "sha256-JVZkRj7fv/T234ZAk/pM6UYC91mTJoeIgDFkZ9p3m0o="
+    },
     "tree-sitter-language-injection.nvim": {
       "type": "Git",
       "repository": {

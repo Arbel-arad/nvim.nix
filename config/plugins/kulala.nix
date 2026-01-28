@@ -20,7 +20,9 @@ in {
   ];
 
   treesitter = {
-    grammars = [grammar];
+    grammars = [
+      grammar
+    ];
   };
 
   lazy.plugins = {
