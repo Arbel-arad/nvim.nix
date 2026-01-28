@@ -48,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ecd3bd4898f79689a3f5bf956877ea42c7b3072e",
-      "url": "https://github.com/notashelf/direnv.nvim/archive/ecd3bd4898f79689a3f5bf956877ea42c7b3072e.tar.gz",
-      "hash": "sha256-a+NvIzlGk+ojNzOReXt1QHqr6wVROIaFBhS8Hd1C3HU="
+      "revision": "9e58bb5e8db19d8bf2626de8e94a85fc305a8c1e",
+      "url": "https://github.com/notashelf/direnv.nvim/archive/9e58bb5e8db19d8bf2626de8e94a85fc305a8c1e.tar.gz",
+      "hash": "sha256-TlQ3oTRirUf/Po1KWCL4wDp8GgrJXzYWQx0C5qyZFeQ="
     },
     "distant": {
       "type": "Git",
@@ -153,9 +153,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "3409dc920d40bec4c901c0a122a80bee03d6d1e1",
-      "url": "https://github.com/Shatur/neovim-session-manager/archive/3409dc920d40bec4c901c0a122a80bee03d6d1e1.tar.gz",
-      "hash": "sha256-k2akj/s6qJx/sCnz3UNHo5zbENTpw+OPuo2WPF1W7rg="
+      "revision": "89d253a6c68af60b49570044591d5b8701866601",
+      "url": "https://github.com/Shatur/neovim-session-manager/archive/89d253a6c68af60b49570044591d5b8701866601.tar.gz",
+      "hash": "sha256-d7lXPIy6qJDPvFk8twwkqKUWI205HfTqXMspnVRkng0="
     },
     "nvim-dap-disasm": {
       "type": "Git",

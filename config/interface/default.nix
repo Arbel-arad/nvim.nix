@@ -50,7 +50,7 @@
 
       codewindow = {
         # Broken on unstable treesitter
-        enable = true;
+        #enable = true;
       };
     };
 

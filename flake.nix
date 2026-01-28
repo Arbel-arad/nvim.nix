@@ -98,7 +98,7 @@
 
         packages = import ./flake/package.nix {
           inherit config inputs self self' pkgs lib;
-          nvf-pkgs = inputs'.treesitter-pkgs.legacyPackages;
+          nvf-pkgs = inputs'.nixpkgs.legacyPackages;
         };
 
         apps = import ./flake/apps.nix {
