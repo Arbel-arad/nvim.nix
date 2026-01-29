@@ -64,6 +64,9 @@ in {
             "platformio.piomon"
             "platformio.piorun"
             "platformio.utils"
+            "platformio.health"
+            "health.platformio"
+            "vim.health.platformio"
           ];
         };
 

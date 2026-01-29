@@ -193,9 +193,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "95fb921677b4a738428da7d0d009eeab7a44c3ef",
-      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/95fb921677b4a738428da7d0d009eeab7a44c3ef.tar.gz",
-      "hash": "sha256-9j3YRCV3AGo2Nl8CsKzPQ0LN8z9SFmKRjurc4YNE2ag="
+      "revision": "ec4aa80d661c444e7d6efa0737f52cd2cdca3f08",
+      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/ec4aa80d661c444e7d6efa0737f52cd2cdca3f08.tar.gz",
+      "hash": "sha256-Bc7aM8o5HMCB22eotw7200RLLgd5M8fZhQgMCM+d5h0="
     },
     "nvim-regexplainer": {
       "type": "Git",
