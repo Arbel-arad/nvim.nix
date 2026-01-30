@@ -42,6 +42,34 @@
       desc = "Clear search highlight";
     }
 
+    {
+      key = "<leader>sg";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ "<cmd>GrugFar<cr>";
+      desc = "GrugFar";
+    }
+
+    {
+      key = "<leader>sr";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ "<cmd>SearchBoxReplace<cr>";
+      desc = "Replace";
+    }
+    {
+      key = "<leader>ss";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ "<cmd>SearchBoxMatchAll<cr>";
+      desc = "Search All";
+    }
   ];
 
   binds = let
@@ -62,6 +90,7 @@
         "<leader>d" = "+Debug/Direnv";
         "<leader>de" = "+Direnv";
         "<leader>b" = "+Buffers";
+        "<leader>s" = "+Search";
       };
     };
 

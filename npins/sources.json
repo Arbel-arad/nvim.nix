@@ -193,9 +193,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ec4aa80d661c444e7d6efa0737f52cd2cdca3f08",
-      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/ec4aa80d661c444e7d6efa0737f52cd2cdca3f08.tar.gz",
-      "hash": "sha256-Bc7aM8o5HMCB22eotw7200RLLgd5M8fZhQgMCM+d5h0="
+      "revision": "9878edd0e244ebc805bf7324c039abe4f74a0aa4",
+      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/9878edd0e244ebc805bf7324c039abe4f74a0aa4.tar.gz",
+      "hash": "sha256-zWWg3RyeW4+4MuANyrwzOiiDcBgVMullmDE2Du64UxI="
     },
     "nvim-regexplainer": {
       "type": "Git",
@@ -235,6 +235,19 @@
       "revision": "68f03f52faf52ccfe954e5430ce17f7590bac2a0",
       "url": "https://github.com/NStefan002/screenkey.nvim/archive/68f03f52faf52ccfe954e5430ce17f7590bac2a0.tar.gz",
       "hash": "sha256-HrVxE6dQBntp++9yll28bG17muAOj5uvzvUpulsZ800="
+    },
+    "search-replace.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "roobert",
+        "repo": "search-replace.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "d92290a02d97f4e9b8cd60d28b56b403432158d5",
+      "url": "https://github.com/roobert/search-replace.nvim/archive/d92290a02d97f4e9b8cd60d28b56b403432158d5.tar.gz",
+      "hash": "sha256-hEdEBDeHbJc3efgo7djktX4RemAiX8ZvQlJIEoAgkPM="
     },
     "sqls.nvim": {
       "type": "Git",
