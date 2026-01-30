@@ -41,7 +41,21 @@
 
         extensions = {
           render-markdown-nvim = {
-              enable = true;
+            #enable = true;
+          };
+          markview-nvim = {
+            enable = true;
+
+            setupOpts = {
+              markdown = {
+                #enable = false;
+              };
+              experimental = {
+                fancy_comments = true;
+                prefer_nvim = true;
+                file_open_command = "tabnew";
+              };
+            };
           };
         };
 

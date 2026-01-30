@@ -12,7 +12,7 @@
           ];
         };
 
-        manager = {
+        mgr = {
           sort_by = "natural";
           sort_dir_first = true;
           sort_reverse = false;
@@ -20,6 +20,12 @@
 
           show_hidden = true;
           show_symlink = true;
+
+          linemode = "size";
+        };
+
+        preview = {
+          tab_size = 2;
         };
       };
 
