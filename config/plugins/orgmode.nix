@@ -70,6 +70,9 @@ in {
         ];
       };
 
+      /* FIXME: https://github.com/NotAShelf/nvf/discussions/1048
+         org-roam DB saving/loading is broken, causing screen flicker on startup and increased launch time
+      */
       "org-roam.nvim" = lib.mkIf true {
         #inherit enabled;
         #enabled = false;
@@ -82,6 +85,10 @@ in {
 
         setupOpts = {
           directory = "~/.org-roam";
+            database = {
+              persist = false;
+              update_on_save = false;
+            };
           #org_files = [
 
           #];

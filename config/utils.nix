@@ -155,6 +155,15 @@ in {
     # (partially) Replaced with https://github.com/oxy2dev/tree-sitter-comment
     todo-comments = {
       enable = true;
+
+      setupOpts = {
+        highlight = {
+          # Disable keyword highlight since tree-sitter-comment handles this
+          before = "";
+          keyword = "";
+          after = "fg";
+        };
+      };
     };
 
     neorg = {

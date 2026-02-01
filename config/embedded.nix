@@ -30,6 +30,11 @@ in {
 
   lazy = {
     plugins = if !enabled then {} else {
+      "telescope-ui-select.nvim" = {
+        # Can't lazy load when it's a dependency of platformio
+        lazy = false;
+      };
+
       "nvim-platformio" = lib.mkIf enabled {
         inherit enabled;
         package = pkgs.vimUtils.buildVimPlugin {
@@ -40,7 +45,7 @@ in {
 
           dependencies = [
             pkgs.vimPlugins.telescope-nvim
-            pkgs.vimPlugins.telescope-ui-select-nvim
+            #pkgs.vimPlugins.telescope-ui-select-nvim
             pkgs.vimPlugins.FTerm-nvim
             pkgs.vimPlugins.plenary-nvim
             pkgs.vimPlugins.toggleterm-nvim

@@ -130,11 +130,13 @@
         package = pkgs.vimPlugins.neotest-bash;
       };
 
-      nvim-nio = {
+      /*nvim-nio = {
         package = pkgs.vimPlugins.nvim-nio;
-      };
+      };*/
     };
   };
 
-
+  startPlugins = with pkgs.vimPlugins; [
+    nvim-nio
+  ];
 }

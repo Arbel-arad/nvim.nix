@@ -132,7 +132,7 @@ in {
 
       "telescope-ui-select.nvim" = {
         package = pkgs.vimPlugins.telescope-ui-select-nvim;
-        lazy = true;
+        lazy = lib.mkDefault true;
       };
 
       "direnv.nvim" = {
