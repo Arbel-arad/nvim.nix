@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1";
-    treesitter-pkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1&rev=62b21fb4436e32c7884191bc2fcbb4dc2726f160";
     flake-parts.url = "git+https://forgejo.spacetime.technology/nix-mirrors/flake-parts?shallow=1";
     system.url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1";
     nvim-nightly = {

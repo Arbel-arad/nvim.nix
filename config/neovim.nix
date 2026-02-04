@@ -67,6 +67,7 @@
         };
 
         globals = {
+          markview_cmp_loaded = true; # Disable markview nvim-cmp integration
           navic_silence = true; # navic tries to attach multiple LSPs and fails
           #suda_smart_edit = 1; # use super user write automatically
         } // (import ./neovide.nix { inherit pkgs; }).globals;

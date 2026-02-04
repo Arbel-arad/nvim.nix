@@ -50,6 +50,14 @@
               markdown = {
                 #enable = false;
               };
+
+              preview = {
+                ignore_buftypes = [
+                  "nofile"
+                  "prompt"
+                ];
+              };
+
               experimental = {
                 fancy_comments = true;
                 prefer_nvim = true;
