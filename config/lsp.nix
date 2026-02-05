@@ -21,10 +21,10 @@ in {
 
       setupOpts = {
         max_height = 20;
-        hint_inline = lib.generators.mkLuaInline /* lua */ ''function() return "inline" end'';
+        hint_inline = lib.generators.mkLuaInline /* lua */ ''function() return "right_align" end'';
         hint_prefix = {
           above = "🐼 ";
-          current = "";
+          current = "←";
           below = "🐼 ";
         };
         floating_window_off_y = lib.generators.mkLuaInline /* lua */ ''
@@ -72,6 +72,10 @@ in {
 
         symbol_in_winbar = {
           enable = false;
+        };
+
+        rename = {
+          auto_save = true;
         };
       };
     };
