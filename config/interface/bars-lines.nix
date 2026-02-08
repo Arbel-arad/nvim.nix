@@ -76,6 +76,21 @@
               "alpha"
             ];
           };
+
+          refresh = {
+            events = [
+              "WinEnter"
+              "BufEnter"
+              "BufWritePost"
+              "SessionLoadPost"
+              "FileChangedShellPost"
+              "VimResized"
+              "Filetype"
+              #"CursorMoved"
+              #"CursorMovedI"
+              "ModeChanged"
+            ];
+          };
         };
       };
     };

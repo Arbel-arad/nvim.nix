@@ -1,5 +1,6 @@
 { nvimSize, pkgs, lib, lib' }: lib'.mergeAttrsList [
   (import ./bars-lines.nix { inherit pkgs lib; })
+  (import ./indent.nix { inherit pkgs; })
 
   {
     options = {
@@ -57,6 +58,10 @@
     ui = {
       illuminate = {
         enable = true;
+
+        setupOpts = {
+          delay = 500;
+        };
       };
 
       breadcrumbs = {
@@ -182,8 +187,9 @@
         };
       };
 
+      # Replaced with https://github.com/shellRaining/hlchunk.nvim as it causes performance issues
       indent-blankline = {
-        enable = true;
+        enable = false;
 
         setupOpts = {
           scope = {
