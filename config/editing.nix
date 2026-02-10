@@ -214,6 +214,15 @@
     };
 
     setupOpts = {
+      pickers = {
+        find_files = {
+          #hidden = true;
+        };
+        grep_string = {
+
+        };
+      };
+
       defaults = {
         file_ignore_patterns = [
           "node_modules"
@@ -226,6 +235,17 @@
           ".zig-cache/"
           ".ccls-cache/"
           "%.lock"
+        ];
+
+        vimgrep_arguments = [
+          "rg"
+          "--color=never"
+          "--no-heading"
+          "--with-filename"
+          "--line-number"
+          "--column"
+          "--smart-case"
+          "-u"
         ];
       };
     };
