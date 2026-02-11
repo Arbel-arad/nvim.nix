@@ -35,7 +35,8 @@ in {
             #enable_build_on_save = true;
             build_on_save_args = [
               #"install"
-              #  "-fno-emit-bin"
+              #"-fno-emit-bin"
+              #"-fincremental"
             ];
           }}"
         ];
@@ -47,7 +48,7 @@ in {
 
         settings = {
           zls = {
-            enable_build_on_save = true;
+            enable_build_on_save = false;
           };
         };
       };
