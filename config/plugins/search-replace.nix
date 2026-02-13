@@ -1,6 +1,42 @@
-{ npins, pkgs }: {
+{ npins, nvimSize, pkgs, lib }: let
+
+  enabled = nvimSize <= 200;
+
+in {
   options = {
     inccommand = "split";
+  };
+  extraPackages = lib.optionals enabled [
+    pkgs.ast-grep
+  ];
+
+  lsp = {
+    servers = {
+      ast_grep = lib.mkIf enabled {
+        cmd = [
+          "${lib.getExe pkgs.ast-grep}" "lsp"
+        ];
+      };
+    };
+  };
+
+  telescope = {
+    extensions = lib.optionals enabled [
+      {
+        name = "ast_grep";
+        packages = [ pkgs.vimPlugins.telescope-sg ];
+        setup = {
+          ast_grep = {
+            command = [
+              "${lib.getExe pkgs.ast-grep}"
+              "--json=stream"
+            ];
+            grep_open_files = false;
+            lang = null;
+          };
+        };
+      }
+    ];
   };
 
   lazy = {
