@@ -1,0 +1,26 @@
+diff --git a/src/black/linegen.py b/src/black/linegen.py
+index f907070..ab06e78 100644
+--- a/src/black/linegen.py
++++ b/src/black/linegen.py
+@@ -491,7 +491,7 @@ def visit_STRING(self, leaf: Leaf) -> Iterator[Line]:
+             quote_len = 1 if docstring[1] != quote_char else 3
+             docstring = docstring[quote_len:-quote_len]
+             docstring_started_empty = not docstring
+-            indent = " " * 4 * self.current_line.depth
++            indent = " " * 2 * self.current_line.depth
+
+             if is_multiline_string(leaf):
+                 docstring = fix_multiline_docstring(docstring, indent)
+diff --git a/src/black/lines.py b/src/black/lines.py
+index 3c7b6bb..63fc0f2 100644
+--- a/src/black/lines.py
++++ b/src/black/lines.py
+@@ -480,7 +480,7 @@ def __str__(self) -> str:
+         if not self:
+             return "\n"
+
+-        indent = "    " * self.depth
++        indent = "  " * self.depth
+         leaves = iter(self.leaves)
+         first = next(leaves)
+         res = f"{first.prefix}{indent}{first.value}"

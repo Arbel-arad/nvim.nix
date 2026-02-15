@@ -52,14 +52,23 @@
     };
   };
 
-  outputs = { self, ... }@inputs:
-    inputs.flake-parts.lib.mkFlake {
+  outputs = { self, ... }@inputs: let
+
+    overlays = import (self + /flake/overlays.nix) {
+      inherit self;
+    };
+
+  in inputs.flake-parts.lib.mkFlake {
       inherit inputs self;
     } {
       flake = let
 
         pkgs = import inputs.nixpkgs {
           system = "x86_64-linux";
+
+          overlays = [
+            overlays.nvf-pkgs
+          ];
         };
 
       in {
@@ -97,7 +106,13 @@
 
         packages = import ./flake/package.nix {
           inherit config inputs self self' pkgs lib;
-          nvf-pkgs = inputs'.nixpkgs.legacyPackages;
+          nvf-pkgs = import inputs.nixpkgs {
+            inherit system;
+
+            overlays = [
+              overlays.nvf-pkgs
+            ];
+          };
         };
 
         apps = import ./flake/apps.nix {

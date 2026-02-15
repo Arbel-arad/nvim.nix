@@ -1,6 +1,8 @@
 { enableExtra, pkgs, lib }: {
   extraPackages = lib.optionals enableExtra [
     pkgs.py-spy
+
+    pkgs.black
   ];
 
   languages = {
