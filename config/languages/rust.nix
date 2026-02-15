@@ -11,6 +11,7 @@ in {
     pkgs.cargo
     pkgs.rustc
     pkgs.clippy
+    pkgs.rust-analyzer
 
     pkgs.cargo-deny
     pkgs.cargo-bloat
