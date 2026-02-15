@@ -24,8 +24,14 @@ in {
   languages = {
     rust = {
       inherit enable;
+
       lsp = {
         enable = true;
+
+        # Use rust-analyzer from `$PATH` for compatibility with nvim-unwrapped and project-specific arches
+        package = [
+          "rust-analyzer"
+        ];
 
         opts = /* lua */ ''
           ['rust-analyzer'] = {
