@@ -114,9 +114,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "2fc113fafab9196cda972fa2c8cdff38a3678be9",
-      "url": "https://github.com/nxuv/just.nvim/archive/2fc113fafab9196cda972fa2c8cdff38a3678be9.tar.gz",
-      "hash": "sha256-mpVPjgpNkuDFX0lQEBFZMrBFLMyulzKTkPS1HNsLFPM="
+      "revision": "587cc281734c85c8765e475fb12b328d335b442b",
+      "url": "https://github.com/nxuv/just.nvim/archive/587cc281734c85c8765e475fb12b328d335b442b.tar.gz",
+      "hash": "sha256-q2qlPbpx6YHvgWXUvzZlUmESFJgHM7TtsHAwuzd6iws="
     },
     "micropython.nvim": {
       "type": "Git",
@@ -193,9 +193,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "9878edd0e244ebc805bf7324c039abe4f74a0aa4",
-      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/9878edd0e244ebc805bf7324c039abe4f74a0aa4.tar.gz",
-      "hash": "sha256-zWWg3RyeW4+4MuANyrwzOiiDcBgVMullmDE2Du64UxI="
+      "revision": "d15034940e117a7cb82d63bc6466a6071eb61cd6",
+      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/d15034940e117a7cb82d63bc6466a6071eb61cd6.tar.gz",
+      "hash": "sha256-NahEKN9imn84VKt3zBm1mOkNVFAu4GV2aRFxxr8bK+w="
     },
     "nvim-regexplainer": {
       "type": "Git",
@@ -232,9 +232,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "f42fe7a4f9dee945ac8d3902db276e6548e93f0f",
-      "url": "https://github.com/NStefan002/screenkey.nvim/archive/f42fe7a4f9dee945ac8d3902db276e6548e93f0f.tar.gz",
-      "hash": "sha256-AIGagT3EdTU8j+3EBDCi29f7cMUSScIqSpTtx05zv/k="
+      "revision": "fd321966b41d111eed0488b5a3c2d2f8159e1158",
+      "url": "https://github.com/NStefan002/screenkey.nvim/archive/fd321966b41d111eed0488b5a3c2d2f8159e1158.tar.gz",
+      "hash": "sha256-PqlzJ9m7lxrOI8YuykYqpTWMUdjjlkhj7J2nM/waz84="
     },
     "search-replace.nvim": {
       "type": "Git",

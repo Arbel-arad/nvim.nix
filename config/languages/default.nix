@@ -34,6 +34,11 @@
 
       odin = {
         enable = enableExtra;
+
+        lsp = {
+          # FIXME: OLS package is broken
+          enable = false;
+        };
       };
 
       markdown = {
