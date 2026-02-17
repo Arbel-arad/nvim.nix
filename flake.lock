@@ -304,18 +304,17 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1771274219,
-        "narHash": "sha256-n7CZAK+mTko+y3SSwvFt49AD1RNLY2KcHypcoly8HVc=",
-        "ref": "refs/heads/main",
-        "rev": "99bf160aaef28d47f1818deffe662ce1c4d6e6a1",
-        "shallow": true,
-        "type": "git",
-        "url": "https://forgejo.spacetime.technology/nix-mirrors/nvf"
+        "lastModified": 1771331906,
+        "narHash": "sha256-LS0dGSn99xXuuVPgmpgS57dklQFzZob+pBg+bieouMI=",
+        "owner": "arbel-arad",
+        "repo": "nvf",
+        "rev": "24c7773483e483c5f516837c21270f3ccf265d8d",
+        "type": "github"
       },
       "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "https://forgejo.spacetime.technology/nix-mirrors/nvf"
+        "owner": "arbel-arad",
+        "repo": "nvf",
+        "type": "github"
       }
     },
     "nvim-nightly": {

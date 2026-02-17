@@ -14,7 +14,8 @@
     };
 
     nvf = {
-      url = "git+https://forgejo.spacetime.technology/nix-mirrors/nvf?shallow=1";
+      #url = "git+https://forgejo.spacetime.technology/nix-mirrors/nvf?shallow=1";
+      url = "github:arbel-arad/nvf";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
