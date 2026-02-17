@@ -39,7 +39,9 @@ in {
             cargo = {
               allFeature = true
             },
+
             checkOnSave = true,
+
             procMacro = {
               enable = true,
             },

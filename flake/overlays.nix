@@ -1,6 +1,6 @@
-{ self}: {
-  nvf-pkgs = _: prev: {
-    black = prev.black.overrideAttrs (prev: {
+{ self }: {
+  nvf-pkgs = _: prevPkgs: {
+    black = prevPkgs.black.overrideAttrs (prev: {
       patches = prev.patches ++ [
        (self + /config/languages/patches/black-indent.patch)
       ];

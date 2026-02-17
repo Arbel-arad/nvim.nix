@@ -244,19 +244,19 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1771312263,
-        "narHash": "sha256-vMhdmHvt4Dr8dom4/bLBYMkYuT5onE9O7AjgFIQNWMY=",
-        "ref": "master",
-        "rev": "43f46807e2b43aec03cf7a71d6b5e658e4a8a97a",
+        "lastModified": 1771286612,
+        "narHash": "sha256-oyDONaNq+zZdgJxjPiqY79Lms9jAFX73kpEhMBqjeBE=",
+        "ref": "refs/heads/master",
+        "rev": "97c8a41d0dda5063b4e42f4ddf6a850da2688037",
         "shallow": true,
         "type": "git",
-        "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
+        "url": "https://github.com/nixos/nixpkgs"
       },
       "original": {
-        "ref": "master",
+        "rev": "97c8a41d0dda5063b4e42f4ddf6a850da2688037",
         "shallow": true,
         "type": "git",
-        "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
+        "url": "https://github.com/nixos/nixpkgs"
       }
     },
     "nixpkgs-lib": {

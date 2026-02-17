@@ -2,7 +2,8 @@
   description = "Arbel's neovim flake";
 
   inputs = {
-    nixpkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1";
+    #nixpkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1";
+    nixpkgs.url = "git+https://github.com/nixos/nixpkgs?rev=97c8a41d0dda5063b4e42f4ddf6a850da2688037&shallow=1";
     flake-parts.url = "git+https://forgejo.spacetime.technology/nix-mirrors/flake-parts?shallow=1";
     system.url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1";
     nvim-nightly = {
@@ -80,13 +81,24 @@
           config = { };
         }).config.programs.nvf.settings.vim;
 
+        inherit pkgs;
+
         nixosConfigurations = import ./flake/microVMs.nix {
           inherit inputs self;
         };
       };
 
       systems = inputs.system.wellSupportedArches;
-      perSystem = { inputs', system, config, self', pkgs, lib, ... }: {
+      perSystem = { system, config, self', lib, ... }: let
+
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [
+            overlays.nvf-pkgs
+          ];
+        };
+
+      in {
         devShells = {
           default = pkgs.mkShell {
             nativeBuildInputs = [
