@@ -223,6 +223,19 @@
       "url": "https://github.com/nvim-orgmode/org-bullets.nvim/archive/21437cfa99c70f2c18977bffd423f912a7b832ea.tar.gz",
       "hash": "sha256-/l8IfvVSPK7pt3Or39+uenryTM5aBvyJZX5trKNh0X0="
     },
+    "qalc.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Apeiros-46B",
+        "repo": "qalc.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "33198ba0533d6a514f9a48cb472e40407c2ea9f6",
+      "url": "https://github.com/Apeiros-46B/qalc.nvim/archive/33198ba0533d6a514f9a48cb472e40407c2ea9f6.tar.gz",
+      "hash": "sha256-E1fUczmZ7B852OHxdPz7U0Zdhvl/qihp0cXZv/5HHts="
+    },
     "screenkey.nvim": {
       "type": "Git",
       "repository": {

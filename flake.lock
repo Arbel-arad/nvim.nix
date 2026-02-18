@@ -229,11 +229,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1771279892,
-        "narHash": "sha256-zilx+VZK5+BAmZKzRImtEHeJ8+yJx1SskPlcbUar8I4=",
+        "lastModified": 1771351969,
+        "narHash": "sha256-AvX9xpjcgWCarffnNYvkdVO5HpEPKpnDwDgIHYp93tk=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "16495e686371d45f02eafff5aa3216ca15d5f735",
+        "rev": "29a46a11aa0820e4efcad80a2dfb9ca600924f58",
         "type": "github"
       },
       "original": {
@@ -244,19 +244,19 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1771286612,
-        "narHash": "sha256-oyDONaNq+zZdgJxjPiqY79Lms9jAFX73kpEhMBqjeBE=",
-        "ref": "refs/heads/master",
-        "rev": "97c8a41d0dda5063b4e42f4ddf6a850da2688037",
+        "lastModified": 1771398763,
+        "narHash": "sha256-MVRssUXsWHRffWwPJ0T443k/XXYl6Ax/CsQxBx7WJvE=",
+        "ref": "master",
+        "rev": "1994644a542e1fd365591c84b3606abe1fbd840f",
         "shallow": true,
         "type": "git",
-        "url": "https://github.com/nixos/nixpkgs"
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
       },
       "original": {
-        "rev": "97c8a41d0dda5063b4e42f4ddf6a850da2688037",
+        "ref": "master",
         "shallow": true,
         "type": "git",
-        "url": "https://github.com/nixos/nixpkgs"
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
       }
     },
     "nixpkgs-lib": {
@@ -328,10 +328,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1771286682,
-        "narHash": "sha256-5X4tVhILpK+KD8Djm3j6NxxOlb/KnO/hL1QG7DQBRZM=",
+        "lastModified": 1771373098,
+        "narHash": "sha256-QbqVr1nPO2YKd5jwQ3XGdDBgKdNO7PkHuWmwm1Xb0W8=",
         "ref": "refs/heads/master",
-        "rev": "fba9a0ef6f22d02c81c88629a2b29102cc6d2e82",
+        "rev": "3a8cfad64aeeaea6147d4443f15f56549f32d60c",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"
