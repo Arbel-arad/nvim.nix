@@ -15,7 +15,7 @@
               left_top = "╭";
               left_bottom = "╰";
               # TODO: replace with pipe arrow character
-              right_arrow = ">";
+              right_arrow = "─";
             };
 
             style = [

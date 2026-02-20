@@ -36,8 +36,22 @@ in {
 
         opts = /* lua */ ''
           ['rust-analyzer'] = {
+            check = {
+              command = "check",
+            },
+
+            diagnostics = {
+              experimental = {
+                enable = true,
+              },
+
+              styleLints = {
+                enable = true,
+              },
+            },
+
             cargo = {
-              allFeature = true
+              allFeature = true,
             },
 
             checkOnSave = true,
@@ -45,6 +59,11 @@ in {
             procMacro = {
               enable = true,
             },
+            --rustfmt = {
+            --  overrideCommand = {
+            --    '${pkgs.rustfmt}'
+            --  },
+            --},
           },
         '';
       };

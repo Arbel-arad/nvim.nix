@@ -2,11 +2,19 @@
 
   enabled = nvimSize <= 200;
 
+  profile-rust = pkgs.writeShellScriptBin "profile-rust" /* bash */ ''
+    cargo flamegraph --post-process 'flamelens --echo' $@
+  '';
+
 in {
   extraPackages = lib.optionals enabled [
     pkgs.perf
     pkgs.inferno
     pkgs.flamelens
+    pkgs.cargo-criterion
+    pkgs.gperftools
+
+    profile-rust
   ];
 
   lazy = {
