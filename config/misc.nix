@@ -69,10 +69,16 @@ in {
 
   git = {
     enable = true;
+
     gitsigns = {
       enable = true;
+
       codeActions = {
         enable = false; # throws an annoying debug message
+      };
+
+      setupOpts = {
+        update_debounce = 500;
       };
     };
   };

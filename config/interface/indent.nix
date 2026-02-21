@@ -2,6 +2,8 @@
   lazy = {
     plugins = {
       "hlchunk.nvim" = {
+        #enabled = false;
+
         package = pkgs.vimPlugins.hlchunk-nvim;
 
         setupModule = "hlchunk";
@@ -35,6 +37,10 @@
             enable = true;
 
             #use_treesitter = true;
+          };
+
+          line_num = {
+            enable = false;
           };
         };
 

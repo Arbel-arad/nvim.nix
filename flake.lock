@@ -244,10 +244,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1771575107,
-        "narHash": "sha256-RMiV8PRAuFFtJ0l6EZcADdBW1JP+DUIPpDXnMJp0w/k=",
+        "lastModified": 1771665582,
+        "narHash": "sha256-XKQ6/eG57EizxDRk89/SqhnGTXeQcLA4zrrjll/ouZ8=",
         "ref": "master",
-        "rev": "6b0f198fe0363867d9f8cea387a3b9212b468839",
+        "rev": "418fc26868238e6f81aeaa281b3410b2188825a4",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -335,7 +335,6 @@
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"
-
       },
       "original": {
         "shallow": true,

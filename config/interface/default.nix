@@ -1,5 +1,6 @@
 { nvimSize, pkgs, lib, lib' }: lib'.mergeAttrsList [
   (import ./bars-lines.nix { inherit pkgs lib; })
+  (import ./statuscol.nix { inherit pkgs; })
   (import ./indent.nix { inherit pkgs; })
 
   {
