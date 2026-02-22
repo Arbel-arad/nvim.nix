@@ -1,5 +1,9 @@
 { nvimSize, pkgs, lib }: if nvimSize > 200 then {} else {
 
+  extraPackages = [
+    pkgs.openscad-unstable
+  ];
+
   lsp = {
     servers = {
       openscad = {

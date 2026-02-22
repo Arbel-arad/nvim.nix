@@ -68,7 +68,7 @@
           system = "x86_64-linux";
 
           overlays = [
-            overlays.nvf-pkgs
+            overlays.common
           ];
         };
 
@@ -93,7 +93,7 @@
         pkgs = import inputs.nixpkgs {
           inherit system;
           overlays = [
-            overlays.nvf-pkgs
+            overlays.common
           ];
         };
 
@@ -122,6 +122,7 @@
             inherit system;
 
             overlays = [
+              overlays.common
               overlays.nvf-pkgs
             ];
           };

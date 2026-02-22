@@ -20,6 +20,15 @@
       desc = "Open new terminal";
     }
     {
+      key = "<leader>a";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ ''<cmd>lua Snacks.terminal.open('hx ' .. vim.fn.expand('%:p'), {win = {position = 'current'}})<cr>'';
+      desc = "Reopen in helix";
+    }
+    {
       key = "<leader>rs";
       mode = [
         "n"

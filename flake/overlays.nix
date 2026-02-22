@@ -1,9 +1,5 @@
 { self }: {
-  nvf-pkgs = _: prevPkgs: let
-
-      pkgs = prevPkgs;
-
-    in {
+  common = _: prevPkgs: {
     black = prevPkgs.black.overrideAttrs (prev: {
       patches = prev.patches ++ [
        (self + /config/languages/patches/black-indent.patch)
@@ -17,7 +13,13 @@
         echo "this is broken"
       '';
     });
+  };
 
+  nvf-pkgs = _: prevPkgs: let
+
+      pkgs = prevPkgs;
+
+    in {
     rustfmt = prevPkgs.symlinkJoin {
       name = "rustfmt";
 

@@ -6,6 +6,8 @@ in {
   extraPackages = lib.optionals enabled [
     pkgs.leiningen
     pkgs.clojure
+
+    pkgs.clojure-lsp
   ];
 
   languages = {

@@ -235,10 +235,6 @@
         };
       };
 
-      clojure = {
-        enable = enableExtra;
-      };
-
       helm = {
         enable = enableExtra;
       };
