@@ -1,4 +1,4 @@
-Copyright 2025 Arbel Arad
+Copyright 2026 Arbel Arad
 
 This program is provided under the GNU AGPL version 3
 

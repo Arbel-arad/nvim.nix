@@ -167,9 +167,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "e9c85c1b061dc78537807fc8a9e1266604b35aad",
-      "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/e9c85c1b061dc78537807fc8a9e1266604b35aad.tar.gz",
-      "hash": "sha256-wai8nhYN5VohrI5nRIcZFS+TEidARLAaj/JazMjKkGg="
+      "revision": "1119f3f2b22e411adcd123cdcf6d0425b61a31a7",
+      "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/1119f3f2b22e411adcd123cdcf6d0425b61a31a7.tar.gz",
+      "hash": "sha256-lq0tbMksVXccf6GGD7OxWAuoD9w8tlt30dpJSMtN4g8="
     },
     "nvim-dap-probe-rs": {
       "type": "Git",
@@ -193,9 +193,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "d15034940e117a7cb82d63bc6466a6071eb61cd6",
-      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/d15034940e117a7cb82d63bc6466a6071eb61cd6.tar.gz",
-      "hash": "sha256-NahEKN9imn84VKt3zBm1mOkNVFAu4GV2aRFxxr8bK+w="
+      "revision": "3bc47194d0917a1f174e8c05d90e93824bd5d76f",
+      "url": "https://github.com/anurag3301/nvim-platformio.lua/archive/3bc47194d0917a1f174e8c05d90e93824bd5d76f.tar.gz",
+      "hash": "sha256-r1kTJEyZ4J5iDKUCYfQ/RTszY62OlAFau2NzqFnEODY="
     },
     "nvim-regexplainer": {
       "type": "Git",
@@ -284,9 +284,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6b65f3b8043f5920052bf483932180afddc58b78",
-      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/6b65f3b8043f5920052bf483932180afddc58b78.tar.gz",
-      "hash": "sha256-Ga95J42LQGHnQmZ34cpQpL9LkMMYjIP8FQpqSTHUAhQ="
+      "revision": "2ddf503bb32f0a0d0794aa582714dfeabfa2ac81",
+      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/2ddf503bb32f0a0d0794aa582714dfeabfa2ac81.tar.gz",
+      "hash": "sha256-BZdfoPEkeupBQr2BC4KA+QpHD9DIxqI+J9CJPR/ch+Q="
     },
     "submode.nvim": {
       "type": "Git",
@@ -349,9 +349,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6d2a3e0c1d6c64daf1ed19e9ea0849259b71f180",
-      "url": "https://github.com/hiasr/vim-zellij-navigator/archive/6d2a3e0c1d6c64daf1ed19e9ea0849259b71f180.tar.gz",
-      "hash": "sha256-1zzY1Z8ZpiNTdFW+gKRYaRR+oCzMnbJA2szY0k24bGg="
+      "revision": "5a4819e35d8c7be126f087d7dbfd3a8115c22eff",
+      "url": "https://github.com/hiasr/vim-zellij-navigator/archive/5a4819e35d8c7be126f087d7dbfd3a8115c22eff.tar.gz",
+      "hash": "sha256-G/NeXwMNvrYfFS0VxvfZE7DTBbnCgpJny+krYss8bXE="
     }
   },
   "version": 7
