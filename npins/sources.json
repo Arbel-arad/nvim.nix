@@ -184,6 +184,19 @@
       "url": "https://github.com/abayomi185/nvim-dap-probe-rs/archive/6df52c49755d78a2d7754c0630dd58694ea39ada.tar.gz",
       "hash": "sha256-SVEJG+2oVqJKaH4+jDp2ZpbJIWIL4nqGkH0cN9pCa6M="
     },
+    "nvim-dap-repl-highlights": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "LiadOz",
+        "repo": "nvim-dap-repl-highlights"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "f31deba47fe3ee6ff8d2f13d9dbd06b2d1ae06b5",
+      "url": "https://github.com/LiadOz/nvim-dap-repl-highlights/archive/f31deba47fe3ee6ff8d2f13d9dbd06b2d1ae06b5.tar.gz",
+      "hash": "sha256-1QjmDy4v1AvNs5F4V8C3Lu7CVQH+uOV8gU855oz2IjY="
+    },
     "nvim-platformio.lua": {
       "type": "Git",
       "repository": {
@@ -284,9 +297,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2ddf503bb32f0a0d0794aa582714dfeabfa2ac81",
-      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/2ddf503bb32f0a0d0794aa582714dfeabfa2ac81.tar.gz",
-      "hash": "sha256-BZdfoPEkeupBQr2BC4KA+QpHD9DIxqI+J9CJPR/ch+Q="
+      "revision": "6071224a845d4bb6d70a0ed912797281a80e109d",
+      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/6071224a845d4bb6d70a0ed912797281a80e109d.tar.gz",
+      "hash": "sha256-WUt5+rMwc/InMUUV0TtcCWC7KjO2fLvrVQTtomimOq4="
     },
     "submode.nvim": {
       "type": "Git",

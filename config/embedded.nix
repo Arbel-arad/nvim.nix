@@ -25,7 +25,9 @@ in {
     # For debugging
     pkgs.openocd
     pkgs.pyocd
-    #pkgs.blackmagic
+    pkgs.blackmagic
+
+    pkgs.tockloader
   ];
 
   lazy = {

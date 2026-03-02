@@ -114,8 +114,38 @@ in {
   ];
   */
 
+  treesitter = {
+    grammars = let
+
+    dap-repl = pkgs.tree-sitter.buildGrammar {
+      src = npins."nvim-dap-repl-highlights";
+
+      version = "0";
+      language = "dap_repl";
+    };
+
+    in [
+      dap-repl
+    ];
+  };
+
   lazy = {
     plugins = {
+      /*"nvim-dap-repl-highlights" = {
+        package = pkgs.vimUtils.buildVimPlugin {
+          pname = "nvim-dap-repl-highlights";
+          version = "0";
+
+          src = npins."nvim-dap-repl-highlights";
+        };
+
+        lazy = false;
+
+        ft = [
+          "dap-repl"
+        ];
+      };*/
+
       # Need to fix loading order for nvim-dap-ui
       "nvim-dap-disasm" = {
         enabled = true;

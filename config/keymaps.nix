@@ -52,6 +52,16 @@
     }
 
     {
+      key = "<C-BS>";
+      mode = [
+        "i"
+      ];
+      silent = true;
+      action = "<C-w>";
+      desc = "Delete word";
+    }
+
+    {
       key = "<leader>sg";
       mode = [
         "n"
