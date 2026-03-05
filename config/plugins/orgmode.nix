@@ -8,7 +8,15 @@
 
   config = {
     orgmode = {
+      org_startup_folded = "inherit";
+      org_agenda_files = "~/orgfiles/**/*";
+      org_default_notes_file = "~/orgfiles/refile.org";
 
+      ui = {
+        input = {
+          use_vim_ui = true;
+        };
+      };
     };
 
     org-roam = {

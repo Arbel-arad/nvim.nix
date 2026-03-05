@@ -14,6 +14,9 @@ in {
     # For teensy boards
     pkgs.tytools
 
+    # For RP2xxx chips
+    pkgs.picotool
+
     # For embedded rust
     pkgs.probe-rs-tools
     pkgs.ravedude
