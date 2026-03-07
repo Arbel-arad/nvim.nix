@@ -237,6 +237,10 @@
 
       helm = {
         enable = enableExtra;
+
+        lsp = {
+          enable = true;
+        };
       };
 
       wgsl = {
@@ -245,6 +249,30 @@
 
       just = {
         enable = enableExtra;
+      };
+
+      json = {
+        enable = true;
+
+        lsp = {
+          enable = true;
+        };
+      };
+
+      toml = {
+        enable = true;
+
+        lsp = {
+          enable = true;
+        };
+      };
+
+      xml = {
+        enable = true;
+
+        lsp = {
+          enable = true;
+        };
       };
     };
   }
