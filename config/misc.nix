@@ -95,13 +95,17 @@ in {
     #project-nvim.enable = true;
   };
 
-
-
   terminal = {
     toggleterm = {
       enable = true;
-      lazygit.enable = true;
+
+      lazygit = {
+        enable = true;
+        package = pkgs.gitui;
+      };
+
       mappings.open = null;
+
       setupOpts = {
         direction = "float";
         shell = "bash";
