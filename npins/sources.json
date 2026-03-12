@@ -310,9 +310,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2094da8b2c3a3acd58d13c8c7f349623c58e284e",
-      "url": "https://github.com/pogyomo/submode.nvim/archive/2094da8b2c3a3acd58d13c8c7f349623c58e284e.tar.gz",
-      "hash": "sha256-0hZfassbzQlNu2p32K6MZY7mfLVIUQ2ZpdAC2+xZRDs="
+      "revision": "d3cd2ceed6e2379caba6ec2e75dc50a9a832be63",
+      "url": "https://github.com/pogyomo/submode.nvim/archive/d3cd2ceed6e2379caba6ec2e75dc50a9a832be63.tar.gz",
+      "hash": "sha256-GhtxNm0Wo0zcNEgbKjCBljmuBKGrqFS7rJLPOi0yOvU="
     },
     "tree-sitter-comment": {
       "type": "Git",

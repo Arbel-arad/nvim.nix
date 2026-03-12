@@ -135,9 +135,13 @@ in {
           "--stdio"
         ];
 
-        #filetypes = [
-        #"md"
-        #];
+        filetypes = [
+          "comment"
+          "markdown"
+          "org"
+          "norg"
+          "text"
+        ];
 
         settings = {
           harper-ls = {
