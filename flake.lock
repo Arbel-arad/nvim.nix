@@ -304,11 +304,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1772818489,
-        "narHash": "sha256-kdS2jtDR/2GKIqEzbipZ6ZZ4yUU2i2iLmZ5t7DIBgOI=",
+        "lastModified": 1773832432,
+        "narHash": "sha256-IqbE9/Ypn6bYctUR5wWYm8DGPo2T8chqcVJZoUxLpNI=",
         "owner": "arbel-arad",
         "repo": "nvf",
-        "rev": "e44681495e7ced8053fc06d87d0cab533c93cf6f",
+        "rev": "c7258e27d322743af3821a123bf2c3959a88680e",
         "type": "github"
       },
       "original": {
