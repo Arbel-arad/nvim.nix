@@ -157,6 +157,19 @@
       "url": "https://github.com/Shatur/neovim-session-manager/archive/89d253a6c68af60b49570044591d5b8701866601.tar.gz",
       "hash": "sha256-d7lXPIy6qJDPvFk8twwkqKUWI205HfTqXMspnVRkng0="
     },
+    "nvim-dap": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "mfussenegger",
+        "repo": "nvim-dap"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5",
+      "url": "https://github.com/mfussenegger/nvim-dap/archive/a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5.tar.gz",
+      "hash": "sha256-U9RMvCDeNQjZ/8TFn848YQXhccIvZsBf7Axa/IipX/Q="
+    },
     "nvim-dap-disasm": {
       "type": "Git",
       "repository": {

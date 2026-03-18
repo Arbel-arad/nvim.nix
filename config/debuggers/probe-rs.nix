@@ -1,10 +1,14 @@
-{ pkgs }: /* lua */ ''
-  dap.adapters["probe-rs-debug"] = {
+{ pkgs }: let
+
+  port = "11337";
+
+in /* lua */ ''
+  dap.adapters["probe-rs-debug"] =  {
     type = "server",
-    port = "$${port}",
+    port = "${port}",
     executable = {
       command = '${pkgs.probe-rs-tools}/bin/probe-rs',
-      args = { "dap-server", "--port", "$${port}" },
+      args = { "dap-server", "--port", "${port}" },
     },
     name = 'probe-rs'
   }

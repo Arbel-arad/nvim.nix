@@ -37,7 +37,7 @@ in {
         opts = /* lua */ ''
           ['rust-analyzer'] = {
             check = {
-              command = "check",
+              command = "clippy",
             },
 
             diagnostics = {

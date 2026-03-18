@@ -1,0 +1,26 @@
+diff --git a/lua/dap/ext/vscode.lua b/lua/dap/ext/vscode.lua
+index 4fdc1e0..8c85bea 100644
+--- a/lua/dap/ext/vscode.lua
++++ b/lua/dap/ext/vscode.lua
+@@ -181,7 +181,7 @@ end
+ ---@param path string?
+ ---@return dap.Configuration[]
+ function M.getconfigs(path)
+-  local resolved_path = path or (vim.fn.getcwd() .. '/.vscode/launch.json')
++  local resolved_path = path or (vim.fn.getcwd() .. '/.nvim/launch.json')
+   if not vim.loop.fs_stat(resolved_path) then
+     return {}
+   end
+diff --git a/plugin/dap.lua b/plugin/dap.lua
+index 0a59201..bf678f2 100644
+--- a/plugin/dap.lua
++++ b/plugin/dap.lua
+@@ -53,7 +53,7 @@ end, {
+
+ if api.nvim_create_autocmd then
+   local launchjson_group = api.nvim_create_augroup('dap-launch.json', { clear = true })
+-  local pattern =  '*/.vscode/launch.json'
++  local pattern =  '*/.nvim/launch.json'
+   api.nvim_create_autocmd('BufNewFile', {
+     group = launchjson_group,
+     pattern = pattern,

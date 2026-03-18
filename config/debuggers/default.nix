@@ -54,6 +54,12 @@ in {
     }
   ];
 
+  pluginOverrides = {
+    nvim-dap = pkgs.vimPlugins.nvim-dap.overrideAttrs (prev: {
+      patches = prev.patches or [] ++ [ ./nvim-dap-nvim.patch ];
+    });
+  };
+
   debugger = lib.mkIf enableExtra {
     nvim-dap = {
       enable = true;
