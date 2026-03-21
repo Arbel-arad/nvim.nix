@@ -95,7 +95,8 @@ in {
             };
 
             SQL_original = {
-              interpreter = "${lib.getExe pkgs.usql}";
+              # FIXME: usql build failure
+              #interpreter = "${lib.getExe pkgs.usql}";
             };
 
             Lua_original = {

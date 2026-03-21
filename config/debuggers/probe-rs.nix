@@ -18,7 +18,7 @@ in /* lua */ ''
   require("dap.ext.vscode").type_to_filetypes["probe-rs-debug"] = { "rust" }
   -- Set up of handlers for RTT and probe-rs messages.
   -- In addition to nvim-dap-ui I write messages to a probe-rs.log in project folder
-  -- If RTT is enabled, probe-rs sends an event after init of a channel. This has to be confirmed or otherwise probe-rs wont sent the rtt data.
+  -- If RTT is enabled, probe-rs sends an event after init of a channel. This has to be confirmed or otherwise probe-rs wont send the rtt data.
   dap.listeners.before["event_probe-rs-rtt-channel-config"]["plugins.nvim-dap-probe-rs"] = function(session, body)
     local utils = require "dap.utils"
     utils.notify(

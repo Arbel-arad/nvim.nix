@@ -244,10 +244,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1773813182,
-        "narHash": "sha256-QdyaHfZCPxIP3iQ779//ppjaHc/BTENGhvy1plLKG9U=",
+        "lastModified": 1774078191,
+        "narHash": "sha256-nyxxxW1/2ouu9dU0I02ul5pHrmUrE1JVFhfFlmYe3Lw=",
         "ref": "master",
-        "rev": "e463a482a2345718ad524f43db21b54495a008e6",
+        "rev": "09061f748ee21f68a089cd5d91ec1859cd93d0be",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -419,10 +419,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1773676149,
-        "narHash": "sha256-9ElgxxqNHMYFC8rZ6gO7+Xps7qYYW7SMQwRHoxkgstQ=",
+        "lastModified": 1773850264,
+        "narHash": "sha256-CEXvf30kevd2K4yDnUF7f2Zz+dVNHm63Dcu2yZDtdzQ=",
         "ref": "refs/heads/main",
-        "rev": "ce675b2227f854876dcd6b758d8fe9f06cee6b52",
+        "rev": "93839a16ec7f29617e8c8f68659ad7478ac1b082",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"

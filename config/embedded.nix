@@ -19,6 +19,7 @@ in {
 
     # For embedded rust
     pkgs.probe-rs-tools
+    pkgs.cargo-binutils
     pkgs.ravedude
     pkgs.espflash
 
@@ -31,6 +32,7 @@ in {
     pkgs.blackmagic
 
     pkgs.tockloader
+    pkgs.dfu-util
   ];
 
   lazy = {
