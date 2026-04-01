@@ -229,11 +229,11 @@
     "neovim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1773273300,
-        "narHash": "sha256-PzRI/GS7+4wz+dgqWq4X2biKtJc8WgUqS6jWk0fXmlM=",
+        "lastModified": 1774915197,
+        "narHash": "sha256-yor+eo8CVi7wBp7CjAMQnVoK+m197gsl7MvUzaqicns=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "99a0b2f7b86d447af752ee7436dd5fd69fc6a101",
+        "rev": "dbc4800dda2b0dc3290dc79955f857256e0694e2",
         "type": "github"
       },
       "original": {
@@ -244,10 +244,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1774960260,
-        "narHash": "sha256-fxnDNz7DxJWZqUyRvhko/vq/mH93OdWfNf4NJtN09ac=",
+        "lastModified": 1775048064,
+        "narHash": "sha256-wcMZGNf2Cv/6vxsAbzPYWKPr5NSPrXwIZT+styjK470=",
         "ref": "master",
-        "rev": "985bd49cf0e88ea152eae1ef4e0a235f73cdb552",
+        "rev": "cb83e7058f8640ec0e14845d1bfe02615337e766",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -304,11 +304,11 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1773832432,
-        "narHash": "sha256-IqbE9/Ypn6bYctUR5wWYm8DGPo2T8chqcVJZoUxLpNI=",
+        "lastModified": 1775070769,
+        "narHash": "sha256-A/L/W2iU7Iy3spYg5bTD/q8aKSKzlQdIEFro2xz0uFY=",
         "owner": "arbel-arad",
         "repo": "nvf",
-        "rev": "c7258e27d322743af3821a123bf2c3959a88680e",
+        "rev": "fccaad422b2e1a66bedbeb8fa1684f1fb32358a5",
         "type": "github"
       },
       "original": {
@@ -328,10 +328,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1773273897,
-        "narHash": "sha256-S6r4raWL96DNO8nPP2whq8STG8SI8JDlyEuy1N6SvV8=",
+        "lastModified": 1774915815,
+        "narHash": "sha256-LocQzkSjVS4G0AKMBiEIVdBKCNTMZXQFjQMWFId4Jpg=",
         "ref": "refs/heads/master",
-        "rev": "f165d4768ca760f4c98b63286562b6fa79a8b114",
+        "rev": "9001416dc5d0ca24c8e4b5a44bfe7cd6fbeb1dd1",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"

@@ -232,9 +232,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "78257e4ade22ddcc74dc18b67444e8da079ee7ec",
-      "url": "https://github.com/bennypowers/nvim-regexplainer/archive/78257e4ade22ddcc74dc18b67444e8da079ee7ec.tar.gz",
-      "hash": "sha256-LF0Tv/5y1EWinc83pyRcxbPICVIs3Iaki/+MJfRUMek="
+      "revision": "2928504785750357f2d4f05d58c243b8fe5bcd06",
+      "url": "https://github.com/bennypowers/nvim-regexplainer/archive/2928504785750357f2d4f05d58c243b8fe5bcd06.tar.gz",
+      "hash": "sha256-b9RtJbe7rpi6q5VvqVC2x2AmIJfWjGHvpr51WPIWWTE="
     },
     "org-bullets.nvim": {
       "type": "Git",
