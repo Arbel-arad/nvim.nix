@@ -116,6 +116,7 @@ in {
 
           doCheck = true;
         };
+
         setupOpts = {
           clangd = "${pkgs.clang-tools}/bin/clangd";
           arduino = "${lib.getExe pkgs.arduino-cli}";

@@ -185,7 +185,7 @@ in {
         ];
       };
 
-      systemd-lsp = {
+      systemd-lsp = lib.mkIf enableExtra {
         cmd = [
           "${lib.getExe pkgs.systemd-lsp}"
         ];
@@ -205,7 +205,7 @@ in {
         ];
       };
 
-      lua-language-server = {
+      lua-language-server = lib.mkIf enableExtra {
         settings = {
           Lua = {
             runtime = {

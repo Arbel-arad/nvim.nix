@@ -29,7 +29,7 @@ in {
 
   lsp = {
     servers = {
-      clangd = {
+      clangd = lib.mkIf enableExtra {
         cmd = lib.mkForce [
           "${pkgs.clang-tools}/bin/clangd"
           "--clang-tidy"
