@@ -1,4 +1,8 @@
-{ nvimSize, inputs, npins, pkgs, lib, lib' }: lib'.mergeAttrsList [
+{ nvimSize, inputs, npins, pkgs, lib, lib' }: let
+
+  enableExtra = nvimSize <= 300;
+
+in lib'.mergeAttrsList [
   (import ./c-cpp.nix { inherit nvimSize npins pkgs lib; })
   (import ./nix.nix { inherit nvimSize inputs pkgs lib; })
   (import ./openscad.nix { inherit nvimSize pkgs lib; })
@@ -16,11 +20,13 @@
   })
 
   {
-    languages = let
+    extraPackages = lib.optionals enableExtra [
+      # For ocaml
+      pkgs.dune
+      pkgs.ocaml
+    ];
 
-      enableExtra = nvimSize <= 300;
-
-    in {
+    languages = {
       enableFormat = enableExtra;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
@@ -176,31 +182,6 @@
         };
       };
 
-      dart = {
-        enable = enableExtra;
-
-        dap = {
-          enable = true;
-        };
-
-        lsp = {
-          enable = false;
-        };
-
-        flutter-tools = {
-          enable = enableExtra;
-          color = {
-            enable = true;
-            highlightBackground = false;
-            highlightForeground = false;
-            virtualText = {
-              enable = true;
-              character = ''"■"'';
-            };
-          };
-        };
-      };
-
       r = {
         enable = enableExtra;
 
@@ -232,6 +213,10 @@
         lsp = {
           enable = true;
         };
+      };
+
+      ocaml = {
+        enable = enableExtra;
       };
 
       helm = {
