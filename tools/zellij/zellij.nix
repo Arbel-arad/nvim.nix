@@ -84,6 +84,8 @@
           self'.packages."nvim.nix"
         ] ++ self.nvim-config.extraPackages) }"
 
+      rm -r "$out/share"
+
       mv $out/bin/zellij $out/bin/nvim-zellij
     '';
 
