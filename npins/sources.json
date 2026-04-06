@@ -35,9 +35,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4b258c269d58cc5e37e55cf2316074e2740e5f57",
-      "url": "https://github.com/ranjithshegde/ccls.nvim/archive/4b258c269d58cc5e37e55cf2316074e2740e5f57.tar.gz",
-      "hash": "sha256-o1U+F1F2TTBZ3ViG77wvc3D92rwfQFoCol+vD5WWxXM="
+      "revision": "de925cada98108c25d1043980e83ec7887c53b05",
+      "url": "https://github.com/ranjithshegde/ccls.nvim/archive/de925cada98108c25d1043980e83ec7887c53b05.tar.gz",
+      "hash": "sha256-jTCQ6rSGt6al3IUHEQo+4P1bbTunRd8eo9o9kJ4dZkI="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -166,9 +166,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "4f5deb110d9ff8994d96c21df95e2271d11214f9",
-      "url": "https://github.com/mfussenegger/nvim-dap/archive/4f5deb110d9ff8994d96c21df95e2271d11214f9.tar.gz",
-      "hash": "sha256-H3LML3FgqvD4xI4IljAp2E3dxAdFx/As+nzjC+jPzyc="
+      "revision": "45a69eba683a2c448dd9ecfc4de89511f0646b5f",
+      "url": "https://github.com/mfussenegger/nvim-dap/archive/45a69eba683a2c448dd9ecfc4de89511f0646b5f.tar.gz",
+      "hash": "sha256-9NF0+QoHOEAg6pd+oRBxr3ExWLqbvRrIMoMSZvNdqX4="
     },
     "nvim-dap-disasm": {
       "type": "Git",
@@ -271,9 +271,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8edc1c05340046855db3b35849d700ea854a981f",
-      "url": "https://github.com/NStefan002/screenkey.nvim/archive/8edc1c05340046855db3b35849d700ea854a981f.tar.gz",
-      "hash": "sha256-Mn5MzDnCSaqWWOkwxYdKfXzjiA8SyXsD1B4MgwZ0XcI="
+      "revision": "e07210a5a7de58ca523b21fc82eb71befdf1e213",
+      "url": "https://github.com/NStefan002/screenkey.nvim/archive/e07210a5a7de58ca523b21fc82eb71befdf1e213.tar.gz",
+      "hash": "sha256-OFRPfCaETw5Io8Fm6PGVdQMmPH6wjLkRGZFKbMJ2CY8="
     },
     "search-replace.nvim": {
       "type": "Git",

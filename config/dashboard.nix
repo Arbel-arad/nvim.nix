@@ -133,7 +133,7 @@ in {
                   {
                     icon = " ",
                     title = "Git Status",
-                    cmd = "git --no-pager diff --stat -B -M -C",
+                    cmd = "git --no-pager diff --stat -B -M -C --exit-code && echo \"No changes\"",
                     height = 10,
                   },
                 }
