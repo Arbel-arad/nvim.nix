@@ -271,9 +271,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e07210a5a7de58ca523b21fc82eb71befdf1e213",
-      "url": "https://github.com/NStefan002/screenkey.nvim/archive/e07210a5a7de58ca523b21fc82eb71befdf1e213.tar.gz",
-      "hash": "sha256-OFRPfCaETw5Io8Fm6PGVdQMmPH6wjLkRGZFKbMJ2CY8="
+      "revision": "12d70b39744adb4262fda7c994b37636c741e79c",
+      "url": "https://github.com/NStefan002/screenkey.nvim/archive/12d70b39744adb4262fda7c994b37636c741e79c.tar.gz",
+      "hash": "sha256-zbJZF4bx4cFV03HvdD/3lS2f2rViOXHn8v5V5bq+ebY="
     },
     "search-replace.nvim": {
       "type": "Git",

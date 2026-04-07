@@ -42,7 +42,8 @@ in lib'.mergeAttrsList [
         enable = enableExtra;
 
         lsp = {
-          enable = true;
+          # FIXME: OLS is once again broken
+          enable = false;
         };
       };
 
