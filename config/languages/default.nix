@@ -33,7 +33,7 @@ in lib'.mergeAttrsList [
       enableDAP = nvimSize <= 400;
 
 
-      ts = {
+      typescript = {
         enable = enableExtra;
         extraDiagnostics.enable = true;
       };
@@ -42,8 +42,7 @@ in lib'.mergeAttrsList [
         enable = enableExtra;
 
         lsp = {
-          # FIXME: OLS is once again broken
-          enable = false;
+          enable = true;
         };
       };
 

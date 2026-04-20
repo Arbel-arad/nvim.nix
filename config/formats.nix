@@ -1,4 +1,12 @@
-{ nvimSize }:{
+{ nvimSize, pkgs, lib }: let
+
+  enableExtra = nvimSize <= 300;
+
+in {
+  extraPackages = lib.optionals enableExtra [
+    pkgs.topiary
+  ];
+
   formatter = {
     conform-nvim = {
       enable = true;

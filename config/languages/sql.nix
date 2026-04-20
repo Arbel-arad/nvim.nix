@@ -3,6 +3,10 @@
   enabled = nvimSize <= 500;
 
 in {
+  extraPackages = lib.optionals enabled [
+    pkgs.sqlfluff
+  ];
+
   languages = {
     sql = {
       enable = true;

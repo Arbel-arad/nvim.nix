@@ -35,9 +35,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "de925cada98108c25d1043980e83ec7887c53b05",
-      "url": "https://github.com/ranjithshegde/ccls.nvim/archive/de925cada98108c25d1043980e83ec7887c53b05.tar.gz",
-      "hash": "sha256-jTCQ6rSGt6al3IUHEQo+4P1bbTunRd8eo9o9kJ4dZkI="
+      "revision": "85aed53911f775e0fb2862afd4f20462f8109373",
+      "url": "https://github.com/ranjithshegde/ccls.nvim/archive/85aed53911f775e0fb2862afd4f20462f8109373.tar.gz",
+      "hash": "sha256-1Xndtgf1cPOSF5YXiyRsGuclkHaqVp0eHGnobTrfQek="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -232,9 +232,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "2928504785750357f2d4f05d58c243b8fe5bcd06",
-      "url": "https://github.com/bennypowers/nvim-regexplainer/archive/2928504785750357f2d4f05d58c243b8fe5bcd06.tar.gz",
-      "hash": "sha256-b9RtJbe7rpi6q5VvqVC2x2AmIJfWjGHvpr51WPIWWTE="
+      "revision": "5524915648a545e331b2fa7a3c80d32f0c14e8bd",
+      "url": "https://github.com/bennypowers/nvim-regexplainer/archive/5524915648a545e331b2fa7a3c80d32f0c14e8bd.tar.gz",
+      "hash": "sha256-nfTbQtovqdnPZbttics6+yPUtKV6aMkyP3vqGWk1vSU="
     },
     "org-bullets.nvim": {
       "type": "Git",
@@ -271,9 +271,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "12d70b39744adb4262fda7c994b37636c741e79c",
-      "url": "https://github.com/NStefan002/screenkey.nvim/archive/12d70b39744adb4262fda7c994b37636c741e79c.tar.gz",
-      "hash": "sha256-zbJZF4bx4cFV03HvdD/3lS2f2rViOXHn8v5V5bq+ebY="
+      "revision": "56d19178935dedaac2757ab11fbb8d304c39126c",
+      "url": "https://github.com/NStefan002/screenkey.nvim/archive/56d19178935dedaac2757ab11fbb8d304c39126c.tar.gz",
+      "hash": "sha256-CpWD6kg5heSRlSoeP4yaJ42p+rlQXi/0aTpRvt2/0L4="
     },
     "search-replace.nvim": {
       "type": "Git",
