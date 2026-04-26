@@ -13,6 +13,7 @@
   autocomplete = { # Which is better?
     nvim-cmp = {
       enable = true;
+
       sources = {
         buffer = "[Buffer]";
         nvim-cmp = null;

@@ -20,33 +20,50 @@ in {
       enable = true;
 
       setupOpts = {
-        max_height = 20;
-        hint_inline = lib.generators.mkLuaInline /* lua */ ''function() return "right_align" end'';
-        hint_prefix = {
-          above = "🐼 ";
-          current = "←";
-          below = "🐼 ";
-        };
-        floating_window_off_y = lib.generators.mkLuaInline /* lua */ ''
-          function() -- adjust float windows y position. e.g. set to -2 can make floating window move up 2 lines
-            local linenr = vim.api.nvim_win_get_cursor(0)[1] -- buf line number
-            local pumheight = vim.o.pumheight
-            local winline = vim.fn.winline() -- line number in the window
-            local winheight = vim.fn.winheight(0)
+        doc_lines = 0;
+        max_height = 3;
+        wrap = false;
+        transparency = 20;
+        fix_pos = false;
 
-            -- window top
-            if winline - 10 < pumheight then
-              return pumheight +2
-            end
+        hint_enable = false;
 
-            -- window bottom
-            if winheight - winline < pumheight then
-              return -pumheight -2
-            end
-            return -2
-          end
-        '';
+        floating_window_above_cur_line = true;
+        timer_interval = 250;
+
+        close_timeout = 2000;
+        auto_close_after = 0.01;
       };
+
+        #setupOpts = {
+        #  max_height = 20;
+        #  hint_inline = lib.generators.mkLuaInline /* lua */ ''function() return "right_align" end'';
+        #  hint_prefix = {
+        #    above = "🐼 ";
+        #    current = "←";
+        #    below = "🐼 ";
+        #  };
+
+        #  floating_window_off_y = lib.generators.mkLuaInline /* lua */ ''
+        #    function() -- adjust float windows y position. e.g. set to -2 can make floating window move up 2 lines
+        #      local linenr = vim.api.nvim_win_get_cursor(0)[1] -- buf line number
+        #      local pumheight = vim.o.pumheight
+        #      local winline = vim.fn.winline() -- line number in the window
+        #      local winheight = vim.fn.winheight(0)
+
+        #      -- window top
+        #      if winline - 10 < pumheight then
+        #        return pumheight +2
+        #      end
+
+        #      -- window bottom
+        #      if winheight - winline < pumheight then
+        #        return -pumheight -2
+        #      end
+        #      return -2
+        #    end
+        #  '';
+        #};
     };
 
     inlayHints = {

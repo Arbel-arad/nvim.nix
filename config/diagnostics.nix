@@ -30,7 +30,7 @@ in {
 
         severity = {
           min = lib.generators.mkLuaInline /* Lua */ ''
-            vim.diagnostic.severity.WARN
+            vim.diagnostic.severity.ERROR
           '';
         };
 
