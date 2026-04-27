@@ -99,7 +99,7 @@ in {
         ];
       };
 
-      "grug-far.nvim" = {
+      "grug-far.nvim" = lib.mkIf enabled {
         package = pkgs.vimPlugins.grug-far-nvim;
 
         setupModule = "grug-far";
