@@ -41,7 +41,10 @@
       # One of spellcheck / diagnostics causes scroll lag
 
       {
-        package = inputs.nvim-nightly.packages."${pkgs.stdenv.hostPlatform.system}".neovim;
+        package = if pkgs.stdenv.system == "x86_64-linux"
+          then inputs.nvim-nightly.packages."${pkgs.stdenv.hostPlatform.system}".neovim
+          else pkgs.neovim-unwrapped
+        ;
 
         viAlias = true;
         vimAlias = true;
