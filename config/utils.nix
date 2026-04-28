@@ -1,8 +1,21 @@
-{ nvimSize, pkgs }: let
+{ nvimSize, pkgs, lib }: let
 
   enableExtra = nvimSize <= 500;
 
 in {
+  extraPackages = lib.optionals enableExtra [
+    # For Snacks.image
+    pkgs.mermaid-cli
+    pkgs.ghostscript
+    pkgs.tectonic
+
+    # For tree-sitter-cli?
+    pkgs.vcpkg
+
+    # For FZF-lua images
+    pkgs.viu
+  ];
+
   clipboard = {
     enable = true;
 

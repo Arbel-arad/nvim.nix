@@ -48,6 +48,7 @@
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
       };
     };
@@ -59,6 +60,14 @@
       inherit self;
     };
 
+    pkgs-config = {
+      allowUnfreePredicate = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [
+        "telescope-sg"
+        "scope.nvim"
+        "barbar.nvim"
+      ];
+    };
+
   in inputs.flake-parts.lib.mkFlake {
       inherit inputs self;
     } {
@@ -67,6 +76,7 @@
         pkgs = import inputs.nixpkgs {
           system = "x86_64-linux";
 
+          config = pkgs-config;
           overlays = [
             overlays.common
           ];
@@ -92,6 +102,8 @@
 
         pkgs = import inputs.nixpkgs {
           inherit system;
+
+          config = pkgs-config;
           overlays = [
             overlays.common
           ];

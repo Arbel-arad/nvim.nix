@@ -258,6 +258,10 @@ in lib'.mergeAttrsList [
           enable = true;
         };
       };
+
+      tex = {
+        enable = true;
+      };
     };
   }
 ]
