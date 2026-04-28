@@ -8,10 +8,50 @@
 
 in {
   extraPackages = lib.optionals enable [
-    pkgs.cargo
-    pkgs.rustc
-    pkgs.clippy
-    pkgs.rust-analyzer
+    (pkgs.rust-bin.fromRustupToolchain {
+      channel = "nightly";
+
+      components = [
+        "rustc"
+        "cargo"
+        "rustfmt"
+        "rust-std"
+        "rust-docs"
+        "rust-analyzer"
+        "clippy"
+        "miri"
+        "rust-src"
+        "llvm-tools"
+      ];
+
+      targets = [
+        "aarch64-unknown-linux-gnu"
+        "x86_64-unknown-linux-gnu"
+
+        "aarch64-unknown-linux-musl"
+        "x86_64-unknown-linux-musl"
+
+        "aarch64-unknown-none"
+        "x86_64-unknown-none"
+
+        # Web
+        "wasm32-unknown-unknown"
+
+        # Embedded microcontrollers
+        "thumbv6m-none-eabi"
+        "thumbv7em-none-eabihf"
+        "thumbv8m.main-none-eabihf"
+        "riscv32imc-unknown-none-elf"
+        "riscv32imac-unknown-none-elf"
+
+        #"xtensa-esp32s3-espidf"
+        #"xtensa-esp32s3-none-elf"
+      ];
+    })
+    #pkgs.cargo
+    #pkgs.rustc
+    #pkgs.clippy
+    #pkgs.rust-analyzer
 
     pkgs.cargo-deny
     pkgs.cargo-bloat

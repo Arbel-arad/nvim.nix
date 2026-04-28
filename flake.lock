@@ -334,12 +334,34 @@
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",
         "nvim-nightly": "nvim-nightly",
+        "rust-overlay": "rust-overlay",
         "rustowl-flake": "rustowl-flake",
         "spectrum-os": "spectrum-os",
         "system": "system"
       }
     },
     "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777346187,
+        "narHash": "sha256-oVxyGjpiIsrXhWTJVUOs38fZQkLjd0nZGOY9K7Kfot8=",
+        "ref": "refs/heads/master",
+        "rev": "146e7bf7569b8288f24d41d806b9f584f7cfd5b5",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay"
+      }
+    },
+    "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -384,7 +406,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "rust-overlay": "rust-overlay",
+        "rust-overlay": "rust-overlay_2",
         "rustowl": "rustowl"
       },
       "locked": {
