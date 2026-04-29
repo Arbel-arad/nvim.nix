@@ -48,10 +48,6 @@ in {
         #"xtensa-esp32s3-none-elf"
       ];
     })
-    #pkgs.cargo
-    #pkgs.rustc
-    #pkgs.clippy
-    #pkgs.rust-analyzer
 
     pkgs.cargo-deny
     pkgs.cargo-bloat

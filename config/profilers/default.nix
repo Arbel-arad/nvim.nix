@@ -6,6 +6,11 @@
     cargo flamegraph --post-process 'flamelens --echo' $@
   '';
 
+/*
+  perf record --call-graph dwarf target/debug/*
+  perf script --full-source-path -F +srcline | ./filter-perf.pl | stackcollapse-perf.pl out.perf > perf.log
+*/
+
 in {
   extraPackages = lib.optionals enabled [
     pkgs.perf
@@ -13,13 +18,13 @@ in {
     pkgs.flamelens
     pkgs.cargo-criterion
     pkgs.gperftools
+    pkgs.flamegraph
 
     profile-rust
   ];
 
   lazy = {
     plugins = {
-      # TODO: Figure out how to make this work
       "perfanno.nvim" = lib.mkIf enabled {
         package = pkgs.vimPlugins.perfanno-nvim;
 
