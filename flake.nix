@@ -59,6 +59,13 @@
         flake-parts.follows = "flake-parts";
       };
     };
+
+    bookrokat = {
+      url = "git+https://forgejo.spacetime.technology/mirrors/bookokrat?shallow=1";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
   };
 
   outputs = { self, ... }@inputs: let

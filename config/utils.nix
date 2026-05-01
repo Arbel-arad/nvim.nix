@@ -1,4 +1,6 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, inputs, pkgs, lib }: let
+
+  inherit (pkgs.stdenv.hostPlatform) system;
 
   enableExtra = nvimSize <= 500;
 
@@ -14,6 +16,9 @@ in {
 
     # For FZF-lua images
     pkgs.viu
+
+    # PDF + EPUB reader
+    inputs.bookrokat.packages.${system}.default
   ];
 
   clipboard = {
