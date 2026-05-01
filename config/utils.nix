@@ -18,7 +18,7 @@ in {
     pkgs.viu
 
     # PDF + EPUB reader
-    inputs.bookrokat.packages.${system}.default
+    inputs.bookokrat.packages.${system}.default
   ];
 
   clipboard = {

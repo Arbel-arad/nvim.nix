@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "bookrokat": {
+    "bookokrat": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
@@ -368,7 +368,7 @@
     },
     "root": {
       "inputs": {
-        "bookrokat": "bookrokat",
+        "bookokrat": "bookokrat",
         "flake-parts": "flake-parts",
         "lsp-inputs": "lsp-inputs",
         "microvm": "microvm",
