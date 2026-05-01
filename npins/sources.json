@@ -140,9 +140,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6ecf6253697b2964e9afef9d000357d887221a2c",
-      "url": "https://github.com/coffebar/neovim-project/archive/6ecf6253697b2964e9afef9d000357d887221a2c.tar.gz",
-      "hash": "sha256-1SR/Pkzn1XWHJeGBiYd3hXArvVx7IgdlWDFdznl/gsw="
+      "revision": "f4e9b3392dc46b6e615b629a40ea4fa47cc2a203",
+      "url": "https://github.com/coffebar/neovim-project/archive/f4e9b3392dc46b6e615b629a40ea4fa47cc2a203.tar.gz",
+      "hash": "sha256-BUco01ZPzDNrbjsUCYY6+Furir3mKxaqCNNDQLhPRn0="
     },
     "neovim-session-manager": {
       "type": "Git",

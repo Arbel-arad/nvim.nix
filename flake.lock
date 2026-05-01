@@ -231,11 +231,11 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1770419553,
-        "narHash": "sha256-b1XqsH7AtVf2dXmq2iyRr2NC1yG7skY7Z6N2MpWHlK4=",
+        "lastModified": 1776530647,
+        "narHash": "sha256-AHM3wNuC5zzGaygnovHqFUI0YJR1Jj7ZgK9D9m7cgMQ=",
         "owner": "Gerg-L",
         "repo": "mnw",
-        "rev": "2aaffa8030d0b262176146adbb6b0e6374ce2957",
+        "rev": "54f7ad6e34f4e44e0260a5140af7726a4792dece",
         "type": "github"
       },
       "original": {
@@ -328,11 +328,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1776713220,
-        "narHash": "sha256-soNh9ab/AYB+l7XvAf3lNXi+ibr9sc2kueXoRz+RD84=",
+        "lastModified": 1777672673,
+        "narHash": "sha256-Ab3PD5S6bOxf7BY/2hlZkY8/ED/bO4Huu44KECyoSK0=",
         "owner": "arbel-arad",
         "repo": "nvf",
-        "rev": "056baf8a4158bffe2ad5309029b1868d6b00e406",
+        "rev": "cfbd95b9b6afb52b7af4501305eadc31faddca91",
         "type": "github"
       },
       "original": {
@@ -388,10 +388,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1777432579,
-        "narHash": "sha256-Ce11TStDsqCge2vAAfLKe2+4lDI5cSX5ZYZOuKJBKKQ=",
+        "lastModified": 1777605393,
+        "narHash": "sha256-Hjp0VOOHgHcTrX23iVvnfAudPcuCmfkfpQNFwv2v/ks=",
         "ref": "refs/heads/master",
-        "rev": "3ecb5e6ab380ced3272ef7fcfe398bffbcc0f152",
+        "rev": "ff88db34cfa486fc4964a6991cab1678d82eee8c",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay"
