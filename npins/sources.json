@@ -39,6 +39,19 @@
       "url": "https://github.com/ranjithshegde/ccls.nvim/archive/85aed53911f775e0fb2862afd4f20462f8109373.tar.gz",
       "hash": "sha256-1Xndtgf1cPOSF5YXiyRsGuclkHaqVp0eHGnobTrfQek="
     },
+    "datui": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "derekwisong",
+        "repo": "datui"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "c939a841f132daae044d7a2542efc238d57800f7",
+      "url": "https://github.com/derekwisong/datui/archive/c939a841f132daae044d7a2542efc238d57800f7.tar.gz",
+      "hash": "sha256-Y74pXBC3tQMPIx8MZbUH3+jbn10W/SZ8U9Xo9rH81v4="
+    },
     "direnv.nvim": {
       "type": "Git",
       "repository": {

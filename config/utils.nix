@@ -1,4 +1,4 @@
-{ nvimSize, inputs, pkgs, lib }: let
+{ nvimSize, inputs, npins, pkgs, lib }: let
 
   inherit (pkgs.stdenv.hostPlatform) system;
 
@@ -19,6 +19,11 @@ in {
 
     # PDF + EPUB reader
     inputs.bookokrat.packages.${system}.default
+
+    # Data-ui for CSVs
+    (pkgs.callPackage ../tools/datui.nix {
+      inherit npins pkgs;
+    })
   ];
 
   clipboard = {
