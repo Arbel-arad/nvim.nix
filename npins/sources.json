@@ -323,9 +323,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "6071224a845d4bb6d70a0ed912797281a80e109d",
-      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/6071224a845d4bb6d70a0ed912797281a80e109d.tar.gz",
-      "hash": "sha256-WUt5+rMwc/InMUUV0TtcCWC7KjO2fLvrVQTtomimOq4="
+      "revision": "57f586251d788dae38fd12998b9a208f7d54c1ef",
+      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/57f586251d788dae38fd12998b9a208f7d54c1ef.tar.gz",
+      "hash": "sha256-Vcdjd0WbeSFIeRyCxzHNdFwC33l3hKAvZ3kKCDTDHco="
     },
     "submode.nvim": {
       "type": "Git",
