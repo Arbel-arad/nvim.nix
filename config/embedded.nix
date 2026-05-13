@@ -64,6 +64,10 @@ in {
 
           nvimSkipModules = [
             "minimal_config"
+            "platformio.pickers.init"
+            "platformio.pickers.telescope"
+            "platformio.pickers.ui_select"
+            "platformio.piotermlist"
             "platformio.piolsserial"
             "platformio.boilerplate"
             "platformio"
