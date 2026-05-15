@@ -5,18 +5,19 @@
 in lib'.mergeAttrsList [
   (import ./c-cpp.nix { inherit nvimSize npins pkgs lib; })
   (import ./nix.nix { inherit nvimSize inputs pkgs lib; })
-  (import ./openscad.nix { inherit nvimSize pkgs lib; })
-  (import ./rust.nix {
-    inherit nvimSize npins pkgs lib;
-    inherit (inputs) rustowl-flake;
-  })
-  (import ./zig.nix { inherit nvimSize pkgs lib; })
-  (import ./dart.nix { inherit nvimSize pkgs lib; })
-  (import ./clojure.nix { inherit nvimSize pkgs lib; })
   (import ./sql.nix { inherit nvimSize npins pkgs lib; })
+  (import ./openscad.nix { inherit nvimSize pkgs lib; })
+  (import ./verilog.nix { inherit nvimSize pkgs lib; })
+  (import ./clojure.nix { inherit nvimSize pkgs lib; })
+  (import ./dart.nix { inherit nvimSize pkgs lib; })
+  (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./python.nix {
     inherit pkgs lib;
     enableExtra = nvimSize <= 300;
+  })
+  (import ./rust.nix {
+    inherit nvimSize npins pkgs lib;
+    inherit (inputs) rustowl-flake;
   })
 
   {

@@ -172,25 +172,6 @@ in {
         };
       };
 
-      verible-verilog-ls = lib.mkIf enableExtra {
-        root_markers = [
-          ".git"
-          "verilator.f"
-        ];
-
-        cmd = [
-          "${pkgs.verible}/bin/verible-verilog-ls"
-          # Fixes double notification issue
-          "--nopush_diagnostic_notifications"
-        ];
-
-        filetypes = [
-          "verilog"
-          "systemverilog"
-        ];
-
-      };
-
       fish-lsp = lib.mkIf enableExtra {
         cmd = [
           "${lib.getExe pkgs.fish-lsp}"

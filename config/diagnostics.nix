@@ -67,26 +67,6 @@ in {
             ".vale.ini"
           ];
         };
-
-        # verilog linter
-        verilator = {
-          cmd = if enableExtra then "${pkgs.verilator}/bin/verilator" else "false";
-
-          args = [
-            "-sv"
-            "-wall"
-            "--bbox-sys"
-            "--bbox-unsup"
-            "--lint-only"
-            "-f"
-            (lib.generators.mkLuaInline /* Lua */ ''
-              vim.fs.find('verilator.f', {upward = true, stop = vim.env.HOME})[1]
-            '')
-          ];
-
-
-        };
-
       };
 
       linters_by_ft = {
@@ -101,12 +81,6 @@ in {
         ];
         cpp = [
           "cppcheck"
-        ];
-        systemverilog = [
-          "verilator"
-        ];
-        verilog = [
-          "verilator"
         ];
       };
     };
