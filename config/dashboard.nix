@@ -7,6 +7,27 @@ N  E  O -- V  I  M
   ]]'';
 
 in {
+  autocmds = [
+    {
+      event = [
+        "BufDelete"
+      ];
+      pattern = [
+        "*.*"
+      ];
+      callback = lib.generators.mkLuaInline /* lua */ ''
+        function(args)
+          local deleted_name = vim.api.nvim_buf_get_name(args.buf)
+          local deleted_ft = vim.api.nvim_get_option_value("filetype", { buf = args.buf })
+          local dashboard_on_empty = (deleted_name == "" and deleted_ft == "")
+            or (vim.api.nvim_buf_get_name(0) == "" and vim.api.nvim_get_option_value("filetype", { buf = 0 }) == "")
+          if dashboard_on_empty then
+            Snacks.dashboard.open()
+          end
+        end
+      '';
+    }
+  ];
 
   dashboard = {
     dashboard-nvim = {
