@@ -8,6 +8,7 @@ in lib'.mergeAttrsList [
   (import ./sql.nix { inherit nvimSize npins pkgs lib; })
   (import ./openscad.nix { inherit nvimSize pkgs lib; })
   (import ./verilog.nix { inherit nvimSize pkgs lib; })
+  (import ./vhdl.nix { inherit nvimSize pkgs lib; })
   (import ./clojure.nix { inherit nvimSize pkgs lib; })
   (import ./dart.nix { inherit nvimSize pkgs lib; })
   (import ./zig.nix { inherit nvimSize pkgs lib; })
