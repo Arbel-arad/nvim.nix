@@ -202,12 +202,12 @@
           };
         };
       }
-      {
-        name = "nerdy";
-        packages = [
-          pkgs.vimPlugins.nerdy-nvim
-        ];
-      }
+      #{
+      #  name = "nerdy";
+      #  packages = [
+      #    pkgs.vimPlugins.nerdy-nvim
+      #  ];
+      #}
     ];
 
     mappings = {

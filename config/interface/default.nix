@@ -141,7 +141,9 @@
       };
 
       noice = {
-        enable = true; # should i use this?
+        # Notifications and CLI
+        # Use `:Noice all` for history
+        enable = true;
 
         setupOpts = {
           lsp = {

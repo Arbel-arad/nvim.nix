@@ -20,11 +20,11 @@
       pkgs = prevPkgs;
 
     in {
-    rustfmt = prevPkgs.symlinkJoin {
+    rustfmt = prevPkgs.lib.makeOverridable ({asNightly}: (prevPkgs.symlinkJoin {
       name = "rustfmt";
 
       paths = [
-        prevPkgs.rustfmt
+        (prevPkgs.rustfmt.override { inherit asNightly; })
       ];
 
       buildInputs = [
@@ -46,6 +46,6 @@
       meta = {
         mainProgram = "rustfmt";
       };
-    };
+    })) { asNightly = false; };
   };
 }

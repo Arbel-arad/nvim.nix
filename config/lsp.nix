@@ -117,6 +117,10 @@ in {
       };
     };
 
+    presets = {
+      markdown-oxide.enable = true;
+    };
+
     servers = {
       qmlls = lib.mkIf enableExtra {
         cmd = [
@@ -226,6 +230,13 @@ in {
             };
           };
         };
+      };
+
+      markdown-oxide = {
+        filetypes = [
+          "markdown"
+        ];
+        capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true;
       };
     };
 

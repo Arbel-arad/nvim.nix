@@ -123,11 +123,24 @@
       };
 
       neotest-zig = {
-        package = pkgs.vimPlugins.neotest-zig;
+        package = pkgs.vimPlugins.neotest-zig.overrideAttrs {
+          dependencies = [];
+          nvimSkipModules = [
+            "neotest-zig"
+          ];
+        };
       };
 
       neotest-bash = {
-        package = pkgs.vimPlugins.neotest-bash;
+        package = pkgs.vimPlugins.neotest-bash.overrideAttrs {
+          dependencies = [];
+          nvimSkipModules = [
+            "neotest-bash.core.positions_discoverer"
+            "neotest-bash.core.root_finder"
+            "neotest-bash.core.spec_builder"
+            "neotest-bash"
+          ];
+        };
       };
 
       /*nvim-nio = {

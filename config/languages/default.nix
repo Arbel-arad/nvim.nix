@@ -265,5 +265,15 @@ in lib'.mergeAttrsList [
         enable = true;
       };
     };
+
+    luaConfigRC = {
+      filetypes = /* lua */ ''
+        vim.filetype.add({
+          extension = {
+            xdc = 'tcl',
+          }
+        })
+      '';
+    };
   }
 ]
