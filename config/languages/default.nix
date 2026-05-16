@@ -8,9 +8,10 @@ in lib'.mergeAttrsList [
   (import ./sql.nix { inherit nvimSize npins pkgs lib; })
   (import ./openscad.nix { inherit nvimSize pkgs lib; })
   (import ./verilog.nix { inherit nvimSize pkgs lib; })
-  (import ./vhdl.nix { inherit nvimSize pkgs lib; })
   (import ./clojure.nix { inherit nvimSize pkgs lib; })
+  (import ./vhdl.nix { inherit nvimSize pkgs lib; })
   (import ./dart.nix { inherit nvimSize pkgs lib; })
+  (import ./markdown.nix { inherit nvimSize pkgs; })
   (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./python.nix {
     inherit pkgs lib;
@@ -45,46 +46,6 @@ in lib'.mergeAttrsList [
 
         lsp = {
           enable = true;
-        };
-      };
-
-      markdown = {
-        enable = true;
-
-        extensions = {
-          render-markdown-nvim = {
-            #enable = true;
-          };
-          markview-nvim = {
-            enable = true;
-
-            setupOpts = {
-              markdown = {
-                #enable = false;
-              };
-
-              preview = {
-                ignore_buftypes = [
-                  "nofile"
-                  "prompt"
-                ];
-              };
-
-              experimental = {
-                fancy_comments = true;
-                prefer_nvim = true;
-                file_open_command = "tabnew";
-              };
-            };
-          };
-        };
-
-        extraDiagnostics = {
-          enable = enableExtra;
-        };
-
-        lsp = {
-          enable = enableExtra;
         };
       };
 

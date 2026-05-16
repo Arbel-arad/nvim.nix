@@ -40,6 +40,7 @@
       "live-share.nvim" = {
         package = pkgs.vimPlugins.live-share-nvim;
 
+        #TODO: modify this for IPv6 support
         beforeSetup = /* Lua */ ''
           require("live-share.provider").register("bore", {
             command = function(_, port, service_url)
@@ -51,18 +52,41 @@
             end,
             pattern = "bore%.pub:%d+",
           })
+
+          require("live-share.provider").register("lan", {
+            command = function(_, port, service_url)
+              return string.format(
+                [[printf 'tcp://127.0.0.1:%d\n' > %s; sleep infinity]],
+                port, service_url)
+            end,
+            pattern = "tcp://[%w._-]+:%d+",
+          })
         '';
 
         setupModule = "live-share";
         setupOpts = {
-          service = "bore";
+          openssl_lib = "${pkgs.rustls-libssl}/lib/libcrypto.so";
+
+          #service = "bore";
+          service = "lan";
+
+          username = "Arbel";
+          ip_local = "127.0.0.1";
         };
 
         lazy = true;
 
         cmd = [
-          "LiveShareServer"
+          "LiveShareHostStart"
           "LiveShareJoin"
+          "LiveShareStop"
+          "LiveShareTerminal"
+          "LiveShareWorkspace"
+          "LiveShareOpen"
+          "LiveShareFollow"
+          "LiveShareUnfollow"
+          "LiveSharePeers"
+          #"LiveShareDebugInfo"
         ];
       };
     };
