@@ -1,9 +1,10 @@
 { enableExtra, pkgs, lib }: {
-  extraPackages = lib.optionals enableExtra [
-    pkgs.py-spy
-
-    pkgs.black
-  ];
+  extraPackages = lib.optionals enableExtra (
+    [
+      pkgs.black
+      # FIXME: broken on aarch64
+    ] ++ lib.optional (!pkgs.stdenv.hostPlatform.isAarch64) pkgs.py-spy
+  );
 
   languages = {
     python = {
@@ -31,13 +32,16 @@
 
       ty = {
         enable = true;
+
         cmd = [
           (lib.getExe pkgs.ty)
           "server"
         ];
+
         filetypes = [
           "python"
         ];
+
         root_markers = [
           "pyproject.toml"
           "setup.py"

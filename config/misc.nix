@@ -4,11 +4,17 @@
 
 in {
 
-  extraPackages = [
+  extraPackages =
     (if nvimSize <= 500
-      then pkgs.gitFull
-      else pkgs.gitMinimal
-    )
+      then [
+        pkgs.gitFull
+        pkgs.ripgrep-all
+      ]
+      else [
+        pkgs.gitMinimal
+        pkgs.ripgrep
+      ]
+    ) ++ [
     pkgs.fzf
     # jq-LSP???
     pkgs.jq
@@ -48,8 +54,6 @@ in {
     # Binary analyzer
     pkgs.binsider
 
-    pkgs.ripgrep
-    pkgs.ripgrep-all
     pkgs.imagemagick
 
     pkgs.attic-client
