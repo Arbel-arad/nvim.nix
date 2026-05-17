@@ -22,12 +22,10 @@ in {
       inherit pkgs;
     })
 
-    pkgs.nushell
     pkgs.direnv
     pkgs.openssh
     pkgs.hyperfine
 
-    pkgs.lazysql
     pkgs.gitui
     pkgs.btop
 
@@ -35,6 +33,11 @@ in {
     pkgs.inotify-tools
 
   ] ++ lib.optionals enableExtra [
+
+    pkgs.nushell
+
+    pkgs.lazysql
+
     # For opening weird office documents
     pkgs.unzip
     pkgs.pandoc

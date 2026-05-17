@@ -5,11 +5,11 @@
 in {
 
   extraPackages = [
-    pkgs.cppcheck
-
     pkgs.gnumake
 
   ] ++ lib.optionals enableExtra [
+    pkgs.cppcheck
+
     pkgs.cmakeMinimal
 
     pkgs.ccls
@@ -21,6 +21,11 @@ in {
   languages = {
     clang = {
       enable = true;
+
+      lsp = {
+        enable = true;
+      };
+
       dap = {
         enable = true;
       };
@@ -29,11 +34,11 @@ in {
 
   lsp = {
     servers = {
-      clangd = lib.mkIf enableExtra {
-        cmd = lib.mkForce [
+      clangd = {
+        cmd = lib.mkForce (if enableExtra then [
           "${pkgs.clang-tools}/bin/clangd"
           "--clang-tidy"
-        ];
+        ] else []);
       };
     };
   };

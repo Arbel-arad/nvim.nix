@@ -1,4 +1,4 @@
-{ self }: {
+{ self, npins}: {
   common = _: prevPkgs: {
     black = prevPkgs.black.overrideAttrs (prev: {
       patches = prev.patches ++ [
@@ -13,6 +13,12 @@
         echo "this is broken"
       '';
     });
+
+    luajit = prevPkgs.luajit.override {
+      packageOverrides = (final: pref: {
+        punch = import (self + /tools/punch.nix) { inherit npins; pkgs = prevPkgs; };
+      });
+    };
   };
 
   nvf-pkgs = _: prevPkgs: let

@@ -70,13 +70,16 @@
 
   outputs = { self, ... }@inputs: let
 
+    npins = import ./npins;
+
     overlays = import (self + /flake/overlays.nix) {
-      inherit self;
+      inherit self npins;
     };
 
     nixpkgs = {
       overlays = [
         overlays.common
+        inputs.nvim-nightly.overlays.default
         inputs.rust-overlay.overlays.default
       ];
 
@@ -108,7 +111,7 @@
           config = { };
         }).config.programs.nvf.settings.vim;
 
-        inherit pkgs;
+        inherit pkgs npins;
 
         nixosConfigurations = import ./flake/microVMs.nix {
           inherit inputs self;

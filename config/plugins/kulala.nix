@@ -1,4 +1,7 @@
-{ pkgs }: let
+{ nvimSize, pkgs, lib }: let
+
+  enableExtra = nvimSize < 600;
+
   inherit (pkgs.vimPlugins) kulala-nvim;
 
   grammar = pkgs.tree-sitter.buildGrammar {
@@ -8,7 +11,7 @@
   };
 
 in {
-  extraPackages = with pkgs; [
+  extraPackages = lib.optionals enableExtra (with pkgs; [
     curl
     grpcurl
     websocat
@@ -17,7 +20,7 @@ in {
     prettierd
     libxml2
     stylua
-  ];
+  ]);
 
   treesitter = {
     grammars = [

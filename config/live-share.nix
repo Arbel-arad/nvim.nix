@@ -1,7 +1,16 @@
-{ pkgs, lib }: {
+{ self, npins, pkgs, lib }: let
+
+  username = lib.mkDefault "Arbel";
+
+in {
   globals = {
-    instant_username = lib.mkDefault "arbel";
+    instant_username = username;
   };
+
+  luaPackages = [
+    "punch"
+  ];
+
 
   extraPackages = [
     pkgs.bore-cli
@@ -67,10 +76,11 @@
         setupOpts = {
           openssl_lib = "${pkgs.rustls-libssl}/lib/libcrypto.so";
 
+          transport = "punch";
           #service = "bore";
           service = "lan";
 
-          username = "Arbel";
+          inherit username;
           ip_local = "127.0.0.1";
         };
 

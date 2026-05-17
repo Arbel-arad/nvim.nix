@@ -1,4 +1,8 @@
-{ npins, pkgs }: {
+{ npins, pkgs }: let
+
+  qalc = npins."qalc.nvim";
+
+in {
   extraPackages = [
     pkgs.libqalculate
   ];
@@ -8,9 +12,9 @@
       "qalc.nvim" = {
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "qalc.nvim";
-          version = "0";
+          version = qalc.revision;
 
-          src = npins."qalc.nvim";
+          src = qalc;
         };
 
         setupModule = "qalc";

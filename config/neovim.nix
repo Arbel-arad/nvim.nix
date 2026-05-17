@@ -31,20 +31,15 @@
       (import ./presentation.nix { inherit npins nvimSize pkgs lib; })
       (import ./injections.nix { inherit npins pkgs lib; })
       (import ./profilers { inherit nvimSize pkgs lib; })
-      (import ./live-share.nix { inherit pkgs lib; })
+      (import ./live-share.nix { inherit self npins pkgs lib; })
       (import ./codelens.nix { inherit lib; })
       (import ./docs.nix { inherit pkgs lib; })
       (import ./plugins {
         inherit nvimSize npins nvf pkgs lib lib';
       })
 
-      # One of spellcheck / diagnostics causes scroll lag
-
       {
-        package = if pkgs.stdenv.system == "x86_64-linux"
-          then inputs.nvim-nightly.packages."${pkgs.stdenv.hostPlatform.system}".neovim
-          else pkgs.neovim-unwrapped
-        ;
+        package = pkgs.neovim-unwrapped;
 
         viAlias = true;
         vimAlias = true;

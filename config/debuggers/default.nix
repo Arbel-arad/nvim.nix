@@ -5,9 +5,7 @@ enableExtra = nvimSize <= 100;
 in {
 
   extraPackages = lib.optionals enableExtra [
-    # FIXME: qemu_full is broken due to the ceph dependency
-    #pkgs.qemu_full
-    pkgs.qemu
+    pkgs.qemu_full
     pkgs.openocd
     pkgs.gcc-arm-embedded
   ];
