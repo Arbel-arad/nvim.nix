@@ -165,6 +165,7 @@ in lib'.mergeAttrsList [
         elixir-tools = {
           enable = true;
         };
+
         lsp = {
           enable = true;
         };

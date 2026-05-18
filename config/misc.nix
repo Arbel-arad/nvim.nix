@@ -8,11 +8,9 @@ in {
     (if nvimSize <= 500
       then [
         pkgs.gitFull
-        pkgs.ripgrep-all
       ]
       else [
         pkgs.gitMinimal
-        pkgs.ripgrep
       ]
     ) ++ [
     pkgs.fzf
@@ -28,6 +26,8 @@ in {
       inherit pkgs;
     })
 
+    pkgs.ripgrep
+
     pkgs.direnv
     pkgs.openssh
     pkgs.hyperfine
@@ -39,6 +39,8 @@ in {
     pkgs.inotify-tools
 
   ] ++ lib.optionals enableExtra [
+
+    pkgs.ripgrep-all
 
     pkgs.nushell
 

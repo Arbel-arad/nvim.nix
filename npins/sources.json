@@ -48,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "9bb32fa734ade896b43fad3f613558d6d171229e",
-      "url": "https://github.com/derekwisong/datui/archive/9bb32fa734ade896b43fad3f613558d6d171229e.tar.gz",
-      "hash": "sha256-Qb8KfnSnXme7lTVo0czmIaZMS7UqgqmWGuTieZQgRH8="
+      "revision": "796e07cc79886c7e22ba98e375db8f9198daa3ad",
+      "url": "https://github.com/derekwisong/datui/archive/796e07cc79886c7e22ba98e375db8f9198daa3ad.tar.gz",
+      "hash": "sha256-xez9mlRmaDr650URN05ctyyitsoIZ9GyiDM/wnP2J20="
     },
     "direnv.nvim": {
       "type": "Git",

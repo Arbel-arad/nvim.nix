@@ -8,7 +8,9 @@
 
 in {
   extraPackages = lib.optionals enable [
-    (pkgs.rust-bin.fromRustupToolchain {
+    (if pkgs.stdenv.hostPlatform.isAarch64
+      then pkgs.cargo
+    else (pkgs.rust-bin.fromRustupToolchain {
       channel = "nightly";
 
       components = [
@@ -47,7 +49,7 @@ in {
         #"xtensa-esp32s3-espidf"
         #"xtensa-esp32s3-none-elf"
       ];
-    })
+    }))
 
     pkgs.cargo-deny
     pkgs.cargo-bloat
@@ -95,9 +97,10 @@ in {
             procMacro = {
               enable = true,
             },
+
             --rustfmt = {
             --  overrideCommand = {
-            --    '${pkgs.rustfmt}'
+            --    ' ''${pkgs.rustfmt}'
             --  },
             --},
           },

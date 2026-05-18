@@ -12,6 +12,10 @@ GUI version:
 nix run git+https://forgejo.spacetime.technology/arbel/nvim.nix#gui
 ```
 
+## [Language Support](./docs/languages.md)
+
+## Screenshots
+
 <div>
 
 ![screenshot_1](./docs/assets/screenshot_1.png)
@@ -33,3 +37,5 @@ nix run git+https://forgejo.spacetime.technology/arbel/nvim.nix#gui
 ---
 
 ##### This project is based on [neovim](https://neovim.io) and [nvf](https://nvf.notashelf.dev/)
+
+##### Licensed under the [GNU AGPLv3](./COPYING.md)

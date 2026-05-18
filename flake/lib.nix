@@ -43,4 +43,5 @@
     # Merge entire list range
     binaryMerge 0 (builtins.length list);
 
+  notAarch64 = pkgs: !pkgs.stdenv.hostPlatform.isAarch64;
 }

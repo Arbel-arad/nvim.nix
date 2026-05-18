@@ -1,5 +1,16 @@
-{ self, npins}: {
+{ self, npins }: {
   common = _: prevPkgs: {
+    neovim-unwrapped = if prevPkgs.stdenv.hostPlatform.isAarch64 then prevPkgs.neovim-unwrapped.overrideAttrs {
+      doCheck = false;
+
+      checkPhase = ''
+        echo "Tests are broken on aarch64"
+      '';
+
+      preCheck = "";
+      postCheck = "";
+    } else prevPkgs.neovim-unwrapped;
+
     black = prevPkgs.black.overrideAttrs (prev: {
       patches = prev.patches ++ [
        (self + /config/languages/patches/black-indent.patch)

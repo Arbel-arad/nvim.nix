@@ -2,13 +2,25 @@
 
 ## Systems / Linux
 
-|Language|LSP|Linter|DAP|Compiler / Interpreter|Notes|
-|-|-|-|-|-|-|
-|C|✔|✔|✔|GCC + Clang + zig-cc| |
-|C++|✔|✔|✔|GCC + Clang + zig-cpp| |
-|Zig|✔|✔|✔|Zig-unstable| |
-|Rust|✔|✔|✔|Nightly Cargo + Rustc| |
+|Language|LSP|Linter|DAP|Compiler / Interpreter|Injections|Notes|
+|-|-|-|-|-|-|-|
+|C|✔|✔|✔|GCC + Clang + zig-cc| | |
+|C++|✔|✔|✔|GCC + Clang + zig-cpp| | |
+|Zig|✔|✔|✔|Zig-unstable| | |
+|Rust|✔|✔|✔|Nightly Cargo + Rustc| | |
+|Clojure|✔| | |Clojure + Lein| | |
+|Haskell| | | | | | |
+|Python|✔|✔| | | | |
+|Go|✔| | | | | |
+|Lua|✔| | | | | |
 
+## Shells
+
+|Language|LSP|Linter|
+|-|-|-|
+|Bash|✔|✔|
+|Fish|✔| |
+|NuShell|✔| |
 
 ## Embedded / BareMetal
 
@@ -28,6 +40,15 @@
 |SystemVerilog|✔|✔| | | |
 |XDC| | | | |TCL-based|
 
+## Web
+
+|Language|LSP|
+|-|-|
+|HTML|✔|
+|CSS| |
+|JavaScript|✔|
+|TypeScript|✔|
+
 ## Markup / Typesetting
 
 |Language|
@@ -36,3 +57,19 @@
 |Typst|
 |LaTeX|
 
+## Misc (DSLs + configuration)
+
+|Language|
+|-|
+|Nix|
+|Toml|
+|Yaml|
+|JSON|
+|XML|
+|SQL|
+|SCAD|
+|HCL|
+
+---
+
+#### Note: This Table Is Incomplete
