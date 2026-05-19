@@ -1,5 +1,5 @@
-Copyright 2026 Arbel Arad
+## Copyright © 2025–2026 Arbel Arad
 
-This program is provided under the GNU AGPL version 3
+##### This program is provided under the GNU AGPL version 3
 
-See [LICENSE](./COPYING.md)
+##### See [LICENSE](./COPYING.md)

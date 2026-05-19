@@ -9,10 +9,12 @@
 |Zig|✔|✔|✔|Zig-unstable| | |
 |Rust|✔|✔|✔|Nightly Cargo + Rustc| | |
 |Clojure|✔| | |Clojure + Lein| | |
-|Haskell| | | | | | |
+|Haskell|✔| |✔| | | |
 |Python|✔|✔| | | | |
 |Go|✔| | | | | |
 |Lua|✔| | | | | |
+|Odin|✔| | | | | |
+|Assembly|✔| | | | | |
 
 ## Shells
 
@@ -45,30 +47,30 @@
 |Language|LSP|
 |-|-|
 |HTML|✔|
-|CSS| |
+|CSS|✔|
 |JavaScript|✔|
 |TypeScript|✔|
 
 ## Markup / Typesetting
 
-|Language|
-|-|
-|Markdown|
-|Typst|
-|LaTeX|
+|Language|LSP|
+|-|-|
+|Markdown|✔|
+|Typst|✔|
+|LaTeX|✔|
 
 ## Misc (DSLs + configuration)
 
-|Language|
-|-|
-|Nix|
-|Toml|
-|Yaml|
-|JSON|
-|XML|
-|SQL|
-|SCAD|
-|HCL|
+|Language|LSP|
+|-|-|
+|Nix|✔|
+|Toml|✔|
+|Yaml|✔|
+|JSON|✔|
+|XML|✔|
+|SQL|✔|
+|SCAD|✔|
+|HCL|✔|
 
 ---
 

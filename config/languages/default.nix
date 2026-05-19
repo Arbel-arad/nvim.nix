@@ -232,7 +232,9 @@ in lib'.mergeAttrsList [
       filetypes = /* lua */ ''
         vim.filetype.add({
           extension = {
+            -- For FPGA constraint files
             xdc = 'tcl',
+            sdc = 'tcl',
           }
         })
       '';
