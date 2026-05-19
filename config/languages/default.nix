@@ -13,6 +13,7 @@ in lib'.mergeAttrsList [
   (import ./dart.nix { inherit nvimSize pkgs lib; })
   (import ./markdown.nix { inherit nvimSize pkgs; })
   (import ./zig.nix { inherit nvimSize pkgs lib; })
+  (import ./lua.nix { inherit nvimSize pkgs lib; })
   (import ./python.nix {
     inherit pkgs lib;
     enableExtra = nvimSize <= 300;
@@ -62,24 +63,6 @@ in lib'.mergeAttrsList [
 
       go = {
         enable = enableExtra;
-      };
-
-      lua = {
-        enable = true;
-
-        extraDiagnostics = {
-          enable = enableExtra;
-          types = [
-            "luacheck"
-          ];
-        };
-
-        lsp = {
-          enable = enableExtra;
-          lazydev = {
-            enable = true;
-          };
-        };
       };
 
       bash = {

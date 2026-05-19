@@ -12,7 +12,7 @@
 |Haskell|✔| |✔| | | |
 |Python|✔|✔| | | | |
 |Go|✔| | | | | |
-|Lua|✔| | | | | |
+|Lua|✔|✔| | | | |
 |Odin|✔| | | | | |
 |Assembly|✔| | | | | |
 
@@ -21,8 +21,8 @@
 |Language|LSP|Linter|
 |-|-|-|
 |Bash|✔|✔|
-|Fish|✔| |
-|NuShell|✔| |
+|Fish|✔|✔|
+|NuShell|✔|✔|
 
 ## Embedded / BareMetal
 
@@ -64,6 +64,8 @@
 |Language|LSP|
 |-|-|
 |Nix|✔|
+|justfile|✔|
+|makefile| |
 |Toml|✔|
 |Yaml|✔|
 |JSON|✔|

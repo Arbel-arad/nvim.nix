@@ -172,6 +172,17 @@ in {
         };
       };
 
+      nu-lint = lib.mkIf enableExtra {
+        cmd = [
+          "${lib.getExe pkgs.nu-lint}"
+          "--lsp"
+        ];
+
+        filetypes = [
+          "nu"
+        ];
+      };
+
       fish-lsp = lib.mkIf enableExtra {
         cmd = [
           "${lib.getExe pkgs.fish-lsp}"
@@ -201,31 +212,6 @@ in {
         filetypes = [
           "awk"
         ];
-      };
-
-      lua-language-server = lib.mkIf enableExtra {
-        settings = {
-          Lua = {
-            runtime = {
-              version = "LuaJIT";
-            };
-
-            workspace = {
-              checkThirdParty = false; # ?
-              library = [
-                # This might be better defined per project
-                # (.luarc.jsonc)
-                (lib.generators.mkLuaInline /* lua */ "vim.env.VIMRUNTIME")
-              ];
-            };
-
-            diagnostics = {
-              globals = [
-                #"vim"
-              ];
-            };
-          };
-        };
       };
     };
 
