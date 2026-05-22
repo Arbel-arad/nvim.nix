@@ -61,18 +61,19 @@
 
 ## Misc (DSLs + configuration)
 
-|Language|LSP|
-|-|-|
-|Nix|✔|
-|justfile|✔|
-|makefile| |
-|Toml|✔|
-|Yaml|✔|
-|JSON|✔|
-|XML|✔|
-|SQL|✔|
-|SCAD|✔|
-|HCL|✔|
+|Language|LSP|Linter
+|-|-|-|
+|Nix|✔|✔|
+|justfile|✔| |
+|makefile| |✔|
+|cmake|✔| |
+|Toml|✔| |
+|Yaml|✔| |
+|JSON|✔| |
+|XML|✔| |
+|SQL|✔| |
+|SCAD|✔| |
+|HCL|✔| |
 
 ---
 

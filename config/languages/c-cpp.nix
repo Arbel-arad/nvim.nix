@@ -30,6 +30,18 @@ in {
         enable = true;
       };
     };
+
+    cmake = {
+      enable = true;
+
+      lsp = {
+        enable = true;
+      };
+    };
+
+    make = {
+      enable = true;
+    };
   };
 
   lsp = {
