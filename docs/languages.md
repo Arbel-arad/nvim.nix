@@ -32,6 +32,7 @@
 |C++|✔|✔|✔|GCC + Clang + zig-cpp| |
 |Zig|✔|✔| |Zig-unstable|No Xtensa support yet|
 |Rust|✔|✔|✔|Nightly Cargo + Rustc|Xtensa requires patched compiler|
+|\*Arduino|✔|✔| | |Not really a language|
 
 ## Hardware Definition (HDL)
 
@@ -61,7 +62,7 @@
 
 ## Misc (DSLs + configuration)
 
-|Language|LSP|Linter
+|Language|LSP|Linter|
 |-|-|-|
 |Nix|✔|✔|
 |justfile|✔| |
@@ -69,7 +70,9 @@
 |cmake|✔| |
 |Toml|✔| |
 |Yaml|✔| |
+|Jinja|✔| |
 |JSON|✔| |
+|QML|✔| |
 |XML|✔| |
 |SQL|✔| |
 |SCAD|✔| |

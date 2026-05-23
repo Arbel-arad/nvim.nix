@@ -108,6 +108,14 @@ in lib'.mergeAttrsList [
         };
       };
 
+      jinja = {
+        enable = true;
+
+        lsp = {
+          enable = enableExtra;
+        };
+      };
+
       typst = {
         enable = enableExtra;
 
@@ -208,6 +216,28 @@ in lib'.mergeAttrsList [
 
       tex = {
         enable = true;
+      };
+
+      jq = {
+        enable = true;
+      };
+
+      qml = {
+        enable = enableExtra;
+
+        lsp = {
+          # Configured manually
+          enable = false;
+        };
+      };
+
+      arduino = {
+        enable = enableExtra;
+
+        lsp = {
+          # Configured manually
+          enable = false;
+        };
       };
     };
 

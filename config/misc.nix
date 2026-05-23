@@ -14,7 +14,6 @@ in {
       ]
     ) ++ [
     pkgs.fzf
-    # jq-LSP???
     pkgs.jq
     pkgs.nix
 
