@@ -65,7 +65,10 @@ in {
     nvf = self'.packages.default;
   };
 
-  "nvim-minimal" = mkNvim 999;
+  "nvim-minimal" = mkNvim 999 // {
+    # Required for bundling
+    pname = "nvim-minimal";
+  };
 
   inherit (zellij) nvim-zellij;
 
