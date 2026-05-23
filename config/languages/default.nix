@@ -239,6 +239,19 @@ in lib'.mergeAttrsList [
           enable = false;
         };
       };
+
+      fish = {
+        enable = enableExtra;
+
+        lsp = {
+          # Configured manually
+          enable = false;
+        };
+      };
+
+      docker = {
+        enable = enableExtra;
+      };
     };
 
     luaConfigRC = {

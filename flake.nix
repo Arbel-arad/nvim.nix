@@ -130,9 +130,8 @@
       in {
         devShells = {
           default = pkgs.mkShell {
-            nativeBuildInputs = [
-              self.nvim-config.extraPackages
-
+            nativeBuildInputs =
+              self.nvim-config.extraPackages ++ [
               self'.packages.default
               self'.packages.nvim-gui
               self'.packages.nvim-zellij

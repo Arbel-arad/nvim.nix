@@ -8,10 +8,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1778750123,
-        "narHash": "sha256-gkcwsNJ38jwdMDmXPDQK4YxPJ5q9e+NNyUEXAebTJwo=",
+        "lastModified": 1779184311,
+        "narHash": "sha256-WZuMv4jQmf1FVm0i11rbnXs3WSmtSceJswsoae2LJ0k=",
         "ref": "refs/heads/main",
-        "rev": "45c8dd71a661de3cb376f3f9a4d2e66356b3df07",
+        "rev": "34547a04836812991b48919dd76a3f57cd06de02",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/bookokrat"
@@ -25,11 +25,11 @@
     "flake-compat": {
       "flake": false,
       "locked": {
-        "lastModified": 1751685974,
-        "narHash": "sha256-NKw96t+BgHIYzHUjkTK95FqYRVKB8DHpVhefWSz/kTw=",
+        "lastModified": 1777699697,
+        "narHash": "sha256-Eg9b/rq/ECYwNwEXs5i9wHyhxNI0JrYx2srdI2uZMaQ=",
         "ref": "refs/heads/main",
-        "rev": "549f2762aebeff29a2e5ece7a7dc0f955281a1d1",
-        "revCount": 92,
+        "rev": "382052b74656a369c5408822af3f2501e9b1af81",
+        "revCount": 94,
         "type": "git",
         "url": "https://git.lix.systems/lix-project/flake-compat.git"
       },
@@ -231,11 +231,11 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1777828893,
-        "narHash": "sha256-gVWVnmyNr74BVKfhMMZDWkhx2699dhmZ2g0W8TTHtkk=",
+        "lastModified": 1778541201,
+        "narHash": "sha256-n0twkzWexzjsoDycOTvvQNuGEdg62UiNHYcFCduYpKI=",
         "owner": "Gerg-L",
         "repo": "mnw",
-        "rev": "c1c0b544bfabe6669b5a6a0383ccb475fe60258b",
+        "rev": "1a3573fc9d2486738fe0b2cacc5cd10dd5f3a445",
         "type": "github"
       },
       "original": {
@@ -252,16 +252,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1776882296,
-        "narHash": "sha256-DWZozXwMsgvUqfVlL1mQ8dOxW7GJ/8CdyaDN+1niZRg=",
+        "lastModified": 1779233504,
+        "narHash": "sha256-YIKEyzh0NFQlD0O92LQQNMoVCDwV8yw1Xz0Iu+4ZC5U=",
         "owner": "feel-co",
         "repo": "ndg",
-        "rev": "ab7d78d4884b3a34968cf9fa3d16c0c1246d5c6e",
+        "rev": "86f6644411a64d5413711895b7cf6e0e1be465b6",
         "type": "github"
       },
       "original": {
         "owner": "feel-co",
-        "ref": "refs/tags/v2.6.0",
+        "ref": "refs/tags/v2.8.0",
         "repo": "ndg",
         "type": "github"
       }
@@ -284,10 +284,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779046440,
-        "narHash": "sha256-BJNXckvRlJXvdk92KwBYIifOrEDjgaHutZwKti5n7OE=",
+        "lastModified": 1779516735,
+        "narHash": "sha256-j6PTzq4/hR3jkJJl9cqN/hVc6JiOyGsZ8ktJWHJrREA=",
         "ref": "master",
-        "rev": "b93c8922a351c2934d4b7a9fa6176e5b33d91d5d",
+        "rev": "784ca1010f041d289ab8afe04758c985911e0691",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -328,11 +328,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1778412918,
-        "narHash": "sha256-kTi7O6WX+loSJqshDnXrTA0yegs9063Z+MpLfRnQLx0=",
+        "lastModified": 1779541231,
+        "narHash": "sha256-yaVe8wNIbLnbShSpW75rxRAHXYNoqP062EEpNT2IGUY=",
         "owner": "arbel-arad",
         "repo": "nvf",
-        "rev": "4c0a0ac4d97fffb10e78952f6dc83cef8e61bd45",
+        "rev": "bfe2e1cea6b787b43107cf23ad19fe1f5e502530",
         "type": "github"
       },
       "original": {
@@ -388,10 +388,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1778987862,
-        "narHash": "sha256-V3qGt9P1eJP/r/1ONablphfGiH0RP4agQhrRANpDYx8=",
+        "lastModified": 1779506148,
+        "narHash": "sha256-OffE5yuMrSW71zIJNLvtl9MCO6WTAHEjlFPUCvkd/QM=",
         "ref": "refs/heads/master",
-        "rev": "6f44d8874ac29806c8d5cae42bf8e19ebb5ce0d3",
+        "rev": "d9973e2ab49747fada06ebbe26cda27eb0220cf1",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay"
@@ -409,11 +409,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778901358,
-        "narHash": "sha256-n35a8GOPs8zi35GXPe4uBz0Y8xseTkQpNgcrq81gPg0=",
+        "lastModified": 1779419951,
+        "narHash": "sha256-dMX0PUslUHPajP6o8FEoRdFv9afq/dec4POR0vVfjK4=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "61ec6a4fc56fe0c2b863f7b3eaba07b6664697d9",
+        "rev": "5b5c521d6cae9ef4aa32f888eb2c0ce595c9be52",
         "type": "github"
       },
       "original": {
@@ -425,11 +425,11 @@
     "rustowl": {
       "flake": false,
       "locked": {
-        "lastModified": 1778855286,
-        "narHash": "sha256-KMnAJ2X8tuHAiORofEwnj8dQoYv1eXAdtYXwi1v9RH8=",
+        "lastModified": 1779124922,
+        "narHash": "sha256-SCvBAk8oq6eBlxgRlVwgwNLSLE0C2sqgo2VEGB+ekEo=",
         "owner": "cordx56",
         "repo": "rustowl",
-        "rev": "2d1dd1ec09cae9604a189e366429dc549fbed203",
+        "rev": "bda20689c9f2f5c8b8a0c753454c2e9bd24aa0b9",
         "type": "github"
       },
       "original": {
@@ -451,10 +451,10 @@
         "rustowl": "rustowl"
       },
       "locked": {
-        "lastModified": 1778985685,
-        "narHash": "sha256-VAkgXxLDQS6SV4XWuKyEXb/QgyUMX0roFl887GaxPGk=",
+        "lastModified": 1779504256,
+        "narHash": "sha256-CcqY0vSmm5pICGiBgCO2rhtUtdsV/zCBTl59hek/Z/E=",
         "ref": "refs/heads/main",
-        "rev": "d72725b8015758fa431214fce43197ad2e4b1081",
+        "rev": "798bed361e69020f992778a3a065cf96daccde69",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git"
@@ -468,10 +468,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1778940603,
-        "narHash": "sha256-voSM8dZNlaOWN3kbYFky+FNY6fFQOEw0xF+ZMpZKkCQ=",
+        "lastModified": 1779524947,
+        "narHash": "sha256-sVpqGnYjqr14nt8wS4S7C5RMvA84tHsvrc6q/xGUeD4=",
         "ref": "refs/heads/main",
-        "rev": "367dd227f539267eae2b62770b4c17b88ac8c1f1",
+        "rev": "4827f7591e945f331a945fb53a9fd4e8ebfdbc12",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"
