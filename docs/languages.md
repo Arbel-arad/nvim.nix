@@ -57,6 +57,8 @@
 |Language|LSP|
 |-|-|
 |Markdown|✔|
+|Org Mode| |
+|Neorg| |
 |Typst|✔|
 |LaTeX|✔|
 
@@ -77,6 +79,7 @@
 |SQL|✔| |
 |SCAD|✔| |
 |HCL|✔| |
+|HTTP|✔| |
 
 ---
 

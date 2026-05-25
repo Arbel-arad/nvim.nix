@@ -3,6 +3,16 @@
   enabled = nvimSize < 300;
 
 in {
+  languages = {
+    vhdl = {
+      enable = true;
+
+      lsp = {
+        enable = false;
+      };
+    };
+  };
+
   lsp = {
     servers = {
       vhdl_ls = lib.mkIf enabled {

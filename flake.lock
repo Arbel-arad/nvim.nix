@@ -284,10 +284,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779634415,
-        "narHash": "sha256-jRA8zMQzS25R7qTcCTpvo3caKh1JOMSr3obTtl87K10=",
+        "lastModified": 1779692642,
+        "narHash": "sha256-cNyEjm/7fRGbmHhmo2PlapzL8e8Df62fTzkzXFlM7LU=",
         "ref": "master",
-        "rev": "f9d097cefe19512ea56b4948b83168a68455403b",
+        "rev": "2e5f3187bc98e805a7bbd15da29562790891b003",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -388,10 +388,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1779506148,
-        "narHash": "sha256-OffE5yuMrSW71zIJNLvtl9MCO6WTAHEjlFPUCvkd/QM=",
+        "lastModified": 1779679233,
+        "narHash": "sha256-qSIAAfK66X6waos6alIYxVze1ZU3C/WPp7NlN4ooP54=",
         "ref": "refs/heads/master",
-        "rev": "d9973e2ab49747fada06ebbe26cda27eb0220cf1",
+        "rev": "47ab6c7b3c6a68beac60067490240efa32ae344c",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay"
@@ -409,11 +409,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779419951,
-        "narHash": "sha256-dMX0PUslUHPajP6o8FEoRdFv9afq/dec4POR0vVfjK4=",
+        "lastModified": 1779592685,
+        "narHash": "sha256-p9d56GezhHRf4QfANxwa1d+fvwShvjB5XUhdIl7WEd0=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "5b5c521d6cae9ef4aa32f888eb2c0ce595c9be52",
+        "rev": "3a58b199e7c83a80b85c28044f808085ba7e941c",
         "type": "github"
       },
       "original": {
@@ -451,10 +451,10 @@
         "rustowl": "rustowl"
       },
       "locked": {
-        "lastModified": 1779504256,
-        "narHash": "sha256-CcqY0vSmm5pICGiBgCO2rhtUtdsV/zCBTl59hek/Z/E=",
+        "lastModified": 1779677883,
+        "narHash": "sha256-gAA7QLUHDZpV1cmGD9/9HsXc7AWgsUOtBd6chV0hY5g=",
         "ref": "refs/heads/main",
-        "rev": "798bed361e69020f992778a3a065cf96daccde69",
+        "rev": "294de0a5f6f543cae0ecb14ccd61c5a2177ce652",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git"

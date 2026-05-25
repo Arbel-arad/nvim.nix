@@ -42,6 +42,10 @@ in lib'.mergeAttrsList [
         extraDiagnostics.enable = true;
       };
 
+      tsx = {
+        enable = true;
+      };
+
       odin = {
         enable = enableExtra;
 
