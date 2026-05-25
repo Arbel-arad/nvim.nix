@@ -8,7 +8,7 @@
       yazi = {
         plugin = {
           prepend_previewers = [
-            { name = "*justfile"; run = "yazi-plugin-bat"; }
+            { url = "*justfile"; run = "yazi-plugin-bat"; }
           ];
         };
 

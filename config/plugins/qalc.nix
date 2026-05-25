@@ -1,4 +1,5 @@
 { npins, pkgs }: let
+  # Calculator
 
   qalc = npins."qalc.nvim";
 

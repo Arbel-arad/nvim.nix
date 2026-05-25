@@ -10,6 +10,7 @@
   (import ./just.nix { inherit npins pkgs; })
   (import ./exrc.nix { inherit npins pkgs; })
   (import ./kulala.nix { inherit nvimSize pkgs lib; })
+  (import ./nvumi.nix { inherit npins pkgs; })
   (import ./qalc.nix { inherit npins pkgs; })
   #(import ./regexplainer.nix { inherit npins pkgs lib; })
 ]

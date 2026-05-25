@@ -263,4 +263,9 @@
       enable = true;
     };
   };
+
+  extraPackages = [
+    # FIXME: For luasnip
+    #pkgs.luajitPackages.jsregexp
+  ];
 }

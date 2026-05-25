@@ -4,6 +4,7 @@
 in {
   lazy = {
     plugins = {
+      # Per-project configuration loader
       "exrc.nvim" = {
         #enabled = false;
 

@@ -91,12 +91,6 @@ in {
     };
   };
 
-  notify = {
-    nvim-notify = {
-      enable = true;
-    };
-  };
-
   projects = {
     # Replaced with neovim-project
     # https://github.com/coffebar/neovim-project

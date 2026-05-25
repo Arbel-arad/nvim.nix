@@ -3,6 +3,7 @@
   (import ./picker { inherit pkgs lib; })
   (import ./statuscol.nix { inherit pkgs; })
   (import ./indent.nix { inherit pkgs; })
+  (import ./notify.nix { inherit lib; })
 
   {
     options = {
@@ -172,18 +173,6 @@
     };
 
     visuals = {
-      fidget-nvim = {
-        enable = true;
-
-        setupOpts = {
-
-          progress = {
-            # Disable repeated hot-reload LSP notifications
-            suppress_on_insert = true;
-          };
-        };
-      };
-
       nvim-web-devicons = {
         enable = true;
       };
