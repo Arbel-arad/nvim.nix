@@ -4,6 +4,86 @@
   pkgs = inputs.nixpkgs.legacyPackages.${system};
 
 in {
+  mini = inputs.nixpkgs.lib.nixosSystem {
+    inherit system;
+
+    modules = [
+      inputs.microvm.nixosModules.microvm
+
+      {
+        microvm = rec {
+          hypervisor = "qemu";
+          storeDiskType = "squashfs";
+
+          mem = 8192;
+          vcpu = 8;
+
+          interfaces = [
+            {
+              type = "user";
+              id = "test-vm";
+              mac = "02:00:00:00:00:01";
+            }
+          ];
+
+          writableStoreOverlay = "/nix/.rw-store";
+
+          volumes = [ {
+            image = "nix-store-overlay.img";
+            mountPoint = writableStoreOverlay;
+            size = 2048;
+          } ];
+
+          shares = [ {
+            tag = "ro-store";
+            source = "/nix/store";
+            mountPoint = "/nix/.ro-store";
+          } ];
+        };
+
+        users = {
+          users.user = {
+            password = "";
+            group = "user";
+            isNormalUser = true;
+            extraGroups = [ "wheel" "video" ];
+            shell = inputs.nixpkgs.legacyPackages.${system}.fish;
+          };
+          groups.user = { };
+        };
+
+        nix = {
+          settings = {
+            experimental-features = [ "nix-command" "flakes" ];
+          } ;
+        };
+
+        security.sudo = {
+          enable = true;
+          wheelNeedsPassword = false;
+        };
+
+        programs.fish.enable = true;
+
+        fonts = {
+          enableDefaultPackages = true;
+          packages = with pkgs; [
+            noto-fonts
+            nerd-fonts.hack
+          ];
+        };
+
+        services = {
+          getty.autologinUser = "user";
+
+          kmscon = {
+            enable = false;
+          };
+        };
+      }
+    ];
+  };
+
   test = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
 
@@ -40,6 +120,7 @@ in {
               tag = "ro-store";
               source = "/nix/store";
               mountPoint = "/nix/.ro-store";
+              proto = "virtiofs";
             }
           ];
 
@@ -68,7 +149,6 @@ in {
 
           kmscon = {
             enable = false;
-            autologinUser = "user";
           };
         };
 
@@ -78,13 +158,13 @@ in {
           };
         };
 
-         fonts = {
-            enableDefaultPackages = true;
-            packages = with pkgs; [
-              noto-fonts
-              nerd-fonts.hack
-            ];
-          };
+        fonts = {
+          enableDefaultPackages = true;
+          packages = with pkgs; [
+            noto-fonts
+            nerd-fonts.hack
+          ];
+        };
 
         users = {
           users.user = {

@@ -111,6 +111,13 @@
           config = { };
         }).config.programs.nvf.settings.vim;
 
+        nvim-minimal-config = (import (self + /default.nix) {
+          inherit inputs pkgs;
+          inherit (pkgs) lib;
+          config = { };
+          nvimSize = 999;
+        }).config.programs.nvf.settings.vim;
+
         inherit pkgs npins;
 
         nixosConfigurations = import ./flake/microVMs.nix {
@@ -128,20 +135,31 @@
         };
 
       in {
-        devShells = {
+        devShells = let
+
+          defaultPackages = [
+            self'.packages.default
+            self'.packages.nvim-gui
+            self'.packages.nvim-zellij
+
+            pkgs.attic-client
+            pkgs.nix-tree
+            pkgs.npins
+            pkgs.just
+            pkgs.bat
+          ];
+
+        in {
           default = pkgs.mkShell {
             nativeBuildInputs =
-              self.nvim-config.extraPackages ++ [
-              self'.packages.default
-              self'.packages.nvim-gui
-              self'.packages.nvim-zellij
+              self.nvim-config.extraPackages
+              ++ defaultPackages;
+          };
 
-              pkgs.attic-client
-              pkgs.nix-tree
-              pkgs.npins
-              pkgs.just
-              pkgs.bat
-            ];
+          minimal = pkgs.mkShell {
+            nativeBuildInputs =
+              self.nvim-minimal-config.extraPackages
+              ++ defaultPackages;
           };
         };
 
