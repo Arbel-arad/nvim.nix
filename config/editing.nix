@@ -4,6 +4,9 @@
     # Apparently these break treesitter's auto-indent functionality
     autoindent = false;
     smartindent = false;
+
+    # Default at time of writing is `aABceFs_`
+    cpoptions = "aABceFs_I";
   };
 
   globals = {

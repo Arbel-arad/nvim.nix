@@ -3,7 +3,7 @@
   enabled = nvimSize <= 100;
 
 in lib'.mergeAttrsList [
-    (import ./fpga.nix { inherit nvimSize pkgs lib; })
+    (import ./fpga.nix { inherit nvimSize npins pkgs lib; })
   {
     extraPackages = lib.optionals enabled [
       # For micropython

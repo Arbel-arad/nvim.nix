@@ -60,6 +60,16 @@ in {
     rustowl.rustowl
   ];
 
+  globals = {
+    # Disable default textwidth and indent styles
+    rust_recommended_style = 0;
+
+    # Conceal doesn't seem to work
+    #rust_conceal = 1;
+    #rust_conceal_pub = 1;
+    #rust_conceal_mod_path = 1;
+  };
+
   languages = {
     rust = {
       inherit enable;

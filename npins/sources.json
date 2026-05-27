@@ -118,6 +118,20 @@
       "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-compat/archive/5edf11c44bc78a0d334f6334cdaf7d60d732daab.tar.gz",
       "hash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns="
     },
+    "fpga-toolchains": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://forgejo.spacetime.technology/",
+        "owner": "arbel",
+        "repo": "fpga-toolchains"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "ff9d0b44c0971aa3466a5f44ce931b5c15747a96",
+      "url": "https://forgejo.spacetime.technology/arbel/fpga-toolchains/archive/ff9d0b44c0971aa3466a5f44ce931b5c15747a96.tar.gz",
+      "hash": "sha256-iCEQv7XngIEVsdrz3DEmZlNvw6PEYmD76iNj76kIrgE="
+    },
     "just.nvim": {
       "type": "Git",
       "repository": {
