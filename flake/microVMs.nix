@@ -13,6 +13,10 @@ in {
       {
         microvm = rec {
           hypervisor = "qemu";
+          qemu = {
+            #package = pkgs.qemu_full;
+            extraArgs = [];
+          };
           storeDiskType = "squashfs";
 
           mem = 8192;
@@ -39,6 +43,14 @@ in {
             source = "/nix/store";
             mountPoint = "/nix/.ro-store";
           } ];
+
+          kernelParams = [
+            "quiet"
+          ];
+
+          forwardPorts = [
+            { from = "host"; host.port = 2222; guest.port = 22; }
+          ];
         };
 
         users = {
@@ -79,6 +91,10 @@ in {
           kmscon = {
             enable = false;
           };
+
+          openssh = {
+            enable = true;
+          };
         };
       }
     ];
@@ -91,7 +107,7 @@ in {
       inputs.microvm.nixosModules.microvm
 
       {
-        microvm = {
+        microvm = rec {
           hypervisor = "qemu";
           storeDiskType = "squashfs";
 
@@ -115,14 +131,19 @@ in {
             }
           ];
 
-          shares = [
-            {
-              tag = "ro-store";
-              source = "/nix/store";
-              mountPoint = "/nix/.ro-store";
-              proto = "virtiofs";
-            }
-          ];
+          writableStoreOverlay = "/nix/.rw-store";
+
+          volumes = [ {
+            image = "nix-store-overlay.img";
+            mountPoint = writableStoreOverlay;
+            size = 2048;
+          } ];
+
+          shares = [ {
+            tag = "ro-store";
+            source = "/nix/store";
+            mountPoint = "/nix/.ro-store";
+          } ];
 
           devices = [
             # Requires host configuration
@@ -134,6 +155,10 @@ in {
             "-device" "virtio-keyboard"
             "-usb"
             "-device" "usb-tablet,bus=usb-bus.0"
+          ];
+
+          kernelParams = [
+            "quiet"
           ];
         };
 
