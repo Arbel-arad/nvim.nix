@@ -32,11 +32,13 @@ in {
           "--config-path"
           "${(pkgs.formats.json { }).generate "zls.json" {
             warn_style = true;
+            highlight_global_var_declarations = true;
+
             #enable_build_on_save = true;
             build_on_save_args = [
               #"install"
               #"-fno-emit-bin"
-              #"-fincremental"
+              "-fincremental"
             ];
           }}"
         ];
@@ -48,7 +50,7 @@ in {
 
         settings = {
           zls = {
-            enable_build_on_save = false;
+            #enable_build_on_save = false;
           };
         };
       };
