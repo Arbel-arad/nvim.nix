@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "60e7ed08ca2bcf0cd357efb0aa74ae3dd528a83a",
-      "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/60e7ed08ca2bcf0cd357efb0aa74ae3dd528a83a.tar.gz",
-      "hash": "sha256-pQk5bks0oBywnzZcMaime4J3mjpOaG/OUTBv0gVd/gU="
+      "revision": "163fee0768a64091b0365a110cc5daeef9c9111c",
+      "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/163fee0768a64091b0365a110cc5daeef9c9111c.tar.gz",
+      "hash": "sha256-/adNcHpwaQD0zgojvXcrfPvShC7vJEku2iPGvk7nbt4="
     },
     "arduino-nvim": {
       "type": "Git",
@@ -48,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "796e07cc79886c7e22ba98e375db8f9198daa3ad",
-      "url": "https://github.com/derekwisong/datui/archive/796e07cc79886c7e22ba98e375db8f9198daa3ad.tar.gz",
-      "hash": "sha256-xez9mlRmaDr650URN05ctyyitsoIZ9GyiDM/wnP2J20="
+      "revision": "83f59cd420c1a137aec6040f2319b44b6acf72f6",
+      "url": "https://github.com/derekwisong/datui/archive/83f59cd420c1a137aec6040f2319b44b6acf72f6.tar.gz",
+      "hash": "sha256-LZz/pOoFkxsDFCUkLtAiwIdBYmBm8abKHwE+qAhUHuI="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -131,6 +131,20 @@
       "revision": "ff9d0b44c0971aa3466a5f44ce931b5c15747a96",
       "url": "https://forgejo.spacetime.technology/arbel/fpga-toolchains/archive/ff9d0b44c0971aa3466a5f44ce931b5c15747a96.tar.gz",
       "hash": "sha256-iCEQv7XngIEVsdrz3DEmZlNvw6PEYmD76iNj76kIrgE="
+    },
+    "helix.nix": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://forgejo.spacetime.technology/",
+        "owner": "arbel",
+        "repo": "helix.nix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "2ec1bf8734b074d9d8cc5f42525b0757c72babc1",
+      "url": "https://forgejo.spacetime.technology/arbel/helix.nix/archive/2ec1bf8734b074d9d8cc5f42525b0757c72babc1.tar.gz",
+      "hash": "sha256-AmDqB9hCU/RlvmaKgkj70r2WBmi0DaP7L1ZHVnKv9ZY="
     },
     "just.nvim": {
       "type": "Git",

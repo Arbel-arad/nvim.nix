@@ -121,7 +121,7 @@
         inherit pkgs npins;
 
         nixosConfigurations = import ./flake/microVMs.nix {
-          inherit inputs self;
+          inherit inputs self pkgs;
         };
       };
 

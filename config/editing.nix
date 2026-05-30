@@ -1,4 +1,8 @@
-{ nvimSize, pkgs, lib }:{
+{ nvimSize, npins, pkgs, lib }: let
+
+  enableExtra = nvimSize < 500;
+
+in {
 
   options = {
     # Apparently these break treesitter's auto-indent functionality
@@ -269,6 +273,11 @@
 
   extraPackages = [
     # FIXME: For luasnip
-    #pkgs.luajitPackages.jsregexp
+    pkgs.luajitPackages.jsregexp
+  ] ++ lib.optionals enableExtra [
+    (pkgs.callPackage npins."helix.nix".outPath {
+      inherit (pkgs) helix;
+      depList = [ ];
+    })
   ];
 }

@@ -20,7 +20,7 @@
       desc = "Open new terminal";
     }
     {
-      key = "<leader>a";
+      key = "<leader>aa";
       mode = [
         "n"
       ];
@@ -110,6 +110,7 @@
         "<leader>de" = "+Direnv";
         "<leader>b" = "+Buffers";
         "<leader>s" = "+Search";
+        "<leader>a" = "+Alternate";
       };
     };
 

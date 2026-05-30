@@ -28,6 +28,15 @@ in lib'.mergeAttrsList [
       # For ocaml
       pkgs.dune
       pkgs.ocaml
+
+      # For elixir
+      pkgs.elixir
+
+      # For haskell
+      pkgs.haskellPackages.hoogle
+      pkgs.haskellPackages.ghci-dap
+      pkgs.haskellPackages.fast-tags
+      pkgs.haskellPackages.haskell-debug-adapter
     ];
 
     languages = {

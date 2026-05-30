@@ -1,7 +1,6 @@
-{ inputs, self }: let
+{ inputs, self, pkgs }: let
 
-  system = "x86_64-linux";
-  pkgs = inputs.nixpkgs.legacyPackages.${system};
+  inherit (pkgs.stdenv.hostPlatform) system;
 
 in {
   mini = inputs.nixpkgs.lib.nixosSystem {
@@ -10,11 +9,19 @@ in {
     modules = [
       inputs.microvm.nixosModules.microvm
 
+      ({ modulesPath, ... }: {
+        imports = [
+          (modulesPath + "/profiles/image-based-appliance.nix")
+          (modulesPath + "/profiles/qemu-guest.nix")
+          (modulesPath + "/profiles/perlless.nix")
+        ];
+      })
+
       {
         microvm = rec {
           hypervisor = "qemu";
           qemu = {
-            #package = pkgs.qemu_full;
+            package = pkgs.qemu_full;
             extraArgs = [];
           };
           storeDiskType = "squashfs";
@@ -94,6 +101,12 @@ in {
 
           openssh = {
             enable = true;
+          };
+        };
+
+        environment = {
+          sessionVariables = {
+            TERM = "xterm-256color";
           };
         };
       }
