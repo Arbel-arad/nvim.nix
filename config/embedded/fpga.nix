@@ -15,6 +15,8 @@ in {
     pkgs.sby
     pkgs.mcy
 
+    pkgs.apio
+
     # Extras
     pkgs.netlistsvg
   ] ++ toolchains.packagesFor [

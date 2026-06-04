@@ -48,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "83f59cd420c1a137aec6040f2319b44b6acf72f6",
-      "url": "https://github.com/derekwisong/datui/archive/83f59cd420c1a137aec6040f2319b44b6acf72f6.tar.gz",
-      "hash": "sha256-LZz/pOoFkxsDFCUkLtAiwIdBYmBm8abKHwE+qAhUHuI="
+      "revision": "b227f97cac6b3dfd344df782ed9491f5769d5727",
+      "url": "https://github.com/derekwisong/datui/archive/b227f97cac6b3dfd344df782ed9491f5769d5727.tar.gz",
+      "hash": "sha256-FR6G4EF3JwmHEk49/FZEMktO3QPA9u4wj7HYqBILehw="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -364,9 +364,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "dfc304f10fe364611ffdb3efc488ae260b0dca78",
-      "url": "https://github.com/nanotee/sqls.nvim/archive/dfc304f10fe364611ffdb3efc488ae260b0dca78.tar.gz",
-      "hash": "sha256-543z6Rjs1ClKYcSrOosX0evxYOdPtYjG05VEvZVoznc="
+      "revision": "45e2ea8a684a9a194e8adbde77a02e7ac77f6d4e",
+      "url": "https://github.com/nanotee/sqls.nvim/archive/45e2ea8a684a9a194e8adbde77a02e7ac77f6d4e.tar.gz",
+      "hash": "sha256-GA+pqHjAHbkjNfWgOtzD7OPDXEAVOwKpFwQeKJv8FPk="
     },
     "sshfs.nvim": {
       "type": "Git",

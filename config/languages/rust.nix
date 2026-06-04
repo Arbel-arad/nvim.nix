@@ -10,46 +10,54 @@ in {
   extraPackages = lib.optionals enable [
     (if pkgs.stdenv.hostPlatform.isAarch64
       then pkgs.cargo
-    else (pkgs.rust-bin.fromRustupToolchain {
-      channel = "nightly";
+      else (pkgs.rust-bin.fromRustupToolchain {
+        channel = "nightly";
 
-      components = [
-        "rustc"
-        "cargo"
-        "rustfmt"
-        "rust-std"
-        "rust-docs"
-        "rust-analyzer"
-        "clippy"
-        "miri"
-        "rust-src"
-        "llvm-tools"
-      ];
+        components = [
+          "rustc"
+          "cargo"
+          "rustfmt"
+          "rust-std"
+          "rust-docs"
+          "rust-analyzer"
+          "clippy"
+          "miri"
+          "rust-src"
+          "llvm-tools"
+        ];
 
-      targets = [
-        "aarch64-unknown-linux-gnu"
-        "x86_64-unknown-linux-gnu"
+        targets = [
+          "aarch64-unknown-linux-gnu"
+          "x86_64-unknown-linux-gnu"
 
-        "aarch64-unknown-linux-musl"
-        "x86_64-unknown-linux-musl"
+          "aarch64-unknown-linux-musl"
+          "x86_64-unknown-linux-musl"
 
-        "aarch64-unknown-none"
-        "x86_64-unknown-none"
+          #"aarch64-unknown-illumos"
+          #"x86_64-unknown-illumos"
 
-        # Web
-        "wasm32-unknown-unknown"
+          "aarch64-unknown-none"
+          "x86_64-unknown-none"
 
-        # Embedded microcontrollers
-        "thumbv6m-none-eabi"
-        "thumbv7em-none-eabihf"
-        "thumbv8m.main-none-eabihf"
-        "riscv32imc-unknown-none-elf"
-        "riscv32imac-unknown-none-elf"
+          # Web
+          "wasm32-unknown-unknown"
 
-        #"xtensa-esp32s3-espidf"
-        #"xtensa-esp32s3-none-elf"
-      ];
-    }))
+          # Embedded microcontrollers
+          "thumbv6m-none-eabi"
+          "thumbv7em-none-eabihf"
+          "thumbv8m.main-none-eabihf"
+          "riscv32imc-unknown-none-elf"
+          "riscv32imac-unknown-none-elf"
+
+          # ESP32
+          #"riscv32imc-esp-espidf"
+          #"riscv32imac-esp-espidf"
+          #"riscv32imafc-esp-espidf"
+          #"xtensa-esp32s3-espidf"
+          #"xtensa-esp32s3-none-elf"
+        ];
+      })
+    )
 
     pkgs.cargo-deny
     pkgs.cargo-bloat
