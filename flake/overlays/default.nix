@@ -26,10 +26,12 @@
     });
 
     luajit = prevPkgs.luajit.override {
-      packageOverrides = (final: pref: {
+      packageOverrides = (final: prev: {
         punch = import (self + /tools/punch.nix) { inherit npins; pkgs = prevPkgs; };
       });
     };
+
+    apio = prevPkgs.callPackage ./apio.nix {};
   };
 
   nvf-pkgs = _: prevPkgs: let

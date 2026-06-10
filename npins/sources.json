@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "163fee0768a64091b0365a110cc5daeef9c9111c",
-      "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/163fee0768a64091b0365a110cc5daeef9c9111c.tar.gz",
-      "hash": "sha256-/adNcHpwaQD0zgojvXcrfPvShC7vJEku2iPGvk7nbt4="
+      "revision": "c9983b5ead3b2ce574d9bcb9708febad0f8ddbd7",
+      "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/c9983b5ead3b2ce574d9bcb9708febad0f8ddbd7.tar.gz",
+      "hash": "sha256-6Fj4Dy5NdaBecG+lb0XBKL/KFPevJw+Q9Z0wkhByJzY="
     },
     "arduino-nvim": {
       "type": "Git",
@@ -48,9 +48,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "b227f97cac6b3dfd344df782ed9491f5769d5727",
-      "url": "https://github.com/derekwisong/datui/archive/b227f97cac6b3dfd344df782ed9491f5769d5727.tar.gz",
-      "hash": "sha256-FR6G4EF3JwmHEk49/FZEMktO3QPA9u4wj7HYqBILehw="
+      "revision": "7f13e2f089774798cdc1cb545940a386e36b7481",
+      "url": "https://github.com/derekwisong/datui/archive/7f13e2f089774798cdc1cb545940a386e36b7481.tar.gz",
+      "hash": "sha256-kHQD/fVsWdLqM71O00bqI8teqYkGCKqNEmczSqI2p5U="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -61,9 +61,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8962b7fe3f6267db9dd8b2a49f2c6175b7980210",
-      "url": "https://github.com/notashelf/direnv.nvim/archive/8962b7fe3f6267db9dd8b2a49f2c6175b7980210.tar.gz",
-      "hash": "sha256-S2AuTMOCiglrvB1mJWEDlSke130GWpnDvMuIapjMyFk="
+      "revision": "e623d3645152839cbe7e73e7b2aa6e31256020ea",
+      "url": "https://github.com/notashelf/direnv.nvim/archive/e623d3645152839cbe7e73e7b2aa6e31256020ea.tar.gz",
+      "hash": "sha256-Bwdkf1ZHPsR3BUxdsGBNNNbzJ/CPOIlqb5EcQUUPuAk="
     },
     "distant": {
       "type": "Git",

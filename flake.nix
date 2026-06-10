@@ -72,7 +72,7 @@
 
     npins = import ./npins;
 
-    overlays = import (self + /flake/overlays.nix) {
+    overlays = import (self + /flake/overlays) {
       inherit self npins;
     };
 
