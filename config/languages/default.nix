@@ -265,6 +265,14 @@ in lib'.mergeAttrsList [
       docker = {
         enable = enableExtra;
       };
+
+      env = {
+        enable = enableExtra;
+
+        extraDiagnostics = {
+          enable = enableExtra;
+        };
+      };
     };
 
     luaConfigRC = {
