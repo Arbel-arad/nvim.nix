@@ -128,9 +128,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "fa6fc7993657b913a322b23f3b74d8fa408c8964",
-      "url": "https://forgejo.spacetime.technology/arbel/fpga-toolchains/archive/fa6fc7993657b913a322b23f3b74d8fa408c8964.tar.gz",
-      "hash": "sha256-3CdH4oXxZLZdhyfkW4MA3K1DlfEq5XzIcaUM1zlXNwg="
+      "revision": "eec6eda13b7925887397d198e0646c2772968dc7",
+      "url": "https://forgejo.spacetime.technology/arbel/fpga-toolchains/archive/eec6eda13b7925887397d198e0646c2772968dc7.tar.gz",
+      "hash": "sha256-8wHrEL6UGsKhnax2co78PzdhSRZdeUTI5E++60hb1Rc="
     },
     "helix.nix": {
       "type": "Git",

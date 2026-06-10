@@ -7,10 +7,15 @@ in {
   languages = {
     nix = {
       enable = true;
+
       lsp = {
-        enable = false;
-        #server = "nixd";
+        enable = true;
+        servers = [
+          "nil"
+          "nixd"
+        ];
       };
+
       extraDiagnostics = {
         enable = true;
         types = [
@@ -26,7 +31,9 @@ in {
       nil = {
         enable = true;
 
-        cmd = [ "${lib.getExe pkgs.nil}" ];
+        cmd = lib.mkForce [
+          "${lib.getExe pkgs.nil}"
+        ];
 
         filetypes = [
           "nix"
@@ -75,7 +82,7 @@ in {
       nixd = lib.mkIf enableExtra {
         enable = enableExtra;
 
-        cmd = [
+        cmd = lib.mkForce [
           "${lib.getExe pkgs.nixd}"
           "--log=error"
         ];

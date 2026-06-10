@@ -15,10 +15,6 @@ in {
     pkgs.sby
     pkgs.mcy
 
-    pkgs.apio
-
-    # Extras
-    pkgs.netlistsvg
   ] ++ toolchains.packagesFor [
       "xilinx-XC7"
       "lattice-iCE40"
