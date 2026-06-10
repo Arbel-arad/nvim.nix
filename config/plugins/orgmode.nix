@@ -25,6 +25,33 @@
   };
 
 in {
+    #notes = {
+    #  orgmode = {
+    #    treesitter.enable = false;
+    #    setupOpts = {
+    #      org_startup_folded = "inherit";
+    #      org_agenda_files = [
+    #        "~/orgfiles/**/*"
+    #      ];
+    #      org_default_notes_file = "~/orgfiles/refile.org";
+
+    #      ui = {
+    #        input = {
+    #          use_vim_ui = true;
+    #        };
+    #      };
+    #    };
+    #  };
+    #};
+
+  lsp = {
+    servers = {
+      org = {
+        enable = true;
+      };
+    };
+  };
+
   startPlugins = with pkgs.vimPlugins; [
     orgmode
     #org-roam-nvim
@@ -51,17 +78,7 @@ in {
 
         setupModule = "orgmode";
 
-        setupOpts = {
-          org_startup_folded = "inherit";
-          org_agenda_files = "~/orgfiles/**/*";
-          org_default_notes_file = "~/orgfiles/refile.org";
-
-          ui = {
-            input = {
-              use_vim_ui = true;
-            };
-          };
-        };
+        setupOpts = config.orgmode;
 
         lazy = false;
 
