@@ -22,6 +22,7 @@ in lib'.mergeAttrsList [
       # For embedded rust
       pkgs.probe-rs-tools
       pkgs.cargo-binutils
+      pkgs.stm32loader
       pkgs.ravedude
       pkgs.espflash
 

@@ -30,7 +30,7 @@ in lib'.mergeAttrsList [
       pkgs.ocaml
 
       # For elixir
-      pkgs.elixir
+      pkgs.beamPackages.elixir
 
       # For haskell
       pkgs.haskellPackages.hoogle

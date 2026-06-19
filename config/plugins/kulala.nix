@@ -20,6 +20,9 @@ in {
     prettierd
     libxml2
     stylua
+
+    kulala-fmt
+    kulala-core
   ]);
 
   treesitter = {

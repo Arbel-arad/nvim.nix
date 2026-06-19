@@ -59,6 +59,7 @@ in {
               "unused_with"
             ];
           };
+
           nix = {
             binary = lib.getExe pkgs.lixPackageSets.git.lix;
 
