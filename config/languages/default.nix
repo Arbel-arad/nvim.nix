@@ -52,7 +52,7 @@ in lib'.mergeAttrsList [
       };
 
       tsx = {
-        enable = true;
+        enable = enableExtra;
       };
 
       odin = {
@@ -65,6 +65,10 @@ in lib'.mergeAttrsList [
 
       html = {
         enable = true;
+
+        lsp = {
+          enable = enableExtra;
+        };
         extraDiagnostics = {
           enable = enableExtra;
         };
@@ -72,6 +76,10 @@ in lib'.mergeAttrsList [
 
       css = {
         enable = true;
+
+        lsp = {
+          enable = enableExtra;
+        };
       };
 
       go = {
@@ -220,7 +228,7 @@ in lib'.mergeAttrsList [
       };
 
       xml = {
-        enable = true;
+        enable = enableExtra;
 
         lsp = {
           enable = true;
@@ -228,7 +236,7 @@ in lib'.mergeAttrsList [
       };
 
       tex = {
-        enable = true;
+        enable = enableExtra;
       };
 
       jq = {

@@ -30,7 +30,7 @@
         ];
       };
 
-      ty = {
+      ty = lib.mkIf enableExtra {
         enable = true;
 
         cmd = [

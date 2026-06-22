@@ -27,7 +27,7 @@ in {
       };
 
       dap = {
-        enable = true;
+        enable = enableExtra;
       };
     };
 
@@ -35,7 +35,7 @@ in {
       enable = true;
 
       lsp = {
-        enable = true;
+        enable = enableExtra;
       };
     };
 

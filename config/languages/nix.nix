@@ -61,7 +61,11 @@ in {
           };
 
           nix = {
-            binary = lib.getExe pkgs.lixPackageSets.git.lix;
+            binary = if enableExtra then
+              lib.getExe pkgs.lixPackageSets.git.lix
+            else
+              "nix"
+            ;
 
             maxMemoryMB = 16384;
 

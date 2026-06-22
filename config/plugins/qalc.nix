@@ -1,10 +1,12 @@
-{ npins, pkgs }: let
+{ nvimSize, npins, pkgs, lib }: let
   # Calculator
+
+  enabled = nvimSize <= 500;
 
   qalc = npins."qalc.nvim";
 
 in {
-  extraPackages = [
+  extraPackages = lib.optionals enabled [
     pkgs.libqalculate
   ];
 

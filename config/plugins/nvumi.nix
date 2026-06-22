@@ -1,10 +1,11 @@
-{ pkgs, npins }: let
+{ nvimSize, npins, pkgs, lib }: let
   # Freeform unit conversion
 
+  enabled = nvimSize <= 100;
   inherit (npins) nvumi;
 
 in {
-  extraPackages = [
+  extraPackages = lib.optionals enabled [
     (pkgs.symlinkJoin {
       name = "numr-numi";
 
@@ -21,7 +22,7 @@ in {
 
   lazy = {
     plugins = {
-      nvumi = {
+      nvumi = lib.mkIf enabled {
         package = pkgs.vimUtils.buildVimPlugin {
           pname = "nvumi";
           version = nvumi.revision;
