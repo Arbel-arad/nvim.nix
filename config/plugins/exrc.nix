@@ -17,7 +17,7 @@ in {
 
         setupModule = "exrc";
         setupOpts = {
-          exrc_name = ".nvim.lua";
+          exrc_name = ".nvim/rc.lua";
           on_vim_enter = false;
           on_dir_changed = {
             enabled = true;

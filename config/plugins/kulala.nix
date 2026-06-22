@@ -27,6 +27,8 @@ in {
 
   treesitter = {
     grammars = [
+      # FIXME: Changed upstream?
+      # https://github.com/mistweaverco/kulala.nvim/commit/e483050a54eb9d70ef733b06e129a8da8b3f1780
       grammar
     ];
   };
