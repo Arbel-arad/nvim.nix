@@ -162,6 +162,7 @@ in {
     };
 
     ccc = {
+      # Color picker
       enable = true;
     };
 
@@ -170,6 +171,14 @@ in {
     };
 
     undotree = {
+      enable = true;
+    };
+
+    csvview = {
+      enable = true;
+    };
+
+    crazy-coverage = {
       enable = true;
     };
   };

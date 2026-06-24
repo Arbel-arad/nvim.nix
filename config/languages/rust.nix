@@ -65,6 +65,9 @@ in {
 
     pkgs.cargo-flamegraph
 
+    pkgs.cargo-tarpaulin
+    pkgs.cargo-llvm-cov
+
     rustowl.rustowl
   ];
 

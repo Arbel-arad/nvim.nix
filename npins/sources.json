@@ -61,9 +61,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "e623d3645152839cbe7e73e7b2aa6e31256020ea",
-      "url": "https://github.com/notashelf/direnv.nvim/archive/e623d3645152839cbe7e73e7b2aa6e31256020ea.tar.gz",
-      "hash": "sha256-Bwdkf1ZHPsR3BUxdsGBNNNbzJ/CPOIlqb5EcQUUPuAk="
+      "revision": "b41d16d88de2753059827e030d4dabcdb8deeec2",
+      "url": "https://github.com/notashelf/direnv.nvim/archive/b41d16d88de2753059827e030d4dabcdb8deeec2.tar.gz",
+      "hash": "sha256-gWOe2NjmWf1LPWgHgSJqMkaq9As+XA/pTPJT04WZMCA="
     },
     "distant": {
       "type": "Git",

@@ -7,8 +7,10 @@
   '';
 
 /*
+```bash
   perf record --call-graph dwarf target/debug/*
   perf script --full-source-path -F +srcline | ./filter-perf.pl | stackcollapse-perf.pl out.perf > perf.log
+```
 */
 
 in {
@@ -19,6 +21,9 @@ in {
     pkgs.cargo-criterion
     pkgs.gperftools
     pkgs.flamegraph
+    pkgs.pprof
+    pkgs.speedscope
+    pkgs.perf_data_converter
 
     profile-rust
   ];

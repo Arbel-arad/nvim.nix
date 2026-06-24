@@ -112,8 +112,19 @@ in lib'.mergeAttrsList [
       haskell = {
         enable = nvimSize <= 0;
 
+        lsp = {
+          # Replaced by haskell-tools
+          enable = false;
+        };
+
         dap = {
           enable = true;
+        };
+
+        extensions = {
+          haskell-tools = {
+            enable = true;
+          };
         };
       };
 

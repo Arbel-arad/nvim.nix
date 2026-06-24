@@ -212,38 +212,16 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1778541201,
-        "narHash": "sha256-n0twkzWexzjsoDycOTvvQNuGEdg62UiNHYcFCduYpKI=",
+        "lastModified": 1780772958,
+        "narHash": "sha256-VKKe8r4pwCGWZ3Yr9CPN129R4S3CKLSrlYqdYz3vKpM=",
         "owner": "Gerg-L",
         "repo": "mnw",
-        "rev": "1a3573fc9d2486738fe0b2cacc5cd10dd5f3a445",
+        "rev": "0871dbf63a53610c95db04439ed8ea4d6ec9c160",
         "type": "github"
       },
       "original": {
         "owner": "Gerg-L",
         "repo": "mnw",
-        "type": "github"
-      }
-    },
-    "ndg": {
-      "inputs": {
-        "nixpkgs": [
-          "nvf",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1779233504,
-        "narHash": "sha256-YIKEyzh0NFQlD0O92LQQNMoVCDwV8yw1Xz0Iu+4ZC5U=",
-        "owner": "feel-co",
-        "repo": "ndg",
-        "rev": "86f6644411a64d5413711895b7cf6e0e1be465b6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "feel-co",
-        "ref": "refs/tags/v2.8.0",
-        "repo": "ndg",
         "type": "github"
       }
     },
@@ -302,24 +280,24 @@
           "flake-parts"
         ],
         "mnw": "mnw",
-        "ndg": "ndg",
         "nixpkgs": [
           "nixpkgs"
         ],
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1779541231,
-        "narHash": "sha256-yaVe8wNIbLnbShSpW75rxRAHXYNoqP062EEpNT2IGUY=",
-        "owner": "arbel-arad",
-        "repo": "nvf",
-        "rev": "bfe2e1cea6b787b43107cf23ad19fe1f5e502530",
-        "type": "github"
+        "lastModified": 1782337698,
+        "narHash": "sha256-dsdWhz2pW16K3W/itxtYPmq0WYuNmK/GbjShusNP4bo=",
+        "ref": "refs/heads/main",
+        "rev": "98ca09f3e9b3a8bd07111d33d42f6b7a7a7c6b02",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/arbel/nvf"
       },
       "original": {
-        "owner": "arbel-arad",
-        "repo": "nvf",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/arbel/nvf"
       }
     },
     "nvim-nightly": {
