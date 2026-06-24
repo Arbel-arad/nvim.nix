@@ -38,18 +38,13 @@ in {
     programmingWordlist = {
       enable = true;
     };
-  };
 
-  autocmds = [
-    {
-      event = [
-        "TermOpen"
-      ];
-      pattern = null;
-      command = "setlocal nospell";
-      desc = "Disable spellcheck for terminal buffers";
-    }
-  ];
+    ignoreTerminal = true;
+
+    ignoredFiletypes = [
+      "noice"
+    ];
+  };
 
   # Append location of the programming word list
   #luaConfigRC = {
