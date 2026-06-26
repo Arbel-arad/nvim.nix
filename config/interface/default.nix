@@ -64,6 +64,11 @@
     };
 
     ui = {
+      ui2 = {
+        # TODO: Noice replacement?
+        #enable = true;
+      };
+
       illuminate = {
         enable = true;
 

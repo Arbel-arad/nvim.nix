@@ -445,6 +445,19 @@
       "revision": "5a4819e35d8c7be126f087d7dbfd3a8115c22eff",
       "url": "https://github.com/hiasr/vim-zellij-navigator/archive/5a4819e35d8c7be126f087d7dbfd3a8115c22eff.tar.gz",
       "hash": "sha256-G/NeXwMNvrYfFS0VxvfZE7DTBbnCgpJny+krYss8bXE="
+    },
+    "zeal.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "paradoxical-dev",
+        "repo": "zeal.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "5b60a017ccc0bd9e0f4768367e425fdae6a6e500",
+      "url": "https://github.com/paradoxical-dev/zeal.nvim/archive/5b60a017ccc0bd9e0f4768367e425fdae6a6e500.tar.gz",
+      "hash": "sha256-sg23S+xk1MeCDYL5ozcY29C3nIXrWKQRDCs3HScu/7U="
     }
   },
   "version": 8

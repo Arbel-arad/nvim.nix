@@ -12,5 +12,6 @@
   (import ./kulala.nix { inherit nvimSize pkgs lib; })
   (import ./nvumi.nix { inherit nvimSize npins pkgs lib; })
   (import ./qalc.nix { inherit nvimSize npins pkgs lib; })
+  (import ./zeal.nix { inherit nvimSize npins pkgs lib; })
   #(import ./regexplainer.nix { inherit npins pkgs lib; })
 ]
