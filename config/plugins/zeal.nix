@@ -55,6 +55,23 @@ in {
 
           picker = {
             type = "snacks";
+            snacks = {
+              layout = "select";
+            };
+          };
+
+          ft_map = {
+            lua = [ "Lua" ];
+            rust = [ "Rust" ];
+            c = [ "C" ];
+            cpp = [ "C" "C++" ];
+            go = [ "Go" ];
+            r = [ "R" ];
+            bash = [ "Bash" ];
+            fish = [ "contrib_fish" ];
+            markdown = [ "Markdown" ];
+            zig = [ "contrib_Zig" ];
+            jq = [ "contrib_jq" ];
           };
         };
 
