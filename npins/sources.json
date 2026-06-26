@@ -469,9 +469,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "0aec765d5e63a71921b4643877a5845d96147405",
-      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/0aec765d5e63a71921b4643877a5845d96147405.tar.gz",
-      "hash": "sha256-rmJj45imeaw94tspS1xVpjdJ3+yowmOSyKbQ/lX5oC8="
+      "revision": "e9ebd6cccca11f0a99c07c27eb3f035a912f6b6b",
+      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/e9ebd6cccca11f0a99c07c27eb3f035a912f6b6b.tar.gz",
+      "hash": "sha256-yINM7y1+m1h4giERWA1Sa/MCryTVd3r+GhkyRn4rg24="
     }
   },
   "version": 8

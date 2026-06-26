@@ -13,6 +13,26 @@
     ];
   };
 
+  docsets = (import npins."zealdocs.nix" {
+    inherit pkgs lib;
+  }).fromSets [
+    "C"
+    "C++"
+    "CMake"
+    "Rust"
+    "Bash"
+    "Lua"
+    "Go"
+    "R"
+    "Man_Pages"
+    "Markdown"
+    "contrib_Zig"
+    "contrib_fish"
+    "contrib_jq"
+    "contrib_Neovim"
+    "contrib_Linux_Man_Pages"
+  ];
+
 in {
   extraPackages = lib.optionals enabled [
     pkgs.w3m-nox
@@ -26,8 +46,12 @@ in {
 
         setupModule = "zeal";
         setupOpts = {
+          docsets_path = docsets;
 
           use_toggleterm = true;
+          toggleterm = {
+            direction = "float";
+          };
 
           picker = {
             type = "snacks";
