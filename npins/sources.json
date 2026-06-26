@@ -458,6 +458,20 @@
       "revision": "5b60a017ccc0bd9e0f4768367e425fdae6a6e500",
       "url": "https://github.com/paradoxical-dev/zeal.nvim/archive/5b60a017ccc0bd9e0f4768367e425fdae6a6e500.tar.gz",
       "hash": "sha256-sg23S+xk1MeCDYL5ozcY29C3nIXrWKQRDCs3HScu/7U="
+    },
+    "zealdocs.nix": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://forgejo.spacetime.technology/",
+        "owner": "arbel",
+        "repo": "zealdocs.nix"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "0aec765d5e63a71921b4643877a5845d96147405",
+      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/0aec765d5e63a71921b4643877a5845d96147405.tar.gz",
+      "hash": "sha256-rmJj45imeaw94tspS1xVpjdJ3+yowmOSyKbQ/lX5oC8="
     }
   },
   "version": 8

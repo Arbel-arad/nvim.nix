@@ -9,7 +9,7 @@
     src = npins."zeal.nvim";
 
     patches = [
-      #./patches/zeal-ro.patch
+      ./patches/zeal-ro.patch
     ];
   };
 
