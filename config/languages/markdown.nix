@@ -26,6 +26,7 @@ in {
         render-markdown-nvim = {
           #enable = true;
         };
+
         markview-nvim = {
           enable = true;
 
@@ -39,6 +40,14 @@ in {
                 "nofile"
                 "prompt"
               ];
+            };
+
+            comment = {
+              mentions = {
+                default = {
+                  icon = " ";
+                };
+              };
             };
 
             experimental = {

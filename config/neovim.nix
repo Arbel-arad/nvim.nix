@@ -34,6 +34,7 @@
       (import ./live-share.nix { inherit self npins pkgs lib; })
       (import ./codelens.nix { inherit lib; })
       (import ./docs.nix { inherit pkgs lib; })
+      (import ./nvim { })
       (import ./plugins {
         inherit nvimSize npins nvf pkgs lib lib';
       })

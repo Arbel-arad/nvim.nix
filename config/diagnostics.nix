@@ -11,6 +11,10 @@ in {
     enable = true;
 
     config = {
+      underline = true;
+      severity_sort = true;
+      update_in_insert = true;
+
       signs = {
         text = lib.generators.mkLuaInline /* Lua */ ''
           {
@@ -21,8 +25,6 @@ in {
           }
       '';
       };
-      underline = true;
-      update_in_insert = true;
 
       virtual_text = {
         # current_line causes "flickering" when there are multiple entries on the same line
@@ -53,6 +55,11 @@ in {
         #    end
         #  end
         #'';
+      };
+
+      float = {
+        source = "always";
+        border = "rounded";
       };
     };
 

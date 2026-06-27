@@ -47,8 +47,11 @@ in {
 
         on_attach = lib.generators.mkLuaInline /* Lua */ ''
           function(client, bufnr)
-            --client.server_capabilities.hoverProvider = false
+            client.server_capabilities.hoverProvider = false
             client.server_capabilities.completionProvider = false
+            -- Fixes comment highlighting (https://github.com/OXY2DEV/markview.nvim)
+            --client.server_capabilities.documentHighlightProvider = false
+            vim.api.nvim_set_hl(0, "@lsp.type.comment.nix", {})
           end
         '';
 
@@ -104,7 +107,7 @@ in {
 
         on_attach = lib.generators.mkLuaInline /* Lua */ ''
           function(client, bufnr)
-            client.server_capabilities.hoverProvider = false
+            --client.server_capabilities.hoverProvider = false
             --client.server_capabilities.completionProvider = false
           end
         '';
