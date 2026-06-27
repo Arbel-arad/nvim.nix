@@ -118,6 +118,20 @@
       "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-compat/archive/5edf11c44bc78a0d334f6334cdaf7d60d732daab.tar.gz",
       "hash": "sha256-vNpUSpF5Nuw8xvDLj2KCwwksIbjua2LZCqhV1LNRDns="
     },
+    "flake-parts-files": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://forgejo.spacetime.technology/",
+        "owner": "nix-mirrors",
+        "repo": "flake-parts-files"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "72c3663bf84fcffbccc682949041189c1e5e5197",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts-files/archive/72c3663bf84fcffbccc682949041189c1e5e5197.tar.gz",
+      "hash": "sha256-a7a7123pVQpWOVfZnffX+KFGIx8rTHC6pbNwk0ZYe1k="
+    },
     "fpga-toolchains": {
       "type": "Git",
       "repository": {
@@ -469,9 +483,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "e9ebd6cccca11f0a99c07c27eb3f035a912f6b6b",
-      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/e9ebd6cccca11f0a99c07c27eb3f035a912f6b6b.tar.gz",
-      "hash": "sha256-yINM7y1+m1h4giERWA1Sa/MCryTVd3r+GhkyRn4rg24="
+      "revision": "b40d559c88b0bdd116b41fb84e9ec6b96a891eb1",
+      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/b40d559c88b0bdd116b41fb84e9ec6b96a891eb1.tar.gz",
+      "hash": "sha256-YSzvy/TpKtoqNuyPHUjAVOVOprqOTx7nWQs4WKardjs="
     }
   },
   "version": 8

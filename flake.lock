@@ -243,10 +243,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1781614315,
-        "narHash": "sha256-JxSJbz3FkRLbrdV93EfwwsaBaaXGlpw0UuBlY3AsJbE=",
+        "lastModified": 1782560667,
+        "narHash": "sha256-roRqoAz4Cuzw4nyKcpAVnPve9/6nB5RaA/cCTapGdmg=",
         "ref": "master",
-        "rev": "9beda59d4b8a16a4351b918e864b7704cefe4dd9",
+        "rev": "cb868ce3991c1936757ec7643c2220a72524c6f0",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"

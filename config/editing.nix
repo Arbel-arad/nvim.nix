@@ -18,7 +18,7 @@ in {
   };
 
   autocomplete = { # Which is better?
-    nvim-cmp = {
+    nvim-cmp = lib.mkIf true {
       enable = true;
 
       sources = {

@@ -14,7 +14,7 @@
   };
 
   docsets = (import npins."zealdocs.nix" {
-    inherit pkgs lib;
+    inherit (pkgs.stdenv.hostPlatform) system;
   }).fromSets [
     "C"
     "C++"
@@ -37,6 +37,7 @@ in {
   extraPackages = lib.optionals enabled [
     pkgs.w3m-nox
     pkgs.sqlite
+    #pkgs.lynx
   ];
 
   lazy = {
@@ -47,6 +48,7 @@ in {
         setupModule = "zeal";
         setupOpts = {
           docsets_path = docsets;
+          browser = "w3m";
 
           use_toggleterm = true;
           toggleterm = {

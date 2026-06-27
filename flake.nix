@@ -94,6 +94,10 @@
   in inputs.flake-parts.lib.mkFlake {
       inherit inputs self;
     } {
+      imports = [
+        "${npins.flake-parts-files}/flake-module.nix"
+      ];
+
       flake = let
 
         pkgs = import inputs.nixpkgs {
@@ -137,6 +141,8 @@
         devShells = let
 
           defaultPackages = [
+            config.files.writer.drv
+
             self'.packages.default
             self'.packages.nvim-gui
             self'.packages.nvim-zellij
@@ -148,14 +154,21 @@
             pkgs.bat
           ];
 
+          # Automatically write file
+          shellHook = /* bash */ ''
+            write-files
+          '';
+
         in {
           default = pkgs.mkShell {
+            inherit shellHook;
             nativeBuildInputs =
               self.nvim-config.extraPackages
               ++ defaultPackages;
           };
 
           minimal = pkgs.mkShell {
+            inherit shellHook;
             nativeBuildInputs =
               self.nvim-minimal-config.extraPackages
               ++ defaultPackages;
@@ -176,6 +189,21 @@
 
         apps = import ./flake/apps.nix {
           inherit self self' pkgs;
+        };
+
+        files = {
+          file = {
+            ".luarc.json".source = (pkgs.formats.json {}).generate ".luarc.json" {
+              "workspace.library" = [
+                "${pkgs.neovim-unwrapped}/share/nvim/runtime"
+                ''''${3rd}/luv/library''
+              ];
+
+              "diagnostics.globals" = [
+                "read_globals"
+              ];
+            };
+          };
         };
       };
     };

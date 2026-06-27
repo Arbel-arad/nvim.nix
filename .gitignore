@@ -2,3 +2,4 @@
 .direnv
 /tools/colorprint/target
 /target
+.luarc.json
