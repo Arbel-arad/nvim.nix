@@ -119,6 +119,13 @@ in {
               enable = true,
             },
 
+            -- FIXME: rust-analyzer watches >70K files???
+            files = {
+              exclude = {
+                ".direnv"
+              },
+            },
+
             --rustfmt = {
             --  overrideCommand = {
             --    ' ''${pkgs.rustfmt}'

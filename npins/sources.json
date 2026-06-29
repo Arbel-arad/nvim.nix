@@ -13,6 +13,19 @@
       "url": "https://github.com/yuukiflow/Arduino-Nvim/archive/c9983b5ead3b2ce574d9bcb9708febad0f8ddbd7.tar.gz",
       "hash": "sha256-6Fj4Dy5NdaBecG+lb0XBKL/KFPevJw+Q9Z0wkhByJzY="
     },
+    "ComChan": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Vaishnav-Sabari-Girish",
+        "repo": "ComChan"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b862f4ca7492c12886e10aebe083d734085e3f36",
+      "url": "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/b862f4ca7492c12886e10aebe083d734085e3f36.tar.gz",
+      "hash": "sha256-i7CJAnT+ZRKPhVAiJUCrsYtd6HEwQkQaEDJfKKAwzIo="
+    },
     "arduino-nvim": {
       "type": "Git",
       "repository": {
@@ -343,6 +356,20 @@
       "url": "https://github.com/Apeiros-46B/qalc.nvim/archive/33198ba0533d6a514f9a48cb472e40407c2ea9f6.tar.gz",
       "hash": "sha256-E1fUczmZ7B852OHxdPz7U0Zdhvl/qihp0cXZv/5HHts="
     },
+    "rust-fenix": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://forgejo.spacetime.technology/",
+        "owner": "nix-mirrors",
+        "repo": "rust-fenix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "7f6d415487ef6d5dfe08c4bda148af3d21477dec",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/7f6d415487ef6d5dfe08c4bda148af3d21477dec.tar.gz",
+      "hash": "sha256-+pFKu+a/YWhPUaBj5cIa7PLNcDvpzpgzuZm+jeFJC38="
+    },
     "screenkey.nvim": {
       "type": "Git",
       "repository": {
@@ -483,9 +510,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "b40d559c88b0bdd116b41fb84e9ec6b96a891eb1",
-      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/b40d559c88b0bdd116b41fb84e9ec6b96a891eb1.tar.gz",
-      "hash": "sha256-YSzvy/TpKtoqNuyPHUjAVOVOprqOTx7nWQs4WKardjs="
+      "revision": "61a4b45de0537ae32e6e60eabe12c23ca901a42e",
+      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/61a4b45de0537ae32e6e60eabe12c23ca901a42e.tar.gz",
+      "hash": "sha256-KVHA/H6f3Q9NWDbl7bNlFP/8KR3DXEbRYf3b3Bcx5Vo="
     }
   },
   "version": 8

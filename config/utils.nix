@@ -24,6 +24,11 @@ in {
     (pkgs.callPackage ../tools/datui.nix {
       inherit npins pkgs;
     })
+
+    # ComChan Serial + RTT Terminal
+    (pkgs.callPackage ../tools/comchan.nix {
+      inherit npins system pkgs;
+    })
   ];
 
   clipboard = {

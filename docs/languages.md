@@ -54,13 +54,13 @@
 
 ## Markup / Typesetting
 
-|Language|LSP|
-|-|-|
-|Markdown|✔|
-|Org Mode| |
-|Neorg| |
-|Typst|✔|
-|LaTeX|✔|
+|Language|LSP|Preview
+|-|-|-|
+|Markdown|✔|✔|
+|Org Mode|✔| |
+|Neorg| | |
+|Typst|✔|✔|
+|LaTeX|✔| |
 
 ## Misc (DSLs + configuration)
 

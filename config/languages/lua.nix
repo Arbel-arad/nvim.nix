@@ -41,6 +41,11 @@ in {
 
             workspace = {
               checkThirdParty = "Ask"; # ?
+              ignoreDir = [
+                ".direnv"
+                "target"
+                "result"
+              ];
               library = [
                 # This might be better defined per project
                 # (.luarc.jsonc)

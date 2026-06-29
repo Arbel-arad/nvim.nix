@@ -2,6 +2,8 @@
 
   enabled = nvimSize <= 100;
 
+  pythonPackages = pkgs.python314Packages;
+
 in lib'.mergeAttrsList [
     (import ./fpga.nix { inherit nvimSize npins pkgs lib; })
   {
@@ -18,6 +20,9 @@ in lib'.mergeAttrsList [
 
       # For RP2xxx chips
       pkgs.picotool
+
+      # For zephyr
+      pythonPackages.west
 
       # For embedded rust
       pkgs.probe-rs-tools

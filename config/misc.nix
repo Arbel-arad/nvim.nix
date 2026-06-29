@@ -36,6 +36,7 @@ in {
 
     # For vim.lsp file watcher performance?
     pkgs.inotify-tools
+    pkgs.inotify-info
 
   ] ++ lib.optionals enableExtra [
 
