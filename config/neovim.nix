@@ -4,13 +4,19 @@
 
   settings = let
 
-    lib' = import ../flake/lib.nix { inherit lib; };
+    lib' = import ../flake/lib.nix {
+      inherit lib;
+    };
 
     npins = import ../npins;
 
     inherit (inputs) nvf;
 
     modules = lib.evalModules {
+      specialArgs = {
+        inherit nvimSize self inputs npins pkgs lib lib';
+      };
+
       modules = [
         {
           options = {

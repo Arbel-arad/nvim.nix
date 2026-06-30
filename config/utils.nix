@@ -180,11 +180,18 @@ in {
     };
 
     csvview = {
-      enable = true;
+      enable = enableExtra;
+
+      autoEnable = true;
+      setupOpts = {
+        view = {
+          display_mode = "border";
+        };
+      };
     };
 
     crazy-coverage = {
-      enable = true;
+      enable = enableExtra;
     };
   };
 
