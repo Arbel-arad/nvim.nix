@@ -1,95 +1,91 @@
-{ nvimSize, self, inputs, pkgs, lib }: {
-  enable = true;
-  enableManpages = true;
+{ nvimSize, self, inputs, npins, pkgs, lib }: let
 
-  settings = let
+  lib' = import ../flake/lib.nix {
+    inherit lib;
+  };
 
-    lib' = import ../flake/lib.nix {
-      inherit lib;
+  inherit (inputs) nvf;
+
+  modules = lib.evalModules {
+    specialArgs = {
+      inherit nvimSize self inputs npins pkgs lib lib';
     };
 
-    npins = import ../npins;
-
-    inherit (inputs) nvf;
-
-    modules = lib.evalModules {
-      specialArgs = {
-        inherit nvimSize self inputs npins pkgs lib lib';
-      };
-
-      modules = [
-        {
-          options = {
-            nvim = lib.mkOption { };
-          };
-        }
-
-        ./nvim
-      ];
-    };
-
-  in {
-    vim = lib'.mergeAttrsList [
-      modules.config.nvim
-      (import ./misc.nix { inherit self npins nvimSize pkgs lib; })
-      (import ./utils.nix { inherit nvimSize inputs npins pkgs lib; })
-      (import ./languages { inherit nvimSize inputs npins pkgs lib lib'; })
-      (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
-      (import ./debuggers { inherit nvimSize npins pkgs lib; })
-      (import ./formats.nix { inherit nvimSize pkgs lib; })
-      (import ./editing.nix { inherit nvimSize npins pkgs lib; })
-      (import ./embedded { inherit nvimSize npins pkgs lib lib'; })
-      (import ./interface { inherit nvimSize pkgs lib lib'; })
-      (import ./dashboard.nix { inherit self pkgs lib; })
-      (import ./keymaps.nix { inherit nvf npins pkgs lib; })
-      (import ./navigation.nix { inherit nvimSize; })
-      (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
-      (import ./tests.nix { inherit pkgs lib; })
-      (import ./remote.nix { inherit nvimSize npins pkgs lib; })
-      (import ./spellcheck.nix { inherit nvimSize nvf pkgs lib; })
-      (import ./presentation.nix { inherit npins nvimSize pkgs lib; })
-      (import ./injections.nix { inherit npins pkgs lib; })
-      (import ./profilers { inherit nvimSize pkgs lib; })
-      (import ./live-share.nix { inherit self npins pkgs lib; })
-      (import ./codelens.nix { inherit lib; })
-      (import ./docs.nix { inherit pkgs lib; })
-      (import ./plugins {
-        inherit nvimSize npins nvf pkgs lib lib';
-      })
-
+    modules = [
       {
-        package = pkgs.neovim-unwrapped;
-
-        viAlias = true;
-        vimAlias = true;
-
         options = {
-          tabstop = 2;
-          shiftwidth = 2; # should be equal to tabstop
-
-          # Fold configuration for UFO-nvim and statuscol
-          foldlevel = 99; # for folds and fillchars to show correctly
-          foldcolumn = "auto:1"; # levels of folds to show
-          fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
-
-          # For neorg
-          conceallevel = 3;
-
-          mousescroll = "ver:1,hor:1";
-          mousemoveevent = true;
-
-          # Enable external per-project config
-          # Handled with exrc plugin instead
-          exrc = false;
+          nvim = lib.mkOption {
+            type = lib.types.attrsOf lib.types.anything;
+          };
+          #nvf = (inputs.nvf.lib.neovimConfiguration { inherit pkgs;}).options;
         };
-
-        globals = {
-          markview_cmp_loaded = true; # Disable markview nvim-cmp integration
-          navic_silence = true; # navic tries to attach multiple LSPs and fails
-          #suda_smart_edit = 1; # use super user write automatically
-        } // (import ./neovide.nix { inherit pkgs; }).globals;
-
       }
+
+      ./nvim
     ];
   };
+
+in {
+  vim = lib'.mergeAttrsList [
+    modules.config.nvim
+    (import ./misc.nix { inherit self npins nvimSize pkgs lib; })
+    (import ./utils.nix { inherit nvimSize inputs npins pkgs lib; })
+    (import ./languages { inherit nvimSize inputs npins pkgs lib lib'; })
+    (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
+    (import ./debuggers { inherit nvimSize npins pkgs lib; })
+    (import ./formats.nix { inherit nvimSize pkgs lib; })
+    (import ./editing.nix { inherit nvimSize npins pkgs lib; })
+    (import ./embedded { inherit nvimSize npins pkgs lib lib'; })
+    (import ./interface { inherit nvimSize pkgs lib lib'; })
+    (import ./dashboard.nix { inherit self pkgs lib; })
+    (import ./keymaps.nix { inherit nvf npins pkgs lib; })
+    (import ./navigation.nix { inherit nvimSize; })
+    (import ./diagnostics.nix { inherit nvimSize pkgs lib; })
+    (import ./tests.nix { inherit pkgs lib; })
+    (import ./remote.nix { inherit nvimSize npins pkgs lib; })
+    (import ./spellcheck.nix { inherit nvimSize nvf pkgs lib; })
+    (import ./presentation.nix { inherit npins nvimSize pkgs lib; })
+    (import ./injections.nix { inherit npins pkgs lib; })
+    (import ./profilers { inherit nvimSize pkgs lib; })
+    (import ./live-share.nix { inherit self npins pkgs lib; })
+    (import ./codelens.nix { inherit lib; })
+    (import ./docs.nix { inherit pkgs lib; })
+    (import ./plugins {
+      inherit nvimSize npins nvf pkgs lib lib';
+    })
+
+    {
+      package = pkgs.neovim-unwrapped;
+
+      viAlias = true;
+      vimAlias = true;
+
+      options = {
+        tabstop = 2;
+        shiftwidth = 2; # should be equal to tabstop
+
+        # Fold configuration for UFO-nvim and statuscol
+        foldlevel = 99; # for folds and fillchars to show correctly
+        foldcolumn = "auto:1"; # levels of folds to show
+        fillchars = "eob:‿,fold: ,foldopen:▼,foldsep:⸽,foldclose:⏵";
+
+        # For neorg
+        conceallevel = 3;
+
+        mousescroll = "ver:1,hor:1";
+        mousemoveevent = true;
+
+        # Enable external per-project config
+        # Handled with exrc plugin instead
+        exrc = false;
+      };
+
+      globals = {
+        markview_cmp_loaded = true; # Disable markview nvim-cmp integration
+        navic_silence = true; # navic tries to attach multiple LSPs and fails
+        #suda_smart_edit = 1; # use super user write automatically
+      } // (import ./neovide.nix { inherit pkgs; }).globals;
+
+    }
+  ];
 }

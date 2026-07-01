@@ -109,15 +109,13 @@
       in {
         # For exploring configuration in REPL
         nvim-config = (import (self + /default.nix) {
-          inherit inputs pkgs;
+          inherit self inputs pkgs;
           inherit (pkgs) lib;
-          config = { };
         }).config.programs.nvf.settings.vim;
 
         nvim-minimal-config = (import (self + /default.nix) {
-          inherit inputs pkgs;
+          inherit self inputs pkgs;
           inherit (pkgs) lib;
-          config = { };
           nvimSize = 999;
         }).config.programs.nvf.settings.vim;
 

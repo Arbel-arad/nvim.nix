@@ -1,14 +1,12 @@
 {
-  config,
+  npins ? (import ./npins),
+  nvimSize ? 0,
+  self,
   inputs,
   pkgs,
   lib,
   ...
-}@self: let
-
-  nvimSize = self.nvimSize or 0;
-
-in {
+}: {
 
   imports = [
     inputs.nvf.homeManagerModules.default
@@ -17,15 +15,13 @@ in {
 
   config = {
     programs = {
-      nvf = lib.recursiveUpdate {
+      nvf = {
+        enable = true;
         enableManpages = true;
-        settings = {
-
+        settings = import ./config/neovim.nix {
+          inherit self inputs npins pkgs lib nvimSize;
         };
-      } (import ./config/neovim.nix {
-          inherit inputs pkgs lib nvimSize;
-          self = ./.;
-        });
+      };
     };
   };
 }

@@ -9,13 +9,12 @@
       modules = [
         (
           import (self + /default.nix) {
-            inherit nvimSize config inputs pkgs lib;
+            inherit self nvimSize config inputs pkgs lib;
           }
         ).config.programs.nvf.settings
       ];
     }
   ).neovim;
-
 
 in {
 

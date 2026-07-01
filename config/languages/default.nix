@@ -9,6 +9,7 @@ in lib'.mergeAttrsList [
   (import ./openscad.nix { inherit nvimSize pkgs lib; })
   (import ./verilog.nix { inherit nvimSize pkgs lib; })
   (import ./clojure.nix { inherit nvimSize pkgs lib; })
+  (import ./typst.nix { inherit nvimSize pkgs lib; })
   (import ./vhdl.nix { inherit nvimSize pkgs lib; })
   (import ./dart.nix { inherit nvimSize pkgs lib; })
   (import ./markdown.nix { inherit nvimSize pkgs; })
@@ -145,26 +146,6 @@ in lib'.mergeAttrsList [
 
         lsp = {
           enable = enableExtra;
-        };
-      };
-
-      typst = {
-        enable = enableExtra;
-
-        lsp = {
-          enable = enableExtra;
-        };
-
-        extensions = {
-          typst-concealer = {
-            enable = true;
-            mappings = {
-
-            };
-          };
-          typst-preview-nvim = {
-            enable = true;
-          };
         };
       };
 
