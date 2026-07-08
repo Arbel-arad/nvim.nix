@@ -41,6 +41,8 @@ in lib'.mergeAttrsList [
 
       pkgs.tockloader
       pkgs.dfu-util
+
+      pkgs.busybox
     ];
 
     lazy = {
