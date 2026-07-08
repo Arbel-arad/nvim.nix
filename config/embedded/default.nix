@@ -43,6 +43,7 @@ in lib'.mergeAttrsList [
       pkgs.dfu-util
 
       pkgs.busybox
+      pkgs.lsplug
     ];
 
     lazy = {

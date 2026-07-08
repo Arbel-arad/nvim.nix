@@ -36,8 +36,8 @@ in {
     postBuild = let
 
       override-packages = [
-        (import ../config/tools/fish.nix { inherit pkgs; })
-        (import ../config/tools/yazi.nix { inherit pkgs; })
+        (import (self + /config/tools/fish.nix) { inherit pkgs; })
+        (import (self + /config/tools/yazi.nix) { inherit pkgs; })
       ];
 
     in /* bash */ ''
@@ -71,5 +71,5 @@ in {
 
   inherit (zellij) nvim-zellij;
 
-  #inherit ((import ../packages/vm.nix { inherit pkgs; })) vm-gui;
+  #inherit ((import (self + /packages/vm.nix) { inherit pkgs; })) vm-gui;
 }

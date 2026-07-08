@@ -173,7 +173,7 @@
           };
         };
 
-        packages = import ./flake/package.nix {
+        packages = import ./flake/packages {
           inherit config inputs self self' pkgs lib;
           nvf-pkgs = import inputs.nixpkgs {
             inherit system;
