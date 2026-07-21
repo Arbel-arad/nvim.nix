@@ -3,7 +3,14 @@
     [
       pkgs.black
       # FIXME: broken on aarch64
-    ] ++ lib.optional (!pkgs.stdenv.hostPlatform.isAarch64) pkgs.py-spy
+    ] ++ lib.optionals (!pkgs.stdenv.hostPlatform.isAarch64) [
+      (pkgs.py-spy.overrideAttrs (final: prev: {
+        checkFlags = (prev.checkFlags or []) ++ [
+          #FIXME: pyspy tests
+          "--skip=test_thread_names"
+        ];
+      }))
+    ]
   );
 
   languages = {

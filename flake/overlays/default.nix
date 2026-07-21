@@ -1,5 +1,5 @@
 { self, npins }: {
-  common = _: prevPkgs: {
+  common = finalPkgs: prevPkgs: {
     neovim-unwrapped = if prevPkgs.stdenv.hostPlatform.isAarch64 then prevPkgs.neovim-unwrapped.overrideAttrs {
       doCheck = false;
 
@@ -12,7 +12,7 @@
     } else prevPkgs.neovim-unwrapped;
 
     black = prevPkgs.black.overrideAttrs (prev: {
-      patches = prev.patches ++ [
+      patches = (prev.patches or []) ++ [
        (self + /config/languages/patches/black-indent.patch)
       ];
 
@@ -32,6 +32,10 @@
     };
 
     apio = prevPkgs.callPackage ./apio.nix {};
+
+    qemu_full = prevPkgs.qemu_full.override {
+      cephSupport = false;
+    };
   };
 
   nvf-pkgs = _: prevPkgs: let

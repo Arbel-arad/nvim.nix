@@ -49,6 +49,9 @@ in {
           "riscv32imc-unknown-none-elf"
           "riscv32imac-unknown-none-elf"
 
+          # CH32V30x
+          #"riscv32imfc-unknown-none-elf"
+
           # ESP32
           #"riscv32imc-esp-espidf"
           #"riscv32imac-esp-espidf"
@@ -81,61 +84,91 @@ in {
     #rust_conceal_mod_path = 1;
   };
 
+  lsp =  {
+    servers = {
+
+    };
+  };
+
   languages = {
     rust = {
       inherit enable;
 
       lsp = {
-        enable = true;
+        # Managed by rustaceanvim
+        enable = false;
 
-        # Use rust-analyzer from `$PATH` for compatibility with nvim-unwrapped and project-specific arches
-        package = [
+        servers = [
           "rust-analyzer"
         ];
 
-        opts = /* lua */ ''
-          ['rust-analyzer'] = {
-            check = {
-              command = "clippy",
-            },
+        # Use rust-analyzer from `$PATH` for compatibility with nvim-unwrapped and project-specific arches
+        #package = [
+        #  "rust-analyzer"
+        #];
+      };
 
-            diagnostics = {
-              experimental = {
-                enable = true,
-              },
+      dap = {
+        # Managed by rustaceanvim
+        enable = false;
 
-              styleLints = {
-                enable = true,
-              },
-            },
-
-            cargo = {
-              allFeature = true,
-            },
-
-            checkOnSave = true,
-
-            procMacro = {
-              enable = true,
-            },
-
-            -- FIXME: rust-analyzer watches >70K files???
-            files = {
-              exclude = {
-                ".direnv"
-              },
-            },
-
-            --rustfmt = {
-            --  overrideCommand = {
-            --    ' ''${pkgs.rustfmt}'
-            --  },
-            --},
-          },
-        '';
+        debugger = [
+          "codelldb"
+        ];
       };
 
       extensions = {
+        rustaceanvim = {
+          enable = true;
+
+          setupOpts = {
+            server = {
+              default_settings = lib.generators.mkLuaInline /* lua */ ''
+                {
+                  ['rust-analyzer'] = {
+                    check = {
+                      command = "clippy",
+                    },
+
+                    diagnostics = {
+                      experimental = {
+                        enable = true,
+                      },
+
+                      styleLints = {
+                        enable = true,
+                      },
+                    },
+
+                    cargo = {
+                      allFeature = true,
+                    },
+
+                    checkOnSave = true,
+
+                    procMacro = {
+                      enable = true,
+                    },
+
+                    -- FIXME: rust-analyzer watches >70K files???
+                    files = {
+                      exclude = {
+                        ".direnv"
+                      },
+                    },
+
+                    --rustfmt = {
+                    --  overrideCommand = {
+                    --    ' ''${pkgs.rustfmt}'
+                    --  },
+                    --},
+                  },
+                },
+              '';
+            };
+          };
+        };
+
         crates-nvim = {
           enable = true;
 

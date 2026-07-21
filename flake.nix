@@ -17,7 +17,6 @@
       url = "git+https://forgejo.spacetime.technology/arbel/nvf?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
       };
     };
 
@@ -87,6 +86,7 @@
           "telescope-sg"
           "scope.nvim"
           "barbar.nvim"
+          "tree-sitter-http"
         ];
       };
     };

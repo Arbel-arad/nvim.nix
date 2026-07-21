@@ -1,7 +1,9 @@
 { nvimSize, pkgs, lib }: if nvimSize > 200 then {} else {
 
   extraPackages = [
-    pkgs.openscad-unstable
+    # FIXME: unstable is broken
+    #pkgs.openscad-unstable
+    pkgs.openscad
   ];
 
   lsp = {
@@ -29,7 +31,8 @@
       linters = {
         # openSCAD linter
         sca2d = {
-          cmd = lib.getExe pkgs.sca2d;
+          #cmd = lib.getExe pkgs.sca2d;
+          cmd = "sca2d";
 
           stdin = false;
           append_fname = true;

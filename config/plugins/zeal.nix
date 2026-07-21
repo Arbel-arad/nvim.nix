@@ -16,21 +16,21 @@
   docsets = (import npins."zealdocs.nix" {
     inherit (pkgs.stdenv.hostPlatform) system;
   }).fromSets [
-    "C"
-    "C++"
-    "CMake"
-    "Rust"
-    "Bash"
-    "Lua"
-    "Go"
-    "R"
-    "Man_Pages"
-    "Markdown"
-    "contrib_Zig"
-    "contrib_fish"
-    "contrib_jq"
-    "contrib_Neovim"
-    "contrib_Linux_Man_Pages"
+    #"C"
+    #"C++"
+    #"CMake"
+    #"Rust"
+    #"Bash"
+    #"Lua"
+    #"Go"
+    #"R"
+    #"Man_Pages"
+    #"Markdown"
+    #"contrib_Zig"
+    #"contrib_fish"
+    #"contrib_jq"
+    #"contrib_Neovim"
+    #"contrib_Linux_Man_Pages"
   ];
 
 in {

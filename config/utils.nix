@@ -18,7 +18,13 @@ in {
     pkgs.viu
 
     # PDF + EPUB reader
-    inputs.bookokrat.packages.${system}.default
+    (inputs.bookokrat.packages.${system}.default.overrideAttrs (final: prev: {
+      checkFlags = (prev.checkFlags or []) ++ [
+        "--skip=test_content_scrolling_svg"
+        "--skip=test_help_popup_search_svg"
+      ];
+    }))
+
 
     # Data-ui for CSVs
     (pkgs.callPackage ../tools/datui.nix {

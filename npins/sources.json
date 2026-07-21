@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "02102567398b14aca1e05e509b5d033f921aeb7d",
-      "url": "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/02102567398b14aca1e05e509b5d033f921aeb7d.tar.gz",
-      "hash": "sha256-p4j30aGu7sfC1szeiFzJTqzOztrNwybM8kaVgPwe7rU="
+      "revision": "5b2395131e0fb2bdd06c0f473ceabaa4c772b4fc",
+      "url": "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/5b2395131e0fb2bdd06c0f473ceabaa4c772b4fc.tar.gz",
+      "hash": "sha256-DiC/YMRpgPMBq2nIJ2+qUdlKI46Tflh/PuswpwGvaag="
     },
     "arduino-nvim": {
       "type": "Git",
@@ -61,9 +61,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "7f13e2f089774798cdc1cb545940a386e36b7481",
-      "url": "https://github.com/derekwisong/datui/archive/7f13e2f089774798cdc1cb545940a386e36b7481.tar.gz",
-      "hash": "sha256-kHQD/fVsWdLqM71O00bqI8teqYkGCKqNEmczSqI2p5U="
+      "revision": "9cd8e2c4617ef63c896f6eff80a99b5ce2bfd02d",
+      "url": "https://github.com/derekwisong/datui/archive/9cd8e2c4617ef63c896f6eff80a99b5ce2bfd02d.tar.gz",
+      "hash": "sha256-Bso2KUx2b6mONdAMbBbc0BKDEAb/cb56PciQA/PHdsg="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -366,9 +366,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "1748a8592edbdcbe8a2317ddc237b47a27932578",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/1748a8592edbdcbe8a2317ddc237b47a27932578.tar.gz",
-      "hash": "sha256-oREqdReAdtbMW5WFcVFDg7NM4b6rmJQglZ+sxC+CwDs="
+      "revision": "ef671b6baee7d1c55a93ee555d5f5ca2f0e6aaa0",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/ef671b6baee7d1c55a93ee555d5f5ca2f0e6aaa0.tar.gz",
+      "hash": "sha256-TitoB4AUyAEACEfMnIFPxFrkvEMqseulDvNHvfOyu7I="
     },
     "screenkey.nvim": {
       "type": "Git",
@@ -510,9 +510,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "61a4b45de0537ae32e6e60eabe12c23ca901a42e",
-      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/61a4b45de0537ae32e6e60eabe12c23ca901a42e.tar.gz",
-      "hash": "sha256-KVHA/H6f3Q9NWDbl7bNlFP/8KR3DXEbRYf3b3Bcx5Vo="
+      "revision": "3228667d4bd319e2b61dffeec3b6f3f39b9959fe",
+      "url": "https://forgejo.spacetime.technology/arbel/zealdocs.nix/archive/3228667d4bd319e2b61dffeec3b6f3f39b9959fe.tar.gz",
+      "hash": "sha256-Aogp0lBHXLSfAW8PNrgD2mndaFo7fBLL+mEW3CSeaLY="
     }
   },
   "version": 8

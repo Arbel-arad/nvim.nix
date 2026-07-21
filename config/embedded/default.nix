@@ -30,6 +30,9 @@ in lib'.mergeAttrsList [
       pkgs.stm32loader
       pkgs.ravedude
       pkgs.espflash
+      pkgs.wchisp
+      pkgs.wlink
+      pkgs.blisp
 
       pkgs.minicom
       pkgs.tio
