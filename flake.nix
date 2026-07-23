@@ -59,8 +59,7 @@
     };
 
     bookokrat = {
-      #url = "git+https://forgejo.spacetime.technology/mirrors/bookokrat?shallow=1";
-      url = "github:arbel-arad/bookokrat";
+      url = "git+https://forgejo.spacetime.technology/mirrors/bookokrat?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };

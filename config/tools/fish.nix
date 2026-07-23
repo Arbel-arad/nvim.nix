@@ -2,6 +2,7 @@
   runtimeInputs = [
     pkgs.starship
     pkgs.fd
+    pkgs.grc
   ];
 
   localConfig = /* fish */ ''
@@ -14,6 +15,8 @@
   pluginPkgs = with pkgs.fishPlugins; [
     fzf-fish
     autopair
+    #FIXME: grc breaks *everything?*
+    #grc
   ];
 
   #completionDirs = [ ];

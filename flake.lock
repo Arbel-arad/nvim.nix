@@ -8,17 +8,18 @@
         ]
       },
       "locked": {
-        "lastModified": 1784717162,
+        "lastModified": 1784723607,
         "narHash": "sha256-nEdQDa65tcMXIsuqSo/ENe0i+2P3iMMs0kj8aVJ2DVs=",
-        "owner": "arbel-arad",
-        "repo": "bookokrat",
-        "rev": "0a7b8d285b53a83a84c2b19791e65b9c43d41612",
-        "type": "github"
+        "ref": "refs/heads/main",
+        "rev": "019c6d3642256caa40f356485c8b578a9eef428f",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/mirrors/bookokrat"
       },
       "original": {
-        "owner": "arbel-arad",
-        "repo": "bookokrat",
-        "type": "github"
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/mirrors/bookokrat"
       }
     },
     "flake-compat": {

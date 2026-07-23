@@ -133,7 +133,7 @@ in {
 
           graphics = {
             enable = true;
-            backend = "gtk-gpu";
+            backend = "gtk";
           };
 
           interfaces = [
@@ -173,6 +173,8 @@ in {
           kernelParams = [
             "quiet"
           ];
+
+          forwardPorts = [ { from = "host"; host.port = 2222; guest.port = 22; } ];
         };
 
         documentation = {
@@ -185,9 +187,29 @@ in {
         services = {
           getty.autologinUser = "user";
 
+          greetd = let
+            tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
+            session = "${pkgs.hyprland}/bin/Hyprland";
+            username = "user";
+          in {
+            enable = true;
+            settings = {
+              initial_session = {
+                command = "${session}";
+                user = "${username}";
+              };
+              default_session = {
+                command = "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time --cmd ${session}";
+                user = "greeter";
+              };
+            };
+          };
+
           kmscon = {
             enable = false;
           };
+
+          sshd.enable = true;
         };
 
         programs = {
@@ -236,6 +258,8 @@ in {
           stateVersion = pkgs.lib.trivial.release;
         };
 
+        boot.kernelModules = [ "vhci-hcd" ];
+
         environment = {
           systemPackages = [
             pkgs.xdg-utils
@@ -243,8 +267,12 @@ in {
             pkgs.sway
             pkgs.hyprland
             pkgs.btop
+            pkgs.kitty
             #pkgs.sommelier
             pkgs.wayland-proxy-virtwl
+            pkgs.linuxPackages.usbip
+
+            self.packages.${pkgs.stdenv.hostPlatform.system}.default
           ];
           sessionVariables = {
             WAYLAND_DISPLAY = "wayland-1";
