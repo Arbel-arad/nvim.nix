@@ -25,7 +25,7 @@
         setupOpts = {
           open_qf_on_error = true;
           open_qf_on_run = true;
-          open_qf_on_any = true;
+          open_qf_on_any = false;
           autoscroll_qf = true;
           register_commands = true;
         };
