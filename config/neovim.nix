@@ -51,7 +51,7 @@ in {
     (import ./codelens.nix { inherit lib; })
     (import ./docs.nix { inherit pkgs lib; })
     (import ./plugins {
-      inherit nvimSize npins nvf pkgs lib lib';
+      inherit inputs nvimSize npins nvf pkgs lib lib';
     })
 
     {

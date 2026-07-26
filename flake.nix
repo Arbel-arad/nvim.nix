@@ -64,6 +64,15 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    build123d = {
+      url = "git+https://forgejo.spacetime.technology/arbel/build123d.nix?shallow=1";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        system.follows = "system";
+      };
+    };
   };
 
   outputs = { self, ... }@inputs: let

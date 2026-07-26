@@ -22,6 +22,36 @@
         "url": "https://forgejo.spacetime.technology/mirrors/bookokrat"
       }
     },
+    "build123d": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "pyproject-build-systems": "pyproject-build-systems",
+        "pyproject-nix": "pyproject-nix",
+        "system": [
+          "system"
+        ],
+        "uv2nix": "uv2nix"
+      },
+      "locked": {
+        "lastModified": 1785052345,
+        "narHash": "sha256-/n+KW/TkXly7w5QCsD/UQjEm4ZnDf5d7rcCfZf/0SE0=",
+        "ref": "refs/heads/master",
+        "rev": "1f8e367bb70ab25a7db98e45d9cc05c26c9379e1",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/arbel/build123d.nix"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/arbel/build123d.nix"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -220,10 +250,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1784906970,
-        "narHash": "sha256-ByB2rtVcZxb//uhTi/1ddlpvIEMiqys2QdHd682/GSY=",
+        "lastModified": 1785038967,
+        "narHash": "sha256-ihWU1/VdTKDEj9rEf2mQ08YSNP6rY8QpPfzh/v/L5tE=",
         "ref": "master",
-        "rev": "519b09fb676799f032a9f92108d7a91ffbcd4b07",
+        "rev": "b0c16e302373776eb33c219e454ae6718b401560",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -298,9 +328,62 @@
         "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay"
       }
     },
+    "pyproject-build-systems": {
+      "inputs": {
+        "nixpkgs": [
+          "build123d",
+          "nixpkgs"
+        ],
+        "pyproject-nix": [
+          "build123d",
+          "pyproject-nix"
+        ],
+        "uv2nix": [
+          "build123d",
+          "uv2nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784580899,
+        "narHash": "sha256-65qjoshs2FUkt+3NzaVutCWjydUpiHElXLo+0SGuvPk=",
+        "ref": "refs/heads/master",
+        "rev": "5c4cc964cfb1e3cab9134dabe2d86bc4858f3867",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/pyproject-nix-build-system-pkgs"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/pyproject-nix-build-system-pkgs"
+      }
+    },
+    "pyproject-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "build123d",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784591072,
+        "narHash": "sha256-zP/WaDxrRu8GANZM61+V2LT/7ycEEdoyLWn7M6WzU7M=",
+        "ref": "refs/heads/master",
+        "rev": "e3b599ca2e7fcf93d4edf65d7f19bbf6491724f3",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/pyproject.nix"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/pyproject.nix"
+      }
+    },
     "root": {
       "inputs": {
         "bookokrat": "bookokrat",
+        "build123d": "build123d",
         "flake-parts": "flake-parts",
         "lsp-inputs": "lsp-inputs",
         "microvm": "microvm",
@@ -443,6 +526,32 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "uv2nix": {
+      "inputs": {
+        "nixpkgs": [
+          "build123d",
+          "nixpkgs"
+        ],
+        "pyproject-nix": [
+          "build123d",
+          "pyproject-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784582828,
+        "narHash": "sha256-uPeuFNSYO429IEiud3iJKWIpN/xrH2CANj1uYNiDxqc=",
+        "ref": "refs/heads/master",
+        "rev": "49dac8d206c42175b069b7c6050ba27060a21106",
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/uv2nix"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "https://forgejo.spacetime.technology/nix-mirrors/uv2nix"
       }
     }
   },

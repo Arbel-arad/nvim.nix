@@ -1,4 +1,4 @@
-{ nvimSize, npins, nvf, pkgs, lib, lib' }: lib'.mergeAttrsList [
+{ inputs, nvimSize, npins, nvf, pkgs, lib, lib' }: lib'.mergeAttrsList [
   (import ./yazi.nix { inherit pkgs; }) # TMP
   (if lib'.notAarch64 pkgs then (import ./orgmode.nix { inherit nvimSize npins nvf pkgs lib; }) else {})
   (import ./tree-sitter-comment.nix { inherit npins pkgs; })
@@ -13,5 +13,6 @@
   (import ./nvumi.nix { inherit nvimSize npins pkgs lib; })
   (import ./qalc.nix { inherit nvimSize npins pkgs lib; })
   (import ./zeal.nix { inherit nvimSize npins pkgs lib; })
+  (import ./build123d.nix { inherit inputs nvimSize pkgs lib; })
   #(import ./regexplainer.nix { inherit npins pkgs lib; })
 ]
