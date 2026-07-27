@@ -1,7 +1,4 @@
-{ npins, pkgs }: let
-
-
-in {
+{ npins, pkgs }: {
   lazy = {
     plugins = {
       # Per-project configuration loader
@@ -18,12 +15,12 @@ in {
         setupModule = "exrc";
         setupOpts = {
           exrc_name = ".nvim/rc.lua";
-          on_vim_enter = false;
+          on_vim_enter = true;
           on_dir_changed = {
             enabled = true;
             use_ui_select = true;
           };
-          trust_on_write = false;
+          trust_on_write = true;
           use_telescope = true;
           lsp = {
             auto_setup = false;

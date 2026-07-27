@@ -37,6 +37,24 @@
       action = /* lua */ "<cmd>SnipRun<cr>";
       desc = "Run snippet";
     }
+    {
+      key = "<leader>rf";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ "<cmd>%SnipRun<cr>";
+      desc = "Run file";
+    }
+    {
+      key = "<leader>rq";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ "<cmd>SnipClose<cr>";
+      desc = "Close SnipRun";
+    }
 
     # Search
     # set hlsearch/nohlsearch for highlighting
