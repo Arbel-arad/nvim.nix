@@ -38,6 +38,21 @@
       desc = "Run snippet";
     }
     {
+      key = "<leader>rs";
+      mode = [
+        "v"
+      ];
+      silent = true;
+      lua = true;
+      # TODO: This should use line ranges instead
+      action = /* lua */ ''
+        function()
+          require('sniprun').run('v')
+        end
+      '';
+      desc = "Run snippet";
+    }
+    {
       key = "<leader>rf";
       mode = [
         "n"
@@ -45,6 +60,20 @@
       silent = true;
       action = /* lua */ "<cmd>%SnipRun<cr>";
       desc = "Run file";
+    }
+    {
+      key = "<leader>ra";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      lua = true;
+      action = /* lua */ ''
+        function()
+          require('sniprun.api').run_range(1, vim.fn.getcurpos()[2])
+        end
+      '';
+      desc = "Run to line";
     }
     {
       key = "<leader>rq";

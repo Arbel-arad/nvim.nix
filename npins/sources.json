@@ -366,9 +366,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "42d2c5f54f90dd11ebd5dc7732f004aa900cfecd",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/42d2c5f54f90dd11ebd5dc7732f004aa900cfecd.tar.gz",
-      "hash": "sha256-uexExdN1itvHYHFek4bpvRqURvxYLKWUetpekP+udbk="
+      "revision": "896e0b5796797f8f6ba3e61036d61b5597281b1f",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/896e0b5796797f8f6ba3e61036d61b5597281b1f.tar.gz",
+      "hash": "sha256-qZ5lzSBKLXReYMf0+t+Ra4tmh+3reLgf8+IJaNdDTCA="
     },
     "screenkey.nvim": {
       "type": "Git",
