@@ -65,6 +65,20 @@
 
         lazy = false;
         priority = 100;
+
+        after = /* lua */ ''
+          local project_group = vim.api.nvim_create_augroup('project-aug', {})
+
+          vim.api.nvim_create_autocmd({ 'User' }, {
+            pattern = "SessionLoadPost",
+            group = scope_group,
+            callback = function()
+              --FIXME: load LSPs with project local direnv
+              require('direnv').check_direnv()
+              --vim.cmd('lsp restart')
+            end,
+          })
+        '';
       };
     };
   };

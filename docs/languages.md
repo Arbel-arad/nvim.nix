@@ -78,6 +78,7 @@
 |XML|✔| |
 |SQL|✔| |
 |SCAD|✔| |
+|build123d|✔|✔|
 |HCL|✔| |
 |HTTP|✔| |
 

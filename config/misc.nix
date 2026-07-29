@@ -183,6 +183,10 @@ in {
             reload = "<Leader>der";
             edit = "<Leader>dee";
           };
+
+          notifications = {
+            silent_autoload = false;
+          };
         };
       };
 
