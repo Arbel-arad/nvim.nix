@@ -15,11 +15,15 @@
               colored = false,
               diff_color = {
                 -- Same color values as the general color option can be used here.
-                added    = 'DiffAdd',    -- Changes the diff's added color
-                modified = 'DiffChange', -- Changes the diff's modified color
-                removed  = 'DiffDelete', -- Changes the diff's removed color you
+                added    = 'DiffAdd',
+                modified = 'DiffChange',
+                removed  = 'DiffDelete',
               },
-              symbols = {added = '+', modified = '~', removed = '-'}, -- Changes the diff symbols
+              symbols = { -- Changes the diff symbols
+                added = '+',
+                modified = '~',
+                removed = '-'
+              },
               separator = {right = ''}
             }
           ''
@@ -29,6 +33,23 @@
             function()
               return require('direnv').statusline()
             end
+          ''
+
+          # lua
+          ''
+            {
+              label = "TASKS:", -- Prefix for task counts
+              colored = true, -- Color the task icons and counts
+              --symbols = {
+              --  [overseer.STATUS.FAILURE] = "F:",
+              --  [overseer.STATUS.CANCELED] = "C:",
+              --  [overseer.STATUS.SUCCESS] = "S:",
+              --  [overseer.STATUS.RUNNING] = "R:",
+              --},
+              unique = false, -- Unique-ify non-running task count by name
+              status = nil, -- List of task statuses to display
+              filter = nil, -- Function to filter out tasks you don't wish to display
+            }
           ''
 
           # lua

@@ -30,8 +30,19 @@
               }),
 
               require('rustaceanvim.neotest'),
-            },
+            }
           '';
+
+          consumers = lib.generators.mkLuaInline /* lua */ ''
+            {
+              overseer = require("neotest.consumers.overseer"),
+            }
+          '';
+
+          overseer = {
+            enabled = true;
+            force_default = false;
+          };
         };
 
         lazy = true;
