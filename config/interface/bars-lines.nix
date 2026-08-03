@@ -38,7 +38,8 @@
           # lua
           ''
             {
-              label = "TASKS:", -- Prefix for task counts
+              "overseer",
+              label = "", -- Prefix for task counts
               colored = true, -- Color the task icons and counts
               --symbols = {
               --  [overseer.STATUS.FAILURE] = "F:",

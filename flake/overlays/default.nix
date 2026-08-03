@@ -36,6 +36,18 @@
     qemu_full = prevPkgs.qemu_full.override {
       cephSupport = false;
     };
+
+    molten-nvim-no-wezterm = prevPkgs.vimPlugins.molten-nvim.overrideAttrs {
+      # Optional image providers
+      checkInputs = with finalPkgs.vimPlugins; [
+        image-nvim
+        snacks-nvim
+      ];
+
+      nvimSkipModules = [
+        "load_wezterm_nvim"
+      ];
+    };
   };
 
   nvf-pkgs = _: prevPkgs: let

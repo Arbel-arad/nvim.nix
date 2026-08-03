@@ -141,9 +141,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "72c3663bf84fcffbccc682949041189c1e5e5197",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts-files/archive/72c3663bf84fcffbccc682949041189c1e5e5197.tar.gz",
-      "hash": "sha256-a7a7123pVQpWOVfZnffX+KFGIx8rTHC6pbNwk0ZYe1k="
+      "revision": "ffaceaf36ccfd7868272ee3ccfe3f17ff2424060",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts-files/archive/ffaceaf36ccfd7868272ee3ccfe3f17ff2424060.tar.gz",
+      "hash": "sha256-udzZZPcWFI1ul8uLNfofC2fzuq0LI7Pv1cY5qs+JlbQ="
     },
     "fpga-toolchains": {
       "type": "Git",
@@ -366,9 +366,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "594418b2c9ea0731bee6988236ef5bfd97e81dca",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/594418b2c9ea0731bee6988236ef5bfd97e81dca.tar.gz",
-      "hash": "sha256-imz9J5iMNersDeQ1ymenFg35N6C2R3MCaGg2i0XCIrE="
+      "revision": "e6dc05cac3bc08fc8b00cc1571a456a47d7ca782",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/e6dc05cac3bc08fc8b00cc1571a456a47d7ca782.tar.gz",
+      "hash": "sha256-7HLoqxURizfu1Gs5Xg0OTwi9s9Ewh7JpBeE2xVoZHAU="
     },
     "screenkey.nvim": {
       "type": "Git",

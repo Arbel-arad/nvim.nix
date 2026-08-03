@@ -15,5 +15,6 @@
   (import ./qalc.nix { inherit nvimSize npins pkgs lib; })
   (import ./zeal.nix { inherit nvimSize npins pkgs lib; })
   (import ./build123d.nix { inherit inputs nvimSize pkgs lib; })
+  (if nvimSize <= 500 then (import ./molten.nix { inherit pkgs; }) else {})
   #(import ./regexplainer.nix { inherit npins pkgs lib; })
 ]

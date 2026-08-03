@@ -38,10 +38,10 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1785052345,
-        "narHash": "sha256-/n+KW/TkXly7w5QCsD/UQjEm4ZnDf5d7rcCfZf/0SE0=",
+        "lastModified": 1785657598,
+        "narHash": "sha256-SJpRMaHyYQu1TnefgTAvmQoRVzuZ5+4oECY4mxOhF0k=",
         "ref": "refs/heads/master",
-        "rev": "1f8e367bb70ab25a7db98e45d9cc05c26c9379e1",
+        "rev": "9d278519d049e71ff12b5c6559320d09bac860c9",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/arbel/build123d.nix"

@@ -10,7 +10,7 @@
 |Rust|✔|✔|✔|Nightly Cargo + Rustc| | |
 |Clojure|✔| | |Clojure + Lein| | |
 |Haskell|✔| |✔| | | |
-|Python|✔|✔| | | | |
+|Python|✔|✔|✔|I/Python3 | |+Interactive|
 |Go|✔| | | | | |
 |Lua|✔|✔| | | | |
 |Odin|✔| | | | | |
