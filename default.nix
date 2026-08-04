@@ -1,6 +1,6 @@
 {
   npins ? (import ./npins),
-  nvimSize ? 0,
+  nvimConf ? { },
   self,
   inputs,
   pkgs,
@@ -10,7 +10,7 @@
 
   imports = [
     inputs.nvf.homeManagerModules.default
-    ./home.nix
+    ./flake/home.nix
   ];
 
   config = {
@@ -19,7 +19,7 @@
         enable = true;
         enableManpages = true;
         settings = import ./config/neovim.nix {
-          inherit self inputs npins pkgs lib nvimSize;
+          inherit self inputs npins pkgs lib nvimConf;
         };
       };
     };

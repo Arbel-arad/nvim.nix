@@ -15,6 +15,7 @@ in lib'.mergeAttrsList [
   (import ./markdown.nix { inherit nvimSize pkgs; })
   (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./lua.nix { inherit nvimSize pkgs lib; })
+  (if enableExtra then (import ./octave-matlab.nix { inherit pkgs lib; }) else {})
   (import ./python.nix {
     inherit pkgs lib;
     enableExtra = nvimSize <= 300;
@@ -232,7 +233,7 @@ in lib'.mergeAttrsList [
       };
 
       jq = {
-        enable = true;
+        enable = enableExtra;
       };
 
       qml = {

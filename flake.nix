@@ -125,7 +125,9 @@
         nvim-minimal-config = (import (self + /default.nix) {
           inherit self inputs pkgs;
           inherit (pkgs) lib;
-          nvimSize = 999;
+          nvimConf = {
+            size = 999;
+          };
         }).config.programs.nvf.settings.vim;
 
         inherit pkgs npins;

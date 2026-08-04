@@ -1,4 +1,4 @@
-{ nvimSize, self, inputs, npins, pkgs, lib }: let
+{ nvimConf, self, inputs, npins, pkgs, lib }: let
 
   lib' = import ../flake/lib.nix {
     inherit lib;
@@ -24,6 +24,8 @@
       ./nvim
     ];
   };
+
+  nvimSize = nvimConf.size or 0;
 
 in {
   vim = lib'.mergeAttrsList [

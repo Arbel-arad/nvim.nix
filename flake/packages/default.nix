@@ -4,12 +4,12 @@
     inherit self self' pkgs lib;
   };
 
-  mkNvim = nvimSize: (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
+  mkNvim = nvimConf: (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
       pkgs = nvf-pkgs;
       modules = [
         (
           import (self + /default.nix) {
-            inherit self nvimSize config inputs pkgs lib;
+            inherit self nvimConf config inputs pkgs lib;
           }
         ).config.programs.nvf.settings
       ];
@@ -26,7 +26,7 @@ in {
     name = "nvim.nix";
 
     paths = [
-      (mkNvim 0)
+      (mkNvim { size = 0; })
     ];
 
     buildInputs = [
@@ -64,7 +64,7 @@ in {
     nvf = self'.packages.default;
   };
 
-  "nvim-minimal" = mkNvim 999 // {
+  "nvim-minimal" = mkNvim { size = 999; } // {
     # Required for bundling
     pname = "nvim-minimal";
   };
