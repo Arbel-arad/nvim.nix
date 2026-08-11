@@ -17,3 +17,5 @@ print-config:
   nix run .#print-config --quiet --option warn-dirty false | bat --language lua
 cache:
   bash tools/build-cache.sh
+test:
+  nix run .#testing

@@ -89,10 +89,10 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1782949081,
-        "narHash": "sha256-vp6Y/Grm98ESt6ceOkWiHWyZRDV3J1RID4w+6NWK9yA=",
+        "lastModified": 1785627969,
+        "narHash": "sha256-4dtXQk/NMePegK/nWp5NSeuZKLATItOq61lpEvmXqGw=",
         "ref": "refs/heads/main",
-        "rev": "17c9d6cdfc60c64f4ee8d306f9bc0b4ccb51481e",
+        "rev": "427bf4bd9435fdf21321c8cc628c24efc14c0f7a",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts"
@@ -203,10 +203,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1785246989,
-        "narHash": "sha256-7CjGBACbXXIJvGrPed75QI8ytqc48M78GP9aB/h2VSc=",
+        "lastModified": 1786300091,
+        "narHash": "sha256-4UFJOVGpaYtHW5yasSv80MaJxTBYdk2zyf3jhKtt0wA=",
         "ref": "refs/heads/main",
-        "rev": "39a499ab85311b56dddb09ec43351cc3658f22c1",
+        "rev": "71beea0076cd46dafcee97a5a2e7d00cbba5bd2f",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/microvm.nix"
@@ -250,10 +250,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785393183,
-        "narHash": "sha256-fV4U2PSLzHuc6iQNR5Uy+Zxm1Kv6AbsCiRjXEV7nJqk=",
+        "lastModified": 1786363314,
+        "narHash": "sha256-PlK6tFf0kLbHQGWu0Na/v50f3tmI1tuv6XsN9Y5j4y8=",
         "ref": "master",
-        "rev": "68aefd57bf7daa39a928d8f298cb906537ae3001",
+        "rev": "8fc2e87950c58729ca05b6fe642482ede6027ff7",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs"
@@ -267,11 +267,11 @@
     },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1782614948,
-        "narHash": "sha256-ePjCwr1sNm9NYUqywL7QfK3JnlS015msC+eBu2zKlp8=",
+        "lastModified": 1785031560,
+        "narHash": "sha256-OmshNvn2vupOFpYinLUu+1Dnpu4n7Q5N3ggGVNHpkUI=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "db3f255737b94216eb71cce308e2912cf6bc2d7c",
+        "rev": "0e79af5e3d4dcfcd676ab5ba3f95d2e3352e078c",
         "type": "github"
       },
       "original": {
@@ -403,10 +403,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1785302874,
-        "narHash": "sha256-fpKEww3TJoo1ANHO2q918ei+ayOrp0YEQAO1DuBLOB4=",
+        "lastModified": 1786334499,
+        "narHash": "sha256-g63bW8kYMVhJSncbPuqc1ugbd5ZL3YU3ieEVeaBq/0k=",
         "ref": "refs/heads/master",
-        "rev": "b99d48435bc3e34309d2c7ae6f7d45e77a156c38",
+        "rev": "2cb7cad89f0326df860ca399e209352ba6a19ef9",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay"
@@ -424,11 +424,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785216007,
-        "narHash": "sha256-KrGilCiFVxEQOaBD3TODhklZzE7uICQvqsBWgycIABA=",
+        "lastModified": 1786247265,
+        "narHash": "sha256-cVTcTqAhzSNMOVddtBhFpuv+Vx6/SgrhgZWJiI61H24=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "8ec8a5a41f8d8244e672829c9cd705416139d3f0",
+        "rev": "6df7076ea0f5697e3242719a4c71211f00411cf5",
         "type": "github"
       },
       "original": {
@@ -440,11 +440,11 @@
     "rustowl": {
       "flake": false,
       "locked": {
-        "lastModified": 1785141582,
-        "narHash": "sha256-fPY7nyT2Aj/Cxx7dxOVPjdRuF/PXHnTxYVm6NdlAyOY=",
+        "lastModified": 1785745242,
+        "narHash": "sha256-qDtw9nIGtOEwfTPmNQtNkACsNMG8Cddl79A24ua11zU=",
         "owner": "cordx56",
         "repo": "rustowl",
-        "rev": "f59c6030707be4bfe8468b7d57277989d63551dd",
+        "rev": "8fac3183bb443942cb03143dd1d61f5bf9098514",
         "type": "github"
       },
       "original": {
@@ -466,10 +466,10 @@
         "rustowl": "rustowl"
       },
       "locked": {
-        "lastModified": 1785290908,
-        "narHash": "sha256-y+C90yIw586P6oG9LxMXvpmbhj1o6Y4SMyU3ya7kn1g=",
+        "lastModified": 1786324827,
+        "narHash": "sha256-/8olqmun+0Ll8S2graMLGyXHWtq5bo8/zGPSX4p5Tj4=",
         "ref": "refs/heads/main",
-        "rev": "91140a0214fb96d4cad2d7a71cdbd005d1bd1b52",
+        "rev": "444daeac7c60eed88d696f266b9a19622df26c6c",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git"
@@ -483,10 +483,10 @@
     "spectrum-os": {
       "flake": false,
       "locked": {
-        "lastModified": 1784897415,
-        "narHash": "sha256-gszkMF99I69P0OjR5zKVnQQn1vRuT3rEIMKLlMnfWao=",
+        "lastModified": 1786032750,
+        "narHash": "sha256-+Ba/kIn5BjvV7PN8bWOo7RoqgTY/Yv2M7qeMf3wS2Ag=",
         "ref": "refs/heads/main",
-        "rev": "6a3fdfca7e9fe9ae8e2cccf3d3a2d3fcf9fbd220",
+        "rev": "77d2389874bb092b8dbf05ecc5b1030372e80e98",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os"

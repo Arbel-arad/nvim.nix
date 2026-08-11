@@ -26,7 +26,9 @@ in {
     name = "nvim.nix";
 
     paths = [
-      (mkNvim { size = 0; })
+      (mkNvim {
+        size = 0;
+      })
     ];
 
     buildInputs = [
@@ -64,9 +66,16 @@ in {
     nvf = self'.packages.default;
   };
 
-  "nvim-minimal" = mkNvim { size = 999; } // {
+  "nvim-minimal" = mkNvim {
+    size = 999;
+  } // {
     # Required for bundling
     pname = "nvim-minimal";
+  };
+
+  testing = mkNvim {
+    size = 0;
+    test = true;
   };
 
   inherit (zellij) nvim-zellij;

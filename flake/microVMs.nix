@@ -39,11 +39,18 @@ in {
 
           writableStoreOverlay = "/nix/.rw-store";
 
-          volumes = [ {
-            image = "nix-store-overlay.img";
-            mountPoint = writableStoreOverlay;
-            size = 2048;
-          } ];
+          volumes = [
+            {
+              image = "nix-store-overlay.img";
+              mountPoint = writableStoreOverlay;
+              size = 2048;
+            }
+            {
+              mountPoint = "/";
+              image = "rootfs.img";
+              size = 2048;
+            }
+          ];
 
           shares = [ {
             tag = "ro-store";

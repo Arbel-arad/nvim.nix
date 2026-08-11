@@ -6,6 +6,9 @@
 
   inherit (inputs) nvf;
 
+  nvimSize = nvimConf.size or 0;
+  test = nvimConf.test or false;
+
   modules = lib.evalModules {
     specialArgs = {
       inherit nvimSize self inputs npins pkgs lib lib';
@@ -25,7 +28,6 @@
     ];
   };
 
-  nvimSize = nvimConf.size or 0;
 
 in {
   vim = lib'.mergeAttrsList [
@@ -55,6 +57,7 @@ in {
     (import ./plugins {
       inherit inputs nvimSize npins nvf pkgs lib lib';
     })
+    (if test then (import ./test.nix { inherit pkgs; }) else { })
 
     {
       package = pkgs.neovim-unwrapped;
