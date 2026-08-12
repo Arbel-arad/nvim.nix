@@ -16,6 +16,7 @@ in lib'.mergeAttrsList [
   (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./lua.nix { inherit nvimSize pkgs lib; })
   (if enableExtra then (import ./octave-matlab.nix { inherit pkgs lib; }) else {})
+  (if enableExtra then (import ./plantuml.nix { inherit npins pkgs; }) else {})
   (import ./python.nix {
     inherit pkgs lib;
     enableExtra = nvimSize <= 300;

@@ -91,6 +91,7 @@ in {
 
       image-nvim = {
         enable = true;
+
         setupOpts = {
           backend = "kitty";
 
@@ -116,7 +117,7 @@ in {
             ];
           };
 
-          maxHeightWindowPercentage = 35;
+          maxHeightWindowPercentage = 60;
           maxWidthWindowPercentage = 100;
 
           integrations = let
