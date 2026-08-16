@@ -81,6 +81,7 @@
 |build123d|✔|✔|
 |HCL|✔| |
 |HTTP|✔| |
+|PlantUML|✔| |
 
 ---
 

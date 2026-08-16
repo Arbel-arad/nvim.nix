@@ -4,8 +4,8 @@
 
 in {
 
-  extraPackages =
-    (if nvimSize <= 500
+  extraPackages = (
+    if nvimSize <= 500
       then [
         pkgs.gitFull
       ]
@@ -24,6 +24,8 @@ in {
     (import (self + /config/tools/fish.nix) {
       inherit pkgs;
     })
+
+    (pkgs.callPackage (npins.rush + /nix/package.nix) { })
 
     pkgs.ripgrep
 

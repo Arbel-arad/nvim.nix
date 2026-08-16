@@ -395,6 +395,19 @@
       "url": "https://github.com/Apeiros-46B/qalc.nvim/archive/33198ba0533d6a514f9a48cb472e40407c2ea9f6.tar.gz",
       "hash": "sha256-E1fUczmZ7B852OHxdPz7U0Zdhvl/qihp0cXZv/5HHts="
     },
+    "rush": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rockorager",
+        "repo": "rush"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "12c1dfeab9d681f0d374c8c1815b28d9d39d511b",
+      "url": "https://github.com/rockorager/rush/archive/12c1dfeab9d681f0d374c8c1815b28d9d39d511b.tar.gz",
+      "hash": "sha256-epng3ODRZxrwtE+pFZXbgehq/dgl0wjXn9tAcoTtKRI="
+    },
     "rust-fenix": {
       "type": "Git",
       "repository": {
