@@ -1,4 +1,6 @@
-{ nvimSize, npins, pkgs, lib, lib' }: let
+{ inputs, nvimConf, npins, pkgs, lib, lib' }: let
+
+  nvimSize = nvimConf.size or 0;
 
   enabled = nvimSize <= 100;
 
@@ -6,6 +8,7 @@
 
 in lib'.mergeAttrsList [
     (import ./fpga.nix { inherit nvimSize npins pkgs lib; })
+    (if (nvimConf.with_nRF or false) then (import ./nordic.nix { inherit pkgs; inherit (inputs) nixpkgs; }) else {})
   {
     extraPackages = lib.optionals enabled [
       # For micropython
@@ -47,6 +50,9 @@ in lib'.mergeAttrsList [
 
       pkgs.busybox
       pkgs.lsplug
+
+      # For BLE
+      pkgs.btrpa-scan
     ];
 
     lazy = {

@@ -39,7 +39,7 @@ in {
     (import ./debuggers { inherit nvimSize npins pkgs lib; })
     (import ./formats.nix { inherit nvimSize pkgs lib; })
     (import ./editing.nix { inherit nvimSize npins pkgs lib; })
-    (import ./embedded { inherit nvimSize npins pkgs lib lib'; })
+    (import ./embedded { inherit inputs nvimConf npins pkgs lib lib'; })
     (import ./interface { inherit nvimSize pkgs lib lib'; })
     (import ./dashboard.nix { inherit self pkgs lib; })
     (import ./keymaps.nix { inherit nvf npins pkgs lib; })
