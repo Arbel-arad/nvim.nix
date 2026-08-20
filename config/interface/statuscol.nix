@@ -59,6 +59,7 @@
             { -- Breakpoints / other
               sign = {
                 name = { ".*" },
+                namespace = { ".*" },
                 maxwidth = 1,
                 --auto = " ",
                 auto = true,
