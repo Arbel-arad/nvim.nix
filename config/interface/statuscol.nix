@@ -60,7 +60,8 @@
               sign = {
                 name = { ".*" },
                 namespace = { ".*" },
-                maxwidth = 1,
+                maxwidth = 3,
+                colwidth = 2,
                 --auto = " ",
                 auto = true,
                 --wrap = true
