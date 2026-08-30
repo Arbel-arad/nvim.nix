@@ -61,9 +61,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "9cd8e2c4617ef63c896f6eff80a99b5ce2bfd02d",
-      "url": "https://github.com/derekwisong/datui/archive/9cd8e2c4617ef63c896f6eff80a99b5ce2bfd02d.tar.gz",
-      "hash": "sha256-Bso2KUx2b6mONdAMbBbc0BKDEAb/cb56PciQA/PHdsg="
+      "revision": "bfc0f36fff4ecaa388010265c02a2ef691085d5a",
+      "url": "https://github.com/derekwisong/datui/archive/bfc0f36fff4ecaa388010265c02a2ef691085d5a.tar.gz",
+      "hash": "sha256-zqcEVlVQCeYqensS/Kr7Uf3a87QX4IMlAK71xc+msWE="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -404,9 +404,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "12c1dfeab9d681f0d374c8c1815b28d9d39d511b",
-      "url": "https://github.com/rockorager/rush/archive/12c1dfeab9d681f0d374c8c1815b28d9d39d511b.tar.gz",
-      "hash": "sha256-epng3ODRZxrwtE+pFZXbgehq/dgl0wjXn9tAcoTtKRI="
+      "revision": "568fb092b5d443f62dc30ce327924ab3e631ef6f",
+      "url": "https://github.com/rockorager/rush/archive/568fb092b5d443f62dc30ce327924ab3e631ef6f.tar.gz",
+      "hash": "sha256-+c/aCoYqrc4cP8iCeofc79B+amo+MXBRMSUDJZS8kzo="
     },
     "rust-fenix": {
       "type": "Git",
@@ -418,9 +418,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "a0b1aef63d7e9c5568958e0d90f6fe48f0f4a7a2",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/a0b1aef63d7e9c5568958e0d90f6fe48f0f4a7a2.tar.gz",
-      "hash": "sha256-tnTpFky6/GeXVMBO+hLJK2jWS4J8TYloL+rqRME9gAk="
+      "revision": "428f69c19e46334bed722164c5125b62d3722723",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/428f69c19e46334bed722164c5125b62d3722723.tar.gz",
+      "hash": "sha256-SiyWmwDoDF2jCEpEW887qxaUazaQrVQs+QXq2bvgm+0="
     },
     "screenkey.nvim": {
       "type": "Git",
@@ -457,9 +457,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "45e2ea8a684a9a194e8adbde77a02e7ac77f6d4e",
-      "url": "https://github.com/nanotee/sqls.nvim/archive/45e2ea8a684a9a194e8adbde77a02e7ac77f6d4e.tar.gz",
-      "hash": "sha256-GA+pqHjAHbkjNfWgOtzD7OPDXEAVOwKpFwQeKJv8FPk="
+      "revision": "332caa9ab86af1a00259feb01051ea825e8fc461",
+      "url": "https://github.com/nanotee/sqls.nvim/archive/332caa9ab86af1a00259feb01051ea825e8fc461.tar.gz",
+      "hash": "sha256-wCU6wqFykkUv0dpO9MY8VNjPeyUqV4x0LngSZ2D967s="
     },
     "sshfs.nvim": {
       "type": "Git",

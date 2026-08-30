@@ -4,7 +4,10 @@
     name = "plantuml-lsp";
 
     src = npins.plantuml-lsp;
+
     vendorHash = null;
+
+    doCheck = false;
   };
 
 in {

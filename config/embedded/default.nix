@@ -24,6 +24,10 @@ in lib'.mergeAttrsList [
       # For RP2xxx chips
       pkgs.picotool
 
+      # For ESP32-xx
+      pkgs.esptool
+      pkgs.espflash
+
       # For zephyr
       pythonPackages.west
 
@@ -32,7 +36,6 @@ in lib'.mergeAttrsList [
       pkgs.cargo-binutils
       pkgs.stm32loader
       pkgs.ravedude
-      pkgs.espflash
       pkgs.wchisp
       pkgs.wlink
       pkgs.blisp
