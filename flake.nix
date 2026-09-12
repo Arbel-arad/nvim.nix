@@ -53,7 +53,7 @@
       url = "git+https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git?shallow=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+        rust-overlay.follows = "rust-overlay";
         flake-parts.follows = "flake-parts";
       };
     };

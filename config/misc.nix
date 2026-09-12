@@ -25,7 +25,6 @@ in {
       inherit pkgs;
     })
 
-    (pkgs.callPackage (npins.rush + /nix/package.nix) { })
 
     pkgs.ripgrep
 
@@ -71,6 +70,8 @@ in {
     # System utilities
     pkgs.uutils-coreutils-noprefix
     pkgs.uutils-findutils
+
+    #(pkgs.callPackage (npins.rush + /nix/package.nix) { })
   ];
 
   enableLuaLoader = true;

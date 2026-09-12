@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "5b2395131e0fb2bdd06c0f473ceabaa4c772b4fc",
-      "url": "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/5b2395131e0fb2bdd06c0f473ceabaa4c772b4fc.tar.gz",
-      "hash": "sha256-DiC/YMRpgPMBq2nIJ2+qUdlKI46Tflh/PuswpwGvaag="
+      "revision": "960bc95689b677c98b092a36329d8b14acde8bda",
+      "url": "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/960bc95689b677c98b092a36329d8b14acde8bda.tar.gz",
+      "hash": "sha256-D1Q5fZvebZtYyM52Xo7GeDRbdYW8KbLwEErI3gtvWRg="
     },
     "arduino-nvim": {
       "type": "Git",
@@ -61,9 +61,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "bfc0f36fff4ecaa388010265c02a2ef691085d5a",
-      "url": "https://github.com/derekwisong/datui/archive/bfc0f36fff4ecaa388010265c02a2ef691085d5a.tar.gz",
-      "hash": "sha256-zqcEVlVQCeYqensS/Kr7Uf3a87QX4IMlAK71xc+msWE="
+      "revision": "83a752f9de1c83573763cba9902c6357eff916b0",
+      "url": "https://github.com/derekwisong/datui/archive/83a752f9de1c83573763cba9902c6357eff916b0.tar.gz",
+      "hash": "sha256-GFPv1gVv8zWkfuBx1/Li7SiMnEVXQf+pEPPgrjVU6fo="
     },
     "direnv.nvim": {
       "type": "Git",
@@ -365,9 +365,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "bdbb819f76c75e7a23af582b2a63ea7dc43eed7c",
-      "url": "https://github.com/plantuml/plantuml-stdlib/archive/bdbb819f76c75e7a23af582b2a63ea7dc43eed7c.tar.gz",
-      "hash": "sha256-fSEIFBjs1pFcIyRtYG828S2dH4QEbYQ93M3//uEn3T0="
+      "revision": "7167ca01416dac036fb11a72898ad7cbd008031a",
+      "url": "https://github.com/plantuml/plantuml-stdlib/archive/7167ca01416dac036fb11a72898ad7cbd008031a.tar.gz",
+      "hash": "sha256-uh/qTXqWS31E54vJnQs/FEkUYoT6x7u+dnutBfrUUZw="
     },
     "punch.lua": {
       "type": "Git",
@@ -404,9 +404,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "568fb092b5d443f62dc30ce327924ab3e631ef6f",
-      "url": "https://github.com/rockorager/rush/archive/568fb092b5d443f62dc30ce327924ab3e631ef6f.tar.gz",
-      "hash": "sha256-+c/aCoYqrc4cP8iCeofc79B+amo+MXBRMSUDJZS8kzo="
+      "revision": "6ea7e1d5b5282924e75596111d8e15bfad6e8d32",
+      "url": "https://github.com/rockorager/rush/archive/6ea7e1d5b5282924e75596111d8e15bfad6e8d32.tar.gz",
+      "hash": "sha256-VKFFyJCWRBk7AguJwTPACeeazdSAbwk2uPWvu7F/VXE="
     },
     "rust-fenix": {
       "type": "Git",
@@ -418,9 +418,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "428f69c19e46334bed722164c5125b62d3722723",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/428f69c19e46334bed722164c5125b62d3722723.tar.gz",
-      "hash": "sha256-SiyWmwDoDF2jCEpEW887qxaUazaQrVQs+QXq2bvgm+0="
+      "revision": "af85de9d317b402448a8ebb06bc16c7fd82f0375",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/af85de9d317b402448a8ebb06bc16c7fd82f0375.tar.gz",
+      "hash": "sha256-N7UHRZbJzgWaad+SOgl9QlWKiBulHan2/ezZhLfnjlo="
     },
     "screenkey.nvim": {
       "type": "Git",
