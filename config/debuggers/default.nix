@@ -180,7 +180,12 @@ in {
       };
 
       "nvim-dap-view" = {
-        package = pkgs.vimPlugins.nvim-dap-view;
+        package = pkgs.vimPlugins.nvim-dap-view.overrideAttrs (prev: {
+          nvimSkipModules = prev.nvimSkipModules or [] ++ [
+            "dap-view"
+            "dap-view.autocmds"
+          ];
+        });
 
         setupModule = "dap-view";
         setupOpts = {
