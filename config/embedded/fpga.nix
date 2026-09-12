@@ -7,11 +7,12 @@
   };
 
 in {
-  extraPackages = lib.optionals enabled (
-    toolchains.packagesFor [
-      "xilinx-XC7"
-      "lattice-iCE40"
-      "lattice-ECP5"
-    ]
-  );
+    #FIXME: waiting for https://github.com/NixOS/nixpkgs/pull/561980
+    #extraPackages = lib.optionals enabled (
+    #  toolchains.packagesFor [
+    #    "xilinx-XC7"
+    #    "lattice-iCE40"
+    #    "lattice-ECP5"
+    #  ]
+    #);
 }

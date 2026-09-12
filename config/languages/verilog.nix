@@ -89,7 +89,8 @@ in {
         ];
 
         cmd = [
-          "${pkgs.veridian}/bin/veridian"
+          #FIXME:
+          #"${pkgs.veridian}/bin/veridian"
         ];
 
         filetypes = [
