@@ -47,6 +47,9 @@ in {
 
     pkgs.lazysql
 
+    # Security
+    pkgs.bubblewrap
+
     # For opening weird office documents
     pkgs.unzip
     pkgs.pandoc
@@ -71,7 +74,9 @@ in {
     pkgs.uutils-coreutils-noprefix
     pkgs.uutils-findutils
 
-    #(pkgs.callPackage (npins.rush + /nix/package.nix) { })
+    (pkgs.callPackage ../tools/rush.nix {
+      src = npins.rush;
+    })
   ];
 
   enableLuaLoader = true;
