@@ -40,6 +40,8 @@ in lib'.mergeAttrsList [
       pkgs.haskellPackages.ghci-dap
       pkgs.haskellPackages.fast-tags
       pkgs.haskellPackages.haskell-debug-adapter
+      pkgs.haskellPackages.cabal-fmt
+      pkgs.ormolu
     ];
 
     languages = {

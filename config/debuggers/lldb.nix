@@ -1,7 +1,7 @@
 { pkgs }: /* lua */ ''
   dap.adapters.lldb = {
     type = 'executable',
-    command = '${pkgs.clang-tools}/bin/lldb-dap',
+    command = '${pkgs.lldb}/bin/lldb-dap',
     name = 'lldb'
   }
 

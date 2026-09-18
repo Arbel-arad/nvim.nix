@@ -104,6 +104,9 @@ in lib'.mergeAttrsList [
               "platformio.piorun"
               "platformio.utils"
               "platformio.health"
+              "platformio.terminal"
+              "platformio.pickers.snacks"
+              "platformio.pickers.mini_pick"
               "health.platformio"
               "vim.health.platformio"
             ];

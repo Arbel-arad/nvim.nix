@@ -7,11 +7,15 @@
 in {
   extraPackages = lib.optionals enableExtra [
     # For Snacks.image
-    pkgs.mermaid-cli
+    (pkgs.mermaid-cli.overrideAttrs {
+      # Do not build chromium for mermaid-cli
+      makeWrapperArgs = [];
+    })
     pkgs.ghostscript
     pkgs.tectonic
 
     # For tree-sitter-cli?
+    pkgs.tree-sitter
     pkgs.vcpkg
 
     # For FZF-lua images
