@@ -22,9 +22,9 @@ in {
     pkgs.viu
 
     # PDF + EPUB reader
-    (inputs.bookokrat.packages.${system}.default.overrideAttrs (final: prev: {
-    }))
+    (inputs.bookokrat.packages.${system}.default.overrideAttrs (_final: _prev: {
 
+    }))
 
     # Data-ui for CSVs
     (pkgs.callPackage ../tools/datui.nix {
@@ -35,6 +35,9 @@ in {
     (pkgs.callPackage ../tools/comchan.nix {
       inherit npins system pkgs;
     })
+
+    # Loc
+    pkgs.tokei
   ];
 
   clipboard = {
