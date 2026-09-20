@@ -2,6 +2,11 @@
 
   enableExtra = nvimSize < 500;
 
+  helix = (pkgs.callPackage npins."helix.nix".outPath {
+    inherit (pkgs) helix;
+    depList = [ ];
+  });
+
 in {
 
   options = {
@@ -167,6 +172,12 @@ in {
 
     addDefaultGrammars = true;
 
+    grammars = [
+      #pkgs.vimPlugins.nvim-treesitter.allGrammars
+    ];
+
+    vendorCLI = true;
+
     context = {
       enable = false;
       setupOpts = {
@@ -272,12 +283,13 @@ in {
   };
 
   extraPackages = [
-    # FIXME: For luasnip
     pkgs.luajitPackages.jsregexp
   ] ++ lib.optionals enableExtra [
-    (pkgs.callPackage npins."helix.nix".outPath {
-      inherit (pkgs) helix;
-      depList = [ ];
-    })
+    helix
+  ];
+
+  additionalRuntimePaths = [
+    # Add extra treesitter queries (ex. for spade)
+    (pkgs.helix-unwrapped.src + /runtime)
   ];
 }

@@ -17,6 +17,7 @@ in lib'.mergeAttrsList [
   (import ./lua.nix { inherit nvimSize pkgs lib; })
   (if enableExtra then (import ./octave-matlab.nix { inherit pkgs lib; }) else {})
   (if enableExtra then (import ./plantuml.nix { inherit npins pkgs; }) else {})
+  (if enableExtra then (import ./spade-hdl.nix { inherit npins pkgs lib; }) else {})
   (import ./python.nix {
     inherit pkgs lib;
     enableExtra = nvimSize <= 300;
@@ -203,6 +204,10 @@ in lib'.mergeAttrsList [
         enable = enableExtra;
       };
 
+      glsl = {
+        enable = enableExtra;
+      };
+
       just = {
         enable = enableExtra;
       };
@@ -286,6 +291,8 @@ in lib'.mergeAttrsList [
             -- For FPGA constraint files
             xdc = 'tcl',
             sdc = 'tcl',
+            -- For spade HDL
+            spade = 'spade',
           }
         })
       '';
