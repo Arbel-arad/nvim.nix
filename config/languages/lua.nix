@@ -18,7 +18,9 @@ in {
 
       lsp = {
         enable = enableExtra;
+      };
 
+      extensions = {
         lazydev = {
           enable = true;
         };

@@ -77,14 +77,6 @@
         };
       };
 
-      breadcrumbs = {
-        enable = false;
-
-        navbuddy = {
-          enable = false;
-        };
-      };
-
       modes-nvim = {
         enable = true;
 

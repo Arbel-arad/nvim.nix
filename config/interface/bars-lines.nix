@@ -4,10 +4,22 @@
     lualine = {
       enable = true;
 
-      theme = "iceberg_dark";
+      integrations = {
+        breadcrumbs = {
+          navbuddy = {
+            enable = false;
+          };
+
+          nvim-navic = {
+            enable = false;
+          };
+        };
+      };
 
       setupOpts = {
         options = {
+          theme = "iceberg_dark";
+
           disabled_filetypes = rec {
             winbar = statusline;
             statusline = [

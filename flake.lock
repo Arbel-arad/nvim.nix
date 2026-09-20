@@ -289,10 +289,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1789933250,
-        "narHash": "sha256-tjRfZlfU4vLMga/rcxESskXDdkmJub680EKZ/2CdhW8=",
+        "lastModified": 1789936504,
+        "narHash": "sha256-aQfJYoBMH/nkvXkVtpbEVr6z1L/ddXNq2k+aKtqlriQ=",
         "ref": "refs/heads/main",
-        "rev": "af1d7fe2866272688f8a3539c16526b26768eb71",
+        "rev": "85ec04f8d5a971599401fbfed003e111aebc5483",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/arbel/nvf"
@@ -403,10 +403,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1789715798,
-        "narHash": "sha256-hWw9vlrsFm9kOw8MT5k6IX/7xCzgROuJ6ZvQOrkq66Q=",
+        "lastModified": 1789889921,
+        "narHash": "sha256-aL/ogiN7qZCGeNovS1f9hX73jwYIKb4Pcq6AZm57WtY=",
         "ref": "refs/heads/master",
-        "rev": "fbdb2de9e7619d660ae7e8f752f38b261020b701",
+        "rev": "1fb104a12a8667045559b2575d6d448ae2fbd99b",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay"
@@ -448,10 +448,10 @@
         "rustowl": "rustowl"
       },
       "locked": {
-        "lastModified": 1789699925,
-        "narHash": "sha256-HHoeTgwcQHIguXu3guvwjZfgP+JDY7H9uxpIAxgz3Yk=",
+        "lastModified": 1789873343,
+        "narHash": "sha256-YCT8sSEnYMo2oZfrLnDYeU9QQ2YDb+tX7uaXS/ocOGs=",
         "ref": "refs/heads/main",
-        "rev": "cf9dcca049e3e379b2ffd5d329e30f04657f8775",
+        "rev": "9d2fdc81e4bdc06d0082a31c951b60bd2261a16d",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git"
