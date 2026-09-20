@@ -282,6 +282,10 @@ in lib'.mergeAttrsList [
           enable = enableExtra;
         };
       };
+
+      lisp = {
+        enable = enableExtra;
+      };
     };
 
     luaConfigRC = {

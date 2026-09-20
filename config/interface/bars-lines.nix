@@ -6,74 +6,6 @@
 
       theme = "iceberg_dark";
 
-      activeSection = {
-        c = [
-          # lua
-          ''
-            {
-              "diff",
-              colored = false,
-              diff_color = {
-                -- Same color values as the general color option can be used here.
-                added    = 'DiffAdd',
-                modified = 'DiffChange',
-                removed  = 'DiffDelete',
-              },
-              symbols = { -- Changes the diff symbols
-                added = '+',
-                modified = '~',
-                removed = '-'
-              },
-              separator = {right = ''}
-            }
-          ''
-
-          # lua
-          ''
-            function()
-              return require('direnv').statusline()
-            end
-          ''
-
-          # lua
-          ''
-            {
-              "overseer",
-              label = "", -- Prefix for task counts
-              colored = true, -- Color the task icons and counts
-              --symbols = {
-              --  [overseer.STATUS.FAILURE] = "F:",
-              --  [overseer.STATUS.CANCELED] = "C:",
-              --  [overseer.STATUS.SUCCESS] = "S:",
-              --  [overseer.STATUS.RUNNING] = "R:",
-              --},
-              unique = false, -- Unique-ify non-running task count by name
-              status = nil, -- List of task statuses to display
-              filter = nil, -- Function to filter out tasks you don't wish to display
-            }
-          ''
-
-          # lua
-          ''
-            function()
-              local mode = require("submode").mode()
-              if mode == nil then
-                return '''
-              else
-                return mode
-              end
-            end
-          ''
-
-          # lua
-          ''
-            function()
-              return require("remote-sshfs.statusline").status()
-            end
-          ''
-        ];
-      };
-
       setupOpts = {
         options = {
           disabled_filetypes = rec {
@@ -113,6 +45,75 @@
               "ModeChanged"
             ];
           };
+        };
+
+        # https://github.com/NotAShelf/nvf/blob/5e4f212f8720c17fdd06f5c57591f251aff67453/docs/manual/release-notes/rl-26.12.md?plain=1#L42
+        sections = {
+          lualine_c = map lib.generators.mkLuaInline [
+            # lua
+            ''
+              {
+                "diff",
+                colored = false,
+                diff_color = {
+                  -- Same color values as the general color option can be used here.
+                  added    = 'DiffAdd',
+                  modified = 'DiffChange',
+                  removed  = 'DiffDelete',
+                },
+                symbols = { -- Changes the diff symbols
+                  added = '+',
+                  modified = '~',
+                  removed = '-'
+                },
+                separator = {right = ''}
+              }
+            ''
+
+            # lua
+            ''
+              function()
+                return require('direnv').statusline()
+              end
+            ''
+
+            # lua
+            ''
+              {
+                "overseer",
+                label = "", -- Prefix for task counts
+                colored = true, -- Color the task icons and counts
+                --symbols = {
+                --  [overseer.STATUS.FAILURE] = "F:",
+                --  [overseer.STATUS.CANCELED] = "C:",
+                --  [overseer.STATUS.SUCCESS] = "S:",
+                --  [overseer.STATUS.RUNNING] = "R:",
+                --},
+                unique = false, -- Unique-ify non-running task count by name
+                status = nil, -- List of task statuses to display
+                filter = nil, -- Function to filter out tasks you don't wish to display
+              }
+            ''
+
+            # lua
+            ''
+              function()
+                local mode = require("submode").mode()
+                if mode == nil then
+                  return '''
+                else
+                  return mode
+                end
+              end
+            ''
+
+            # lua
+            ''
+              function()
+                return require("remote-sshfs.statusline").status()
+              end
+            ''
+          ];
         };
       };
     };

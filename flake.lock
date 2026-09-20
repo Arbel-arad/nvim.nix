@@ -289,10 +289,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1784620587,
-        "narHash": "sha256-JycK0RndUQ5SwWUHHwUUr8+siQl1SNGJt9br8m7UPHI=",
+        "lastModified": 1789933250,
+        "narHash": "sha256-tjRfZlfU4vLMga/rcxESskXDdkmJub680EKZ/2CdhW8=",
         "ref": "refs/heads/main",
-        "rev": "cf3cd2263c484e177e0c5e46a430a4bb77c107c3",
+        "rev": "af1d7fe2866272688f8a3539c16526b26768eb71",
         "shallow": true,
         "type": "git",
         "url": "https://forgejo.spacetime.technology/arbel/nvf"
