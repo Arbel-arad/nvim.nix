@@ -288,7 +288,7 @@ in {
     helix
   ];
 
-  additionalRuntimePaths = [
+  additionalRuntimePaths = lib.optionals enableExtra [
     # Add extra treesitter queries (ex. for spade)
     (pkgs.helix-unwrapped.src + /runtime)
   ];

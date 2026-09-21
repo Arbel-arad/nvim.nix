@@ -1,83 +1,11 @@
 {
   description = "Arbel's neovim flake";
 
-  inputs = {
-    nixpkgs.url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1";
-    flake-parts.url = "git+https://forgejo.spacetime.technology/nix-mirrors/flake-parts?shallow=1";
-    system.url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1";
-    nvim-nightly = {
-      url = "git+https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
-
-    nvf = {
-      url = "git+https://forgejo.spacetime.technology/arbel/nvf?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    spectrum-os = {
-      url = "git+https://forgejo.spacetime.technology/mirrors/spectrum-os?shallow=1";
-      flake = false;
-    };
-
-    microvm = {
-      url = "git+https://forgejo.spacetime.technology/nix-mirrors/microvm.nix?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        spectrum.follows = "spectrum-os";
-      };
-    };
-
-    lsp-inputs = {
-      url = "git+https://forgejo.spacetime.technology/arbel/nix-lsp-inputs?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        system.follows = "system";
-      };
-    };
-
-    rust-overlay = {
-      url = "git+https://forgejo.spacetime.technology/nix-mirrors/rust-overlay?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    rustowl-flake = {
-      url = "git+https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "rust-overlay";
-        flake-parts.follows = "flake-parts";
-      };
-    };
-
-    bookokrat = {
-      url = "git+https://forgejo.spacetime.technology/mirrors/bookokrat?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    build123d = {
-      url = "git+https://forgejo.spacetime.technology/arbel/build123d.nix?shallow=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        system.follows = "system";
-      };
-    };
-  };
-
-  outputs = { self, ... }@inputs: let
+  outputs = { self, ... }@args: let
 
     npins = import ./npins;
+
+    inputs = (import ./.tack) { overrides = args.tackOverrides or { }; };
 
     overlays = import (self + /flake/overlays) {
       inherit self npins;
@@ -101,7 +29,10 @@
     };
 
   in inputs.flake-parts.lib.mkFlake {
-      inherit inputs self;
+      inherit inputs;
+      self = self // {
+        inherit inputs;
+      };
     } {
       imports = [
         "${npins.flake-parts-files}/flake-module.nix"
@@ -121,7 +52,7 @@
           inherit self inputs pkgs;
           inherit (pkgs) lib;
           nvimConf = {
-            size = 999;
+            size = 0;
           };
         }).config.programs.nvf.settings.vim;
 
@@ -162,6 +93,7 @@
             pkgs.attic-client
             pkgs.nix-tree
             pkgs.npins
+            pkgs.tack
             pkgs.just
             pkgs.bat
           ];

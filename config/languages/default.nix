@@ -103,6 +103,10 @@ in lib'.mergeAttrsList [
         };
       };
 
+      zsh = {
+        enable = true;
+      };
+
       nu = {
         enable = true;
       };
@@ -164,6 +168,10 @@ in lib'.mergeAttrsList [
 
       scala = {
         enable = enableExtra;
+
+        lsp.enable = false;
+        dap.enable = false;
+        treesitter.enable = false;
 
         fixShortmess = false;
       };
@@ -285,6 +293,10 @@ in lib'.mergeAttrsList [
 
       lisp = {
         enable = enableExtra;
+      };
+
+      asciidoc = {
+        enable = true;
       };
     };
 

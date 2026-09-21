@@ -1,0 +1,98 @@
+{
+  "bookokrat": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/mirrors/bookokrat",
+    "ref": "HEAD",
+    "rev": "824cc7b175379ed314c12f3b8406edc32e2270cb",
+    "narHash": "sha256-LtiRpkYuPEVOvwlUNooj1PRI4JMvVRZLjW0nJV161dk=",
+    "lastModified": 1788695731
+  },
+  "build123d": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/arbel/build123d.nix",
+    "ref": "HEAD",
+    "rev": "9d278519d049e71ff12b5c6559320d09bac860c9",
+    "narHash": "sha256-SJpRMaHyYQu1TnefgTAvmQoRVzuZ5+4oECY4mxOhF0k=",
+    "lastModified": 1785657598
+  },
+  "flake-parts": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts",
+    "ref": "HEAD",
+    "rev": "31729ca8cbdb4fa927b34e5f4353e6a83f39e993",
+    "narHash": "sha256-glZLQlzIn1fXH6PazR2iUmTo7kzzyYSshrWhLS9TqCU=",
+    "lastModified": 1788450739
+  },
+  "lsp-inputs": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/arbel/nix-lsp-inputs",
+    "ref": "HEAD",
+    "rev": "7e66c17168e52463031dc9b5437c6e56a04e2ebd",
+    "narHash": "sha256-MNrgQeNoxqsSOELg5l8OzrN5GY0IT6q5QgVWgJxGo1w=",
+    "lastModified": 1761817688
+  },
+  "microvm": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/microvm.nix",
+    "ref": "HEAD",
+    "rev": "187b0a390ee054028106a674e7b01b1cb940cbba",
+    "narHash": "sha256-4L8SOCF84de1irB72Ka9VHcu9wrAJ9Amuey4lU9oh4Y=",
+    "lastModified": 1789506833
+  },
+  "nixpkgs": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",
+    "ref": "refs/heads/master",
+    "rev": "d43f0f4b227a2d7a2dc2dd2f6d546f5752f1dccc",
+    "narHash": "sha256-Y43zmPsgyyLHEpaJkdIocQsmm3K7Bc6s6r7Gi+mNCds=",
+    "lastModified": 1790003400
+  },
+  "nvf": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/arbel/nvf",
+    "ref": "HEAD",
+    "rev": "85ec04f8d5a971599401fbfed003e111aebc5483",
+    "narHash": "sha256-aQfJYoBMH/nkvXkVtpbEVr6z1L/ddXNq2k+aKtqlriQ=",
+    "lastModified": 1789936504
+  },
+  "nvim-nightly": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay",
+    "ref": "HEAD",
+    "rev": "2256cb2eecdce4ad75ac9a0320f874b900c00529",
+    "narHash": "sha256-D0c1qWtSL49RY5K6cEXf6Bjksbiv5oLRefSwMr9Wh4s=",
+    "lastModified": 1777162024
+  },
+  "rust-overlay": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay",
+    "ref": "HEAD",
+    "rev": "2776e42828203ec89511699c8dcdedec69ab98e1",
+    "narHash": "sha256-fKY4BedarKx4aR0+UOHk65hhDW8pxFytFkaUi0VYDYk=",
+    "lastModified": 1789977098
+  },
+  "rustowl-flake": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git",
+    "ref": "HEAD",
+    "rev": "6bcec9152579a04943761756ed7d865457ee842b",
+    "narHash": "sha256-qZ2UjYJAXo+xR3gQIf0OjZfD/ws/pPTXTi8EXuC+EUs=",
+    "lastModified": 1789959631
+  },
+  "spectrum-os": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/mirrors/spectrum-os",
+    "ref": "HEAD",
+    "rev": "77d2389874bb092b8dbf05ecc5b1030372e80e98",
+    "narHash": "sha256-+Ba/kIn5BjvV7PN8bWOo7RoqgTY/Yv2M7qeMf3wS2Ag=",
+    "lastModified": 1786032750
+  },
+  "system": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/arbel/nix-system",
+    "ref": "HEAD",
+    "rev": "be2db9b2a5321c41a6774185eaabd08e6a7ac425",
+    "narHash": "sha256-BfN7cocSfiaR0GKvp8ZddijPmbEXQG+UifNX5Tt6+h8=",
+    "lastModified": 1764663594
+  }
+}

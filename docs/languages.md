@@ -23,6 +23,7 @@
 |Bash|✔|✔|
 |Fish|✔|✔|
 |NuShell|✔|✔|
+|Zsh|✔|✔|
 
 ## Embedded / BareMetal
 
@@ -38,6 +39,7 @@
 
 |Language|LSP|Linter|Simulator|Compiler|Notes|
 |-|-|-|-|-|-|
+|Spade|✔| | | | |
 |VHDL|✔| | | | |
 |Verilog|✔|✔| | | |
 |SystemVerilog|✔|✔| | | |
@@ -51,6 +53,13 @@
 |CSS|✔|
 |JavaScript|✔|
 |TypeScript|✔|
+
+## Graphics
+
+|Language|LSP|
+|-|-|
+|GLSL|✔|
+|WGSL|✔|
 
 ## Markup / Typesetting
 

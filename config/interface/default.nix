@@ -176,6 +176,17 @@
 
       rainbow-delimiters = {
         enable = true;
+
+        setupOpts = {
+          highlight = [
+            "rainbow6"
+            "rainbow5"
+            "rainbow4"
+            "rainbow3"
+            "rainbow2"
+            "rainbow1"
+          ];
+        };
       };
 
       nvim-scrollbar = {

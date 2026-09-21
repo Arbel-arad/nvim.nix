@@ -1,0 +1,95 @@
+# tack pins
+# edit by hand or with tack add / rm / alias
+# nix reads pins.lock.json
+# this file drives tack update
+
+# shorturl schemes
+# scheme rest expands rest into {path}
+[shorturls]
+# gh = "github:{path}"
+
+# all_follow maps input names to the top-level pin they follow
+# opt out per-input with exclude_follow
+[all_follow]
+# nixpkgs = "nixpkgs"
+# nixpkgs = ["nixpkgs-stable", "nixpkgs-unstable"]
+
+# inputs.<name> fields
+#   url             required, shorturl ok, ?rev=<sha> pins an exact commit
+#   type            flake (default), fetch, or fixed
+#   flake           legacy false means type = "fetch"
+#   follows         { child = "pin" } override map
+#   exclude_follow  all_follow names to skip
+#   dir             subdir holding flake.nix
+#   submodules      fetch git submodules
+#   unpack          fixed-only tarball or file
+[inputs]
+
+[inputs.bookokrat]
+url = "git+https://forgejo.spacetime.technology/mirrors/bookokrat?shallow=1"
+
+[inputs.bookokrat.follows]
+nixpkgs = "nixpkgs"
+
+[inputs.build123d]
+url = "git+https://forgejo.spacetime.technology/arbel/build123d.nix?shallow=1"
+
+[inputs.build123d.follows]
+flake-parts = "flake-parts"
+nixpkgs = "nixpkgs"
+system = "system"
+
+[inputs.flake-parts]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/flake-parts?shallow=1"
+
+[inputs.lsp-inputs]
+url = "git+https://forgejo.spacetime.technology/arbel/nix-lsp-inputs?shallow=1"
+
+[inputs.lsp-inputs.follows]
+flake-parts = "flake-parts"
+nixpkgs = "nixpkgs"
+system = "system"
+
+[inputs.microvm]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/microvm.nix?shallow=1"
+
+[inputs.microvm.follows]
+nixpkgs = "nixpkgs"
+spectrum = "spectrum-os"
+
+[inputs.nixpkgs]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=master&shallow=1"
+
+[inputs.nvf]
+url = "git+https://forgejo.spacetime.technology/arbel/nvf?shallow=1"
+
+[inputs.nvf.follows]
+nixpkgs = "nixpkgs"
+
+[inputs.nvim-nightly]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay?shallow=1&rev=2256cb2eecdce4ad75ac9a0320f874b900c00529"
+
+[inputs.nvim-nightly.follows]
+flake-parts = "flake-parts"
+nixpkgs = "nixpkgs"
+
+[inputs.rust-overlay]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/rust-overlay?shallow=1"
+
+[inputs.rust-overlay.follows]
+nixpkgs = "nixpkgs"
+
+[inputs.rustowl-flake]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git?shallow=1"
+
+[inputs.rustowl-flake.follows]
+flake-parts = "flake-parts"
+nixpkgs = "nixpkgs"
+rust-overlay = "rust-overlay"
+
+[inputs.spectrum-os]
+url = "git+https://forgejo.spacetime.technology/mirrors/spectrum-os?shallow=1"
+type = "fetch"
+
+[inputs.system]
+url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1"
