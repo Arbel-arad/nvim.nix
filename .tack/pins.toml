@@ -67,7 +67,7 @@ url = "git+https://forgejo.spacetime.technology/arbel/nvf?shallow=1"
 nixpkgs = "nixpkgs"
 
 [inputs.nvim-nightly]
-url = "git+https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay?shallow=1&rev=3d655c93cd9bdd67a0a523c76882b340e0454a64"
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay?shallow=1&rev=70cfacc6ea1a24851e6d5c550456a95d4ca35f80"
 
 [inputs.nvim-nightly.follows]
 flake-parts = "flake-parts"

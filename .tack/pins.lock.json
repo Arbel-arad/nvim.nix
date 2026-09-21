@@ -59,9 +59,9 @@
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay",
     "ref": "HEAD",
-    "rev": "3d655c93cd9bdd67a0a523c76882b340e0454a64",
-    "narHash": "sha256-UzOpPK+G0c1fM24n7ZwjQdxg9FE6kN6oIdnxP5qmxDM=",
-    "lastModified": 1779468162
+    "rev": "70cfacc6ea1a24851e6d5c550456a95d4ca35f80",
+    "narHash": "sha256-w6J7mhMUI5wXzsnHJQUX8BURO2f+e98q0LzfpBVCCdE=",
+    "lastModified": 1782173092
   },
   "rust-overlay": {
     "type": "git",
