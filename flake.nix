@@ -64,7 +64,7 @@
           };
         }).config.programs.nvf.settings.vim;
 
-        inherit pkgs npins;
+        inherit pkgs npins inputs;
 
         nixosConfigurations = import ./flake/microVMs.nix {
           inherit inputs self pkgs;
