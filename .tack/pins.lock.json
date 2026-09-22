@@ -43,9 +43,9 @@
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",
     "ref": "refs/heads/master",
-    "rev": "d43f0f4b227a2d7a2dc2dd2f6d546f5752f1dccc",
-    "narHash": "sha256-Y43zmPsgyyLHEpaJkdIocQsmm3K7Bc6s6r7Gi+mNCds=",
-    "lastModified": 1790003400
+    "rev": "b8ba068c7ff3db7b45952eca7a36294983e34c4b",
+    "narHash": "sha256-pqNZ1Q5to9GaO8HYivugvaHqgqxrKihl2DAPuzEftr0=",
+    "lastModified": 1790089799
   },
   "nvf": {
     "type": "git",
