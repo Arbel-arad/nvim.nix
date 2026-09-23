@@ -39,6 +39,14 @@
     "narHash": "sha256-4L8SOCF84de1irB72Ka9VHcu9wrAJ9Amuey4lU9oh4Y=",
     "lastModified": 1789506833
   },
+  "nixpak": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpak",
+    "ref": "HEAD",
+    "rev": "853aa37cf5b5ced298752cc644ffb07cabb741bf",
+    "narHash": "sha256-KwHZMqTRy9OFaT1Z/Lx6jZsPoWXKDS1OXCc80SsmOyk=",
+    "lastModified": 1789611914
+  },
   "nixpkgs": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",

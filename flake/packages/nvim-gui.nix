@@ -1,8 +1,13 @@
-{ pkgs, nvf }: let
-  neovideToml = (import ../config/neovide.nix { inherit pkgs; }).config;
+{ self, pkgs, nvf }: let
+
+  neovideToml = (import (self + /config/neovide.nix) {
+    inherit pkgs;
+  }).config;
+
 in
 pkgs.writeShellApplication {
-  name = "nvf-wrapped";
+  name = "nvim-gui";
+
   runtimeInputs = [
     pkgs.yazi
     pkgs.fish

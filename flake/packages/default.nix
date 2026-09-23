@@ -61,9 +61,9 @@ in {
     };
   };
 
-  nvim-gui = import (self + /packages/nvf-wrapped.nix) {
-    inherit pkgs;
+  nvim-gui = pkgs.callPackage ./nvim-gui.nix {
     nvf = self'.packages.default;
+    inherit self;
   };
 
   "nvim-minimal" = mkNvim {

@@ -111,6 +111,10 @@ in {
           };
         };
 
+        system = {
+          stateVersion = pkgs.lib.trivial.release;
+        };
+
         environment = {
           sessionVariables = {
             TERM = "xterm-256color";

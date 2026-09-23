@@ -93,3 +93,6 @@ type = "fetch"
 
 [inputs.system]
 url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1"
+
+[inputs.nixpak]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpak?shallow=1"

@@ -52,9 +52,9 @@
 
   gui = {
     type = "app";
-    program = import (self + /packages/nvf-wrapped.nix) {
-      inherit pkgs;
+    program = pkgs.callPackage (self + /flake/packages/nvim-gui.nix) {
       nvf = self'.packages.default;
+      inherit self;
     };
     meta = {
       description = "Neovide GUI";
@@ -63,9 +63,9 @@
 
   gui-minimal = {
     type = "app";
-    program = import (self + /packages/nvf-wrapped.nix) {
-      inherit pkgs;
+    program = pkgs.callPackage (self + /flake/packages/nvim-gui.nix) {
       nvf = self'.packages.nvim-minimal;
+      inherit self;
     };
     meta = {
       description = "Neovide GUI";
