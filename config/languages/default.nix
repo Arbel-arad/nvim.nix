@@ -228,6 +228,10 @@ in lib'.mergeAttrsList [
         };
       };
 
+      json5 = {
+        enable = true;
+      };
+
       toml = {
         enable = true;
 

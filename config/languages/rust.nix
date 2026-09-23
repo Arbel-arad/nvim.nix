@@ -207,15 +207,24 @@ in {
       rustowl = lib.mkIf enable {
         package = rustowl.rustowl-nvim;
 
+        setupModule = "rustowl";
+
+        setupOpts = {
+          auto_attach = false;
+          auto_enable = false;
+
+          idle_time = 1000;
+        };
+
         lazy = true;
 
         cmd = [
           "Rustowl"
         ];
 
-        #ft = [
-        #  "rust"
-        #];
+        ft = [
+          "rust"
+        ];
       };
 
       # For memory layout
