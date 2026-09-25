@@ -2,7 +2,7 @@
 
   default = self'.apps."nvim.nix";
 
-  "nvim.nix" = {
+  nvim = {
     type = "app";
     program = self'.packages.default;
     meta = {
@@ -69,6 +69,14 @@
     };
     meta = {
       description = "Neovide GUI";
+    };
+  };
+
+  sandbox = {
+    type = "app";
+    program = self'.packages.sandbox;
+    meta = {
+      description = "Neovim in a sandbox";
     };
   };
 

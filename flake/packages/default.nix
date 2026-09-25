@@ -22,43 +22,8 @@ in {
 
   nvim = self'.packages."nvim.nix";
 
-  "nvim.nix" = pkgs.symlinkJoin {
-    name = "nvim.nix";
-
-    paths = [
-      (mkNvim {
-        size = 0;
-      })
-    ];
-
-    buildInputs = [
-      pkgs.makeWrapper
-    ];
-
-    postBuild = let
-
-      override-packages = [
-        (import (self + /config/tools/fish.nix) { inherit pkgs; })
-        (import (self + /config/tools/yazi.nix) { inherit pkgs; })
-      ];
-
-    in /* bash */ ''
-      cp "$out/bin/nvim" "$out/bin/nvim-unwrapped"
-      cp "$out/bin/nvim" "$out/bin/nvim-softwrapped"
-
-      wrapProgram "$out/bin/nvim" \
-        --set SHELL "fish" \
-        --prefix PATH : "${lib.makeBinPath self.nvim-config.extraPackages}"
-
-      wrapProgram "$out/bin/nvim-softwrapped" \
-        --set SHELL "fish" \
-        --prefix PATH : "${lib.makeBinPath override-packages}" \
-        --suffix PATH : "${lib.makeBinPath self.nvim-config.extraPackages}"
-    '';
-
-    meta = {
-      mainProgram = "nvim";
-    };
+  "nvim.nix" = pkgs.callPackage ./nvim.nix {
+    inherit self mkNvim;
   };
 
   nvim-gui = pkgs.callPackage ./nvim-gui.nix {
@@ -78,7 +43,12 @@ in {
     test = true;
   };
 
+  sandbox = (pkgs.callPackage ./sandbox.nix {
+    nvim = self'.packages.default;
+    inherit inputs;
+  }).config.script;
+
   inherit (zellij) nvim-zellij;
 
-  #inherit ((import (self + /packages/vm.nix) { inherit pkgs; })) vm-gui;
+  #inherit ((import (self + /flake/packages/vm.nix) { inherit pkgs; })) vm-gui;
 }

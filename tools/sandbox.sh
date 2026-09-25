@@ -12,8 +12,8 @@ bwrap \
   --ro-bind /etc/static/ssl /etc/static/ssl \
   --ro-bind /run/current-system/sw/bin/ /bin \
   --ro-bind "$HOME" "$HOME" \
-  --overlay-src /home/arbel/.local/ \
-  --tmp-overlay /home/arbel/.local/ \
+  --overlay-src "$HOME/.local/" \
+  --tmp-overlay "$HOME/.local/" \
   --overlay-src "$HOME/.cache/" \
   --tmp-overlay "$HOME/.cache/" \
   --proc /proc \
