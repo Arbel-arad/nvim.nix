@@ -15,6 +15,7 @@ in lib'.mergeAttrsList [
   (import ./markdown.nix { inherit nvimSize pkgs; })
   (import ./zig.nix { inherit nvimSize pkgs lib; })
   (import ./lua.nix { inherit nvimSize pkgs lib; })
+  (import ./web.nix { inherit nvimSize pkgs lib; })
   (if enableExtra then (import ./octave-matlab.nix { inherit pkgs lib; }) else {})
   (if enableExtra then (import ./plantuml.nix { inherit npins pkgs; }) else {})
   (if enableExtra then (import ./spade-hdl.nix { inherit npins pkgs lib; }) else {})
@@ -51,40 +52,11 @@ in lib'.mergeAttrsList [
       enableExtraDiagnostics = true;
       enableDAP = nvimSize <= 400;
 
-
-      typescript = {
-        enable = enableExtra;
-        extraDiagnostics.enable = true;
-      };
-
-      tsx = {
-        enable = enableExtra;
-      };
-
       odin = {
         enable = enableExtra;
 
         lsp = {
           enable = true;
-        };
-      };
-
-      html = {
-        enable = true;
-
-        lsp = {
-          enable = enableExtra;
-        };
-        extraDiagnostics = {
-          enable = enableExtra;
-        };
-      };
-
-      css = {
-        enable = true;
-
-        lsp = {
-          enable = enableExtra;
         };
       };
 

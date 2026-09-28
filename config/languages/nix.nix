@@ -3,6 +3,9 @@
   enableExtra = nvimSize <= 600;
 
 in {
+  extraPackages = lib.optionals enableExtra [
+    pkgs.sbomnix
+  ];
 
   languages = {
     nix = {

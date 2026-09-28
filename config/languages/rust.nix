@@ -71,6 +71,8 @@ in {
     pkgs.cargo-tarpaulin
     pkgs.cargo-llvm-cov
 
+    pkgs.ron-lsp
+
     rustowl.rustowl
   ];
 
@@ -86,8 +88,27 @@ in {
 
   lsp =  {
     servers = {
+      ron-lsp = {
+        cmd = [
+          "ron-lsp"
+        ];
 
+        filetypes = [
+          "ron"
+        ];
+
+        root_markers = [
+          ".git"
+          "Cargo.toml"
+        ];
+      };
     };
+  };
+
+  treesitter = {
+    grammars = lib.optionals enable [
+      pkgs.vimPlugins.nvim-treesitter-parsers.ron
+    ];
   };
 
   languages = {
