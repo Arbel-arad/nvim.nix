@@ -23,6 +23,10 @@ in {
       };
     };
 
+    scss = {
+      enable = enableExtra;
+    };
+
     typescript = {
       enable = enableExtra;
       extraDiagnostics.enable = true;
@@ -34,4 +38,12 @@ in {
   };
 
   lsp.presets.tailwindcss-language-server.enable = true;
+
+  formatter.conform-nvim.presets.prettier = {
+    enable = true;
+
+    plugins = [
+      #pkgs.prettier-plugin-tailwindcss
+    ];
+  };
 }

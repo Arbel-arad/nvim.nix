@@ -47,12 +47,14 @@
 
 ## Web
 
-|Language|LSP|
-|-|-|
-|HTML|✔|
-|CSS|✔|
-|JavaScript|✔|
-|TypeScript|✔|
+|Language|LSP|Linter
+|-|-|-|
+|HTML|✔| |
+|CSS|✔| |
+|SCSS/SASS|✔| |
+|JavaScript|✔|✔|
+|TypeScript|✔|✔|
+|\*Tailwind|✔| |
 
 ## Graphics
 
@@ -83,6 +85,7 @@
 |Yaml|✔| |
 |Jinja|✔| |
 |JSON|✔| |
+|RON|✔| |
 |QML|✔| |
 |XML|✔| |
 |SQL|✔| |
