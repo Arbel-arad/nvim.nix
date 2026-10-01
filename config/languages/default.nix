@@ -1,4 +1,4 @@
-{ nvimSize, inputs, npins, pkgs, lib, lib' }: let
+{ nvimSize, inputs, npins, nvf, pkgs, lib, lib' }: let
 
   enableExtra = nvimSize <= 300;
 
@@ -276,7 +276,11 @@ in lib'.mergeAttrsList [
       };
     };
 
-    luaConfigRC = {
+    luaConfigRC = let
+
+  inherit (nvf.lib.nvim) dag;
+
+        in {
       filetypes = /* lua */ ''
         vim.filetype.add({
           extension = {
@@ -285,9 +289,20 @@ in lib'.mergeAttrsList [
             sdc = 'tcl',
             -- For spade HDL
             spade = 'spade',
+
+            rhai = 'rhai'
           }
         })
       '';
+    };
+
+    treesitter = {
+      filetypeMappings = {
+        # Use javascript parser for rhai
+        javascript = [
+          "rhai"
+        ];
+      };
     };
   }
 ]

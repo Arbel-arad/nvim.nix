@@ -94,6 +94,7 @@
 |HCL|✔| |
 |HTTP|✔| |
 |PlantUML|✔| |
+|Rhai| | |
 
 ---
 

@@ -34,7 +34,7 @@ in {
     modules.config.nvim
     (import ./misc.nix { inherit self npins nvimSize pkgs lib; })
     (import ./utils.nix { inherit nvimSize inputs npins pkgs lib; })
-    (import ./languages { inherit nvimSize inputs npins pkgs lib lib'; })
+    (import ./languages { inherit nvimSize inputs npins nvf pkgs lib lib'; })
     (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
     (import ./debuggers { inherit nvimSize npins pkgs lib; })
     (import ./formats.nix { inherit nvimSize pkgs lib; })
