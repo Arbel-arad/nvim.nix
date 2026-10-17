@@ -90,7 +90,7 @@ in {
 
         cmd = [
           #FIXME:
-          #"${pkgs.veridian}/bin/veridian"
+          #"${pkgs.veridian.overrideAttrs}/bin/veridian"
         ];
 
         filetypes = [

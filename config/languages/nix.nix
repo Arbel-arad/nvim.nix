@@ -68,7 +68,7 @@ in {
 
           nix = {
             binary = if enableExtra then
-              lib.getExe pkgs.lixPackageSets.git.lix
+              lib.getExe pkgs.lixPackageSets.latest.lix
             else
               "nix"
             ;

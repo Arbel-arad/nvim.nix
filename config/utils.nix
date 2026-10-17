@@ -23,7 +23,7 @@ in {
 
     # PDF + EPUB reader
     (inputs.bookokrat.packages.${system}.default.overrideAttrs (_final: _prev: {
-
+      doCheck = false;
     }))
 
     # Data-ui for CSVs

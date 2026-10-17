@@ -7,7 +7,7 @@
   (import ./sniprun.nix { inherit nvimSize pkgs lib; })
   (if lib'.notAarch64 pkgs then (import ./search-replace.nix { inherit npins nvimSize pkgs lib; }) else {})
   (import ./hex.nix { inherit pkgs lib; })
-  #(import ./just.nix { inherit npins pkgs; })
+  (import ./just.nix { inherit npins pkgs; })
   (import ./overseer.nix { inherit pkgs; })
   (import ./exrc.nix { inherit npins pkgs; })
   (import ./kulala.nix { inherit nvimSize pkgs lib; })

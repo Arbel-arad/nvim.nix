@@ -20,7 +20,6 @@
           ];
         };
 
-
         setupModule = "just";
         setupOpts = {
           open_qf_on_error = true;
