@@ -46,7 +46,16 @@ in lib'.mergeAttrsList [
       # For debugging
       pkgs.openocd
       pkgs.pyocd
-      pkgs.blackmagic
+        #FIXME:
+        #(pkgs.blackmagic.overrideAttrs {
+        #  nativeBuildInputs = lib.mkForce [
+        #    pkgs.gcc-arm-embedded-14
+        #    pkgs.pkg-config
+        #    pkgs.meson
+        #    pkgs.ninja
+        #    pkgs.udevCheckHook
+        #  ];
+        #})
 
       pkgs.tockloader
       pkgs.dfu-util

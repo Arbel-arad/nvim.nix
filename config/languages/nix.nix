@@ -4,7 +4,8 @@
 
 in {
   extraPackages = lib.optionals enableExtra [
-    pkgs.sbomnix
+    #FIXME:
+    #pkgs.sbomnix
   ];
 
   languages = {

@@ -69,7 +69,9 @@ in {
     pkgs.cargo-flamegraph
 
     pkgs.cargo-tarpaulin
-    pkgs.cargo-llvm-cov
+    # FIXME: nixpkgs cargo-llvm-cov 0.9.0 checkPhase fails (14 upstream tests).
+    # Remove override once https://github.com/NixOS/nixpkgs/issues/576588 is fixed.
+    (pkgs.cargo-llvm-cov.overrideAttrs { doCheck = false; })
 
     pkgs.ron-lsp
 
