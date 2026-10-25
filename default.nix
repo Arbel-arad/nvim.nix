@@ -4,6 +4,7 @@
   self,
   inputs,
   pkgs,
+  pkgs-stable,
   lib,
   ...
 }: {
@@ -19,7 +20,7 @@
         enable = true;
         enableManpages = true;
         settings = import ./config/neovim.nix {
-          inherit self inputs npins pkgs lib nvimConf;
+          inherit self inputs npins pkgs pkgs-stable lib nvimConf;
         };
       };
     };

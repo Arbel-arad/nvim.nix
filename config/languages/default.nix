@@ -1,13 +1,13 @@
-{ nvimSize, inputs, npins, nvf, pkgs, lib, lib' }: let
+{ nvimSize, inputs, npins, nvf, pkgs, pkgs-stable, lib, lib' }: let
 
   enableExtra = nvimSize <= 300;
 
 in lib'.mergeAttrsList [
   (import ./c-cpp.nix { inherit nvimSize npins pkgs lib; })
-  (import ./nix.nix { inherit nvimSize inputs pkgs lib; })
+  (import ./nix.nix { inherit nvimSize inputs pkgs pkgs-stable lib; })
   (import ./sql.nix { inherit nvimSize npins pkgs lib; })
   (import ./openscad.nix { inherit nvimSize pkgs lib; })
-  (import ./verilog.nix { inherit nvimSize pkgs lib; })
+  (import ./verilog.nix { inherit nvimSize pkgs pkgs-stable lib; })
   (import ./clojure.nix { inherit nvimSize pkgs lib; })
   (import ./typst.nix { inherit nvimSize pkgs lib; })
   (import ./vhdl.nix { inherit nvimSize pkgs lib; })

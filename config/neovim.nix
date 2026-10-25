@@ -1,4 +1,4 @@
-{ nvimConf, self, inputs, npins, pkgs, lib }: let
+{ nvimConf, self, inputs, npins, pkgs, pkgs-stable, lib }: let
 
   lib' = import ../flake/lib.nix {
     inherit lib;
@@ -34,12 +34,12 @@ in {
     modules.config.nvim
     (import ./misc.nix { inherit self npins nvimSize pkgs lib; })
     (import ./utils.nix { inherit nvimSize inputs npins pkgs lib; })
-    (import ./languages { inherit nvimSize inputs npins nvf pkgs lib lib'; })
+    (import ./languages { inherit nvimSize inputs npins nvf pkgs pkgs-stable lib lib'; })
     (import ./lsp.nix { inherit nvimSize inputs pkgs lib; })
     (import ./debuggers { inherit nvimSize npins pkgs lib; })
     (import ./formats.nix { inherit nvimSize pkgs lib; })
     (import ./editing.nix { inherit nvimSize npins pkgs lib; })
-    (import ./embedded { inherit inputs nvimConf npins pkgs lib lib'; })
+    (import ./embedded { inherit inputs nvimConf npins pkgs pkgs-stable lib lib'; })
     (import ./interface { inherit nvimSize pkgs lib lib'; })
     (import ./dashboard.nix { inherit self pkgs lib; })
     (import ./keymaps.nix { inherit nvf npins pkgs lib; })

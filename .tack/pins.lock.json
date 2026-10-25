@@ -55,6 +55,14 @@
     "narHash": "sha256-T24+2KuggpD3ju5JbtLFLoE8k9SPzJLfIDggLBlzk1Y=",
     "lastModified": 1792655073
   },
+  "nixpkgs-stable": {
+    "type": "git",
+    "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",
+    "ref": "refs/heads/nixos-26.05",
+    "rev": "da6dc0e7b26060f2f71ce3ef7088fb56ee44fa36",
+    "narHash": "sha256-MlvRfa1O5Cqc2/a+gG+l9TSuowEoCKCmrJ1d9oAVm0I=",
+    "lastModified": 1792615934
+  },
   "nvf": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/arbel/nvf",

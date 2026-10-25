@@ -98,3 +98,6 @@ url = "git+https://forgejo.spacetime.technology/arbel/nix-system?shallow=1"
 
 [inputs.nixpak]
 url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpak?shallow=1"
+
+[inputs.nixpkgs-stable]
+url = "git+https://forgejo.spacetime.technology/nix-mirrors/nixpkgs?ref=nixos-26.05&shallow=1"

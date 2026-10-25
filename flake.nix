@@ -46,10 +46,16 @@
           inherit (nixpkgs) overlays config;
         };
 
+        pkgs-stable = import inputs.nixpkgs-stable {
+          system = "x86_64-linux";
+
+          inherit (nixpkgs) overlays config;
+        };
+
       in {
         # For exploring configuration in REPL
         nvim-config = (import (self + /default.nix) {
-          inherit self inputs pkgs;
+          inherit self inputs pkgs pkgs-stable;
           inherit (pkgs) lib;
           nvimConf = {
             size = 0;
@@ -57,7 +63,7 @@
         }).config.programs.nvf.settings.vim;
 
         nvim-minimal-config = (import (self + /default.nix) {
-          inherit self inputs pkgs;
+          inherit self inputs pkgs pkgs-stable;
           inherit (pkgs) lib;
           nvimConf = {
             size = 999;
@@ -75,6 +81,12 @@
       perSystem = { system, config, self', lib, ... }: let
 
         pkgs = import inputs.nixpkgs {
+          inherit system;
+
+          inherit (nixpkgs) overlays config;
+        };
+
+        pkgs-stable = import inputs.nixpkgs-stable {
           inherit system;
 
           inherit (nixpkgs) overlays config;
@@ -120,7 +132,7 @@
         };
 
         packages = import ./flake/packages {
-          inherit config inputs self self' pkgs lib;
+          inherit config inputs self self' pkgs pkgs-stable lib;
           nvf-pkgs = import inputs.nixpkgs {
             inherit system;
 

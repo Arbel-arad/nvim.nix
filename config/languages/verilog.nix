@@ -1,4 +1,4 @@
-{ nvimSize, pkgs, lib }: let
+{ nvimSize, pkgs, pkgs-stable, lib }: let
   enabled = nvimSize < 300;
 
   svlint_config = {
@@ -89,8 +89,7 @@ in {
         ];
 
         cmd = [
-          #FIXME:
-          #"${pkgs.veridian.overrideAttrs}/bin/veridian"
+          "${pkgs-stable.veridian}/bin/veridian"
         ];
 
         filetypes = [

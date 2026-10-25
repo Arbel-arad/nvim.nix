@@ -1,4 +1,4 @@
-{ inputs, nvimConf, npins, pkgs, lib, lib' }: let
+{ inputs, nvimConf, npins, pkgs, pkgs-stable, lib, lib' }: let
 
   nvimSize = nvimConf.size or 0;
 
@@ -46,16 +46,7 @@ in lib'.mergeAttrsList [
       # For debugging
       pkgs.openocd
       pkgs.pyocd
-        #FIXME:
-        #(pkgs.blackmagic.overrideAttrs {
-        #  nativeBuildInputs = lib.mkForce [
-        #    pkgs.gcc-arm-embedded-14
-        #    pkgs.pkg-config
-        #    pkgs.meson
-        #    pkgs.ninja
-        #    pkgs.udevCheckHook
-        #  ];
-        #})
+      pkgs-stable.blackmagic
 
       pkgs.tockloader
       pkgs.dfu-util
@@ -174,7 +165,6 @@ in lib'.mergeAttrsList [
           ft = [
             "ino"
           ];
-
         };
 
         "nvim-arduino" = lib.mkIf enabled {

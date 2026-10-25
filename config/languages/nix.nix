@@ -1,11 +1,10 @@
-{ nvimSize, inputs, pkgs, lib }: let
+{ nvimSize, inputs, pkgs, pkgs-stable, lib }: let
 
   enableExtra = nvimSize <= 600;
 
 in {
   extraPackages = lib.optionals enableExtra [
-    #FIXME:
-    #pkgs.sbomnix
+    pkgs-stable.sbomnix
   ];
 
   languages = {
