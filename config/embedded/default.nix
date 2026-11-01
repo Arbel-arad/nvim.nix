@@ -46,7 +46,7 @@ in lib'.mergeAttrsList [
       # For debugging
       pkgs.openocd
       pkgs.pyocd
-      pkgs-stable.blackmagic
+      pkgs.blackmagic
 
       pkgs.tockloader
       pkgs.dfu-util
