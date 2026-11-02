@@ -229,7 +229,8 @@ in {
     ];
 
     mappings = {
-
+      # broken after nvim-overlay `70cfacc6ea1a24851e6d5c550456a95d4ca35f80`
+      liveGrep = lib.mkForce null;
     };
 
     setupOpts = {
@@ -269,6 +270,36 @@ in {
       };
     };
   };
+
+  fzf-lua = {
+    enable = true;
+
+    profile = "telescope";
+
+    setupOpts = {
+      fzf_opts = {
+        "--layout" = "reverse";
+      };
+    };
+  };
+
+  mini = {
+    pick = {
+      #enable = true;
+    };
+  };
+
+  keymaps = [
+    {
+      key = "<leader>fg";
+      mode = [
+        "n"
+      ];
+      silent = true;
+      action = /* lua */ "<cmd>FzfLua live_grep<cr>";
+      desc = "Live Grep [FzfLua]";
+    }
+  ];
 
   autopairs = {
     nvim-autopairs = {

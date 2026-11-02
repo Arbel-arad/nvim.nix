@@ -149,6 +149,7 @@
       # Add whichkey groups for test and debug runners
       register = pushDownDefault {
         "<leader>r" = "+Run";
+        #"<leader>f" = "+Find";
         "<leader>rt" = "+Run test";
         "<leader>rd" = "+Run debug";
         "<leader>rdw" = "+Debug mode";

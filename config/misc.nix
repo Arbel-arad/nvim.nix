@@ -8,6 +8,7 @@ in {
     if nvimSize <= 500
       then [
         pkgs.gitFull
+        pkgs.jujutsu
       ]
       else [
         pkgs.gitMinimal

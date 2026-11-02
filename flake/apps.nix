@@ -1,6 +1,6 @@
 { self, self' , pkgs }: {
 
-  default = self'.apps."nvim.nix";
+  default = self'.apps."nvim";
 
   nvim = {
     type = "app";

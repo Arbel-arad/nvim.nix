@@ -24,9 +24,9 @@
           neovim-session-manager
 
           # Optional pickers
-          pkgs.vimPlugins.telescope-nvim
-          pkgs.vimPlugins.fzf-lua
-          pkgs.vimPlugins.snacks-nvim
+          #pkgs.vimPlugins.telescope-nvim
+          #pkgs.vimPlugins.fzf-lua
+          #pkgs.vimPlugins.snacks-nvim
         ];
       };
 
