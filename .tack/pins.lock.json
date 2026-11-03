@@ -19,9 +19,9 @@
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts",
     "ref": "HEAD",
-    "rev": "024633cd702b10285db5cb19b40ad48d2399ba60",
-    "narHash": "sha256-zTwuwezD0w3hpga6a6P8emidzAZFyWqlNeRBlpWOOl8=",
-    "lastModified": 1790898470
+    "rev": "ea2630b7470978622c7689a1ff75d2b389175399",
+    "narHash": "sha256-V1h85lUaJBQoHFrB2vpXZOE0Ju1MYSnIpsehoVZYlDo=",
+    "lastModified": 1793576659
   },
   "lsp-inputs": {
     "type": "git",
@@ -67,17 +67,17 @@
     "type": "git",
     "url": "https://forgejo.spacetime.technology/arbel/nvf",
     "ref": "HEAD",
-    "rev": "85ec04f8d5a971599401fbfed003e111aebc5483",
-    "narHash": "sha256-aQfJYoBMH/nkvXkVtpbEVr6z1L/ddXNq2k+aKtqlriQ=",
-    "lastModified": 1789936504
+    "rev": "19bad68474e37a50bd224d4565eef0d1980b1044",
+    "narHash": "sha256-yD212oNg21wTq+szWAqRKsnoo+jCkSfPLjTChgm0s/Q=",
+    "lastModified": 1793703566
   },
   "nvim-nightly": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay",
     "ref": "HEAD",
-    "rev": "e0c4f44fb8f605513fad74376d2a431948802407",
-    "narHash": "sha256-viltrcfqiQCLftI9IrdmMM5xqTdVR5hTdIoXL4xCYc4=",
-    "lastModified": 1793404991
+    "rev": "57b69c515047758595c5ea31722ee090dfd65cc9",
+    "narHash": "sha256-wj+DkbLRJ64iACjZIMxRXxfh7WqgZwbatRmMhe3Hje0=",
+    "lastModified": 1793664170
   },
   "rust-overlay": {
     "type": "git",
