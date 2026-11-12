@@ -1,4 +1,4 @@
-{ config, inputs, self, self', nvf-pkgs, pkgs, pkgs-stable, lib }: let
+{ inputs, self, self', nvf-pkgs, pkgs, pkgs-stable, lib }: let
 
   zellij = import (self + /tools/zellij/zellij.nix) {
     inherit self self' pkgs lib;
@@ -8,10 +8,10 @@
       pkgs = nvf-pkgs;
       modules = [
         (
-          import (self + /default.nix) {
-            inherit self nvimConf config inputs pkgs pkgs-stable lib;
+          import (self + /config/neovim.nix) {
+            inherit self nvimConf inputs pkgs pkgs-stable lib;
           }
-        ).config.programs.nvf.settings
+        )
       ];
     }
   ).neovim;

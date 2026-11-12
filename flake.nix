@@ -54,21 +54,21 @@
 
       in {
         # For exploring configuration in REPL
-        nvim-config = (import (self + /default.nix) {
+        nvim-config = (import (self + /config/neovim.nix) {
           inherit self inputs pkgs pkgs-stable;
           inherit (pkgs) lib;
           nvimConf = {
             size = 0;
           };
-        }).config.programs.nvf.settings.vim;
+        }).vim;
 
-        nvim-minimal-config = (import (self + /default.nix) {
+        nvim-minimal-config = (import (self + /config/neovim.nix) {
           inherit self inputs pkgs pkgs-stable;
           inherit (pkgs) lib;
           nvimConf = {
             size = 999;
           };
-        }).config.programs.nvf.settings.vim;
+        }).vim;
 
         inherit pkgs npins inputs;
 
@@ -132,7 +132,7 @@
         };
 
         packages = import ./flake/packages {
-          inherit config inputs self self' pkgs pkgs-stable lib;
+          inherit inputs self self' pkgs pkgs-stable lib;
           nvf-pkgs = import inputs.nixpkgs {
             inherit system;
 

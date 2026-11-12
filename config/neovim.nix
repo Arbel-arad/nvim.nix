@@ -1,4 +1,4 @@
-{ nvimConf, self, inputs, npins, pkgs, pkgs-stable, lib }: let
+{ nvimConf, self, inputs, npins ? (import ../npins), pkgs, pkgs-stable, lib }: let
 
   lib' = import ../flake/lib.nix {
     inherit lib;
