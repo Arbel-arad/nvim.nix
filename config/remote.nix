@@ -15,6 +15,11 @@
 
     nativeBuildInputs = [
       pkgs.perl
+      pkgs.pkg-config
+    ];
+
+    buildInputs = [
+      pkgs.openssl.dev
     ];
 
     doCheck = false;

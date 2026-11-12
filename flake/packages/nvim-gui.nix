@@ -13,6 +13,7 @@ pkgs.writeShellApplication {
     pkgs.fish
   ];
 
+    #FIXME:
   text = /* bash */ ''
     sockdir=$(mktemp -d)
     sockfile="$sockdir/nvim.sock"
@@ -20,7 +21,7 @@ pkgs.writeShellApplication {
     while [[ ! -S "$sockfile" ]]; do
       sleep 0.1
     done
-    NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide}/bin/neovide --server="$sockfile"
+    NEOVIDE_CONFIG=${neovideToml} ${pkgs.neovide.overrideAttrs {doCheck = false; }}/bin/neovide --server="$sockfile"
     if [ -S "$sockfile" ]; then rm "$sockdir/nvim.sock"; fi
     rmdir "$sockdir"
   '';

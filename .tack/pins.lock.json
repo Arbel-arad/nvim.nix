@@ -51,17 +51,17 @@
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",
     "ref": "refs/heads/master",
-    "rev": "4e03afeea56fd9fd86ced423880fe261f564f593",
-    "narHash": "sha256-dkJ3TmsXPoCCJjlVQQifKgBF4GxI2VAtopQTTwfXHXk=",
-    "lastModified": 1793481655
+    "rev": "d0f70639d123ef33069ba393c92065f84d58c54e",
+    "narHash": "sha256-CTfKIYPzpePHVSOz902aHwsGqAFC6iAouODX9CHA8BM=",
+    "lastModified": 1794489612
   },
   "nixpkgs-stable": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",
     "ref": "refs/heads/nixos-26.05",
-    "rev": "fa1373130d5a21c040a47c5dbe1913d59ed91808",
-    "narHash": "sha256-HzgjxrLY4AEc0044ZuM5CHbLSWLZgDlay1idmzvvpJs=",
-    "lastModified": 1793410479
+    "rev": "ac588ef1c914865dad517b337ea0eb9694a4021c",
+    "narHash": "sha256-XuAV2cUwaod3Bt4XFVqiXz3v1w2ex16W6Sv4S7EWres=",
+    "lastModified": 1794165970
   },
   "nvf": {
     "type": "git",
@@ -75,25 +75,25 @@
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay",
     "ref": "HEAD",
-    "rev": "57b69c515047758595c5ea31722ee090dfd65cc9",
-    "narHash": "sha256-wj+DkbLRJ64iACjZIMxRXxfh7WqgZwbatRmMhe3Hje0=",
-    "lastModified": 1793664170
+    "rev": "4eb6aa56fa5516008afd4915597d8da7dd762105",
+    "narHash": "sha256-yEuw0jacl4t7ihPYB/8X/i+Svihot6T24Z48HxtZvCM=",
+    "lastModified": 1794138095
   },
   "rust-overlay": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay",
     "ref": "HEAD",
-    "rev": "6ecf534a7c16e7c969f26838fdd8c93597ae93f3",
-    "narHash": "sha256-+sgVNI2c67di+XIeMaz5KSei4T65kX68s5Nl0E5Gzbc=",
-    "lastModified": 1793434469
+    "rev": "b70538330f20adc9665afa2976471eb5b85ebd1f",
+    "narHash": "sha256-J+4v+Olc/2mN/bSc9CuAQ/PB7c0w1mzDJK8JvS7rKmM=",
+    "lastModified": 1794216702
   },
   "rustowl-flake": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git",
     "ref": "HEAD",
-    "rev": "944d1f83195476c4f5f27aeb778ce7c60487f1df",
-    "narHash": "sha256-oRn1mWi0xPmu83rQaQ/zroH4vo01UFKGAJwQcwbewNg=",
-    "lastModified": 1793418496
+    "rev": "96dff098adc3de30190550fc62570e4680d8fdee",
+    "narHash": "sha256-6OsvM1zgOrIqo5/YaL3UXFIC2t6Oz64r8GW7WYMpJ/4=",
+    "lastModified": 1794370914
   },
   "spectrum-os": {
     "type": "git",

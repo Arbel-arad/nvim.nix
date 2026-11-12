@@ -17,9 +17,11 @@ in pkgs.rustPlatform.buildRustPackage {
 
   buildInputs = [
     pkgs.fontconfig.dev
+    pkgs.zstd.dev
+    pkgs.sqlite.dev
   ];
 
-  # FIXME:
+  # TODO:
   # The tests need extra python packages
   doCheck = false;
 
