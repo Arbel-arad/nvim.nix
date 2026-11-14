@@ -4,7 +4,8 @@
     inherit self self' pkgs lib;
   };
 
-  mkNvim = nvimConf: (inputs.nvf.outputs.lib.nvim.neovimConfiguration {
+  mkNvim = nvimConf: (
+    inputs.nvf.outputs.lib.nvim.neovimConfiguration {
       pkgs = nvf-pkgs;
       modules = [
         (
@@ -49,6 +50,10 @@ in {
   }).config.script;
 
   inherit (zellij) nvim-zellij;
+
+  oci = pkgs.callPackage ./oci.nix {
+    inherit self';
+  };
 
   #inherit ((import (self + /flake/packages/vm.nix) { inherit pkgs; })) vm-gui;
 }

@@ -80,6 +80,21 @@
     };
   };
 
+  oci = {
+    type = "app";
+    program = pkgs.writeShellApplication {
+      name = "nvim-oci";
+
+      runtimeInputs = [
+        #pkgs.podman
+      ];
+
+      text = /* bash */ ''
+        podman load < ${self'.packages.oci} && podman run -p 127.0.0.1:8082:8082 -it localhost/nvim:latest
+      '';
+    };
+  };
+
   print-config = {
     type = "app";
     program = "${self'.packages.default}/bin/nvf-print-config";
