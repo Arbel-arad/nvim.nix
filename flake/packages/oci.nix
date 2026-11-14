@@ -49,6 +49,9 @@ in
       "SHELL=fish"
       "EDITOR=nvim"
 
+      "LANG=C.UTF-8"
+      "LC_ALL=C.UTF-8"
+
       "XDG_CACHE_HOME=/.cache"
       "XDG_CONFIG_HOME=/.config"
     ];
