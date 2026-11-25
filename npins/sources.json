@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "1bfe5548765dab83a3a7d2ba85b0bc0fe718b473",
-      "url": "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/1bfe5548765dab83a3a7d2ba85b0bc0fe718b473.tar.gz",
-      "hash": "sha256-dEYD6uia89KXToR6w4YiP6xVPxOFjxB+PnoJYXFeNAs="
+      "revision": "9b1ee1f92fe773fb37c10d6351de34e43105a8a2",
+      "url": "https://github.com/Vaishnav-Sabari-Girish/ComChan/archive/9b1ee1f92fe773fb37c10d6351de34e43105a8a2.tar.gz",
+      "hash": "sha256-TkNvHxfN+VPvTb2Q/zIsgnjTgUvOYB4uUiDwBjiKEB0="
     },
     "arduino-nvim": {
       "type": "Git",
@@ -141,9 +141,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "e9b74f7f587cf111ba427794d055a7a74cfa0f99",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts-files/archive/e9b74f7f587cf111ba427794d055a7a74cfa0f99.tar.gz",
-      "hash": "sha256-mT/ue3orGPYHze4NWp5QfX+DHiYLBN8ugLRSnvvcECQ="
+      "revision": "377996f4280fdbd874c1c0e7f5b8bcfc445ac32f",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/flake-parts-files/archive/377996f4280fdbd874c1c0e7f5b8bcfc445ac32f.tar.gz",
+      "hash": "sha256-HzFq1p6DQBUDmcwa88PCBHFLkRPEHrVc0jcg50Ha31U="
     },
     "fpga-toolchains": {
       "type": "Git",
@@ -155,9 +155,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "02aa2ebf2b25555d47543465460c73f2deb37734",
-      "url": "https://forgejo.spacetime.technology/arbel/fpga-toolchains/archive/02aa2ebf2b25555d47543465460c73f2deb37734.tar.gz",
-      "hash": "sha256-YmDFRyb+QCTEjgkvzUJ/fYwJ2zgtfTkiO3PDxJV9bvQ="
+      "revision": "f6a347c885c17f22f4c65534e33cbe76cb8e2a2a",
+      "url": "https://forgejo.spacetime.technology/arbel/fpga-toolchains/archive/f6a347c885c17f22f4c65534e33cbe76cb8e2a2a.tar.gz",
+      "hash": "sha256-479KVnZj8qfj4KwsHcsTd1FwfHfwsMXsPd+gTwrPkWs="
     },
     "helix.nix": {
       "type": "Git",
@@ -261,9 +261,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "8aed212c9fbd5516048c90e1cedc163b27a507e8",
-      "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/8aed212c9fbd5516048c90e1cedc163b27a507e8.tar.gz",
-      "hash": "sha256-sdIe6EEV57elRxZVMLM7aTppI82bxwq3SizKCumqc/s="
+      "revision": "44c6eb0ec369962316b3d7c35d109be66666c6c1",
+      "url": "https://codeberg.org/Jorenar/nvim-dap-disasm/archive/44c6eb0ec369962316b3d7c35d109be66666c6c1.tar.gz",
+      "hash": "sha256-o/hL4uPhTCbo4x+SFdA+b7Frt+7mvdIPfiAkzL2ODDw="
     },
     "nvim-dap-probe-rs": {
       "type": "Git",
@@ -365,9 +365,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "46bf3f1def08198eba41b1c62c9fe07a034650c6",
-      "url": "https://github.com/plantuml/plantuml-stdlib/archive/46bf3f1def08198eba41b1c62c9fe07a034650c6.tar.gz",
-      "hash": "sha256-371WreOJf3rQIoP8yRwSUgYvEvt7Zw+8Nz8CGlRpIAY="
+      "revision": "6a9993f714ef61f4cd565726531d142151f86389",
+      "url": "https://github.com/plantuml/plantuml-stdlib/archive/6a9993f714ef61f4cd565726531d142151f86389.tar.gz",
+      "hash": "sha256-XXPxnkQ9LPnGqHozEX1XDNoc+qAf3bBqIzmndeoeHIE="
     },
     "punch.lua": {
       "type": "Git",
@@ -418,9 +418,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "9e77b652ca4af1d2e5d9ad4f5a910e48d8c79085",
-      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/9e77b652ca4af1d2e5d9ad4f5a910e48d8c79085.tar.gz",
-      "hash": "sha256-9yPW7S9dzihQVL2dxAbbmdtGsTm2zPXu8JpMiwbXKNw="
+      "revision": "c0e82cad53833b053f4e1ec2c596cb3b18f00cbf",
+      "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-fenix/archive/c0e82cad53833b053f4e1ec2c596cb3b18f00cbf.tar.gz",
+      "hash": "sha256-I4XtLHtuQa4roY8uky/9PqPSpm5sqt6uWkmY5eRxzN0="
     },
     "screenkey.nvim": {
       "type": "Git",
@@ -457,9 +457,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "332caa9ab86af1a00259feb01051ea825e8fc461",
-      "url": "https://github.com/nanotee/sqls.nvim/archive/332caa9ab86af1a00259feb01051ea825e8fc461.tar.gz",
-      "hash": "sha256-wCU6wqFykkUv0dpO9MY8VNjPeyUqV4x0LngSZ2D967s="
+      "revision": "eaecd949e082b96e66533034adde60828c828990",
+      "url": "https://github.com/nanotee/sqls.nvim/archive/eaecd949e082b96e66533034adde60828c828990.tar.gz",
+      "hash": "sha256-vcReq4TrMYJafgFIwFRpRxsZBmsQ87ewcbIaMUEyOiQ="
     },
     "sshfs.nvim": {
       "type": "Git",
@@ -470,9 +470,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "a4c61a8b49639dbd37d0c272e0f93a5ffe85e81d",
-      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/a4c61a8b49639dbd37d0c272e0f93a5ffe85e81d.tar.gz",
-      "hash": "sha256-DxV1nVB+OqpFOFAn8MtH4pJc6TCboSD5cQnK+oz9d6g="
+      "revision": "817036e6f8c91d838685c569e0e3590ed5fb5472",
+      "url": "https://github.com/uhs-robert/sshfs.nvim/archive/817036e6f8c91d838685c569e0e3590ed5fb5472.tar.gz",
+      "hash": "sha256-KeESfPmpN5Kus0jkSp7uOeeQlbb83CDMxaalviDRJzg="
     },
     "submode.nvim": {
       "type": "Git",
@@ -562,9 +562,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "5b60a017ccc0bd9e0f4768367e425fdae6a6e500",
-      "url": "https://github.com/paradoxical-dev/zeal.nvim/archive/5b60a017ccc0bd9e0f4768367e425fdae6a6e500.tar.gz",
-      "hash": "sha256-sg23S+xk1MeCDYL5ozcY29C3nIXrWKQRDCs3HScu/7U="
+      "revision": "0c8f0ab863a8e585e30e6233f46ddc305777c40b",
+      "url": "https://github.com/paradoxical-dev/zeal.nvim/archive/0c8f0ab863a8e585e30e6233f46ddc305777c40b.tar.gz",
+      "hash": "sha256-qGnJeQgCaOUiJthMqjzc0LVKplIKloGbuYQIob3SkCI="
     },
     "zealdocs.nix": {
       "type": "Git",

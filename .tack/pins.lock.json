@@ -35,65 +35,65 @@
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/microvm.nix",
     "ref": "HEAD",
-    "rev": "194a254693f49af939a2b53d04982bd4b276fdb3",
-    "narHash": "sha256-m5iXk3ILiCuRpCgqYWNiGVFmu8YLh2FNxxaZj/Auc10=",
-    "lastModified": 1794529892
+    "rev": "430a46d03ef15f1b8b715fafa85f21847960b783",
+    "narHash": "sha256-mruPu1cqOVBxPiRwrh6r1tnX1OAzMggy+rDk6YuqhK8=",
+    "lastModified": 1795298370
   },
   "nixpak": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpak",
     "ref": "HEAD",
-    "rev": "3b061c82f9ccb99973154ffced2391535da7b66b",
-    "narHash": "sha256-Bv69px6ayex2DFXZnx398li2wj1TrTV+6AZlPXgSRzQ=",
-    "lastModified": 1792779741
+    "rev": "cac23d811e3793588eb3be1df3be9fb78ee22e1e",
+    "narHash": "sha256-pGD+0IiMZXW7qSHSIkoyF2sf7TDhsWqsdcoEEmIvdho=",
+    "lastModified": 1795055727
   },
   "nixpkgs": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",
     "ref": "refs/heads/master",
-    "rev": "d0f70639d123ef33069ba393c92065f84d58c54e",
-    "narHash": "sha256-CTfKIYPzpePHVSOz902aHwsGqAFC6iAouODX9CHA8BM=",
-    "lastModified": 1794489612
+    "rev": "92a3f72f37b96713768c4fdc33e49bc501ff4295",
+    "narHash": "sha256-wFcYYX7iotBo6sk8kMOZvgNZN8RTEOic+ofz3AQKQtI=",
+    "lastModified": 1795142483
   },
   "nixpkgs-stable": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/nixpkgs",
     "ref": "refs/heads/nixos-26.05",
-    "rev": "ac588ef1c914865dad517b337ea0eb9694a4021c",
-    "narHash": "sha256-XuAV2cUwaod3Bt4XFVqiXz3v1w2ex16W6Sv4S7EWres=",
-    "lastModified": 1794165970
+    "rev": "3457b69ac4aba6d9ea9a743370af160fb502db29",
+    "narHash": "sha256-Obi0Kr71SBfU9aaDxSncVRT4wYTjLzjMyCmmuC2XGd0=",
+    "lastModified": 1795031880
   },
   "nvf": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/arbel/nvf",
     "ref": "HEAD",
-    "rev": "19bad68474e37a50bd224d4565eef0d1980b1044",
-    "narHash": "sha256-yD212oNg21wTq+szWAqRKsnoo+jCkSfPLjTChgm0s/Q=",
-    "lastModified": 1793703566
+    "rev": "79f85f5ec64ea0387797455fa3815aebecbac279",
+    "narHash": "sha256-JWToBr7DEfSzyUnGV72YpMVzHAr/Y+QUXkeXO7oXnA0=",
+    "lastModified": 1795554683
   },
   "nvim-nightly": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/neovim-nightly-overlay",
     "ref": "HEAD",
-    "rev": "96a225e8cfffc5b844c86a3aac17f7501c7d7c17",
-    "narHash": "sha256-jbJ2GGmBNloHe8EiF8ueMF6T/S9Be51Jr27vx6wId3w=",
-    "lastModified": 1794614588
+    "rev": "55b2b909ebb0efa4859b3d49d11f97c6c96eb1e3",
+    "narHash": "sha256-3R27A/N5v7H7kHZw++4EPU0DeVZUjm3j3YrxgxaAFzs=",
+    "lastModified": 1795478556
   },
   "rust-overlay": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/rust-overlay",
     "ref": "HEAD",
-    "rev": "5b87ee0513c29127a01ad06e9cb362ea5ce91e78",
-    "narHash": "sha256-rpqDyUM/d5fACYB8W+wKxxO57ICWjjalzb2X25oFFkY=",
-    "lastModified": 1794646145
+    "rev": "639e209cc8eecd0c307fd95c8aabc011bf047c41",
+    "narHash": "sha256-2UgrrjTeYt4UMmsjdcUjhxSnCGYOlzMuGuk7dRB5Kq4=",
+    "lastModified": 1795522582
   },
   "rustowl-flake": {
     "type": "git",
     "url": "https://forgejo.spacetime.technology/nix-mirrors/rustowl-flake.git",
     "ref": "HEAD",
-    "rev": "96dff098adc3de30190550fc62570e4680d8fdee",
-    "narHash": "sha256-6OsvM1zgOrIqo5/YaL3UXFIC2t6Oz64r8GW7WYMpJ/4=",
-    "lastModified": 1794370914
+    "rev": "98b9f8ff41bdfb7b1100d4bcebd1da5f58917612",
+    "narHash": "sha256-X4mUapEwbcfFzzPV/DguhCEPjNy4SJF2p1+/CsCLVnU=",
+    "lastModified": 1795411738
   },
   "spectrum-os": {
     "type": "git",

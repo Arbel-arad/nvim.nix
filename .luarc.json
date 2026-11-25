@@ -3,7 +3,7 @@
     "read_globals"
   ],
   "workspace.library": [
-    "/nix/store/34xqkpr7zpgg12dk7zh1ix318n3hv6b6-neovim-unwrapped-c868e1a/share/nvim/runtime",
+    "/nix/store/pn8l5g128daqj2yfxn55gg6h1f5w0ssn-neovim-unwrapped-d837f77/share/nvim/runtime",
     "${3rd}/luv/library"
   ]
 }

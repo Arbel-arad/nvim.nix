@@ -20,16 +20,9 @@ in {
         enable = false;
       };
 
-      flutter-tools = {
-        enable = enableExtra;
-        color = {
-          enable = true;
-          highlightBackground = false;
-          highlightForeground = false;
-          virtualText = {
-            enable = true;
-            character = ''"■"'';
-          };
+      extensions = {
+        flutter-tools = {
+          enable = enableExtra;
         };
       };
     };
